@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter+Variable:opsz,wght@14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - Dark theme optimized for liquid glass */
+    --color-background: #0A0B0F; /* darker base for better glass contrast */
+    --color-foreground: #F8FAFC; /* brighter foreground */
+    --color-border: rgba(255, 255, 255, 0.08); /* softer borders */
+    --color-input: rgba(15, 23, 42, 0.8); /* glass input */
+    --color-ring: #8B5CF6; /* violet-500 */
+    
+    /* Glass Card Colors */
+    --color-card: rgba(15, 23, 42, 0.6); /* glass background */
+    --color-card-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Popover Colors */
+    --color-popover: rgba(15, 23, 42, 0.9); /* stronger glass for popovers */
+    --color-popover-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Muted Colors */
+    --color-muted: rgba(51, 65, 85, 0.5); /* glass muted */
+    --color-muted-foreground: #CBD5E1; /* slate-300 */
+    
+    /* Solware Brand Colors - Updated to liquid glass friendly */
+    --color-primary: #8B5CF6; /* violet-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #22D3EE; /* cyan-400 */
+    --color-secondary-foreground: #0F1115; /* gray-950 */
+    
+    /* Destructive Colors */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #EC4899; /* pink-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error Colors */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Solware/SolHub Gradient */
+    --gradient-medical: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 50%, #EC4899 100%);
+    --gradient-solware: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
+    
+    /* Venezuelan Context Colors */
+    --color-venezuela-yellow: #FCDD09; /* yellow-400 */
+    --color-venezuela-red: #CF142B; /* red-700 */
+    --color-venezuela-blue: #00247D; /* blue-900 */
+    
+    /* Liquid Glass System */
+    --glass-light: rgba(255, 255, 255, 0.05);
+    --glass-medium: rgba(255, 255, 255, 0.08);
+    --glass-strong: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-glow: rgba(139, 92, 246, 0.2);
+    
+    /* Spacing System */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 0.75rem; /* 12px */
+    --spacing-md: 1.25rem; /* 20px */
+    --spacing-lg: 2rem; /* 32px */
+    --spacing-xl: 3rem; /* 48px */
+    
+    /* Border Radius System */
+    --radius-sm: 0.5rem; /* 8px */
+    --radius-md: 0.75rem; /* 12px */
+    --radius-lg: 1rem; /* 16px */
+    --radius-xl: 1.25rem; /* 20px */
+    --radius-2xl: 1.5rem; /* 24px */
+    
+    /* Liquid Glass Shadows */
+    --shadow-glass-light: 0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-glass-medium: 0 8px 32px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-glass-strong: 0 16px 48px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.16);
+    
+    /* Animation Timing */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 800ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glass: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Light theme (toggle functionality) */
+  .light {
+    --color-background: #FFFFFF;
+    --color-foreground: #0F172A;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-input: rgba(248, 250, 252, 0.8);
+    --color-card: rgba(248, 250, 252, 0.6);
+    --color-card-foreground: #0F172A;
+    --color-popover: rgba(248, 250, 252, 0.9);
+    --color-popover-foreground: #0F172A;
+    --color-muted: rgba(226, 232, 240, 0.5);
+    --color-muted-foreground: #64748B;
+    --glass-light: rgba(0, 0, 0, 0.03);
+    --glass-medium: rgba(0, 0, 0, 0.05);
+    --glass-strong: rgba(0, 0, 0, 0.08);
+    --glass-border: rgba(0, 0, 0, 0.08);
+  }
+  
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Liquid Glass Components */
+.glass-light  {
+    @apply bg-glass-light backdrop-blur-glass border;
+    background: var(--glass-light);
+  }
+.glass-medium  {
+    @apply bg-glass-medium backdrop-blur-glass border shadow-glass-light;
+    background: var(--glass-medium);
+  }
+.glass-strong  {
+    @apply bg-glass-strong backdrop-blur-glass-strong border shadow-glass-medium;
+    background: var(--glass-strong);
+  }
+  
+  .glass-card {
+    @apply glass-medium rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card hover:shadow-glass-hover hover:bg-glass-strong hover:scale-[1.02] transform transition-all duration-300;
+  }
+.glass-nav  {
+    @apply glass-medium border-b shadow-glass-light sticky top-0;
+    backdrop-filter: blur(16px) saturate(180%);
+  }
+  
+  /* Solware Brand Glass Buttons */
+  .btn-solware-primary {
+    @apply bg-gradient-solware text-white font-semibold px-6 py-3 rounded-xl;
+    @apply shadow-glass-medium hover:shadow-glass-strong;
+    @apply transition-all duration-300 hover:scale-105 active:scale-95;
+    @apply focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+.btn-solware-ghost  {
+    @apply glass-light text-foreground font-medium px-6 py-3 rounded-xl;
+    @apply transition-all duration-300;
+    @apply focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  .btn-whatsapp {
+    @apply bg-success text-white rounded-full p-4 shadow-glass-strong;
+    @apply hover:scale-110 active:scale-95 transition-all duration-300;
+    @apply animate-bounce-gentle hover:animate-none;
+  }
+  
+  /* Gradient Text Effects */
+  .text-gradient-solware {
+    background: var(--gradient-solware);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+  
+  .text-gradient-medical {
+    background: var(--gradient-medical);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glass Input Elements */
+.input-glass  {
+    @apply glass-light text-foreground placeholder:text-muted-foreground;
+    @apply focus:border-primary focus:ring-2;
+    @apply transition-all duration-300 rounded-xl px-4 py-3;
+    backdrop-filter: blur(12px);
+  }
+  
+  /* Medical/Healthcare specific components */
+  .card-medical-glass {
+    @apply glass-card p-6 hover:shadow-glass-hover transition-all duration-300;
+  }
+.hero-glass  {
+    @apply glass-medium rounded-3xl p-8 md:p-12 border-2;
+    background: linear-gradient(135deg, var(--glass-medium) 0%, var(--glass-light) 100%);
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+  
+  /* Animation Classes */
+  .animate-glass-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animate-glass-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: glassShimmer 2s ease-in-out infinite;
+  }
+  
+  /* Venezuelan Context Styling */
+  .accent-venezuela {
+    border-left: 4px solid var(--color-venezuela-yellow);
+    border-right: 4px solid var(--color-venezuela-red);
+    border-bottom: 4px solid var(--color-venezuela-blue);
+  }
+  
+  /* Medical Professional Typography */
+  .text-medical-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+    font-feature-settings: 'ss01' 1;
+  }
+  
+  .text-medical-subheading {
+    @apply text-lg md:text-xl font-semibold text-muted-foreground;
+  }
+  
+  .text-medical-body {
+    @apply text-base leading-relaxed text-foreground;
+    font-feature-settings: 'liga' 1;
+  }
+  
+  /* Focus Management - WCAG AA Compliant */
+  .focus-glass {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Accessibility - High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .glass-light, .glass-medium, .glass-strong {
+      background: var(--color-card);
+      border-color: var(--color-border);
+      backdrop-filter: none;
+    }
+  }
+}
+
+@layer utilities {
+  /* Z-Index Utilities (Centralized Layer System) */
+  .z-base { z-index: 0; }
+  .z-behind { z-index: -1; }
+  .z-content { z-index: 1; }
+  .z-float { z-index: 10; }
+  .z-sticky { z-index: 20; }
+  .z-navbar { z-index: 30; }
+  .z-header { z-index: 40; }
+  .z-dropdown { z-index: 50; }
+  .z-sidebar { z-index: 60; }
+  .z-overlay { z-index: 70; }
+  .z-modal-backdrop { z-index: 80; }
+  .z-modal { z-index: 90; }
+  .z-popover { z-index: 95; }
+  .z-toast { z-index: 100; }
+  .z-tooltip { z-index: 110; }
+  .z-whatsapp { z-index: 120; }
+  
+  /* Responsive Container System */
+  .container-solware {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+  }
+  
+  .container-solware-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+  }
+  
+  .container-medical {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    width: 100%;
+  }
+  
+  /* Safe Area Handling */
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Glass Backdrop Utilities */
+  .backdrop-glass-light {
+    backdrop-filter: blur(8px) saturate(120%);
+  }
+  
+  .backdrop-glass-medium {
+    backdrop-filter: blur(16px) saturate(150%);
+  }
+  
+  .backdrop-glass-strong {
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+  
+  /* Hover Effect Utilities */
+  .hover-lift-glass {
+    @apply hover:transform hover:-translate-y-1 hover:shadow-glass-hover transition-all duration-300;
+  }
+  
+  .hover-glow-glass {
+    @apply hover:shadow-glass-medium transition-shadow duration-300;
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-solware {
+    background: var(--gradient-solware);
+  }
+  
+  .bg-gradient-medical {
+    background: var(--gradient-medical);
+  }
+  
+  .bg-gradient-glass {
+    background: linear-gradient(135deg, var(--glass-medium) 0%, var(--glass-light) 100%);
+  }
+  
+  .bg-liquid-gradient {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(34, 211, 238, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%);
+  }
+  
+  /* Performance Optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  .contain-layout {
+    contain: layout;
+  }
+  
+  .contain-paint {
+    contain: paint;
+  }
+  
+  /* Accessibility Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Motion Preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .motion-reduce-friendly {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .contrast-friendly {
+      border: 2px solid currentColor;
+      background: transparent;
+    }
+  }
+}
+
+/* Enhanced Scrollbar Styling for Liquid Glass */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--glass-light);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 8px;
+  border: 2px solid var(--color-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--glass-light);
+}
+
+/* Prevent Horizontal Overflow */
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+/* Better Focus Handling */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* Selection Styling */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+/* Print Styles */
+@media print {
+  .glass-light, .glass-medium, .glass-strong {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    backdrop-filter: none !important;
+  }
+  
+  .text-gradient-solware, .text-gradient-medical {
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+    color: #333 !important;
+  }
+}

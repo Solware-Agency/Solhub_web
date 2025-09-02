@@ -1,0 +1,224 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Icon from '../../../components/AppIcon';
+import Button from '../../../components/ui/Button';
+
+const SocialProofSection = () => {
+  const metrics = [
+    {
+      icon: 'TrendingUp',
+      value: '40%',
+      label: 'Reducción en tiempo de procesamiento',
+      description: 'Promedio en las 5 sedes activas'
+    },
+    {
+      icon: 'Target',
+      value: '99.9%',
+      label: 'Precisión en diagnósticos',
+      description: 'Validado por profesionales médicos'
+    },
+    {
+      icon: 'Users',
+      value: '50+',
+      label: 'Profesionales activos',
+      description: 'Médicos, técnicos y administrativos'
+    },
+    {
+      icon: 'MapPin',
+      value: '5',
+      label: 'Sedes en Venezuela',
+      description: 'Caracas, Valencia, Maracaibo, Barquisimeto'
+    }
+  ];
+
+  const locations = [
+    {
+      city: 'Caracas',
+      zone: 'Centro',
+      users: 15,
+      satisfaction: 4.9,
+      uptime: '99.98%'
+    },
+    {
+      city: 'Valencia',
+      zone: 'Norte',
+      users: 12,
+      satisfaction: 4.8,
+      uptime: '99.95%'
+    },
+    {
+      city: 'Maracaibo',
+      zone: 'Centro',
+      users: 8,
+      satisfaction: 4.9,
+      uptime: '99.97%'
+    },
+    {
+      city: 'Barquisimeto',
+      zone: 'Este',
+      users: 10,
+      satisfaction: 4.7,
+      uptime: '99.94%'
+    },
+    {
+      city: 'Puerto Ordaz',
+      zone: 'Sur',
+      users: 6,
+      satisfaction: 4.8,
+      uptime: '99.96%'
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-muted/20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
+      </div>
+      <div className="container-medical relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-4 py-2 mb-6">
+            <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-success">Resultados Comprobados</span>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <span className="text-foreground">Transformando</span>
+            <br />
+            <span className="text-gradient-medical">laboratorios venezolanos</span>
+          </h2>
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Más de 50 profesionales médicos ya confían en IBEX Medical para optimizar 
+            sus operaciones diarias y mejorar la atención al paciente.
+          </p>
+        </div>
+
+        {/* Key Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {metrics?.map((metric, index) => (
+            <div 
+              key={index} 
+              className="text-center p-6 bg-card/50 backdrop-blur-sm border border-border rounded-xl hover:bg-card/70 hover:border-primary/20 transition-all duration-300 hover-lift"
+            >
+              <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Icon name={metric?.icon} size={24} color="white" />
+              </div>
+              <div className="text-3xl font-bold text-gradient-medical mb-2">{metric?.value}</div>
+              <div className="text-lg font-semibold text-foreground mb-2">{metric?.label}</div>
+              <div className="text-sm text-muted-foreground">{metric?.description}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Active Locations */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Sedes Activas en Venezuela
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Cada sede opera con seguridad independiente y soporte local 24/7
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {locations?.map((location, index) => (
+              <div 
+                key={index}
+                className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all duration-300 hover-lift"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h4 className="font-bold text-foreground">{location?.city}</h4>
+                    <p className="text-sm text-muted-foreground">{location?.zone}</p>
+                  </div>
+                  <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Usuarios:</span>
+                    <span className="text-sm font-medium text-foreground">{location?.users}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Satisfacción:</span>
+                    <div className="flex items-center space-x-1">
+                      <Icon name="Star" size={12} className="text-warning fill-current" />
+                      <span className="text-sm font-medium text-foreground">{location?.satisfaction}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Uptime:</span>
+                    <span className="text-sm font-medium text-success">{location?.uptime}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Trust Badges */}
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-foreground mb-8">
+            Certificaciones y Cumplimiento
+          </h3>
+          
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
+            <div className="flex items-center space-x-3 bg-card/30 rounded-lg px-6 py-3">
+              <Icon name="Shield" size={24} className="text-primary" />
+              <div className="text-left">
+                <div className="font-semibold text-foreground">ISO 27001</div>
+                <div className="text-sm text-muted-foreground">Seguridad de Información</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3 bg-card/30 rounded-lg px-6 py-3">
+              <Icon name="Lock" size={24} className="text-secondary" />
+              <div className="text-left">
+                <div className="font-semibold text-foreground">HIPAA</div>
+                <div className="text-sm text-muted-foreground">Privacidad Médica</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-3 bg-card/30 rounded-lg px-6 py-3">
+              <Icon name="CheckCircle" size={24} className="text-success" />
+              <div className="text-left">
+                <div className="font-semibold text-foreground">GDPR</div>
+                <div className="text-sm text-muted-foreground">Protección de Datos</div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/client-success-stories">
+              <Button
+                variant="default"
+                iconName="Trophy"
+                iconPosition="left"
+                className="bg-gradient-medical hover:opacity-90"
+              >
+                Ver Casos de Éxito
+              </Button>
+            </Link>
+            <Link to="/security-fortress">
+              <Button
+                variant="outline"
+                iconName="Shield"
+                iconPosition="left"
+                className="border-primary/30 text-primary hover:bg-primary/10"
+              >
+                Conocer Seguridad
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SocialProofSection;
