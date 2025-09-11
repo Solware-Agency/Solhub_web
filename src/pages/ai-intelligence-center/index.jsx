@@ -13,7 +13,7 @@ const AIIntelligenceCenter = () => {
   const { handleDemoClick, handleContactClick } = useActions();
 
   const seoConfig = {
-    title: 'Centro de Inteligencia Artificial - Solwy para Diagnósticos Médicos',
+    title: 'IA',
     description: 'Descubre cómo Solwy, la inteligencia artificial de SolHub, revoluciona los diagnósticos médicos en Venezuela. Reconocimiento de patrones, análisis predictivo y detección de anomalías con 95% de precisión.',
     keywords: 'inteligencia artificial médica, Solwy diagnósticos, machine learning laboratorio, análisis predictivo médico, detección anomalías, SolHub Venezuela',
     url: '/ai-intelligence-center'

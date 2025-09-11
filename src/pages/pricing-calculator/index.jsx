@@ -21,7 +21,7 @@ const PricingCalculator = () => {
   const { handleWhatsAppClick } = useActions();
 
   const seoConfig = {
-    title: 'Calculadora de Precios - Planifica tu Inversión',
+    title: 'Precios',
     description: 'Calcula el costo de implementar SolHub en tu laboratorio. Precios transparentes en bolívares, opciones flexibles de pago y programa de referidos con 20% de descuento.',
     keywords: 'precios laboratorio médico, software médico Venezuela, calculadora precios SolHub, ROI laboratorio digital',
     url: '/pricing-calculator'
