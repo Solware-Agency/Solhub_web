@@ -5,16 +5,13 @@ import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 
 import DemoScheduler from './components/DemoScheduler';
-import PreDemoQuestionnaire from './components/PreDemoQuestionnaire';
 import PlatformPreview from './components/PlatformPreview';
-import PreparationMaterials from './components/PreparationMaterials';
 import TestimonialSection from './components/TestimonialSection';
 
 const DemoExperience = () => {
   const [currentStep, setCurrentStep] = useState('overview');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [demoScheduled, setDemoScheduled] = useState(false);
-  const [questionnaireSubmitted, setQuestionnaireSubmitted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,9 +20,7 @@ const DemoExperience = () => {
   const steps = [
     { id: 'overview', title: 'Información General', icon: 'Info' },
     { id: 'preview', title: 'Preview de Plataforma', icon: 'Monitor' },
-    { id: 'questionnaire', title: 'Cuestionario', icon: 'ClipboardList' },
-    { id: 'schedule', title: 'Programar Demo', icon: 'Calendar' },
-    { id: 'preparation', title: 'Preparación', icon: 'BookOpen' }
+    { id: 'schedule', title: 'Programar Demo', icon: 'Calendar' }
   ];
 
   const benefits = [
@@ -97,19 +92,9 @@ const DemoExperience = () => {
     
     setDemoScheduled(true);
     setIsSubmitting(false);
-    setCurrentStep('preparation');
+    setCurrentStep('overview');
   };
 
-  const handleQuestionnaireSubmit = async (formData) => {
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setQuestionnaireSubmitted(true);
-    setIsSubmitting(false);
-    setCurrentStep('schedule');
-  };
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent(
@@ -207,14 +192,6 @@ const DemoExperience = () => {
       case 'preview':
         return <PlatformPreview />;
 
-      case 'questionnaire':
-        return (
-          <PreDemoQuestionnaire
-            onSubmit={handleQuestionnaireSubmit}
-            isSubmitting={isSubmitting}
-          />
-        );
-
       case 'schedule':
         return (
           <DemoScheduler
@@ -222,9 +199,6 @@ const DemoExperience = () => {
             isSubmitting={isSubmitting}
           />
         );
-
-      case 'preparation':
-        return <PreparationMaterials />;
 
       default:
         return null;
@@ -294,14 +268,6 @@ const DemoExperience = () => {
             </div>
           )}
 
-          {questionnaireSubmitted && (
-            <div className="fixed bottom-4 right-4 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg z-50">
-              <div className="flex items-center space-x-2">
-                <Icon name="Send" size={20} />
-                <span className="font-medium">¡Cuestionario enviado!</span>
-              </div>
-            </div>
-          )}
 
           {/* Footer CTA */}
           <div className="bg-gradient-medical py-16">

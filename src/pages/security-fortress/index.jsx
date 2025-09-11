@@ -15,8 +15,8 @@ const SecurityFortress = () => {
   const { handleWhatsAppClick } = useActions();
   const seoConfig = {
     title: 'Seguridad',
-    description: 'Descubre cómo SolHub protege los datos médicos con seguridad nivel bancario. Encriptación AES-256, control de acceso por roles, auditoría completa y cumplimiento HIPAA en Venezuela.',
-    keywords: 'seguridad datos médicos Venezuela, encriptación AES-256, HIPAA compliance, control acceso laboratorio, auditoría médica, protección datos clínicos',
+    description: 'Descubre cómo SolHub protege los datos médicos con seguridad nivel bancario. Encriptación AES-256, control de acceso por roles, auditoría completa y cumplimiento ISO 27001 en Venezuela.',
+    keywords: 'seguridad datos médicos Venezuela, encriptación AES-256, ISO 27001 compliance, control acceso laboratorio, auditoría médica, protección datos clínicos',
     url: '/security-fortress',
     structuredData: {
       "@context": "https://schema.org",
@@ -44,7 +44,7 @@ const SecurityFortress = () => {
   };
 
   return (
-    <PageLayout seoConfig={seoConfig} showFooter={false}>
+    <PageLayout seoConfig={seoConfig}>
       {/* Hero Section */}
       <SecurityHero />
       
@@ -120,8 +120,6 @@ const SecurityFortress = () => {
               <span>© {new Date()?.getFullYear()} SolHub by Solware</span>
               <span>•</span>
               <span>Certificado ISO 27001</span>
-              <span>•</span>
-              <span>HIPAA Compliant</span>
               <span>•</span>
               <span>Hecho en Venezuela</span>
             </div>

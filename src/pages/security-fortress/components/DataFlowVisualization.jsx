@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from '../../../components/AppIcon';
 
 const DataFlowVisualization = () => {
@@ -66,6 +66,15 @@ const DataFlowVisualization = () => {
       ]
     }
   ];
+
+  // Cambio automático de pasos cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % dataFlowSteps.length);
+    }, 4000); // Cambia cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, [dataFlowSteps.length]);
 
   const getColorClass = (color, type = 'bg') => {
     const colorMap = {
@@ -145,6 +154,32 @@ const DataFlowVisualization = () => {
             </div>
           </div>
 
+          {/* Progress Indicators */}
+          <div className="flex justify-center space-x-3 mb-8">
+            {dataFlowSteps?.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveStep(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === activeStep
+                    ? 'bg-primary scale-125'
+                    : 'bg-muted hover:bg-muted-foreground/50'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Progress Bar */}
+          <div className="w-full max-w-md mx-auto bg-muted/30 rounded-full h-1 mb-8">
+            <div
+              className="bg-gradient-to-r from-purple-500 via-green-500 via-blue-400 via-pink-500 to-orange-500 h-1 rounded-full transition-all duration-100 ease-linear"
+              style={{
+                width: `${((activeStep + 1) / dataFlowSteps.length) * 100}%`,
+                animation: 'progress 4s linear infinite'
+              }}
+            ></div>
+          </div>
+
           {/* Active Step Details */}
           <div className="bg-card border border-border rounded-xl p-8">
             <div className="flex items-center space-x-4 mb-6">
@@ -207,6 +242,14 @@ const DataFlowVisualization = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS Animation for Progress Bar */}
+      <style jsx>{`
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 };

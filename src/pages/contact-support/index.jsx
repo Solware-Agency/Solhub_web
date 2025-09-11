@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/layout/Footer';
 import ContactHero from './components/ContactHero';
 import ContactChannels from './components/ContactChannels';
 import ContactForm from './components/ContactForm';
@@ -111,7 +112,7 @@ const ContactSupport = () => {
         <ReferralProgram />
       </main>
 
-      {/* Footer would go here */}
+      <Footer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
+import { sendReferralEmail } from '../../../lib/resend';
 
 const ReferralProgram = () => {
   const [referralForm, setReferralForm] = useState({
@@ -78,22 +79,28 @@ const ReferralProgram = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitSuccess(true);
-      setReferralForm({
-        referrerName: '',
-        referrerEmail: '',
-        referrerPhone: '',
-        referredName: '',
-        referredEmail: '',
-        referredPhone: '',
-        referredInstitution: '',
-        relationship: '',
-        notes: ''
-      });
+      // Enviar referido usando Resend
+      const result = await sendReferralEmail(referralForm);
+      
+      if (result.success) {
+        setSubmitSuccess(true);
+        setReferralForm({
+          referrerName: '',
+          referrerEmail: '',
+          referrerPhone: '',
+          referredName: '',
+          referredEmail: '',
+          referredPhone: '',
+          referredInstitution: '',
+          relationship: '',
+          notes: ''
+        });
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       console.error('Error submitting referral:', error);
+      alert(error.message || 'Error al enviar el referido. Inténtalo de nuevo.');
     } finally {
       setIsSubmitting(false);
     }
@@ -108,6 +115,46 @@ const ReferralProgram = () => {
     };
     return colorMap?.[color] || colorMap?.primary;
   };
+
+  if (submitSuccess) {
+    return (
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container-medical">
+          <div className="max-w-2xl mx-auto">
+            <div className="card-medical-elevated p-12 text-center">
+              <div className="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Icon name="CheckCircle" size={40} className="text-success" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                ¡Referido Enviado Exitosamente!
+              </h3>
+              <p className="text-muted-foreground mb-8">
+                Hemos recibido la información del referido y nos pondremos en contacto con ellos 
+                para ofrecerles el descuento especial. ¡Gracias por recomendar SolHub!
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                  <Icon name="Gift" size={16} />
+                  <span>El referido recibirá 20% de descuento permanente</span>
+                </div>
+                <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                  <Icon name="Clock" size={16} />
+                  <span>Contactaremos al referido en las próximas 24 horas</span>
+                </div>
+              </div>
+              <Button
+                variant="outline"
+                onClick={() => setSubmitSuccess(false)}
+                className="mt-8"
+              >
+                Enviar Otro Referido
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 lg:py-24 bg-background">

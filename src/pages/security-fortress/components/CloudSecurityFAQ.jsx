@@ -41,7 +41,7 @@ const CloudSecurityFAQ = () => {
       id: 5,
       category: "Cumplimiento Legal",
       question: "¿SolHub cumple con las regulaciones venezolanas de protección de datos?",
-      answer: `Sí, SolHub está diseñado específicamente para cumplir con todas las regulaciones venezolanas:\n\n**Normativas Venezolanas:**\n• Ley de Protección de Datos Personales\n• Regulaciones del Ministerio del Poder Popular para la Salud (MPPS)\n• Normativas de telemedicina y salud digital\n• Requisitos de confidencialidad médica\n\n**Estándares Internacionales:**\n• ISO 27001 (Gestión de Seguridad de la Información)\n• HIPAA (Portabilidad y Responsabilidad del Seguro Médico)\n• GDPR (Reglamento General de Protección de Datos)\n• SOC 2 Type II (Controles de Organización de Servicios)\n\n**Documentación Legal:**\n• Contratos de procesamiento de datos\n• Políticas de privacidad específicas para Venezuela\n• Procedimientos de notificación de brechas\n• Derechos de los titulares de datos claramente definidos`,
+      answer: `Sí, SolHub está diseñado específicamente para cumplir con todas las regulaciones venezolanas:\n\n**Normativas Venezolanas:**\n• Ley de Protección de Datos Personales\n• Regulaciones del Ministerio del Poder Popular para la Salud (MPPS)\n• Normativas de telemedicina y salud digital\n• Requisitos de confidencialidad médica\n\n**Estándares Internacionales:**\n• ISO 27001 (Gestión de Seguridad de la Información)\n\n**Documentación Legal:**\n• Contratos de procesamiento de datos\n• Políticas de privacidad específicas para Venezuela\n• Procedimientos de notificación de brechas\n• Derechos de los titulares de datos claramente definidos`,
       icon: "Scale",
       color: "warning"
     },

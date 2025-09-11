@@ -183,7 +183,7 @@ const ModulesShowcase = () => {
         'Control de acceso basado en roles',
         'Auditoría completa de actividades',
         'Backup automático multi-sede',
-        'Cumplimiento HIPAA y normativas locales',
+        'Cumplimiento ISO 27001 y normativas locales',
         'Monitoreo de seguridad 24/7'
       ],
       benefits: [
@@ -363,7 +363,7 @@ const ModulesShowcase = () => {
   };
 
   return (
-    <PageLayout seoConfig={seoConfig} showFooter={false}>
+    <PageLayout seoConfig={seoConfig}>
       {/* Hero Section */}
       <section className="py-16 bg-gradient-medical-subtle">
         <div className="container-medical">
@@ -597,8 +597,6 @@ const ModulesShowcase = () => {
         />
       )}
       
-      {/* Footer */}
-      <Footer variant="simple" />
     </PageLayout>
   );
 };

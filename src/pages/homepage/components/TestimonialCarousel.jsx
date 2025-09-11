@@ -10,7 +10,7 @@ const TestimonialCarousel = () => {
       name: "Dr. Carlos Mendoza",
       role: "Director Médico",
       location: "Laboratorio Central - Caracas",
-      avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
       content: `SolHub transformó completamente nuestro flujo de trabajo. La integración de IA nos permite detectar anomalías que antes pasábamos por alto, y el tiempo de procesamiento se redujo en un 45%. Nuestros pacientes reciben resultados más rápidos y precisos.`,
       rating: 5,
       metrics: {
@@ -24,7 +24,7 @@ const TestimonialCarousel = () => {
       name: "Lic. María Rodríguez",
       role: "Administradora de Clínica",
       location: "Centro Médico Valencia",
-      avatar: "https://images.unsplash.com/photo-1594824388853-e4d2e8b6e2c5?w=150&h=150&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1594824388853-e4d2e8b6e2c5?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
       content: `La implementación fue sorprendentemente sencilla. El equipo de SolHub nos acompañó paso a paso, y en menos de una semana estábamos operando al 100%. El ROI se hizo evidente desde el primer mes con la reducción de errores y optimización de recursos.`,
       rating: 5,
       metrics: {
@@ -38,7 +38,7 @@ const TestimonialCarousel = () => {
       name: "Bioanalista José Herrera",
       role: "Jefe de Laboratorio",
       location: "Laboratorio Especializado - Maracaibo",
-      avatar: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
       content: `Como técnico, valoro mucho la interfaz intuitiva y las alertas inteligentes. El sistema aprende de nuestros patrones de trabajo y nos sugiere optimizaciones. La seguridad por sede nos da tranquilidad total con los datos sensibles de nuestros pacientes.`,
       rating: 5,
       metrics: {
@@ -52,7 +52,7 @@ const TestimonialCarousel = () => {
       name: "Dra. Ana Gutiérrez",
       role: "Propietaria de Laboratorio",
       location: "Laboratorio Integral - Barquisimeto",
-      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
       content: `SolHub no solo mejoró nuestras operaciones, sino que nos posicionó como líderes tecnológicos en la región. Los reportes con IA impresionan a nuestros médicos referentes, y hemos aumentado significativamente nuestra base de clientes.`,
       rating: 5,
       metrics: {
@@ -117,11 +117,9 @@ const TestimonialCarousel = () => {
 
             {/* Testimonial Content */}
             <div className="pt-8">
-              {/* Rating */}
+              {/* Doctores Aliados */}
               <div className="flex items-center space-x-1 mb-6">
-                {[...Array(testimonials?.[currentTestimonial]?.rating)]?.map((_, i) => (
-                  <Icon key={i} name="Star" size={20} className="text-warning fill-current" />
-                ))}
+                <span className="text-primary font-semibold text-lg">Doctores Aliados</span>
               </div>
 
               {/* Content */}
@@ -132,12 +130,19 @@ const TestimonialCarousel = () => {
               {/* Author Info */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div className="flex items-center space-x-4 mb-6 md:mb-0">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 bg-muted/20 flex items-center justify-center">
                     <img 
                       src={testimonials?.[currentTestimonial]?.avatar} 
                       alt={testimonials?.[currentTestimonial]?.name}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
                     />
+                    <div className="w-full h-full bg-gradient-medical flex items-center justify-center text-white font-bold text-lg" style={{display: 'none'}}>
+                      {testimonials?.[currentTestimonial]?.name?.split(' ').map(n => n[0]).join('')}
+                    </div>
                   </div>
                   <div>
                     <div className="font-bold text-foreground text-lg">
@@ -152,17 +157,6 @@ const TestimonialCarousel = () => {
                   </div>
                 </div>
 
-                {/* Metrics */}
-                <div className="flex flex-wrap gap-4">
-                  {Object.entries(testimonials?.[currentTestimonial]?.metrics)?.map(([key, value], index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-lg font-bold text-gradient-medical">{value}</div>
-                      <div className="text-xs text-muted-foreground capitalize">
-                        {key?.replace('_', ' ')}
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
@@ -80,7 +80,7 @@ const ModuleShowcase = () => {
   "usuarios_activos": 12,
   "nivel_seguridad": "Máximo",
   "ultima_auditoria": "2025-01-15",
-  "certificaciones": ["ISO 27001", "HIPAA"]
+  "certificaciones": ["ISO 27001"]
 }`
     },
     {
@@ -109,6 +109,15 @@ const ModuleShowcase = () => {
 }`
     }
   ];
+
+  // Cambio automático de módulos cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveModule((prev) => (prev + 1) % modules.length);
+    }, 5000); // Cambia cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, [modules.length]);
 
   return (
     <section className="py-20 bg-background relative overflow-hidden">
@@ -151,6 +160,32 @@ const ModuleShowcase = () => {
               <span className="font-medium">{module.name}</span>
             </button>
           ))}
+        </div>
+
+        {/* Progress Indicators */}
+        <div className="flex justify-center space-x-2 mb-8">
+          {modules?.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveModule(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === activeModule
+                  ? 'bg-primary scale-125' 
+                  : 'bg-muted hover:bg-muted-foreground/50'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Progress Bar */}
+        <div className="w-full max-w-md mx-auto bg-muted/30 rounded-full h-1 mb-8">
+          <div 
+            className="bg-gradient-medical h-1 rounded-full transition-all duration-100 ease-linear"
+            style={{ 
+              width: `${((activeModule + 1) / modules.length) * 100}%`,
+              animation: 'progress 5s linear infinite'
+            }}
+          ></div>
         </div>
 
         {/* Active Module Display */}
@@ -267,6 +302,14 @@ const ModuleShowcase = () => {
           </div>
         </div>
       </div>
+
+      {/* CSS para la animación de progreso */}
+      <style jsx>{`
+        @keyframes progress {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 };

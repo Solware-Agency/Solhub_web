@@ -94,18 +94,6 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
               <Icon name="Shield" size={20} color="var(--color-success)" />
               <span className="text-sm text-muted-foreground">ISO 27001</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Icon name="Lock" size={20} color="var(--color-success)" />
-              <span className="text-sm text-muted-foreground">HIPAA Compliant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Icon name="Globe" size={20} color="var(--color-success)" />
-              <span className="text-sm text-muted-foreground">GDPR Ready</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Icon name="Award" size={20} color="var(--color-success)" />
-              <span className="text-sm text-muted-foreground">SOC 2 Type II</span>
-            </div>
           </div>
         </div>
       </div>

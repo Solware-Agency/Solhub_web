@@ -32,7 +32,7 @@ const FilterBar = ({ activeFilter, onFilterChange, searchTerm, onSearchChange })
           placeholder="Buscar por nombre, ubicación o desafío..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e?.target?.value)}
-          className="input-medical pl-10 pr-4 py-3 w-full"
+          className="bg-background text-foreground placeholder:text-muted-foreground border border-border rounded-xl pl-10 pr-4 py-3 w-full focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
         />
       </div>
       {/* Type Filters */}

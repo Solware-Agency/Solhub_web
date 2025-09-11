@@ -21,7 +21,7 @@ const TrustBuildingSection = () => {
       description: "Toda la información médica se procesa con los más altos estándares de seguridad y privacidad, cumpliendo normativas internacionales.",
       details: [
         "Encriptación end-to-end de todos los datos",
-        "Cumplimiento HIPAA y normativas venezolanas",
+        "Cumplimiento ISO 27001 y normativas venezolanas",
         "Procesamiento local sin envío a servidores externos",
         "Auditorías de seguridad regulares"
       ]
@@ -57,24 +57,6 @@ const TrustBuildingSection = () => {
       icon: "Shield",
       status: "Certificado"
     },
-    {
-      name: "HIPAA Compliant",
-      description: "Protección de Información Médica",
-      icon: "Lock",
-      status: "Cumple"
-    },
-    {
-      name: "FDA Guidelines",
-      description: "Directrices para Software Médico",
-      icon: "CheckCircle",
-      status: "Alineado"
-    },
-    {
-      name: "GDPR Ready",
-      description: "Protección de Datos Personales",
-      icon: "UserCheck",
-      status: "Preparado"
-    }
   ];
 
   const testimonials = [

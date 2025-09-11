@@ -18,7 +18,7 @@ const SecurityTestimonials = () => {
       securityFeatures: [
         "Encriptación AES-256 implementada",
         "Auditorías mensuales completadas",
-        "Cumplimiento HIPAA verificado",
+        "ISO 27001 certificado",
         "Respaldos automáticos funcionando"
       ],
       metrics: {
