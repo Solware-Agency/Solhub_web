@@ -218,10 +218,6 @@ const ContactFormSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-              <Icon name="Mail" size={16} className="text-accent" />
-              <span className="text-sm font-medium text-accent">Formulario de Contacto</span>
-            </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Comienza Tu Transformación
@@ -244,7 +240,7 @@ const ContactFormSection = () => {
               )}
 
               {/* Form Fields Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <Input
                   label="Nombre Completo"
                   type="text"

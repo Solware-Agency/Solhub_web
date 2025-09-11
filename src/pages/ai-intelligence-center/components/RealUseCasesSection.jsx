@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
@@ -16,7 +17,7 @@ const RealUseCasesSection = () => {
       severity: "Crítico",
       severityColor: "text-error",
       before: {
-        title: "Antes de IBEX IA",
+        title: "Antes de SolHub IA",
         description: "Detección manual tardía de patrones hemorrágicos",
         metrics: [
           { label: "Tiempo de detección", value: "4-6 horas", color: "text-error" },
@@ -31,7 +32,7 @@ const RealUseCasesSection = () => {
         ]
       },
       after: {
-        title: "Con IBEX IA",
+        title: "Con SolHub IA",
         description: "Detección automática y alertas tempranas inteligentes",
         metrics: [
           { label: "Tiempo de detección", value: "< 30 min", color: "text-success" },
@@ -60,7 +61,7 @@ const RealUseCasesSection = () => {
       severity: "Moderado",
       severityColor: "text-warning",
       before: {
-        title: "Antes de IBEX IA",
+        title: "Antes de SolHub IA",
         description: "Seguimiento reactivo basado en valores puntuales",
         metrics: [
           { label: "Detección complicaciones", value: "21 días", color: "text-error" },
@@ -75,7 +76,7 @@ const RealUseCasesSection = () => {
         ]
       },
       after: {
-        title: "Con IBEX IA",
+        title: "Con SolHub IA",
         description: "Monitoreo predictivo y personalizado continuo",
         metrics: [
           { label: "Detección complicaciones", value: "3-5 días", color: "text-success" },
@@ -104,7 +105,7 @@ const RealUseCasesSection = () => {
       severity: "Alto",
       severityColor: "text-error",
       before: {
-        title: "Antes de IBEX IA",
+        title: "Antes de SolHub IA",
         description: "Evaluación fragmentada de factores de riesgo",
         metrics: [
           { label: "Tiempo evaluación", value: "2-3 días", color: "text-warning" },
@@ -119,7 +120,7 @@ const RealUseCasesSection = () => {
         ]
       },
       after: {
-        title: "Con IBEX IA",
+        title: "Con SolHub IA",
         description: "Evaluación integral con scoring predictivo avanzado",
         metrics: [
           { label: "Tiempo evaluación", value: "< 1 hora", color: "text-success" },
@@ -151,10 +152,6 @@ const RealUseCasesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium mb-6">
-            <Icon name="FileText" size={16} />
-            <span>Casos de Uso Reales</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             <span className="text-gradient-medical">Transformación Real</span>
@@ -163,7 +160,7 @@ const RealUseCasesSection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Casos documentados de cómo la IA de IBEX ha mejorado diagnósticos y salvado vidas 
+            Casos documentados de cómo la IA de SolHub ha mejorado diagnósticos y salvado vidas 
             en las 5 sedes activas en Venezuela.
           </p>
         </motion.div>
@@ -333,15 +330,17 @@ const RealUseCasesSection = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button
-            variant="default"
-            size="lg"
-            iconName="Calendar"
-            iconPosition="left"
-            className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
-          >
-            Solicitar Análisis de Caso Personalizado
-          </Button>
+          <Link to="/contact-support">
+            <Button
+              variant="default"
+              size="lg"
+              iconName="MessageCircle"
+              iconPosition="left"
+              className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+            >
+              Contáctanos
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

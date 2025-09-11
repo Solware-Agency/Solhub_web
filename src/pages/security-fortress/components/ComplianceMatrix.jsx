@@ -180,15 +180,11 @@ const ComplianceMatrix = () => {
     <section className="py-20 bg-muted/20">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="CheckCircle" size={16} color="var(--color-accent)" />
-            <span className="text-accent font-semibold text-sm">Cumplimiento Normativo</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Matriz de Cumplimiento Internacional
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            IBEX Medical cumple con los estándares internacionales más exigentes de seguridad y privacidad de datos médicos, 
+            SolHub cumple con los estándares internacionales más exigentes de seguridad y privacidad de datos médicos, 
             adaptándose también a las regulaciones venezolanas.
           </p>
         </div>
@@ -322,7 +318,7 @@ const ComplianceMatrix = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Cumplimiento con Regulaciones Venezolanas</h4>
               <p className="text-muted-foreground mb-4">
-                Además de los estándares internacionales, IBEX Medical cumple con las regulaciones específicas de Venezuela 
+                Además de los estándares internacionales, SolHub cumple con las regulaciones específicas de Venezuela 
                 para el manejo de información médica y datos personales de salud.
               </p>
               <div className="grid md:grid-cols-3 gap-4">

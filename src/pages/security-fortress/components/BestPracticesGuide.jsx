@@ -15,7 +15,7 @@ const BestPracticesGuide = () => {
         {
           title: "Contraseñas Robustas",
           description: "Utilizar contraseñas de al menos 12 caracteres con combinación de mayúsculas, minúsculas, números y símbolos",
-          implementation: "IBEX Medical requiere contraseñas que cumplan estos criterios y las evalúa automáticamente",
+          implementation: "SolHub requiere contraseñas que cumplan estos criterios y las evalúa automáticamente",
           icon: "Shield",
           level: "Obligatorio"
         },
@@ -52,7 +52,7 @@ const BestPracticesGuide = () => {
         {
           title: "Encriptación de Datos en Reposo",
           description: "Todos los datos almacenados deben estar encriptados usando AES-256",
-          implementation: "IBEX Medical encripta automáticamente toda la información médica almacenada",
+          implementation: "SolHub encripta automáticamente toda la información médica almacenada",
           icon: "Lock",
           level: "Obligatorio"
         },
@@ -211,10 +211,6 @@ const BestPracticesGuide = () => {
     <section className="py-20 bg-background">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="BookOpen" size={16} color="var(--color-primary)" />
-            <span className="text-primary font-semibold text-sm">Mejores Prácticas</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Guía de Mejores Prácticas de Seguridad
           </h2>
@@ -300,7 +296,7 @@ const BestPracticesGuide = () => {
                       </div>
 
                       <div>
-                        <h5 className="font-medium text-foreground mb-2">Implementación en IBEX Medical</h5>
+                        <h5 className="font-medium text-foreground mb-2">Implementación en SolHub</h5>
                         <div className="flex items-start space-x-3 p-3 bg-success/5 border border-success/20 rounded-lg">
                           <Icon name="CheckCircle" size={16} color="var(--color-success)" className="flex-shrink-0 mt-0.5" />
                           <p className="text-sm text-foreground">{practice?.implementation}</p>

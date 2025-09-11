@@ -13,15 +13,15 @@ const FAQ = () => {
       color: 'primary',
       questions: [
         {
-          question: '¿Cuánto tiempo toma implementar IBEX Medical en mi laboratorio?',
-          answer: `La implementación completa de IBEX Medical típicamente toma entre 2-4 semanas, dependiendo del tamaño de su laboratorio y los módulos seleccionados.\n\n**Cronograma típico:**\n• Semana 1: Configuración inicial y migración de datos\n• Semana 2: Capacitación del personal y pruebas\n• Semana 3-4: Puesta en marcha y optimización\n\nNuestro equipo de implementación venezolano lo acompaña en cada paso del proceso, asegurando una transición suave sin interrumpir sus operaciones diarias.`
+          question: '¿Cuánto tiempo toma implementar SolHub en mi laboratorio?',
+          answer: `La implementación completa de SolHub típicamente toma entre 2-4 semanas, dependiendo del tamaño de su laboratorio y los módulos seleccionados.\n\n**Cronograma típico:**\n• Semana 1: Configuración inicial y migración de datos\n• Semana 2: Capacitación del personal y pruebas\n• Semana 3-4: Puesta en marcha y optimización\n\nNuestro equipo de implementación venezolano lo acompaña en cada paso del proceso, asegurando una transición suave sin interrumpir sus operaciones diarias.`
         },
         {
-          question: '¿Necesito conocimientos técnicos especiales para usar IBEX?',
-          answer: `No, IBEX Medical está diseñado para ser intuitivo y fácil de usar por profesionales médicos sin experiencia técnica avanzada.\n\n**Características de usabilidad:**\n• Interfaz en español adaptada al flujo de trabajo médico venezolano\n• Capacitación completa incluida en todos los planes\n• Soporte técnico 24/7 para resolver cualquier duda\n• Manuales y videos tutoriales en español\n\nNuestro objetivo es que su equipo se sienta cómodo usando la plataforma desde el primer día.`
+          question: '¿Necesito conocimientos técnicos especiales para usar SolHub?',
+          answer: `No, SolHub está diseñado para ser intuitivo y fácil de usar por profesionales médicos sin experiencia técnica avanzada.\n\n**Características de usabilidad:**\n• Interfaz en español adaptada al flujo de trabajo médico venezolano\n• Capacitación completa incluida en todos los planes\n• Soporte técnico 24/7 para resolver cualquier duda\n• Manuales y videos tutoriales en español\n\nNuestro objetivo es que su equipo se sienta cómodo usando la plataforma desde el primer día.`
         },
         {
-          question: '¿Cómo migran mis datos existentes a IBEX Medical?',
+          question: '¿Cómo migran mis datos existentes a SolHub?',
           answer: `Ofrecemos un servicio completo de migración de datos sin costo adicional, manejando la transferencia de manera segura y eficiente.\n\n**Proceso de migración:**\n• Análisis de sus sistemas actuales (Excel, software anterior, etc.)\n• Mapeo y limpieza de datos existentes\n• Migración controlada con validación completa\n• Verificación y pruebas antes del go-live\n\nTodos sus registros históricos, pacientes, y resultados se preservan completamente durante la transición.`
         }
       ]
@@ -32,7 +32,7 @@ const FAQ = () => {
       color: 'success',
       questions: [
         {
-          question: '¿Cuáles son los costos de IBEX Medical?',
+          question: '¿Cuáles son los costos de SolHub?',
           answer: `Nuestros precios son transparentes y escalables según las necesidades de su laboratorio.\n\n**Estructura de precios:**\n• Plan Básico: Desde $299 USD/mes (funcionalidades esenciales)\n• Plan Profesional: Desde $599 USD/mes (incluye IA y módulos avanzados)\n• Plan Enterprise: Desde $999 USD/mes (solución completa + soporte premium)\n\n**Incluido en todos los planes:**\n• Implementación y capacitación\n• Soporte técnico 24/7\n• Actualizaciones automáticas\n• Backup y seguridad\n\nContacte para una cotización personalizada basada en su volumen de pruebas y módulos específicos.`
         },
         {
@@ -60,7 +60,7 @@ const FAQ = () => {
         },
         {
           question: '¿Qué pasa si hay problemas de conectividad a internet?',
-          answer: `IBEX Medical incluye funcionalidades offline y múltiples mecanismos de contingencia para asegurar continuidad operacional.\n\n**Soluciones de contingencia:**\n• Modo offline para registro de muestras y resultados\n• Sincronización automática al restaurarse la conexión\n• Backup local de datos críticos\n• Acceso a través de múltiples proveedores de internet\n\n**Soporte de conectividad:**\n• Optimización para conexiones de baja velocidad\n• Compresión de datos para reducir uso de ancho de banda\n• Soporte técnico para configuración de redes\n• Recomendaciones de proveedores de internet confiables\n\nNuestro equipo técnico puede asistir con la configuración de soluciones de conectividad redundante.`
+          answer: `SolHub incluye funcionalidades offline y múltiples mecanismos de contingencia para asegurar continuidad operacional.\n\n**Soluciones de contingencia:**\n• Modo offline para registro de muestras y resultados\n• Sincronización automática al restaurarse la conexión\n• Backup local de datos críticos\n• Acceso a través de múltiples proveedores de internet\n\n**Soporte de conectividad:**\n• Optimización para conexiones de baja velocidad\n• Compresión de datos para reducir uso de ancho de banda\n• Soporte técnico para configuración de redes\n• Recomendaciones de proveedores de internet confiables\n\nNuestro equipo técnico puede asistir con la configuración de soluciones de conectividad redundante.`
         }
       ]
     },
@@ -79,7 +79,7 @@ const FAQ = () => {
         },
         {
           question: '¿Ofrecen capacitación continua para mi personal?',
-          answer: `Sí, la capacitación continua es parte integral de nuestro servicio para asegurar que su equipo aproveche al máximo IBEX Medical.\n\n**Programa de capacitación incluido:**\n• Capacitación inicial completa durante la implementación\n• Sesiones mensuales de actualización y mejores prácticas\n• Webinars trimestrales sobre nuevas funcionalidades\n• Biblioteca de videos tutoriales en español\n• Manuales actualizados y guías de referencia rápida\n\n**Capacitación especializada:**\n• Entrenamientos personalizados para nuevos empleados\n• Certificación de usuarios avanzados\n• Workshops sobre optimización de flujos de trabajo\n• Sesiones de Q&A con expertos en laboratorios médicos\n\nTodo el material de capacitación está adaptado a la realidad y terminología médica venezolana.`
+          answer: `Sí, la capacitación continua es parte integral de nuestro servicio para asegurar que su equipo aproveche al máximo SolHub.\n\n**Programa de capacitación incluido:**\n• Capacitación inicial completa durante la implementación\n• Sesiones mensuales de actualización y mejores prácticas\n• Webinars trimestrales sobre nuevas funcionalidades\n• Biblioteca de videos tutoriales en español\n• Manuales actualizados y guías de referencia rápida\n\n**Capacitación especializada:**\n• Entrenamientos personalizados para nuevos empleados\n• Certificación de usuarios avanzados\n• Workshops sobre optimización de flujos de trabajo\n• Sesiones de Q&A con expertos en laboratorios médicos\n\nTodo el material de capacitación está adaptado a la realidad y terminología médica venezolana.`
         }
       ]
     }
@@ -113,10 +113,6 @@ const FAQ = () => {
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="HelpCircle" size={16} className="text-accent" />
-            <span className="text-sm font-medium text-accent">Centro de Ayuda</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Preguntas
@@ -124,7 +120,7 @@ const FAQ = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Respuestas a las consultas más comunes sobre IBEX Medical, adaptadas específicamente para el mercado médico venezolano.
+            Respuestas a las consultas más comunes sobre SolHub, adaptadas específicamente para el mercado médico venezolano.
           </p>
         </div>
 
@@ -224,7 +220,7 @@ const FAQ = () => {
             </h3>
             
             <p className="text-muted-foreground mb-8">
-              Nuestro equipo de especialistas está listo para resolver cualquier duda específica sobre tu implementación de IBEX Medical.
+              Nuestro equipo de especialistas está listo para resolver cualquier duda específica sobre tu implementación de SolHub.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

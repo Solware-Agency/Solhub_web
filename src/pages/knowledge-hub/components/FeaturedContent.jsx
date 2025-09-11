@@ -21,7 +21,7 @@ const FeaturedContent = () => {
       id: 2,
       type: 'case-study',
       title: 'Caso de Éxito: Laboratorio Central de Caracas',
-      description: 'Cómo el Laboratorio Central de Caracas redujo en 40% el tiempo de procesamiento de muestras implementando IBEX Medical.',
+      description: 'Cómo el Laboratorio Central de Caracas redujo en 40% el tiempo de procesamiento de muestras implementando SolHub.',
       image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop',
       author: 'Dra. María González',
       readTime: '8 min',

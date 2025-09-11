@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PageLayout from '../../components/layout/PageLayout';
 import PricingHeader from './components/PricingHeader';
 import PackageSelector from './components/PackageSelector';
@@ -263,15 +264,16 @@ const PricingCalculator = () => {
               únicas de tu laboratorio, incluyendo integraciones especiales y descuentos por volumen.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="default"
-                onClick={handleRequestDemo}
-                iconName="Calendar"
-                iconPosition="left"
-                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
-              >
-                Agendar Consulta Gratuita
-              </Button>
+              <Link to="/contact-support">
+                <Button
+                  variant="default"
+                  iconName="Calendar"
+                  iconPosition="left"
+                  className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+                >
+                  Agendar Consulta Gratuita
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 onClick={handleContactSales}

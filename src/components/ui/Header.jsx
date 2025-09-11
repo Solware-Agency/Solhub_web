@@ -69,7 +69,7 @@ const Header = ({ className = '' }) => {
       animate="visible"
     >
       <div className="container-medical">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo with Enhanced Animation */}
           <motion.div
             variants={logoVariants}
@@ -82,20 +82,20 @@ const Header = ({ className = '' }) => {
             >
               <div className="relative">
                 <motion.div 
-                  className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-solware rounded-xl flex items-center justify-center shadow-glass-medium"
+                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-solware rounded-xl flex items-center justify-center shadow-glass-medium"
                   whileHover={{
                     boxShadow: "0 8px 32px rgba(139, 92, 246, 0.4)"
                   }}
                 >
-                  <Icon name="Activity" size={24} color="white" strokeWidth={2.5} />
+                  <Icon name="Activity" size={20} color="white" strokeWidth={2.5} className="sm:w-6 sm:h-6" />
                 </motion.div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-success rounded-full border-2 border-background animate-pulse-medical"></div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-success rounded-full border-2 border-background animate-pulse-medical"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl lg:text-2xl font-bold text-gradient-solware">
+                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gradient-solware">
                   SolHub
                 </span>
-                <span className="text-xs lg:text-sm text-muted-foreground font-medium -mt-1">
+                <span className="text-xs sm:text-xs lg:text-sm text-muted-foreground font-medium -mt-1">
                   by Solware
                 </span>
               </div>
@@ -103,7 +103,7 @@ const Header = ({ className = '' }) => {
           </motion.div>
 
           {/* Desktop Navigation with Glass Effects */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1">
             {NAVIGATION_ITEMS?.map((item, index) => (
               <motion.div
                 key={item?.path}
@@ -113,14 +113,14 @@ const Header = ({ className = '' }) => {
               >
                 <Link
                   to={item?.path}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-glass-light ${
+                  className={`flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 hover:shadow-glass-light ${
                     isActivePath(item?.path)
                       ? 'text-primary glass-medium border border-primary/20 shadow-glass-light' 
                       : 'text-foreground hover:text-primary hover:glass-light'
                   }`}
                 >
-                  <Icon name={item?.icon} size={16} />
-                  <span>{item?.name}</span>
+                  <Icon name={item?.icon} size={14} className="lg:w-4 lg:h-4" />
+                  <span className="hidden lg:inline">{item?.name}</span>
                 </Link>
               </motion.div>
             ))}
@@ -128,16 +128,16 @@ const Header = ({ className = '' }) => {
             {/* More Menu with Enhanced Dropdown */}
             <div className="relative group">
               <motion.button 
-                className="flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium text-foreground hover:text-primary hover:glass-light transition-all duration-300"
+                className="flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium text-foreground hover:text-primary hover:glass-light transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
               >
-                <Icon name="MoreHorizontal" size={16} />
-                <span>Más</span>
+                <Icon name="MoreHorizontal" size={14} className="lg:w-4 lg:h-4" />
+                <span className="hidden lg:inline">Más</span>
               </motion.button>
               
               {/* Enhanced Dropdown */}
               <motion.div 
-                className="absolute top-full right-0 mt-2 w-56 glass-strong border border-glass-border rounded-2xl shadow-glass-strong opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-dropdown"
+                className="absolute top-full right-0 mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-dropdown"
                 initial={{ opacity: 0, scale: 0.95, y: -10 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
@@ -162,43 +162,30 @@ const Header = ({ className = '' }) => {
           </nav>
 
           {/* Desktop CTA Buttons with Enhanced Styling */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleWhatsAppClick}
-                iconName="MessageCircle"
-                iconPosition="left"
-                className="text-success hover:text-success hover:glass-light border border-success/20 hover:border-success/40 transition-all duration-300"
-              >
-                WhatsApp
-              </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                variant="default"
-                size="sm"
-                onClick={handleDemoClick}
-                iconName="Play"
-                iconPosition="left"
-                className="bg-gradient-solware hover:opacity-90 shadow-glass-medium hover:shadow-glass-strong transition-all duration-300"
-              >
-                Demo Gratis
-              </Button>
+              <Link to="/contact-support">
+                <Button
+                  variant="default"
+                  size="sm"
+                  iconName="MessageCircle"
+                  iconPosition="left"
+                  className="bg-gradient-solware hover:opacity-90 shadow-glass-medium hover:shadow-glass-strong transition-all duration-300 text-xs lg:text-sm px-3 lg:px-4"
+                >
+                  <span className="hidden lg:inline">Contáctanos</span>
+                  <span className="lg:hidden">Contacto</span>
+                </Button>
+              </Link>
             </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-2 rounded-xl text-foreground hover:text-primary hover:glass-light transition-all duration-300"
+            className="md:hidden p-2 rounded-xl text-foreground hover:text-primary hover:glass-light transition-all duration-300"
             aria-label="Toggle mobile menu"
             whileTap={{ scale: 0.95 }}
           >
@@ -218,7 +205,7 @@ const Header = ({ className = '' }) => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="lg:hidden absolute top-full left-0 right-0 glass-strong backdrop-blur-glass-strong border-b border-glass-border shadow-glass-strong z-dropdown"
+              className="md:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-xl z-dropdown"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -279,26 +266,17 @@ const Header = ({ className = '' }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <Button
-                    variant="outline"
-                    fullWidth
-                    onClick={() => { handleWhatsAppClick(); closeMobileMenu(); }}
-                    iconName="MessageCircle"
-                    iconPosition="left"
-                    className="border-success text-success hover:glass-light hover:border-success/60 transition-all duration-300"
-                  >
-                    Contactar por WhatsApp
-                  </Button>
-                  <Button
-                    variant="default"
-                    fullWidth
-                    onClick={() => { handleDemoClick(); closeMobileMenu(); }}
-                    iconName="Play"
-                    iconPosition="left"
-                    className="bg-gradient-solware hover:opacity-90 shadow-glass-medium transition-all duration-300"
-                  >
-                    Solicitar Demo Gratis
-                  </Button>
+                  <Link to="/contact-support" onClick={closeMobileMenu}>
+                    <Button
+                      variant="default"
+                      fullWidth
+                      iconName="MessageCircle"
+                      iconPosition="left"
+                      className="bg-gradient-solware hover:opacity-90 shadow-glass-medium transition-all duration-300"
+                    >
+                      Contáctanos
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

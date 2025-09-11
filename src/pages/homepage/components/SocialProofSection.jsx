@@ -79,10 +79,6 @@ const SocialProofSection = () => {
       <div className="container-medical relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-4 py-2 mb-6">
-            <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-success">Resultados Comprobados</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-foreground">Transformando</span>
@@ -91,13 +87,13 @@ const SocialProofSection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Más de 50 profesionales médicos ya confían en IBEX Medical para optimizar 
+            Más de 50 profesionales médicos ya confían en SolHub para optimizar 
             sus operaciones diarias y mejorar la atención al paciente.
           </p>
         </div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {metrics?.map((metric, index) => (
             <div 
               key={index} 
@@ -124,7 +120,7 @@ const SocialProofSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
             {locations?.map((location, index) => (
               <div 
                 key={index}

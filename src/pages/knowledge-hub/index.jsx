@@ -16,7 +16,7 @@ const KnowledgeHub = () => {
 
   useEffect(() => {
     // Check localStorage for saved language preference
-    const savedLanguage = localStorage.getItem('ibex-language') || 'es';
+    const savedLanguage = localStorage.getItem('SolHub-language') || 'es';
     setCurrentLanguage(savedLanguage);
   }, []);
 
@@ -31,10 +31,10 @@ const KnowledgeHub = () => {
   return (
     <>
       <Helmet>
-        <title>Centro de Conocimiento - IBEX Medical | Recursos para Digitalización Médica</title>
+        <title>Centro de Conocimiento - SolHub | Recursos para Digitalización Médica</title>
         <meta name="description" content="Centro de recursos completo para la transformación digital de laboratorios médicos en Venezuela. Guías de implementación, casos de éxito, webinars y comunidad profesional." />
         <meta name="keywords" content="recursos médicos, digitalización laboratorios, guías implementación, IA médica, cumplimiento normativo, casos éxito, webinars médicos, comunidad profesional" />
-        <meta property="og:title" content="Centro de Conocimiento - IBEX Medical" />
+        <meta property="og:title" content="Centro de Conocimiento - SolHub" />
         <meta property="og:description" content="Recursos especializados para impulsar la digitalización de laboratorios médicos en Venezuela" />
         <meta property="og:type" content="website" />
         <meta name="robots" content="index, follow" />
@@ -89,7 +89,7 @@ const KnowledgeHub = () => {
                     <span className="text-white font-bold text-lg">I</span>
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-gradient-medical">IBEX Medical</div>
+                    <div className="text-xl font-bold text-gradient-medical">SolHub</div>
                     <div className="text-sm text-muted-foreground">Centro de Conocimiento</div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ const KnowledgeHub = () => {
                   a través de recursos educativos y una comunidad profesional activa.
                 </p>
                 <div className="text-sm text-muted-foreground">
-                  © {new Date()?.getFullYear()} IBEX Medical. Todos los derechos reservados.
+                  © {new Date()?.getFullYear()} SolHub. Todos los derechos reservados.
                 </div>
               </div>
 

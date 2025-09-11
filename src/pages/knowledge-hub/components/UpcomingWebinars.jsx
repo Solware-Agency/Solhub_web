@@ -12,7 +12,7 @@ const UpcomingWebinars = () => {
       time: '14:00',
       duration: '60 min',
       speaker: 'Dr. Carlos Mendoza',
-      speakerTitle: 'Director de IA Médica, IBEX',
+      speakerTitle: 'Director de IA Médica, SolHub',
       registered: 245,
       maxCapacity: 500,
       level: 'Intermedio',

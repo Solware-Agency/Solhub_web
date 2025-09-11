@@ -10,7 +10,7 @@ const OfficeLocations = () => {
       region: 'Distrito Capital',
       address: 'Av. Francisco de Miranda, Torre Empresarial, Piso 12, Chacao',
       phone: '+58 212-555-0123',
-      email: 'caracas@ibexmedical.com.ve',
+      email: 'caracas@SolHubmedical.com.ve',
       hours: 'Lun-Vie: 7:00-19:00, Sáb: 8:00-14:00',
       coordinates: '10.4806,-66.9036',
       isHeadquarters: true,
@@ -23,7 +23,7 @@ const OfficeLocations = () => {
       region: 'Zulia',
       address: 'Av. 5 de Julio, Centro Comercial Doral Center, Oficina 301',
       phone: '+58 261-555-0124',
-      email: 'maracaibo@ibexmedical.com.ve',
+      email: 'maracaibo@SolHubmedical.com.ve',
       hours: 'Lun-Vie: 7:30-18:30, Sáb: 8:00-13:00',
       coordinates: '10.6427,-71.6125',
       isHeadquarters: false,
@@ -36,7 +36,7 @@ const OfficeLocations = () => {
       region: 'Carabobo',
       address: 'Av. Bolívar Norte, Edificio Carabobo Plaza, Piso 8',
       phone: '+58 241-555-0125',
-      email: 'valencia@ibexmedical.com.ve',
+      email: 'valencia@SolHubmedical.com.ve',
       hours: 'Lun-Vie: 7:00-18:00, Sáb: 8:00-12:00',
       coordinates: '10.1621,-68.0077',
       isHeadquarters: false,
@@ -63,10 +63,6 @@ const OfficeLocations = () => {
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="MapPin" size={16} className="text-secondary" />
-            <span className="text-sm font-medium text-secondary">Presencia Nacional</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Nuestras Oficinas en
@@ -102,11 +98,8 @@ const OfficeLocations = () => {
                   </h3>
                   <p className="text-muted-foreground text-sm">{office?.region}</p>
                 </div>
-                <div className="flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-3 py-1">
-                  <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                  <span className="text-xs font-medium text-success">
-                    {office?.activeClients} Cliente{office?.activeClients !== 1 ? 's' : ''} Activo{office?.activeClients !== 1 ? 's' : ''}
-                  </span>
+                <div className="text-sm text-muted-foreground">
+                  {office?.activeClients} Cliente{office?.activeClients !== 1 ? 's' : ''} Activo{office?.activeClients !== 1 ? 's' : ''}
                 </div>
               </div>
 

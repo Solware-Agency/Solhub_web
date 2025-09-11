@@ -26,9 +26,9 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
       color: 'primary',
       action: 'Enviar Email',
       details: [
-        'soporte@ibexmedical.com.ve',
-        'ventas@ibexmedical.com.ve',
-        'emergencias@ibexmedical.com.ve'
+        'soporte@SolHubmedical.com.ve',
+        'ventas@SolHubmedical.com.ve',
+        'emergencias@SolHubmedical.com.ve'
       ],
       onClick: onEmailClick
     },
@@ -80,10 +80,6 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="Headphones" size={16} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Canales de Contacto</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Elige Tu Canal
@@ -141,26 +137,6 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
           ))}
         </div>
 
-        {/* Emergency Contact */}
-        <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Icon name="AlertTriangle" size={24} className="text-destructive" />
-            <h3 className="text-xl font-bold text-destructive">Contacto de Emergencia</h3>
-          </div>
-          <p className="text-muted-foreground mb-6">
-            Para problemas críticos que afecten operaciones de laboratorio fuera del horario laboral
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="flex items-center space-x-2">
-              <Icon name="Phone" size={16} className="text-destructive" />
-              <span className="font-mono text-destructive font-bold">+58 424-URGENTE</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Icon name="MessageCircle" size={16} className="text-destructive" />
-              <span className="font-mono text-destructive font-bold">WhatsApp 24/7</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -80,7 +80,7 @@ const ContactChannels = () => {
         
         <h3 className="text-2xl font-bold text-foreground mb-4">Instagram</h3>
         <p className="text-muted-foreground mb-6">
-          Síguenos para mantenerte actualizado con las últimas innovaciones de IBEX, 
+          Síguenos para mantenerte actualizado con las últimas innovaciones de SolHub, 
           casos de éxito de laboratorios venezolanos y contenido educativo médico.
         </p>
         

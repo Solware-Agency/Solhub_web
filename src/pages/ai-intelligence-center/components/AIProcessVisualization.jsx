@@ -110,10 +110,6 @@ const AIProcessVisualization = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-full text-secondary text-sm font-medium mb-6">
-            <Icon name="Workflow" size={16} />
-            <span>Proceso de IA</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             <span className="text-gradient-medical">Cómo Funciona</span>
@@ -122,7 +118,7 @@ const AIProcessVisualization = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Un vistazo detallado al proceso paso a paso de cómo la IA de IBEX 
+            Un vistazo detallado al proceso paso a paso de cómo la IA de SolHub 
             analiza los datos médicos y genera insights clínicos valiosos.
           </p>
         </motion.div>

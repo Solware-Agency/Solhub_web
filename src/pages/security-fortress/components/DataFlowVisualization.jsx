@@ -69,11 +69,22 @@ const DataFlowVisualization = () => {
 
   const getColorClass = (color, type = 'bg') => {
     const colorMap = {
-      primary: type === 'bg' ? 'bg-primary' : 'text-primary',
-      success: type === 'bg' ? 'bg-success' : 'text-success',
-      secondary: type === 'bg' ? 'bg-secondary' : 'text-secondary',
-      accent: type === 'bg' ? 'bg-accent' : 'text-accent',
-      warning: type === 'bg' ? 'bg-warning' : 'text-warning'
+      primary: type === 'bg' ? 'bg-purple-500' : 'text-purple-500',
+      success: type === 'bg' ? 'bg-green-500' : 'text-green-500',
+      secondary: type === 'bg' ? 'bg-blue-400' : 'text-blue-400',
+      accent: type === 'bg' ? 'bg-pink-500' : 'text-pink-500',
+      warning: type === 'bg' ? 'bg-orange-500' : 'text-orange-500'
+    };
+    return colorMap?.[color] || colorMap?.primary;
+  };
+
+  const getColorVar = (color) => {
+    const colorMap = {
+      primary: '#8b5cf6',
+      success: '#10b981',
+      secondary: '#60a5fa',
+      accent: '#ec4899',
+      warning: '#f97316'
     };
     return colorMap?.[color] || colorMap?.primary;
   };
@@ -82,15 +93,11 @@ const DataFlowVisualization = () => {
     <section className="py-20 bg-background">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="GitBranch" size={16} color="var(--color-secondary)" />
-            <span className="text-secondary font-semibold text-sm">Flujo de Datos</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Visualización del Flujo de Datos Médicos
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprende cómo IBEX Medical protege tus datos médicos en cada etapa del proceso, 
+            Comprende cómo SolHub protege tus datos médicos en cada etapa del proceso, 
             desde la captura hasta el almacenamiento y acceso controlado.
           </p>
         </div>
@@ -99,7 +106,8 @@ const DataFlowVisualization = () => {
           {/* Interactive Flow Diagram */}
           <div className="relative mb-12">
             {/* Connection Lines */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-success via-secondary via-accent to-warning transform -translate-y-1/2 opacity-30"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500/60 via-green-500/60 via-blue-400/60 via-pink-500/60 to-orange-500/60 transform -translate-y-1/2 rounded-full shadow-lg"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-green-500 via-blue-400 via-pink-500 to-orange-500 transform -translate-y-1/2 rounded-full"></div>
             
             {/* Flow Steps */}
             <div className="grid md:grid-cols-5 gap-6">
@@ -117,7 +125,7 @@ const DataFlowVisualization = () => {
                       <Icon 
                         name={step?.icon} 
                         size={32} 
-                        color={`var(--color-${step?.color})`} 
+                        color={getColorVar(step?.color)} 
                       />
                     </div>
                     <h3 className={`font-semibold mb-2 ${activeStep === index ? getColorClass(step?.color, 'text') : 'text-foreground'}`}>
@@ -144,7 +152,7 @@ const DataFlowVisualization = () => {
                 <Icon 
                   name={dataFlowSteps?.[activeStep]?.icon} 
                   size={24} 
-                  color={`var(--color-${dataFlowSteps?.[activeStep]?.color})`} 
+                  color={getColorVar(dataFlowSteps?.[activeStep]?.color)} 
                 />
               </div>
               <div>
@@ -164,7 +172,7 @@ const DataFlowVisualization = () => {
                     <Icon 
                       name="Check" 
                       size={14} 
-                      color={`var(--color-${dataFlowSteps?.[activeStep]?.color})`} 
+                      color={getColorVar(dataFlowSteps?.[activeStep]?.color)} 
                     />
                   </div>
                   <p className="text-sm text-foreground">{detail}</p>

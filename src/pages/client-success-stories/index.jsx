@@ -25,11 +25,11 @@ const ClientSuccessStories = () => {
       staffSize: 25,
       icon: "Building2",
       image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=600&h=400&fit=crop",
-      description: "Laboratorio independiente líder en diagnósticos especializados que transformó completamente sus operaciones con IBEX Medical.",
+      description: "Laboratorio independiente líder en diagnósticos especializados que transformó completamente sus operaciones con SolHub.",
       fullDescription: `Centro Diagnóstico Caracas es un laboratorio independiente establecido en 1995, 
                        especializado en análisis clínicos de alta complejidad. Con 25 empleados y más de 
                        500 pacientes diarios, enfrentaban desafíos significativos en la gestión de flujos 
-                       de trabajo y tiempos de entrega. La implementación de IBEX Medical revolucionó 
+                       de trabajo y tiempos de entrega. La implementación de SolHub revolucionó 
                        sus operaciones, estableciendo nuevos estándares de eficiencia en el sector.`,
       implementationDate: "Marzo 2024",
       keyMetrics: [
@@ -58,7 +58,7 @@ const ClientSuccessStories = () => {
         name: "Dr. María Elena Rodríguez",
         role: "Directora Médica",
         avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-        quote: `IBEX Medical transformó completamente nuestras operaciones. Lo que antes 
+        quote: `SolHub transformó completamente nuestras operaciones. Lo que antes 
                 tomaba horas, ahora se completa en minutos. Nuestros pacientes reciben 
                 resultados más rápido y con mayor precisión. Es la mejor inversión que 
                 hemos hecho en tecnología médica.`
@@ -106,7 +106,7 @@ const ClientSuccessStories = () => {
         name: "Dr. Carlos Mendoza",
         role: "Jefe de Laboratorio",
         avatar: "https://randomuser.me/api/portraits/men/52.jpg",
-        quote: `En un hospital universitario, cada minuto cuenta. IBEX nos permitió 
+        quote: `En un hospital universitario, cada minuto cuenta. SolHub nos permitió 
                 reducir significativamente los tiempos de respuesta en emergencias, 
                 lo que se traduce directamente en vidas salvadas. La integración 
                 fue perfecta y el soporte técnico excepcional.`
@@ -154,7 +154,7 @@ const ClientSuccessStories = () => {
         name: "Dra. Ana Gutiérrez",
         role: "Directora Médica",
         avatar: "https://randomuser.me/api/portraits/women/38.jpg",
-        quote: `IBEX nos permitió mantener nuestro toque personal mientras agregamos 
+        quote: `SolHub nos permitió mantener nuestro toque personal mientras agregamos 
                 la eficiencia tecnológica que nuestros pacientes esperan. Ahora 
                 podemos ofrecer resultados más rápidos sin sacrificar la calidad 
                 que nos caracteriza. Es perfecta para clínicas boutique como la nuestra.`
@@ -202,7 +202,7 @@ const ClientSuccessStories = () => {
         name: "Dr. Luis Morales",
         role: "Director Científico",
         avatar: "https://randomuser.me/api/portraits/men/47.jpg",
-        quote: `Para análisis especializados, la precisión es todo. IBEX nos dio 
+        quote: `Para análisis especializados, la precisión es todo. SolHub nos dio 
                 las herramientas para mantener nuestros estándares de excelencia 
                 mientras mejoramos significativamente nuestros tiempos. Los módulos 
                 especializados se adaptaron perfectamente a nuestros protocolos únicos.`
@@ -251,7 +251,7 @@ const ClientSuccessStories = () => {
         name: "Dra. Carmen Pérez",
         role: "Directora de Red",
         avatar: "https://randomuser.me/api/portraits/women/43.jpg",
-        quote: `Manejar 5 laboratorios era como dirigir 5 empresas diferentes. IBEX 
+        quote: `Manejar 5 laboratorios era como dirigir 5 empresas diferentes. SolHub 
                 nos permitió unificar operaciones sin perder la flexibilidad local. 
                 Ahora operamos como una sola red eficiente con economías de escala 
                 que antes eran imposibles de lograr.`
@@ -336,7 +336,7 @@ const ClientSuccessStories = () => {
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Descubre cómo laboratorios líderes en Venezuela han transformado sus operaciones 
-              con IBEX Medical, logrando mejoras cuantificables en eficiencia, precisión y 
+              con SolHub, logrando mejoras cuantificables en eficiencia, precisión y 
               satisfacción del personal.
             </p>
 
@@ -440,7 +440,7 @@ const ClientSuccessStories = () => {
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
               Únete a los laboratorios líderes en Venezuela que ya están transformando 
-              sus operaciones con IBEX Medical. Tu historia de éxito podría ser la próxima.
+              sus operaciones con SolHub. Tu historia de éxito podría ser la próxima.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -503,13 +503,13 @@ const ClientSuccessStories = () => {
               <div className="w-10 h-10 bg-gradient-medical rounded-xl flex items-center justify-center">
                 <Icon name="Activity" size={20} color="white" />
               </div>
-              <span className="text-xl font-bold text-gradient-medical">IBEX Medical</span>
+              <span className="text-xl font-bold text-gradient-medical">SolHub</span>
             </div>
             <p className="text-muted-foreground mb-6">
               Transformando laboratorios médicos en Venezuela con tecnología de vanguardia
             </p>
             <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
-              <span>© {new Date()?.getFullYear()} IBEX Medical</span>
+              <span>© {new Date()?.getFullYear()} SolHub</span>
               <span>•</span>
               <span>Hecho con ❤️ en Venezuela</span>
             </div>

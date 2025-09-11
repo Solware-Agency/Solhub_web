@@ -113,9 +113,9 @@ const DemoExperience = () => {
 
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent(
-      'Hola, me interesa programar un demo de IBEX Medical. ¿Podrían ayudarme con la programación?'
+      'Hola! Me interesa programar un demo de SolHub. ¿Podrían ayudarme con la programación?'
     );
-    window.open(`https://wa.me/584241234567?text=${message}`, '_blank');
+    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
   };
 
   const renderStepContent = () => {
@@ -133,7 +133,7 @@ const DemoExperience = () => {
                 Experiencia de <span className="text-gradient-medical">Demostración</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Descubra cómo IBEX Medical puede transformar su laboratorio con una demostración personalizada y sin compromiso
+                Descubra cómo SolHub puede transformar su laboratorio con una demostración personalizada y sin compromiso
               </p>
             </div>
             {/* Benefits Grid */}
@@ -234,9 +234,9 @@ const DemoExperience = () => {
   return (
     <>
       <Helmet>
-        <title>Experiencia de Demo - IBEX Medical | Demostración Personalizada</title>
-        <meta name="description" content="Programe una demostración personalizada de IBEX Medical. Demo interactivo de 45 minutos sin compromiso para laboratorios médicos en Venezuela." />
-        <meta name="keywords" content="demo IBEX Medical, demostración laboratorio, software médico Venezuela, prueba gratuita" />
+        <title>Experiencia de Demo - SolHub | Demostración Personalizada</title>
+        <meta name="description" content="Programe una demostración personalizada de SolHub. Demo interactivo de 45 minutos sin compromiso para laboratorios médicos en Venezuela." />
+        <meta name="keywords" content="demo SolHub, demostración laboratorio, software médico Venezuela, prueba gratuita" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
@@ -310,7 +310,7 @@ const DemoExperience = () => {
                 ¿Listo para Transformar su Laboratorio?
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Únase a los laboratorios médicos que ya están revolucionando sus operaciones con IBEX Medical
+                Únase a los laboratorios médicos que ya están revolucionando sus operaciones con SolHub
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button

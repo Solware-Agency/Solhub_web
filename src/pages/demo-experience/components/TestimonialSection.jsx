@@ -14,7 +14,7 @@ const TestimonialSection = () => {
       location: "Caracas, Venezuela",
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face",
       rating: 5,
-      testimonial: `El demo de IBEX Medical superó completamente nuestras expectativas. En 45 minutos pudimos ver cómo el sistema resolvería todos nuestros problemas operativos actuales.\n\nLo que más me impresionó fue la facilidad de uso y cómo se adapta perfectamente a nuestros flujos de trabajo existentes. La implementación fue mucho más sencilla de lo que imaginábamos.`,
+      testimonial: `El demo de SolHub superó completamente nuestras expectativas. En 45 minutos pudimos ver cómo el sistema resolvería todos nuestros problemas operativos actuales.\n\nLo que más me impresionó fue la facilidad de uso y cómo se adapta perfectamente a nuestros flujos de trabajo existentes. La implementación fue mucho más sencilla de lo que imaginábamos.`,
       demoExperience: "Demo personalizado enfocado en gestión de pacientes y reportes médicos",
       implementationTime: "3 semanas",
       keyBenefit: "Reducción del 60% en tiempo de procesamiento de resultados"
@@ -27,7 +27,7 @@ const TestimonialSection = () => {
       location: "Valencia, Venezuela",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Antes del demo tenía muchas dudas sobre la digitalización de nuestro laboratorio. El equipo de IBEX no solo nos mostró las funcionalidades, sino que nos ayudó a entender el ROI específico para nuestro caso.\n\nLa calculadora de costos que utilizaron durante el demo fue muy transparente. Pudimos ver exactamente cómo se justificaba la inversión.`,
+      testimonial: `Antes del demo tenía muchas dudas sobre la digitalización de nuestro laboratorio. El equipo de SolHub no solo nos mostró las funcionalidades, sino que nos ayudó a entender el ROI específico para nuestro caso.\n\nLa calculadora de costos que utilizaron durante el demo fue muy transparente. Pudimos ver exactamente cómo se justificaba la inversión.`,
       demoExperience: "Demo enfocado en ROI y análisis financiero",
       implementationTime: "4 semanas",
       keyBenefit: "ROI del 180% en el primer año de operación"
@@ -40,7 +40,7 @@ const TestimonialSection = () => {
       location: "Maracaibo, Venezuela",
       avatar: "https://images.unsplash.com/photo-1594824475317-d3c0b8e7e0b3?w=100&h=100&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Como técnica de laboratorio, mi principal preocupación era que el sistema fuera complicado de usar. Durante el demo, pude interactuar directamente con la plataforma y me sorprendió lo intuitiva que es.\n\nEl equipo de IBEX se tomó el tiempo de mostrarme cada paso del proceso de análisis. Ahora nuestro trabajo es mucho más eficiente y con menos errores.`,
+      testimonial: `Como técnica de laboratorio, mi principal preocupación era que el sistema fuera complicado de usar. Durante el demo, pude interactuar directamente con la plataforma y me sorprendió lo intuitiva que es.\n\nEl equipo de SolHub se tomó el tiempo de mostrarme cada paso del proceso de análisis. Ahora nuestro trabajo es mucho más eficiente y con menos errores.`,
       demoExperience: "Demo técnico con enfoque en flujos de trabajo de laboratorio",
       implementationTime: "2 semanas",
       keyBenefit: "Eliminación del 95% de errores de transcripción manual"
@@ -53,7 +53,7 @@ const TestimonialSection = () => {
       location: "Barquisimeto, Venezuela",
       avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Había evaluado varias opciones antes de contactar a IBEX. Su demo fue el más completo y profesional que recibí. No solo mostraron el software, sino que entendieron perfectamente las necesidades específicas de nuestro laboratorio.\n\nLa integración con nuestros equipos existentes fue perfecta. El soporte post-implementación ha sido excepcional.`,
+      testimonial: `Había evaluado varias opciones antes de contactar a SolHub. Su demo fue el más completo y profesional que recibí. No solo mostraron el software, sino que entendieron perfectamente las necesidades específicas de nuestro laboratorio.\n\nLa integración con nuestros equipos existentes fue perfecta. El soporte post-implementación ha sido excepcional.`,
       demoExperience: "Demo comparativo con análisis de competencia",
       implementationTime: "5 semanas",
       keyBenefit: "Aumento del 40% en capacidad de procesamiento diario"
@@ -66,7 +66,7 @@ const TestimonialSection = () => {
       location: "Mérida, Venezuela",
       avatar: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=100&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Manejamos múltiples ubicaciones y necesitábamos una solución que nos permitiera centralizar la gestión. El demo de IBEX nos mostró exactamente cómo podríamos unificar todas nuestras operaciones.\n\nLa capacidad de generar reportes consolidados y el control de acceso por roles fueron características que nos convencieron inmediatamente.`,
+      testimonial: `Manejamos múltiples ubicaciones y necesitábamos una solución que nos permitiera centralizar la gestión. El demo de SolHub nos mostró exactamente cómo podríamos unificar todas nuestras operaciones.\n\nLa capacidad de generar reportes consolidados y el control de acceso por roles fueron características que nos convencieron inmediatamente.`,
       demoExperience: "Demo multi-sede con enfoque en gestión centralizada",
       implementationTime: "6 semanas",
       keyBenefit: "Centralización exitosa de 4 ubicaciones diferentes"

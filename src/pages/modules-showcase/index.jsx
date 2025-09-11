@@ -568,12 +568,12 @@ const ModulesShowcase = () => {
             <Button
               variant="secondary"
               size="lg"
-              iconName="Calendar"
+              iconName="MessageCircle"
               iconPosition="left"
               asChild
             >
-              <Link to="/demo-experience">
-                Solicitar Demo Gratis
+              <Link to="/contact-support">
+                Contáctanos
               </Link>
             </Button>
             <Button
