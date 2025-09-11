@@ -154,7 +154,7 @@ const Footer = ({ variant = 'default' }) => {
           variants={footerVariants}
         >
           <div className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-            © {currentYear} SolHub by Solware. Todos los derechos reservados. Desarrollado con ❤️ en Venezuela.
+            © {currentYear} SolHub by Solware. Todos los derechos reservados.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
             <Link to="/legal/privacidad" className="hover:text-primary transition-colors hover:underline">

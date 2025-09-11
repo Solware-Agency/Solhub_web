@@ -210,14 +210,6 @@ const ReferralProgram = () => {
           >
             Comenzar a Referir
           </Button>
-          <Button
-            variant="outline"
-            iconName="Download"
-            iconPosition="left"
-            className="border-primary text-primary hover:bg-primary/10"
-          >
-            Descargar Guía
-          </Button>
         </div>
 
         <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">

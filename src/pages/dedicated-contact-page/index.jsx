@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/layout/Footer';
 import ContactForm from './components/ContactForm';
 import ContactChannels from './components/ContactChannels';
 import Icon from '../../components/AppIcon';
@@ -284,39 +285,7 @@ const DedicatedContactPage = () => {
         </motion.main>
 
         {/* Footer */}
-        <motion.footer 
-          className="glass-medium border-t border-glass-border py-8 sm:py-12 lg:py-16 backdrop-blur-glass-strong"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="container-medical">
-            <div className="text-center">
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-solware rounded-xl flex items-center justify-center shadow-glass-medium">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <div>
-                  <div className="text-xl font-bold text-gradient-solware">SolHub</div>
-                  <div className="text-sm text-muted-foreground">by Solware</div>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                © {new Date()?.getFullYear()} SolHub by Solware. Desarrollado con ❤️ en Venezuela.
-              </p>
-              <div className="flex items-center justify-center space-x-4 text-xs text-muted-foreground">
-                <a href="/legal/privacidad" className="hover:text-primary transition-colors">Privacidad</a>
-                <span>•</span>
-                <a href="/legal/terminos" className="hover:text-primary transition-colors">Términos</a>
-                <span>•</span>
-                <a href="https://www.solware.agency" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  Solware Agency
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.footer>
+        <Footer />
       </div>
     </>
   );

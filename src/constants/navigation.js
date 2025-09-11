@@ -10,7 +10,7 @@ export const SECONDARY_ITEMS = [
   { name: 'Casos de Éxito', path: '/client-success-stories', icon: 'Trophy' },
   { name: 'Demo', path: '/demo-experience', icon: 'Play' },
   { name: 'Conocimiento', path: '/knowledge-hub', icon: 'BookOpen' },
-  { name: 'Soporte', path: '/contact-support', icon: 'MessageCircle' }
+  { name: 'Contacto', path: '/contact-support', icon: 'MessageCircle' }
 ];
 
 export const CONTACT_INFO = {

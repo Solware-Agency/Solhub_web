@@ -170,22 +170,6 @@ const SocialProofSection = () => {
                 <div className="text-sm text-muted-foreground">Seguridad de Información</div>
               </div>
             </div>
-            
-            <div className="flex items-center space-x-3 bg-card/30 rounded-lg px-6 py-3">
-              <Icon name="Lock" size={24} className="text-secondary" />
-              <div className="text-left">
-                <div className="font-semibold text-foreground">HIPAA</div>
-                <div className="text-sm text-muted-foreground">Privacidad Médica</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-3 bg-card/30 rounded-lg px-6 py-3">
-              <Icon name="CheckCircle" size={24} className="text-success" />
-              <div className="text-left">
-                <div className="font-semibold text-foreground">GDPR</div>
-                <div className="text-sm text-muted-foreground">Protección de Datos</div>
-              </div>
-            </div>
           </div>
 
           {/* CTA */}

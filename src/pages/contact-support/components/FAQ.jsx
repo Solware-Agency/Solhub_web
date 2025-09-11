@@ -52,7 +52,7 @@ const FAQ = () => {
       questions: [
         {
           question: '¿Cómo garantizan la seguridad de los datos médicos?',
-          answer: `La seguridad de datos médicos es nuestra máxima prioridad, cumpliendo con estándares internacionales y regulaciones venezolanas.\n\n**Medidas de seguridad implementadas:**\n• Encriptación AES-256 en tránsito y en reposo\n• Autenticación de dos factores obligatoria\n• Auditorías de seguridad trimestrales\n• Backup automático cada 6 horas\n• Servidores en centros de datos certificados\n\n**Cumplimiento normativo:**\n• HIPAA (estándares internacionales)\n• Ley de Protección de Datos Personales de Venezuela\n• ISO 27001 para gestión de seguridad de información\n\nCada sede tiene controles de acceso independientes y logs de auditoría completos.`
+          answer: `La seguridad de datos médicos es nuestra máxima prioridad, cumpliendo con estándares internacionales y regulaciones venezolanas.\n\n**Medidas de seguridad implementadas:**\n• Encriptación AES-256 en tránsito y en reposo\n• Autenticación de dos factores obligatoria\n• Auditorías de seguridad trimestrales\n• Backup automático cada 6 horas\n• Servidores en centros de datos certificados\n\n**Cumplimiento normativo:**\n• ISO 27001 para gestión de seguridad de información\n• Ley de Protección de Datos Personales de Venezuela\n\nCada sede tiene controles de acceso independientes y logs de auditoría completos.`
         },
         {
           question: '¿Dónde se almacenan los datos de mi laboratorio?',

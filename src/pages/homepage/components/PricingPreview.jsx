@@ -247,23 +247,17 @@ const PricingPreview = () => {
               Recomienda SolHub a otros laboratorios y obtén un 20% de descuento 
               en tu próxima facturación por cada referido exitoso.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="default"
-                iconName="Users"
-                iconPosition="left"
-                className="bg-gradient-medical hover:opacity-90"
-              >
-                Conocer Programa
-              </Button>
-              <Button
-                variant="outline"
-                iconName="Share"
-                iconPosition="left"
-                className="border-primary/30 text-primary hover:bg-primary/10"
-              >
-                Compartir Ahora
-              </Button>
+            <div className="flex justify-center">
+              <Link to="/dedicated-contact-page">
+                <Button
+                  variant="default"
+                  iconName="Users"
+                  iconPosition="left"
+                  className="bg-gradient-medical hover:opacity-90"
+                >
+                  Conocer Programa
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

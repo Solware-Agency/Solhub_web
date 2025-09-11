@@ -3,7 +3,7 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
-import { supabase } from '../../../lib/supabase';
+import { sendContactEmail } from '../../../lib/resend';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -117,67 +117,29 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to Supabase
-      const submissionData = {
-        nombre: formData?.nombre,
-        email: formData?.email,
-        telefono: formData?.telefono,
-        institucion: formData?.institucion,
-        cargo: formData?.cargo || null,
-        tipo_consulta: formData?.tipoConsulta,
-        prioridad: formData?.prioridad || 'media',
-        mensaje: formData?.mensaje
-      };
-
-      const { data: submission, error: dbError } = await supabase?.from('contact_submissions')?.insert([submissionData])?.select()?.single();
-
-      if (dbError) {
-        throw new Error(`Database error: ${dbError?.message}`);
-      }
-
-      // Send email notification
-      try {
-        const supabaseUrl = import.meta.env?.VITE_SUPABASE_URL;
-        const emailResponse = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env?.VITE_SUPABASE_ANON_KEY}`,
-          },
-          body: JSON.stringify({
-            formData: submissionData
-          })
+      // Enviar email usando EmailJS
+      const result = await sendContactEmail(formData);
+      
+      if (result.success) {
+        setSubmitSuccess(true);
+        setFormData({
+          nombre: '',
+          email: '',
+          telefono: '',
+          institucion: '',
+          cargo: '',
+          tipoConsulta: '',
+          prioridad: '',
+          mensaje: '',
+          aceptaTerminos: false
         });
-
-        const emailResult = await emailResponse?.json();
-        
-        if (emailResult?.success) {
-          // Update submission to mark email as sent
-          await supabase?.from('contact_submissions')?.update({ 
-              email_sent: true, 
-              email_sent_at: new Date()?.toISOString() 
-            })?.eq('id', submission?.id);
-        }
-      } catch (emailError) {
-        console.warn('Email sending failed, but form was saved:', emailError);
-        // Don't fail the entire submission if email fails
+        setErrors({});
+      } else {
+        throw new Error(result.message);
       }
-
-      setSubmitSuccess(true);
-      setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        institucion: '',
-        cargo: '',
-        tipoConsulta: '',
-        prioridad: '',
-        mensaje: '',
-        aceptaTerminos: false
-      });
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setErrors({ submit: 'Error al enviar el formulario. Por favor, inténtelo nuevamente.' });
+      console.error('Submission error:', error);
+      setErrors({ submit: error.message || 'Error al enviar el formulario. Inténtalo de nuevo.' });
     } finally {
       setIsSubmitting(false);
     }

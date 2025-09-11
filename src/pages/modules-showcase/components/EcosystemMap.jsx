@@ -9,8 +9,8 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
     'ai-analysis': { x: 50, y: 8 },
     'automated-reports': { x: 92, y: 18 },
     'data-security': { x: 50, y: 75 },
-    'inventory-control': { x: 8, y: 82 },
-    'billing-integration': { x: 92, y: 82 }
+    'inventory-control': { x: 8, y: 70 },
+    'billing-integration': { x: 92, y: 70 }
   };
 
   const connections = [
@@ -41,16 +41,16 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
   };
 
   return (
-    <div className="card-medical p-4 sm:p-6 lg:p-8">
-      <div className="text-center mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+    <div className="card-medical p-3 sm:p-4 lg:p-6">
+      <div className="text-center mb-4 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-bold text-foreground mb-2">
           Ecosistema Modular Solwy
         </h2>
-        <p className="text-sm sm:text-base text-muted-foreground px-4">
+        <p className="text-xs sm:text-sm text-muted-foreground px-4">
           Descubre cómo nuestros módulos se integran para crear una solución completa
         </p>
       </div>
-      <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-gradient-medical-subtle rounded-xl overflow-hidden">
+      <div className="relative w-full h-48 sm:h-56 lg:h-64 bg-gradient-medical-subtle rounded-xl overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%">
@@ -116,15 +116,15 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
               onClick={() => onModuleClick?.(module.id)}
             >
               {/* Module Circle */}
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                 isSelected 
-                  ? 'bg-primary text-primary-foreground ring-4 ring-primary/30' 
+                  ? 'bg-primary text-primary-foreground ring-3 ring-primary/30' 
                   : 'bg-card text-card-foreground border-2 border-border hover:border-primary/50'
               }`}>
-                <Icon name={module.icon} size={24} />
+                <Icon name={module.icon} size={20} />
               </div>
               {/* Module Label */}
-              <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all duration-300 ${
+              <div className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all duration-300 ${
                 isSelected 
                   ? 'bg-primary text-primary-foreground' 
                   : 'bg-card text-card-foreground border border-border'
@@ -140,39 +140,39 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
         })}
 
         {/* Data Flow Indicators */}
-        <div className="absolute top-4 right-4 flex items-center space-x-4 text-xs">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-0.5 bg-primary"></div>
-            <span className="text-muted-foreground">Flujo activo</span>
+        <div className="absolute top-3 right-3 flex items-center space-x-3 text-xs">
+          <div className="flex items-center space-x-1">
+            <div className="w-2 h-0.5 bg-primary"></div>
+            <span className="text-muted-foreground text-xs">Flujo activo</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-0.5 bg-border" style={{ strokeDasharray: '2,2' }}></div>
-            <span className="text-muted-foreground">Integración disponible</span>
+          <div className="flex items-center space-x-1">
+            <div className="w-2 h-0.5 bg-border" style={{ strokeDasharray: '2,2' }}></div>
+            <span className="text-muted-foreground text-xs">Integración disponible</span>
           </div>
         </div>
 
         {/* Center Hub */}
         <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-16 h-16 bg-gradient-medical rounded-full flex items-center justify-center shadow-xl">
-            <Icon name="Activity" size={24} color="white" />
+          <div className="w-12 h-12 bg-gradient-medical rounded-full flex items-center justify-center shadow-xl">
+            <Icon name="Activity" size={20} color="white" />
           </div>
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-card border border-border rounded-lg text-xs font-medium text-center whitespace-nowrap">
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-card border border-border rounded-lg text-xs font-medium text-center whitespace-nowrap">
             Solwy Core
           </div>
         </div>
       </div>
       {/* Legend */}
-      <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+      <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
         <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-primary rounded-full"></div>
+          <div className="w-3 h-3 bg-primary rounded-full"></div>
           <span className="text-muted-foreground">Módulo seleccionado</span>
         </div>
         <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-card border border-border rounded-full"></div>
+          <div className="w-3 h-3 bg-card border border-border rounded-full"></div>
           <span className="text-muted-foreground">Módulo disponible</span>
         </div>
         <div className="flex items-center space-x-2">
-          <Icon name="Zap" size={16} className="text-warning" />
+          <Icon name="Zap" size={14} className="text-warning" />
           <span className="text-muted-foreground">Integración automática</span>
         </div>
       </div>

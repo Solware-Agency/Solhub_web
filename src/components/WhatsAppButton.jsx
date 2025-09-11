@@ -13,17 +13,8 @@ const WhatsAppButton = () => {
   const phoneNumber = "+584129974533";
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Hide button when user scrolls to very bottom (footer area)
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const documentHeight = document.documentElement?.scrollHeight;
-      const isNearBottom = scrollPosition >= documentHeight - 100;
-      
-      setIsVisible(!isNearBottom);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Keep button always visible - removed scroll hide logic
+    setIsVisible(true);
   }, []);
 
   const handleWhatsAppClick = () => {

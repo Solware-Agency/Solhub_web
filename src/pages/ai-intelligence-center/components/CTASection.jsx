@@ -222,14 +222,6 @@ const CTASection = () => {
               <span className="text-sm">ISO 27001 Certificado</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Icon name="Lock" size={20} className="text-success" />
-              <span className="text-sm">HIPAA Compliant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Icon name="Award" size={20} className="text-success" />
-              <span className="text-sm">FDA Guidelines</span>
-            </div>
-            <div className="flex items-center space-x-2">
               <Icon name="Star" size={20} className="text-warning" />
               <span className="text-sm">4.9/5 Satisfacción</span>
             </div>
