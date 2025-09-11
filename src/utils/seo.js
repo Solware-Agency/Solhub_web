@@ -10,15 +10,15 @@ export const createSEOConfig = ({
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl;
 
   const config = {
-    title: `${title} | SolHub by Solware`,
+    title: 'SolHub',
     meta: [
       { name: 'description', content: description },
       { name: 'keywords', content: keywords },
-      { property: 'og:title', content: title },
+      { property: 'og:title', content: title || 'SolHub' },
       { property: 'og:description', content: description },
       { property: 'og:type', content: type },
       { property: 'og:url', content: fullUrl },
-      { property: 'og:site_name', content: 'SolHub by Solware' },
+      { property: 'og:site_name', content: 'SolHub' },
       { name: 'geo.region', content: 'VE' },
       { name: 'geo.placename', content: 'Venezuela' },
       { name: 'language', content: 'es-VE' }
@@ -43,7 +43,7 @@ export const createSEOConfig = ({
 export const commonStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "SolHub by Solware",
+  "name": "SolHub",
   "description": "Plataforma SaaS para laboratorios médicos con IA integrada desarrollada por Solware",
   "url": "https://solhub.solware.agency",
   "address": {

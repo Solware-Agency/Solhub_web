@@ -13,7 +13,7 @@ import { commonStructuredData } from '../../utils/seo';
 
 const Homepage = () => {
   const seoConfig = {
-    title: 'SolHub - Plataforma SaaS para Laboratorios Médicos',
+    title: 'SolHub',
     description: 'Transforma tu laboratorio médico con SolHub by Solware. Módulos inteligentes con IA, seguridad por sede, gestión completa y reportes avanzados. Diseñado por profesionales médicos venezolanos.',
     keywords: 'SolHub, Solware, laboratorio médico Venezuela, software médico, IA diagnóstica, gestión laboratorio, reportes médicos, seguridad médica, SaaS médico',
     url: '/',

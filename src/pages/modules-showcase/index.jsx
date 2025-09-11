@@ -18,7 +18,7 @@ const ModulesShowcase = () => {
   const [filterCategory, setFilterCategory] = useState('all');
 
   const seoConfig = {
-    title: 'Módulos Solwy - Soluciones Modulares para Laboratorios Médicos',
+    title: 'Módulos',
     description: 'Descubre cómo nuestros módulos especializados se integran perfectamente para crear la solución ideal para tu laboratorio médico en Venezuela.',
     keywords: 'módulos médicos, soluciones laboratorio, gestión pacientes, IA médica, reportes automatizados, inventario médico',
     url: '/modules-showcase'

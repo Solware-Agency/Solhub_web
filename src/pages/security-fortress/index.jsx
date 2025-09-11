@@ -14,7 +14,7 @@ import useActions from '../../hooks/useActions';
 const SecurityFortress = () => {
   const { handleWhatsAppClick } = useActions();
   const seoConfig = {
-    title: 'Fortaleza de Seguridad - Protección de Datos Médicos Nivel Bancario',
+    title: 'Seguridad',
     description: 'Descubre cómo SolHub protege los datos médicos con seguridad nivel bancario. Encriptación AES-256, control de acceso por roles, auditoría completa y cumplimiento HIPAA en Venezuela.',
     keywords: 'seguridad datos médicos Venezuela, encriptación AES-256, HIPAA compliance, control acceso laboratorio, auditoría médica, protección datos clínicos',
     url: '/security-fortress',
