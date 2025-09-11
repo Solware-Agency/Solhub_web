@@ -23,7 +23,7 @@ const Routes = () => {
       <WhatsAppButton />
       <RouterRoutes>
         {/* Define your route here */}
-        <Route path="/" element={<AIIntelligenceCenter />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/client-success-stories" element={<ClientSuccessStories />} />
         <Route path="/modules-showcase" element={<ModulesShowcase />} />
         <Route path="/contact-support" element={<ContactSupport />} />
