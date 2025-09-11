@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageLayout from '../../components/layout/PageLayout';
 import SecurityHero from './components/SecurityHero';
 import AccessControls from './components/AccessControls';
@@ -7,9 +8,11 @@ import SecurityBySite from './components/SecurityBySite';
 import ComplianceMatrix from './components/ComplianceMatrix';
 import BestPracticesGuide from './components/BestPracticesGuide';
 import SecurityTestimonials from './components/SecurityTestimonials';
-import CloudSecurityFAQ from './components/CloudSecurityFAQ';
+import Button from '../../components/ui/Button';
+import useActions from '../../hooks/useActions';
 
 const SecurityFortress = () => {
+  const { handleWhatsAppClick } = useActions();
   const seoConfig = {
     title: 'Fortaleza de Seguridad - Protección de Datos Médicos Nivel Bancario',
     description: 'Descubre cómo SolHub protege los datos médicos con seguridad nivel bancario. Encriptación AES-256, control de acceso por roles, auditoría completa y cumplimiento HIPAA en Venezuela.',
@@ -43,10 +46,7 @@ const SecurityFortress = () => {
   return (
     <PageLayout seoConfig={seoConfig} showFooter={false}>
       {/* Hero Section */}
-      <SecurityHero 
-        onDemoClick={() => {}}
-        onWhatsAppClick={() => {}}
-      />
+      <SecurityHero />
       
       {/* Access Controls Overview */}
       <AccessControls />
@@ -66,8 +66,42 @@ const SecurityFortress = () => {
       {/* Security Testimonials */}
       <SecurityTestimonials />
 
-      {/* Cloud Security FAQ */}
-      <CloudSecurityFAQ />
+      {/* Contact CTA Section */}
+      <section className="py-16 bg-card border-t border-border">
+        <div className="container-medical">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              ¿Necesitas más información sobre seguridad?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Nuestro equipo de expertos en seguridad está disponible para resolver cualquier duda específica sobre la protección de tus datos médicos.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                variant="default"
+                size="lg"
+                onClick={handleWhatsAppClick}
+                iconName="MessageCircle"
+                iconPosition="left"
+                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+              >
+                Contáctanos
+              </Button>
+              <Link to="/contact-support">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  iconName="Calendar"
+                  iconPosition="left"
+                  className="border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  Agendar Consulta
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Custom Footer for Security Page */}
       <footer className="bg-card border-t border-border py-12">

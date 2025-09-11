@@ -69,7 +69,7 @@ const NewsletterSignup = () => {
           </div>
           
           <h2 className="text-2xl font-bold text-foreground mb-3">
-            Actualizaciones Técnicas IBEX
+            Actualizaciones Técnicas SolHub
           </h2>
           
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -160,7 +160,7 @@ const NewsletterSignup = () => {
             </Button>
             
             <p className="text-xs text-muted-foreground mt-3">
-              Al suscribirte, aceptas recibir emails de IBEX Medical. 
+              Al suscribirte, aceptas recibir emails de SolHub. 
               Puedes cancelar en cualquier momento.
             </p>
           </div>

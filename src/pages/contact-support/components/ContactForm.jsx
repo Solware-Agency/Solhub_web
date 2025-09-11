@@ -23,7 +23,7 @@ const ContactForm = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const tipoConsultaOptions = [
-    { value: 'demo', label: 'Solicitar Demostración', description: 'Quiero ver IBEX en acción' },
+    { value: 'demo', label: 'Solicitar Demostración', description: 'Quiero ver SolHub en acción' },
     { value: 'precios', label: 'Información de Precios', description: 'Cotización personalizada' },
     { value: 'tecnico', label: 'Soporte Técnico', description: 'Ayuda con implementación' },
     { value: 'ventas', label: 'Consulta Comercial', description: 'Información general de ventas' },
@@ -228,10 +228,6 @@ const ContactForm = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-              <Icon name="FileText" size={16} className="text-accent" />
-              <span className="text-sm font-medium text-accent">Formulario de Contacto</span>
-            </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Cuéntanos Sobre Tu

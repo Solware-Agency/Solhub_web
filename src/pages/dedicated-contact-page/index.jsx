@@ -84,10 +84,6 @@ const DedicatedContactPage = () => {
 
             <div className="container-medical relative z-10">
               <div className="text-center max-w-4xl mx-auto">
-                <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-6 py-3 mb-8">
-                  <Icon name="MessageCircle" size={20} className="text-accent" />
-                  <span className="text-sm font-medium text-accent">Centro de Contacto IBEX</span>
-                </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                   Conecta con Nuestros
@@ -97,7 +93,7 @@ const DedicatedContactPage = () => {
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                   Hub especializado de contacto para profesionales médicos venezolanos. 
                   Formulario personalizado con Resend, WhatsApp Business y seguimiento en Instagram para 
-                  mantenerte actualizado con las innovaciones de IBEX.
+                  mantenerte actualizado con las innovaciones de SolHub.
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
@@ -138,10 +134,6 @@ const DedicatedContactPage = () => {
           >
             <div className="container-medical">
               <div className="text-center mb-16">
-                <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-                  <Icon name="Smartphone" size={16} className="text-primary" />
-                  <span className="text-sm font-medium text-primary">Métodos de Contacto Preferidos</span>
-                </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                   Elige Tu Canal

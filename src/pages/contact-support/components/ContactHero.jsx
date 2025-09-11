@@ -15,10 +15,6 @@ const ContactHero = ({ onWhatsAppClick, onDemoClick }) => {
       <div className="container-medical relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="MessageCircle" size={16} color="white" />
-            <span className="text-sm font-medium text-white">Soporte 24/7 Disponible</span>
-          </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">

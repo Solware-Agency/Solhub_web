@@ -60,7 +60,7 @@ const PreparationMaterials = () => {
     {
       category: 'Funcionalidades del Sistema',
       questions: [
-        '¿Cómo maneja IBEX la integración con equipos de laboratorio existentes?',
+        '¿Cómo maneja SolHub la integración con equipos de laboratorio existentes?',
         '¿Qué tipos de reportes y análisis están disponibles?',
         '¿Cómo funciona el sistema de alertas y notificaciones?',
         '¿Puede el sistema manejar múltiples ubicaciones?',
@@ -317,7 +317,7 @@ const PreparationMaterials = () => {
           Calculadora de ROI
         </h4>
         <p className="text-muted-foreground">
-          Estime el retorno de inversión potencial con IBEX Medical
+          Estime el retorno de inversión potencial con SolHub
         </p>
       </div>
 
@@ -343,7 +343,7 @@ const PreparationMaterials = () => {
                 </div>
               </div>
               <div>
-                <label className="text-xs text-muted-foreground">Con IBEX Medical</label>
+                <label className="text-xs text-muted-foreground">Con SolHub</label>
                 <div className="flex items-center space-x-2">
                   <input
                     type="number"

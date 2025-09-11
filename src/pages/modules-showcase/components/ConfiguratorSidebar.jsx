@@ -137,11 +137,11 @@ const ConfiguratorSidebar = ({
                 variant="default"
                 fullWidth
                 onClick={onRequestDemo}
-                iconName="Calendar"
+                iconName="MessageCircle"
                 iconPosition="left"
                 className="bg-gradient-medical hover:opacity-90"
               >
-                Solicitar Demo
+                Contáctanos
               </Button>
               <Button
                 variant="outline"

@@ -207,7 +207,7 @@ const StoryModal = ({ story, isOpen, onClose }) => {
             </h3>
             <p className="text-muted-foreground mb-6">
               Únete a los laboratorios líderes en Venezuela que ya están aprovechando 
-              el poder de IBEX Medical para optimizar sus operaciones.
+              el poder de SolHub para optimizar sus operaciones.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

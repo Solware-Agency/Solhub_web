@@ -9,7 +9,8 @@ const CTASection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/584241234567?text=Hola,%20me%20interesa%20una%20demo%20personalizada%20de%20IBEX%20Medical', '_blank');
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const benefits = [
@@ -72,10 +73,6 @@ const CTASection = () => {
       <div className="container-medical relative z-10">
         {/* Main CTA */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-4 py-2 mb-8">
-            <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-success">Disponible Ahora</span>
-          </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
             <span className="text-foreground">Transforma tu laboratorio</span>
@@ -90,16 +87,17 @@ const CTASection = () => {
 
           {/* Primary CTAs */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button
-              variant="default"
-              size="xl"
-              onClick={handleDemoClick}
-              iconName="Play"
-              iconPosition="left"
-              className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-xl px-12 py-6"
-            >
-              Solicitar Demo Gratis
-            </Button>
+            <Link to="/contact-support">
+              <Button
+                variant="default"
+                size="xl"
+                iconName="MessageCircle"
+                iconPosition="left"
+                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-xl px-12 py-6"
+              >
+                Contáctanos
+              </Button>
+            </Link>
             
             <Button
               variant="outline"
@@ -121,7 +119,7 @@ const CTASection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20">
           {benefits?.map((benefit, index) => (
             <div 
               key={index}
@@ -143,11 +141,11 @@ const CTASection = () => {
               Números que Hablan por Sí Solos
             </h3>
             <p className="text-lg text-muted-foreground">
-              Resultados reales de laboratorios venezolanos usando IBEX Medical
+              Resultados reales de laboratorios venezolanos usando SolHub
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {stats?.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-gradient-medical mb-2">
@@ -165,7 +163,7 @@ const CTASection = () => {
         </div>
 
         {/* Secondary CTAs */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
           {/* Explore Modules */}
           <div className="p-8 bg-card/30 border border-border rounded-xl hover:border-primary/30 transition-all duration-300">
             <div className="flex items-center space-x-4 mb-6">
@@ -228,7 +226,7 @@ const CTASection = () => {
             Hecho por y para profesionales médicos venezolanos
           </h3>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            IBEX Medical nació de la necesidad real de optimizar laboratorios en Venezuela. 
+            SolHub nació de la necesidad real de optimizar laboratorios en Venezuela. 
             Entendemos tus desafíos porque los hemos vivido, y por eso creamos la solución 
             que realmente necesitas.
           </p>

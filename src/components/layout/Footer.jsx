@@ -57,14 +57,14 @@ const Footer = ({ variant = 'default' }) => {
 
   return (
     <motion.footer 
-      className="glass-medium border-t border-glass-border py-8 sm:py-12 lg:py-16 mt-16 sm:mt-20 lg:mt-24 backdrop-blur-glass-strong"
+      className="glass-medium border-t border-glass-border py-8 sm:py-12 lg:py-16 backdrop-blur-glass-strong"
       variants={footerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       <div className="container-medical">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="sm:col-span-2">
             <motion.div 
@@ -93,7 +93,7 @@ const Footer = ({ variant = 'default' }) => {
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <div className="w-2 h-2 bg-success rounded-full animate-pulse-medical flex-shrink-0"></div>
-                <span>7 sedes activas</span>
+                <span>5 sedes activas</span>
               </div>
               <div className="text-sm text-muted-foreground">•</div>
               <div className="text-sm text-muted-foreground">Soporte 24/7</div>

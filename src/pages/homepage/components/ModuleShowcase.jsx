@@ -122,10 +122,6 @@ const ModuleShowcase = () => {
       <div className="container-medical relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="Sparkles" size={16} className="text-primary" />
-            <span className="text-sm font-medium text-primary">Módulos Inteligentes</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-foreground">Módulos que</span>
@@ -158,7 +154,7 @@ const ModuleShowcase = () => {
         </div>
 
         {/* Active Module Display */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Module Info */}
           <div className="space-y-8">
             <div>
@@ -179,7 +175,7 @@ const ModuleShowcase = () => {
             {/* Features */}
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-4">Características principales:</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {modules?.[activeModule]?.features?.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Icon name="Check" size={16} className="text-success" />
@@ -192,13 +188,30 @@ const ModuleShowcase = () => {
             {/* Metrics */}
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-4">Resultados comprobados:</h4>
-              <div className="grid grid-cols-3 gap-4">
-                {Object.entries(modules?.[activeModule]?.metrics)?.map(([key, value], index) => (
-                  <div key={index} className="text-center p-4 bg-card/30 rounded-lg">
-                    <div className="text-2xl font-bold text-gradient-medical">{value}</div>
-                    <div className="text-sm text-muted-foreground capitalize">{key?.replace('_', ' ')}</div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+                {Object.entries(modules?.[activeModule]?.metrics)?.map(([key, value], index) => {
+                  const metricLabels = {
+                    efficiency: 'Eficiencia',
+                    errors: 'Errores',
+                    time: 'Tiempo',
+                    accuracy: 'Precisión',
+                    speed: 'Velocidad',
+                    consistency: 'Consistencia',
+                    uptime: 'Disponibilidad',
+                    compliance: 'Cumplimiento',
+                    incidents: 'Incidentes',
+                    insights: 'Insights',
+                    decisions: 'Decisiones',
+                    roi: 'ROI'
+                  };
+                  
+                  return (
+                    <div key={index} className="text-center p-4 bg-card/30 rounded-lg">
+                      <div className="text-2xl font-bold text-gradient-medical">{value}</div>
+                      <div className="text-sm text-muted-foreground">{metricLabels[key] || key}</div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

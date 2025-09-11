@@ -141,7 +141,7 @@ const PlatformPreview = () => {
             Preview de la Plataforma
           </h3>
           <p className="text-sm text-muted-foreground">
-            Explore los flujos de trabajo principales de IBEX Medical
+            Explore los flujos de trabajo principales de SolHub
           </p>
         </div>
       </div>
@@ -279,7 +279,7 @@ const PlatformPreview = () => {
             </h5>
           </div>
           <p className="text-muted-foreground mb-4">
-            Este es solo un vistazo de las capacidades de IBEX Medical.\n
+            Este es solo un vistazo de las capacidades de SolHub.\n
             En el demo completo podrá interactuar con todas las funcionalidades.
           </p>
           <Button

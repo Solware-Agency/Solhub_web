@@ -78,10 +78,6 @@ const SecurityBySite = () => {
     <section className="py-20 bg-muted/20">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="Building2" size={16} color="var(--color-primary)" />
-            <span className="text-primary font-semibold text-sm">Seguridad por Sede</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Aislamiento de Datos por Ubicación
           </h2>
@@ -125,10 +121,6 @@ const SecurityBySite = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-foreground">{currentSite?.name}</h3>
                   <p className="text-muted-foreground">{currentSite?.location}</p>
-                </div>
-                <div className="flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-3 py-1">
-                  <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                  <span className="text-success text-sm font-medium">{currentSite?.status}</span>
                 </div>
               </div>
 

@@ -53,7 +53,7 @@ const ReferralProgram = () => {
       city: 'Caracas',
       referrals: 3,
       savings: '$2,400 USD',
-      testimonial: 'Referir IBEX a mis colegas ha sido muy gratificante. No solo ayudo a otros laboratorios a modernizarse, sino que también obtengo beneficios significativos.'
+      testimonial: 'Referir SolHub a mis colegas ha sido muy gratificante. No solo ayudo a otros laboratorios a modernizarse, sino que también obtengo beneficios significativos.'
     },
     {
       referrer: 'Lic. Carlos Mendoza',
@@ -61,7 +61,7 @@ const ReferralProgram = () => {
       city: 'Maracaibo',
       referrals: 2,
       savings: '$1,800 USD',
-      testimonial: 'El programa de referidos de IBEX es transparente y justo. Mis referidos están muy satisfechos con el descuento y yo con los beneficios recibidos.'
+      testimonial: 'El programa de referidos de SolHub es transparente y justo. Mis referidos están muy satisfechos con el descuento y yo con los beneficios recibidos.'
     }
   ];
 
@@ -114,13 +114,9 @@ const ReferralProgram = () => {
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="Users" size={16} className="text-success" />
-            <span className="text-sm font-medium text-success">Programa de Referidos</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Comparte IBEX y
+            Comparte SolHub y
             <span className="block text-gradient-medical">Obtén Beneficios</span>
           </h2>
           
@@ -334,10 +330,6 @@ const ReferralProgram = () => {
                     </div>
                     
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-3 py-1">
-                        <Icon name="DollarSign" size={14} className="text-success" />
-                        <span className="text-sm font-medium text-success">{story?.savings} ahorrados</span>
-                      </div>
                     </div>
                     
                     <blockquote className="text-sm text-muted-foreground italic">

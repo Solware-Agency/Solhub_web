@@ -104,10 +104,6 @@ const TrustBuildingSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-sm font-medium mb-6">
-            <Icon name="Heart" size={16} />
-            <span>Confianza y Transparencia</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             <span className="text-gradient-medical">SolIA que Respeta</span>

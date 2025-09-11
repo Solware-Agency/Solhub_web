@@ -191,11 +191,11 @@ const PricingSummary = ({
             variant="default"
             fullWidth
             onClick={onRequestDemo}
-            iconName="Play"
+            iconName="MessageCircle"
             iconPosition="left"
             className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
           >
-            Solicitar Demo Personalizado
+            Contáctanos
           </Button>
           
           <Button

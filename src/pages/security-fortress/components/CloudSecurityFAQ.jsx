@@ -16,8 +16,8 @@ const CloudSecurityFAQ = () => {
     {
       id: 2,
       category: "Encriptación",
-      question: "¿Qué nivel de encriptación utiliza IBEX Medical para proteger mis datos?",
-      answer: `IBEX Medical implementa múltiples capas de encriptación de nivel militar:\n\n**Datos en Reposo:**\n• Encriptación AES-256 para toda la información almacenada\n• Claves de encriptación rotadas automáticamente cada 30 días\n• Almacenamiento de claves separado físicamente de los datos\n\n**Datos en Tránsito:**\n• TLS 1.3 para todas las comunicaciones\n• Certificados SSL/TLS renovados automáticamente\n• Perfect Forward Secrecy para máxima protección\n\n**Datos en Procesamiento:**\n• Encriptación a nivel de aplicación\n• Memoria encriptada durante el procesamiento\n• Eliminación segura de datos temporales\n\nEste nivel de protección es el mismo utilizado por instituciones bancarias y gubernamentales.`,
+      question: "¿Qué nivel de encriptación utiliza SolHub para proteger mis datos?",
+      answer: `SolHub implementa múltiples capas de encriptación de nivel militar:\n\n**Datos en Reposo:**\n• Encriptación AES-256 para toda la información almacenada\n• Claves de encriptación rotadas automáticamente cada 30 días\n• Almacenamiento de claves separado físicamente de los datos\n\n**Datos en Tránsito:**\n• TLS 1.3 para todas las comunicaciones\n• Certificados SSL/TLS renovados automáticamente\n• Perfect Forward Secrecy para máxima protección\n\n**Datos en Procesamiento:**\n• Encriptación a nivel de aplicación\n• Memoria encriptada durante el procesamiento\n• Eliminación segura de datos temporales\n\nEste nivel de protección es el mismo utilizado por instituciones bancarias y gubernamentales.`,
       icon: "Lock",
       color: "success"
     },
@@ -25,7 +25,7 @@ const CloudSecurityFAQ = () => {
       id: 3,
       category: "Acceso y Control",
       question: "¿Quién puede acceder a los datos médicos de mis pacientes?",
-      answer: `El acceso a los datos médicos está estrictamente controlado mediante múltiples mecanismos:\n\n**Control de Acceso por Rol:**\n• Solo personal autorizado de tu laboratorio puede acceder\n• Permisos granulares según función específica\n• Autenticación multifactor obligatoria para todos\n\n**Personal de IBEX Medical:**\n• Acceso técnico solo para mantenimiento autorizado\n• Sin acceso a contenido médico o información de pacientes\n• Todas las actividades técnicas son auditadas y registradas\n\n**Auditoría Completa:**\n• Registro inmutable de todos los accesos\n• Alertas automáticas por actividad sospechosa\n• Reportes de acceso disponibles en tiempo real\n\nNunca compartimos, vendemos o utilizamos tus datos médicos para ningún propósito ajeno a la operación de tu laboratorio.`,
+      answer: `El acceso a los datos médicos está estrictamente controlado mediante múltiples mecanismos:\n\n**Control de Acceso por Rol:**\n• Solo personal autorizado de tu laboratorio puede acceder\n• Permisos granulares según función específica\n• Autenticación multifactor obligatoria para todos\n\n**Personal de SolHub:**\n• Acceso técnico solo para mantenimiento autorizado\n• Sin acceso a contenido médico o información de pacientes\n• Todas las actividades técnicas son auditadas y registradas\n\n**Auditoría Completa:**\n• Registro inmutable de todos los accesos\n• Alertas automáticas por actividad sospechosa\n• Reportes de acceso disponibles en tiempo real\n\nNunca compartimos, vendemos o utilizamos tus datos médicos para ningún propósito ajeno a la operación de tu laboratorio.`,
       icon: "UserCheck",
       color: "secondary"
     },
@@ -40,8 +40,8 @@ const CloudSecurityFAQ = () => {
     {
       id: 5,
       category: "Cumplimiento Legal",
-      question: "¿IBEX Medical cumple con las regulaciones venezolanas de protección de datos?",
-      answer: `Sí, IBEX Medical está diseñado específicamente para cumplir con todas las regulaciones venezolanas:\n\n**Normativas Venezolanas:**\n• Ley de Protección de Datos Personales\n• Regulaciones del Ministerio del Poder Popular para la Salud (MPPS)\n• Normativas de telemedicina y salud digital\n• Requisitos de confidencialidad médica\n\n**Estándares Internacionales:**\n• ISO 27001 (Gestión de Seguridad de la Información)\n• HIPAA (Portabilidad y Responsabilidad del Seguro Médico)\n• GDPR (Reglamento General de Protección de Datos)\n• SOC 2 Type II (Controles de Organización de Servicios)\n\n**Documentación Legal:**\n• Contratos de procesamiento de datos\n• Políticas de privacidad específicas para Venezuela\n• Procedimientos de notificación de brechas\n• Derechos de los titulares de datos claramente definidos`,
+      question: "¿SolHub cumple con las regulaciones venezolanas de protección de datos?",
+      answer: `Sí, SolHub está diseñado específicamente para cumplir con todas las regulaciones venezolanas:\n\n**Normativas Venezolanas:**\n• Ley de Protección de Datos Personales\n• Regulaciones del Ministerio del Poder Popular para la Salud (MPPS)\n• Normativas de telemedicina y salud digital\n• Requisitos de confidencialidad médica\n\n**Estándares Internacionales:**\n• ISO 27001 (Gestión de Seguridad de la Información)\n• HIPAA (Portabilidad y Responsabilidad del Seguro Médico)\n• GDPR (Reglamento General de Protección de Datos)\n• SOC 2 Type II (Controles de Organización de Servicios)\n\n**Documentación Legal:**\n• Contratos de procesamiento de datos\n• Políticas de privacidad específicas para Venezuela\n• Procedimientos de notificación de brechas\n• Derechos de los titulares de datos claramente definidos`,
       icon: "Scale",
       color: "warning"
     },
@@ -49,7 +49,7 @@ const CloudSecurityFAQ = () => {
       id: 6,
       category: "Monitoreo",
       question: "¿Cómo puedo saber si mis datos están seguros y monitorear la actividad?",
-      answer: `IBEX Medical te proporciona visibilidad completa sobre la seguridad de tus datos:\n\n**Dashboard de Seguridad:**\n• Estado de seguridad en tiempo real\n• Métricas de cumplimiento actualizadas\n• Alertas de seguridad priorizadas\n• Tendencias de actividad y acceso\n\n**Reportes Automáticos:**\n• Reportes semanales de actividad\n• Auditorías mensuales de seguridad\n• Reportes trimestrales de cumplimiento\n• Alertas inmediatas por eventos críticos\n\n**Herramientas de Monitoreo:**\n• Logs de actividad detallados\n• Análisis de comportamiento de usuarios\n• Detección de anomalías automática\n• Integración con sistemas de alertas externos\n\n**Transparencia Total:**\n• Acceso a todos los logs de tu laboratorio\n• Reportes de tiempo de actividad (uptime)\n• Métricas de rendimiento del sistema\n• Historial completo de cambios y actualizaciones`,
+      answer: `SolHub te proporciona visibilidad completa sobre la seguridad de tus datos:\n\n**Dashboard de Seguridad:**\n• Estado de seguridad en tiempo real\n• Métricas de cumplimiento actualizadas\n• Alertas de seguridad priorizadas\n• Tendencias de actividad y acceso\n\n**Reportes Automáticos:**\n• Reportes semanales de actividad\n• Auditorías mensuales de seguridad\n• Reportes trimestrales de cumplimiento\n• Alertas inmediatas por eventos críticos\n\n**Herramientas de Monitoreo:**\n• Logs de actividad detallados\n• Análisis de comportamiento de usuarios\n• Detección de anomalías automática\n• Integración con sistemas de alertas externos\n\n**Transparencia Total:**\n• Acceso a todos los logs de tu laboratorio\n• Reportes de tiempo de actividad (uptime)\n• Métricas de rendimiento del sistema\n• Historial completo de cambios y actualizaciones`,
       icon: "Activity",
       color: "primary"
     },
@@ -64,8 +64,8 @@ const CloudSecurityFAQ = () => {
     {
       id: 8,
       category: "Migración",
-      question: "¿Es seguro migrar mis datos actuales a IBEX Medical?",
-      answer: `La migración a IBEX Medical es completamente segura y está diseñada para ser transparente:\n\n**Proceso de Migración Segura:**\n• Análisis previo de tus datos actuales\n• Encriptación de datos durante todo el proceso\n• Migración por lotes para minimizar riesgos\n• Verificación de integridad en cada paso\n\n**Validación Completa:**\n• Comparación bit a bit de datos migrados\n• Pruebas de funcionalidad completas\n• Validación por parte de tu equipo\n• Rollback disponible en caso necesario\n\n**Cero Tiempo de Inactividad:**\n• Migración en paralelo con sistemas actuales\n• Sincronización en tiempo real durante transición\n• Cambio instantáneo cuando esté listo\n• Soporte 24/7 durante todo el proceso\n\n**Garantías de Seguridad:**\n• Eliminación segura de datos temporales\n• Certificado de destrucción de medios\n• Auditoría completa del proceso\n• Garantía de integridad de datos al 100%`,
+      question: "¿Es seguro migrar mis datos actuales a SolHub?",
+      answer: `La migración a SolHub es completamente segura y está diseñada para ser transparente:\n\n**Proceso de Migración Segura:**\n• Análisis previo de tus datos actuales\n• Encriptación de datos durante todo el proceso\n• Migración por lotes para minimizar riesgos\n• Verificación de integridad en cada paso\n\n**Validación Completa:**\n• Comparación bit a bit de datos migrados\n• Pruebas de funcionalidad completas\n• Validación por parte de tu equipo\n• Rollback disponible en caso necesario\n\n**Cero Tiempo de Inactividad:**\n• Migración en paralelo con sistemas actuales\n• Sincronización en tiempo real durante transición\n• Cambio instantáneo cuando esté listo\n• Soporte 24/7 durante todo el proceso\n\n**Garantías de Seguridad:**\n• Eliminación segura de datos temporales\n• Certificado de destrucción de medios\n• Auditoría completa del proceso\n• Garantía de integridad de datos al 100%`,
       icon: "Download",
       color: "secondary"
     }
@@ -79,10 +79,6 @@ const CloudSecurityFAQ = () => {
     <section className="py-20 bg-muted/20">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-secondary/10 border border-secondary/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="HelpCircle" size={16} color="var(--color-secondary)" />
-            <span className="text-secondary font-semibold text-sm">Preguntas Frecuentes</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Seguridad en la Nube: Resolvemos tus Dudas
           </h2>

@@ -5,12 +5,12 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
   const [hoveredModule, setHoveredModule] = useState(null);
 
   const modulePositions = {
-    'patient-management': { x: 20, y: 30 },
-    'ai-analysis': { x: 50, y: 20 },
-    'automated-reports': { x: 80, y: 30 },
-    'data-security': { x: 50, y: 60 },
-    'inventory-control': { x: 20, y: 70 },
-    'billing-integration': { x: 80, y: 70 }
+    'patient-management': { x: 8, y: 18 },
+    'ai-analysis': { x: 50, y: 8 },
+    'automated-reports': { x: 92, y: 18 },
+    'data-security': { x: 50, y: 75 },
+    'inventory-control': { x: 8, y: 82 },
+    'billing-integration': { x: 92, y: 82 }
   };
 
   const connections = [
@@ -41,16 +41,16 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
   };
 
   return (
-    <div className="card-medical p-8">
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-foreground mb-2">
+    <div className="card-medical p-4 sm:p-6 lg:p-8">
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
           Ecosistema Modular Solwy
         </h2>
-        <p className="text-muted-foreground">
+        <p className="text-sm sm:text-base text-muted-foreground px-4">
           Descubre cómo nuestros módulos se integran para crear una solución completa
         </p>
       </div>
-      <div className="relative w-full h-96 bg-gradient-medical-subtle rounded-xl overflow-hidden">
+      <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-gradient-medical-subtle rounded-xl overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%">
@@ -116,7 +116,7 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
               onClick={() => onModuleClick?.(module.id)}
             >
               {/* Module Circle */}
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                 isSelected 
                   ? 'bg-primary text-primary-foreground ring-4 ring-primary/30' 
                   : 'bg-card text-card-foreground border-2 border-border hover:border-primary/50'
@@ -152,11 +152,11 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
         </div>
 
         {/* Center Hub */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-20 h-20 bg-gradient-medical rounded-full flex items-center justify-center shadow-xl">
-            <Icon name="Activity" size={32} color="white" />
+        <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="w-16 h-16 bg-gradient-medical rounded-full flex items-center justify-center shadow-xl">
+            <Icon name="Activity" size={24} color="white" />
           </div>
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium text-center">
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-1 bg-card border border-border rounded-lg text-xs font-medium text-center whitespace-nowrap">
             Solwy Core
           </div>
         </div>

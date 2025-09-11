@@ -14,7 +14,7 @@ const SecurityTestimonials = () => {
       location: "Caracas, Distrito Capital",
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
       rating: 5,
-      testimonial: `La seguridad de IBEX Medical nos ha dado la tranquilidad que necesitábamos para digitalizar completamente nuestro laboratorio. El sistema de 'Seguridad por Sede' es exactamente lo que buscábamos - nuestros datos están completamente aislados y protegidos.\n\nLa implementación fue impecable y el equipo técnico nos acompañó en cada paso. Ahora podemos cumplir con todas las regulaciones venezolanas sin preocupaciones.`,
+      testimonial: `La seguridad de SolHub nos ha dado la tranquilidad que necesitábamos para digitalizar completamente nuestro laboratorio. El sistema de 'Seguridad por Sede' es exactamente lo que buscábamos - nuestros datos están completamente aislados y protegidos.\n\nLa implementación fue impecable y el equipo técnico nos acompañó en cada paso. Ahora podemos cumplir con todas las regulaciones venezolanas sin preocupaciones.`,
       securityFeatures: [
         "Encriptación AES-256 implementada",
         "Auditorías mensuales completadas",
@@ -36,7 +36,7 @@ const SecurityTestimonials = () => {
       location: "Valencia, Carabobo",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Como administrador de sistemas, puedo confirmar que IBEX Medical tiene la arquitectura de seguridad más robusta que he visto en el sector médico venezolano. Los controles de acceso son granulares y el monitoreo en tiempo real nos permite detectar cualquier anomalía inmediatamente.\n\nLa documentación técnica es excelente y el soporte para implementar las mejores prácticas de seguridad ha sido excepcional.`,
+      testimonial: `Como administrador de sistemas, puedo confirmar que SolHub tiene la arquitectura de seguridad más robusta que he visto en el sector médico venezolano. Los controles de acceso son granulares y el monitoreo en tiempo real nos permite detectar cualquier anomalía inmediatamente.\n\nLa documentación técnica es excelente y el soporte para implementar las mejores prácticas de seguridad ha sido excepcional.`,
       securityFeatures: [
         "Monitoreo 24/7 activo",
         "Controles de acceso por rol",
@@ -58,7 +58,7 @@ const SecurityTestimonials = () => {
       location: "Maracaibo, Zulia",
       avatar: "https://images.unsplash.com/photo-1594824475317-d0d4e6e6b6b0?w=400&h=400&fit=crop&crop=face",
       rating: 5,
-      testimonial: `La confianza que tenemos en la seguridad de IBEX Medical es total. Manejamos información médica muy sensible y necesitábamos una solución que cumpliera con estándares internacionales pero que también entendiera el contexto venezolano.\n\nEl sistema de permisos por rol es perfecto - cada técnico, médico y administrativo tiene acceso exactamente a lo que necesita, nada más, nada menos.`,
+      testimonial: `La confianza que tenemos en la seguridad de SolHub es total. Manejamos información médica muy sensible y necesitábamos una solución que cumpliera con estándares internacionales pero que también entendiera el contexto venezolano.\n\nEl sistema de permisos por rol es perfecto - cada técnico, médico y administrativo tiene acceso exactamente a lo que necesita, nada más, nada menos.`,
       securityFeatures: [
         "Permisos granulares por rol",
         "Autenticación multifactor",
@@ -80,7 +80,7 @@ const SecurityTestimonials = () => {
       location: "Barquisimeto, Lara",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       rating: 5,
-      testimonial: `Desde el punto de vista administrativo, IBEX Medical nos ha permitido cumplir con todas las regulaciones de protección de datos sin complicar nuestros procesos operativos. Las auditorías de seguridad son automáticas y los reportes de cumplimiento nos facilitan mucho el trabajo.\n\nLa tranquilidad de saber que nuestros datos están seguros no tiene precio.`,
+      testimonial: `Desde el punto de vista administrativo, SolHub nos ha permitido cumplir con todas las regulaciones de protección de datos sin complicar nuestros procesos operativos. Las auditorías de seguridad son automáticas y los reportes de cumplimiento nos facilitan mucho el trabajo.\n\nLa tranquilidad de saber que nuestros datos están seguros no tiene precio.`,
       securityFeatures: [
         "Auditorías automáticas",
         "Reportes de cumplimiento",
@@ -102,7 +102,7 @@ const SecurityTestimonials = () => {
       location: "San Cristóbal, Táchira",
       avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
       rating: 5,
-      testimonial: `La decisión de implementar IBEX Medical fue una de las mejores que hemos tomado. La seguridad de nivel hospitalario que ofrece nos ha permitido expandir nuestros servicios con total confianza.\n\nEl equipo de IBEX entiende perfectamente las necesidades del sector médico venezolano y su enfoque de 'Seguridad por Sede' es exactamente lo que necesitábamos para mantener la privacidad de nuestros pacientes.`,
+      testimonial: `La decisión de implementar SolHub fue una de las mejores que hemos tomado. La seguridad de nivel hospitalario que ofrece nos ha permitido expandir nuestros servicios con total confianza.\n\nEl equipo de SolHub entiende perfectamente las necesidades del sector médico venezolano y su enfoque de 'Seguridad por Sede' es exactamente lo que necesitábamos para mantener la privacidad de nuestros pacientes.`,
       securityFeatures: [
         "Seguridad nivel hospitalario",
         "Privacidad de pacientes",
@@ -132,15 +132,11 @@ const SecurityTestimonials = () => {
     <section className="py-20 bg-muted/20">
       <div className="container-medical">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-success/10 border border-success/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="MessageSquare" size={16} color="var(--color-success)" />
-            <span className="text-success font-semibold text-sm">Testimonios de Seguridad</span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Lo Que Dicen Nuestros Clientes sobre Seguridad
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Profesionales médicos venezolanos confían en IBEX Medical para proteger 
+            Profesionales médicos venezolanos confían en SolHub para proteger 
             la información más sensible de sus pacientes y operaciones.
           </p>
         </div>

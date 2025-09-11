@@ -10,7 +10,7 @@ const CommunitySection = () => {
   const discussions = [
     {
       id: 1,
-      title: '¿Cómo integrar IBEX con sistemas existentes de laboratorio?',
+      title: '¿Cómo integrar SolHub con sistemas existentes de laboratorio?',
       author: 'Dr. Miguel Herrera',
       role: 'Director de Laboratorio',
       location: 'Caracas',
@@ -62,7 +62,7 @@ const CommunitySection = () => {
     },
     {
       id: 5,
-      title: 'ROI real después de 6 meses con IBEX',
+      title: 'ROI real después de 6 meses con SolHub',
       author: 'Ing. Patricia Vásquez',
       role: 'Administradora',
       location: 'Mérida',
@@ -108,7 +108,7 @@ const CommunitySection = () => {
     <section className="mb-12">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl font-bold text-foreground mb-2">Comunidad IBEX</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-2">Comunidad SolHub</h2>
           <p className="text-muted-foreground">Conecta con otros profesionales médicos y comparte experiencias</p>
         </div>
         <Button variant="outline" iconName="Users" iconPosition="left">

@@ -30,7 +30,7 @@ const ReferralProgram = () => {
     {
       step: 1,
       title: "Comparte tu Experiencia",
-      description: "Recomienda IBEX Medical a otros laboratorios o clínicas que conozcas"
+      description: "Recomienda SolHub a otros laboratorios o clínicas que conozcas"
     },
     {
       step: 2,
@@ -54,7 +54,7 @@ const ReferralProgram = () => {
       referrer: "Dr. María González - Laboratorio Central Caracas",
       referred: "Clínica San Rafael",
       savings: "Bs. 240,000",
-      quote: `Recomendé IBEX porque transformó completamente nuestros procesos. 
+      quote: `Recomendé SolHub porque transformó completamente nuestros procesos. 
       Ver que San Rafael también está teniendo excelentes resultados me da mucha satisfacción.`
     },
     {
@@ -62,16 +62,16 @@ const ReferralProgram = () => {
       referred: "Centro Médico Integral",
       savings: "Bs. 180,000",
       quote: `El programa de referidos es una excelente forma de ayudar a colegas 
-      mientras obtenemos beneficios. Todos ganamos con IBEX Medical.`
+      mientras obtenemos beneficios. Todos ganamos con SolHub.`
     }
   ];
 
   const handleStartReferral = () => {
     // WhatsApp message for referral program
     const message = encodeURIComponent(
-      "Hola, soy cliente de IBEX Medical y me interesa participar en el programa de referidos. ¿Pueden darme más información?"
+      "Hola! Soy cliente de SolHub y me interesa participar en el programa de referidos. ¿Pueden darme más información?"
     );
-    window.open(`https://wa.me/584241234567?text=${message}`, '_blank');
+    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
   };
 
   return (
@@ -83,11 +83,11 @@ const ReferralProgram = () => {
             <Icon name="Gift" size={24} color="white" strokeWidth={2.5} />
           </div>
           <h2 className="text-2xl font-bold text-gradient-medical">
-            Programa de Referidos IBEX
+            Programa de Referidos SolHub
           </h2>
         </div>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Comparte tu experiencia exitosa con IBEX Medical y obtén beneficios exclusivos. 
+          Comparte tu experiencia exitosa con SolHub y obtén beneficios exclusivos. 
           Ayuda a otros profesionales médicos mientras recibes recompensas.
         </p>
       </div>

@@ -11,7 +11,7 @@ const TestimonialCarousel = () => {
       role: "Director Médico",
       location: "Laboratorio Central - Caracas",
       avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=150&h=150&fit=crop&crop=face",
-      content: `IBEX Medical transformó completamente nuestro flujo de trabajo. La integración de IA nos permite detectar anomalías que antes pasábamos por alto, y el tiempo de procesamiento se redujo en un 45%. Nuestros pacientes reciben resultados más rápidos y precisos.`,
+      content: `SolHub transformó completamente nuestro flujo de trabajo. La integración de IA nos permite detectar anomalías que antes pasábamos por alto, y el tiempo de procesamiento se redujo en un 45%. Nuestros pacientes reciben resultados más rápidos y precisos.`,
       rating: 5,
       metrics: {
         efficiency: "+45%",
@@ -25,7 +25,7 @@ const TestimonialCarousel = () => {
       role: "Administradora de Clínica",
       location: "Centro Médico Valencia",
       avatar: "https://images.unsplash.com/photo-1594824388853-e4d2e8b6e2c5?w=150&h=150&fit=crop&crop=face",
-      content: `La implementación fue sorprendentemente sencilla. El equipo de IBEX nos acompañó paso a paso, y en menos de una semana estábamos operando al 100%. El ROI se hizo evidente desde el primer mes con la reducción de errores y optimización de recursos.`,
+      content: `La implementación fue sorprendentemente sencilla. El equipo de SolHub nos acompañó paso a paso, y en menos de una semana estábamos operando al 100%. El ROI se hizo evidente desde el primer mes con la reducción de errores y optimización de recursos.`,
       rating: 5,
       metrics: {
         roi: "+35%",
@@ -53,7 +53,7 @@ const TestimonialCarousel = () => {
       role: "Propietaria de Laboratorio",
       location: "Laboratorio Integral - Barquisimeto",
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=150&h=150&fit=crop&crop=face",
-      content: `IBEX Medical no solo mejoró nuestras operaciones, sino que nos posicionó como líderes tecnológicos en la región. Los reportes con IA impresionan a nuestros médicos referentes, y hemos aumentado significativamente nuestra base de clientes.`,
+      content: `SolHub no solo mejoró nuestras operaciones, sino que nos posicionó como líderes tecnológicos en la región. Los reportes con IA impresionan a nuestros médicos referentes, y hemos aumentado significativamente nuestra base de clientes.`,
       rating: 5,
       metrics: {
         growth: "+60%",
@@ -84,7 +84,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -93,27 +93,23 @@ const TestimonialCarousel = () => {
       </div>
       <div className="container-medical relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="MessageSquare" size={16} className="text-accent" />
-            <span className="text-sm font-medium text-accent">Testimonios Reales</span>
-          </div>
+        <div className="text-center mb-12 sm:mb-16">
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             <span className="text-foreground">Lo que dicen</span>
             <br />
             <span className="text-gradient-medical">nuestros profesionales</span>
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Testimonios auténticos de médicos, administradores y técnicos que ya transformaron 
-            sus laboratorios con IBEX Medical.
+            sus laboratorios con SolHub.
           </p>
         </div>
 
         {/* Testimonial Display */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative bg-card border border-border rounded-2xl p-8 md:p-12 shadow-lg">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="relative bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg">
             {/* Quote Icon */}
             <div className="absolute top-6 left-6 w-12 h-12 bg-gradient-medical rounded-full flex items-center justify-center">
               <Icon name="Quote" size={24} color="white" />

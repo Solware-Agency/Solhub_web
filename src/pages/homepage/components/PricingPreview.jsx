@@ -112,10 +112,6 @@ const PricingPreview = () => {
       <div className="container-medical relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-warning/10 border border-warning/20 rounded-full px-4 py-2 mb-6">
-            <Icon name="Calculator" size={16} className="text-warning" />
-            <span className="text-sm font-medium text-warning">Precios Transparentes</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-foreground">Inversión que</span>
@@ -136,7 +132,7 @@ const PricingPreview = () => {
         </div>
 
         {/* Pricing Plans */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
           {plans?.map((plan) => (
             <div
               key={plan?.id}
@@ -222,7 +218,7 @@ const PricingPreview = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {addOns?.map((addon, index) => (
               <div key={index} className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all duration-300">
                 <div className="flex items-center justify-between mb-4">
@@ -248,7 +244,7 @@ const PricingPreview = () => {
               Programa de Referidos
             </h3>
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Recomienda IBEX Medical a otros laboratorios y obtén un 20% de descuento 
+              Recomienda SolHub a otros laboratorios y obtén un 20% de descuento 
               en tu próxima facturación por cada referido exitoso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

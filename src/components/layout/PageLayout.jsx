@@ -44,7 +44,7 @@ const PageLayout = ({
         {showWhatsApp && <WhatsAppButton />}
         
         <motion.main 
-          className={`pt-20 ${containerClassName}`}
+          className={`pt-16 ${containerClassName}`}
           variants={pageVariants}
           initial="initial"
           animate="animate"

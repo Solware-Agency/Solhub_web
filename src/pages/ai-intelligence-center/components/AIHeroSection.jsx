@@ -40,10 +40,6 @@ const AIHeroSection = ({ onDemoClick, onLearnMoreClick }) => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium">
-                <Icon name="Sparkles" size={16} />
-                <span>Inteligencia Artificial Médica</span>
-              </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="text-gradient-medical">IA que Potencia</span>

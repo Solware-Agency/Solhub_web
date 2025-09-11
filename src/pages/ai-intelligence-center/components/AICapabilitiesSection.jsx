@@ -90,10 +90,6 @@ const AICapabilitiesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-secondary/10 border border-secondary/20 rounded-full text-secondary text-sm font-medium mb-6">
-            <Icon name="Cpu" size={16} />
-            <span>Capacidades de IA</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             <span className="text-gradient-medical">Inteligencia Artificial</span>

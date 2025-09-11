@@ -9,11 +9,12 @@ const HeroSection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/584241234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20SolHub%20Medical', '_blank');
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-visible bg-background px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-visible bg-background px-3 sm:px-6 lg:px-8">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-medical opacity-10 pointer-events-none"></div>
       
@@ -24,23 +25,18 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/4 sm:left-1/3 w-20 h-20 sm:w-24 sm:h-24 bg-accent/20 rounded-full blur-2xl animate-pulse-medical" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container-medical relative z-10 w-full max-w-7xl mx-auto py-20 sm:py-24 lg:py-32">
-        <div className="text-center max-w-4xl mx-auto px-4">
-          {/* Badge - Better responsive design */}
-          <div className="inline-flex items-center space-x-2 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-full px-3 py-2 sm:px-4 mb-6 sm:mb-8 animate-fade-in">
-            <div className="w-2 h-2 bg-success rounded-full animate-pulse flex-shrink-0"></div>
-            <span className="text-xs sm:text-sm font-medium text-primary whitespace-nowrap">5 sedes activas en Venezuela</span>
-          </div>
+      <div className="container-medical relative z-10 w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 xl:py-20">
+        <div className="text-center max-w-4xl mx-auto px-2 sm:px-4">
 
           {/* Main Headline - Improved responsive typography */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight">
             <span className="text-gradient-medical block">IA que potencia</span>
             <span className="text-foreground block">el diagnóstico médico</span>
-            <span className="text-muted-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl block mt-2">en Venezuela</span>
+            <span className="text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl block mt-1 sm:mt-2">en Venezuela</span>
           </h1>
 
           {/* Supporting Tagline - Better responsive text */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in px-2" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in px-2" style={{ animationDelay: '0.2s' }}>
             Transforma tu laboratorio con módulos inteligentes, seguridad por sede y onboarding guiado. 
             La evolución digital que los profesionales médicos venezolanos estaban esperando.
           </p>
@@ -62,24 +58,25 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons - Better responsive layout */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 animate-fade-in px-4" style={{ animationDelay: '0.6s' }}>
-            <Button
-              variant="default"
-              size="lg"
-              onClick={handleDemoClick}
-              iconName="Play"
-              iconPosition="left"
-              className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-h-[48px]"
-            >
-              Solicitar Demo Gratis
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 lg:mb-16 animate-fade-in px-2 sm:px-4" style={{ animationDelay: '0.6s' }}>
+            <Link to="/contact-support" className="w-full sm:w-auto">
+              <Button
+                variant="default"
+                size="lg"
+                iconName="MessageCircle"
+                iconPosition="left"
+                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
+              >
+                Contáctanos
+              </Button>
+            </Link>
             <Link to="/modules-showcase" className="w-full sm:w-auto">
               <Button
                 variant="outline"
                 size="lg"
                 iconName="Grid3X3"
                 iconPosition="left"
-                className="border-primary/30 text-primary hover:bg-primary/10 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full min-h-[48px]"
+                className="border-primary/30 text-primary hover:bg-primary/10 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
               >
                 Explorar Módulos
               </Button>

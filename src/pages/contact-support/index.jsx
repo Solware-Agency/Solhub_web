@@ -10,12 +10,12 @@ import ReferralProgram from './components/ReferralProgram';
 
 const ContactSupport = () => {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Hola, me interesa conocer más sobre IBEX Medical. ¿Podrían brindarme información?');
-    window.open(`https://wa.me/584241234567?text=${message}`, '_blank');
+    const message = encodeURIComponent('Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?');
+    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
   };
 
   const handleEmailClick = () => {
-    window.open('mailto:soporte@ibexmedical.com.ve?subject=Consulta sobre IBEX Medical', '_self');
+    window.open('mailto:soporte@solhub.com.ve?subject=Consulta sobre SolHub', '_self');
   };
 
   const handlePhoneClick = () => {
@@ -30,22 +30,22 @@ const ContactSupport = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contacto y Soporte | IBEX Medical - Soporte 24/7 para Laboratorios Venezolanos</title>
+        <title>Contacto y Soporte | SolHub - Soporte 24/7 para Laboratorios Venezolanos</title>
         <meta 
           name="description" 
-          content="Contacta con IBEX Medical a través de WhatsApp, teléfono o email. Soporte técnico 24/7, oficinas en Caracas, Maracaibo y Valencia. Programa de referidos con 20% descuento." 
+          content="Contacta con SolHub a través de WhatsApp, teléfono o email. Soporte técnico 24/7, oficinas en Caracas, Maracaibo y Valencia. Programa de referidos con 20% descuento." 
         />
-        <meta name="keywords" content="contacto IBEX Medical, soporte técnico laboratorio, WhatsApp médico Venezuela, oficinas laboratorio médico" />
+        <meta name="keywords" content="contacto SolHub, soporte técnico laboratorio, WhatsApp médico Venezuela, oficinas laboratorio médico" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Contacto y Soporte | IBEX Medical" />
+        <meta property="og:title" content="Contacto y Soporte | SolHub" />
         <meta property="og:description" content="Múltiples canales de contacto y soporte 24/7 para laboratorios médicos venezolanos" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ibexmedical.com.ve/contact-support" />
+        <meta property="og:url" content="https://SolHubmedical.com.ve/contact-support" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contacto y Soporte | IBEX Medical" />
+        <meta name="twitter:title" content="Contacto y Soporte | SolHub" />
         <meta name="twitter:description" content="Soporte técnico especializado para laboratorios médicos venezolanos" />
         
         {/* Structured Data */}
@@ -53,12 +53,12 @@ const ContactSupport = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "name": "Contacto y Soporte - IBEX Medical",
+            "name": "Contacto y Soporte - SolHub",
             "description": "Página de contacto y soporte técnico para laboratorios médicos venezolanos",
-            "url": "https://ibexmedical.com.ve/contact-support",
+            "url": "https://SolHubmedical.com.ve/contact-support",
             "mainEntity": {
               "@type": "Organization",
-              "name": "IBEX Medical",
+              "name": "SolHub",
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
@@ -69,7 +69,7 @@ const ContactSupport = () => {
                 },
                 {
                   "@type": "ContactPoint",
-                  "email": "soporte@ibexmedical.com.ve",
+                  "email": "soporte@SolHubmedical.com.ve",
                   "contactType": "technical support",
                   "availableLanguage": "Spanish"
                 }

@@ -10,7 +10,7 @@ const ROIComparison = () => {
         monthly: 180000,
         items: ["Personal administrativo", "Papelería y archivos", "Errores manuales", "Tiempo de reportes"]
       },
-      withIbex: {
+      withSolHub: {
         monthly: 120000,
         items: ["Automatización completa", "Reportes digitales", "Reducción de errores", "Ahorro de tiempo"]
       },
@@ -25,7 +25,7 @@ const ROIComparison = () => {
         monthly: 450000,
         items: ["Múltiples administrativos", "Gestión de inventario manual", "Coordinación compleja", "Reportes tardíos"]
       },
-      withIbex: {
+      withSolHub: {
         monthly: 280000,
         items: ["Gestión centralizada", "Inventario automático", "Coordinación digital", "Reportes instantáneos"]
       },
@@ -40,7 +40,7 @@ const ROIComparison = () => {
         monthly: 720000,
         items: ["Equipo administrativo completo", "Múltiples sedes", "Coordinación manual", "Duplicación de procesos"]
       },
-      withIbex: {
+      withSolHub: {
         monthly: 420000,
         items: ["Gestión multi-sede", "Procesos unificados", "Coordinación automática", "Eficiencia escalable"]
       },
@@ -72,7 +72,7 @@ const ROIComparison = () => {
               </p>
             </div>
 
-            {/* Current vs IBEX Comparison */}
+            {/* Current vs SolHub Comparison */}
             <div className="space-y-4">
               {/* Current Costs */}
               <div className="bg-error/10 border border-error/20 rounded-lg p-4">
@@ -98,22 +98,22 @@ const ROIComparison = () => {
                 </div>
               </div>
 
-              {/* With IBEX */}
+              {/* With SolHub */}
               <div className="bg-success/10 border border-success/20 rounded-lg p-4">
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
                     <Icon name="CheckCircle" size={16} className="text-success" />
-                    <span className="font-medium text-success">Con IBEX Medical</span>
+                    <span className="font-medium text-success">Con SolHub</span>
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-success">
-                      Bs. {data?.withIbex?.monthly?.toLocaleString('es-VE')}
+                      Bs. {data?.withSolHub?.monthly?.toLocaleString('es-VE')}
                     </div>
                     <div className="text-xs text-muted-foreground">por mes</div>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  {data?.withIbex?.items?.map((item, idx) => (
+                  {data?.withSolHub?.items?.map((item, idx) => (
                     <div key={idx} className="flex items-center space-x-2 text-sm">
                       <Icon name="Plus" size={12} className="text-success" />
                       <span className="text-muted-foreground">{item}</span>

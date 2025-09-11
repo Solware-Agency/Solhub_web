@@ -16,7 +16,8 @@ const CTASection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/584241234567?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20las%20capacidades%20de%20IA%20de%20IBEX%20Medical', '_blank');
+    const message = "Hola! Me interesa conocer más sobre SolHub y las capacidades de IA para transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const benefits = [
@@ -85,10 +86,6 @@ const CTASection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-medical/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6">
-            <Icon name="Sparkles" size={16} />
-            <span>Transforma tu Laboratorio Hoy</span>
-          </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-gradient-medical">Lleva tu Diagnóstico</span>
@@ -192,11 +189,11 @@ const CTASection = () => {
                 variant="secondary"
                 size="lg"
                 onClick={handleDemoClick}
-                iconName="Play"
+                iconName="MessageCircle"
                 iconPosition="left"
                 className="bg-white text-primary hover:bg-white/90 shadow-lg"
               >
-                Solicitar Demo Ahora
+                Contáctanos
               </Button>
               
               <div className="flex items-center space-x-2 text-white/80">

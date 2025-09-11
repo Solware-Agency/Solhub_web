@@ -20,7 +20,7 @@ const ReferralProgram = () => {
       },
       discount: "20%",
       story: `Después de ver los resultados extraordinarios en nuestro laboratorio, 
-              recomendé IBEX a mi colega Carlos. Su clínica ahora procesa 40% más 
+              recomendé SolHub a mi colega Carlos. Su clínica ahora procesa 40% más 
               muestras diarias y ambos recibimos beneficios del programa de referidos.`,
       connectionType: "Colegas de Universidad"
     },
@@ -38,7 +38,7 @@ const ReferralProgram = () => {
         avatar: "https://randomuser.me/api/portraits/men/41.jpg"
       },
       discount: "20%",
-      story: `La eficiencia que logramos con IBEX fue tan impresionante que cuando 
+      story: `La eficiencia que logramos con SolHub fue tan impresionante que cuando 
               Roberto me consultó sobre sistemas de gestión, no dudé en recomendárselo. 
               Ahora ambos disfrutamos de los beneficios del programa.`,
       connectionType: "Red Profesional Médica"
@@ -57,7 +57,7 @@ const ReferralProgram = () => {
         avatar: "https://randomuser.me/api/portraits/women/43.jpg"
       },
       discount: "20%",
-      story: `IBEX transformó completamente nuestras operaciones. Cuando Carmen 
+      story: `SolHub transformó completamente nuestras operaciones. Cuando Carmen 
               necesitaba una solución para su red de laboratorios, sabía exactamente 
               qué recomendarle. Los resultados hablan por sí solos.`,
       connectionType: "Asociación de Laboratoristas"
@@ -78,7 +78,7 @@ const ReferralProgram = () => {
     {
       icon: "Award",
       title: "Reconocimiento",
-      description: "Certificado de Embajador IBEX y reconocimiento público"
+      description: "Certificado de Embajador SolHub y reconocimiento público"
     },
     {
       icon: "TrendingUp",
@@ -92,7 +92,7 @@ const ReferralProgram = () => {
       {/* Program Overview */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gradient-medical mb-4">
-          Programa de Referidos IBEX
+          Programa de Referidos SolHub
         </h2>
         <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
           Nuestros clientes satisfechos han creado una red de recomendaciones que 
@@ -192,7 +192,7 @@ const ReferralProgram = () => {
           ¿Conoces a Alguien que Podría Beneficiarse?
         </h3>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-          Comparte el éxito de IBEX Medical con tus colegas y ambos obtendrán 
+          Comparte el éxito de SolHub con tus colegas y ambos obtendrán 
           beneficios exclusivos. Es una situación donde todos ganan.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

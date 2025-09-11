@@ -307,11 +307,11 @@ const WorkflowDemo = ({ module, onClose }) => {
             </div>
             <Button
               variant="default"
-              iconName="Calendar"
+              iconName="MessageCircle"
               iconPosition="left"
               className="bg-gradient-medical"
             >
-              Solicitar Demo Personalizado
+              Contáctanos
             </Button>
           </div>
         </div>
