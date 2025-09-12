@@ -4,7 +4,7 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
-import { sendContactEmail } from '../../../lib/resend';
+import { sendContactEmail } from '../../../lib/emailjs';
 
 const ContactFormSection = () => {
   const [formData, setFormData] = useState({
