@@ -1,14 +1,27 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-
+// Vercel Serverless Function for sending contact emails
 export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+  // Handle preflight request
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   // Solo permitir POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
+    // Importar Resend dinámicamente
+    const { Resend } = await import('resend');
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const { formData } = req.body;
 
     // Validar datos requeridos
@@ -21,7 +34,7 @@ export default async function handler(req, res) {
 
     // Enviar email
     const { data, error } = await resend.emails.send({
-      from: 'SolHub <noreply@solhub.solware.agency>',
+      from: 'SolHub <onboarding@resend.dev>',
       to: ['ventas@solware.agency'], // Email de ventas Solware
       subject: `Nuevo contacto de ${formData.nombre} - ${formData.tipoConsulta || 'Consulta'}`,
       html: `
