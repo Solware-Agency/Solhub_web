@@ -20,6 +20,16 @@ export default async function handler(req, res) {
   try {
     // Importar Resend dinámicamente
     const { Resend } = await import('resend');
+    
+    // Verificar que existe la API key
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY no está configurada');
+      return res.status(500).json({ 
+        success: false, 
+        error: 'Configuración de email no disponible' 
+      });
+    }
+    
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { referralData } = req.body;
