@@ -8,6 +8,8 @@ import ContactForm from './components/ContactForm';
 import OfficeLocations from './components/OfficeLocations';
 import FAQ from './components/FAQ';
 import ReferralProgram from './components/ReferralProgram';
+import EmailJSTest from '../../components/EmailJSTest';
+import EmailJSDebug from '../../components/EmailJSDebug';
 
 const ContactSupport = () => {
   const handleWhatsAppClick = () => {
@@ -110,6 +112,17 @@ const ContactSupport = () => {
         <FAQ />
         
         <ReferralProgram />
+        
+        {/* EmailJS Debug and Test Components - Remove after testing */}
+        <div className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 space-y-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+              🧪 Debug y Prueba de EmailJS
+            </h2>
+            <EmailJSDebug />
+            <EmailJSTest />
+          </div>
+        </div>
       </main>
 
       <Footer />
