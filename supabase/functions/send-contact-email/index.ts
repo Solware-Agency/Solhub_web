@@ -1,10 +1,9 @@
 import { serve } from "https://deno.land/std@0.192.0/http/server.ts";
 
-// Add Deno type declaration for the global Deno object
-declare const Deno: {
-  env: {
-    get(key: string): string | undefined;
-  };
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
 // Helper function to get consultation type label in Spanish
@@ -21,7 +20,7 @@ const getConsultationTypeLabel = (type: string): string => {
 };
 
 // Helper function to get priority label with colors
-const getPriorityLabel = (priority: string): { label: string, color: string } => {
+const getPriorityLabel = (priority: string): { label: string, color: string } = {
   const priorities: { [key: string]: { label: string, color: string } } = {
     'baja': { label: 'Baja - Información General', color: '#22c55e' },
     'media': { label: 'Media - Consulta Específica', color: '#f59e0b' },
@@ -32,30 +31,45 @@ const getPriorityLabel = (priority: string): { label: string, color: string } =>
 };
 
 serve(async (req) => {
-  // ✅ CORS preflight
-  if (req?.method === "OPTIONS") {
-    return new Response("ok", {
-      headers: {
-        "Access-Control-Allow-Origin": "*", // DO NOT CHANGE THIS
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "*" // DO NOT CHANGE THIS
-      }
+  // Handle CORS preflight
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      status: 200,
+      headers: corsHeaders,
     });
   }
 
   try {
-    const { formData } = await req?.json();
+    const { formData } = await req.json();
     
     // Get Resend API key from environment
-    const RESEND_API_KEY = Deno?.env?.get('RESEND_API_KEY');
+    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
     
     if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY not found in environment variables');
+      console.error('RESEND_API_KEY not found in environment variables');
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Configuración de email no disponible'
+      }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" }
+      });
+    }
+
+    // Validar datos requeridos
+    if (!formData.nombre || !formData.email || !formData.mensaje) {
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Faltan campos requeridos'
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" }
+      });
     }
 
     // Get consultation type and priority labels
-    const consultationType = getConsultationTypeLabel(formData?.tipo_consulta || formData?.tipoConsulta);
-    const priorityInfo = getPriorityLabel(formData?.prioridad);
+    const consultationType = getConsultationTypeLabel(formData.tipo_consulta || formData.tipoConsulta);
+    const priorityInfo = getPriorityLabel(formData.prioridad);
     const currentDate = new Date().toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long', 
@@ -94,7 +108,7 @@ serve(async (req) => {
           }
           
           .header {
-            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
             padding: 30px;
             text-align: center;
             color: white;
@@ -119,7 +133,7 @@ serve(async (req) => {
           
           .alert-banner {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 1px solid #0ea5e9;
+            border: 1px solid #8B5CF6;
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 30px;
@@ -127,14 +141,14 @@ serve(async (req) => {
           }
           
           .alert-banner h2 {
-            color: #0369a1;
+            color: #7C3AED;
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 8px;
           }
           
           .alert-banner p {
-            color: #0284c7;
+            color: #8B5CF6;
             font-size: 14px;
           }
           
@@ -157,7 +171,7 @@ serve(async (req) => {
             content: '';
             width: 4px;
             height: 20px;
-            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+            background: linear-gradient(135deg, #8B5CF6, #22D3EE);
             margin-right: 12px;
             border-radius: 2px;
           }
@@ -177,8 +191,8 @@ serve(async (req) => {
           }
           
           .info-item:hover {
-            border-color: #0ea5e9;
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+            border-color: #8B5CF6;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
           }
           
           .info-label {
@@ -211,7 +225,7 @@ serve(async (req) => {
           .message-box {
             background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);
             border: 1px solid #e2e8f0;
-            border-left: 4px solid #0ea5e9;
+            border-left: 4px solid #8B5CF6;
             border-radius: 8px;
             padding: 24px;
             margin-top: 20px;
@@ -235,7 +249,7 @@ serve(async (req) => {
           .footer-brand {
             font-size: 24px;
             font-weight: 700;
-            color: #0ea5e9;
+            color: #8B5CF6;
             margin-bottom: 12px;
           }
           
@@ -254,7 +268,7 @@ serve(async (req) => {
           }
           
           .cta-section {
-            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
             border-radius: 12px;
             padding: 24px;
             text-align: center;
@@ -294,7 +308,7 @@ serve(async (req) => {
           <!-- Header -->
           <div class="header">
             <h1>SolHub</h1>
-            <p>Plataforma Médica Inteligente</p>
+            <p>Plataforma Médica Inteligente by Solware</p>
           </div>
           
           <!-- Content -->
@@ -311,23 +325,23 @@ serve(async (req) => {
               <div class="info-grid">
                 <div class="info-item">
                   <div class="info-label">Nombre Completo</div>
-                  <div class="info-value">${formData?.nombre || 'No especificado'}</div>
+                  <div class="info-value">\${formData?.nombre || 'No especificado'}</div>
                 </div>
                 <div class="info-item">
                   <div class="info-label">Correo Electrónico</div>
-                  <div class="info-value">${formData?.email || 'No especificado'}</div>
+                  <div class="info-value">\${formData?.email || 'No especificado'}</div>
                 </div>
                 <div class="info-item">
                   <div class="info-label">Teléfono</div>
-                  <div class="info-value">${formData?.telefono || 'No especificado'}</div>
+                  <div class="info-value">\${formData?.telefono || 'No especificado'}</div>
                 </div>
                 <div class="info-item">
                   <div class="info-label">Institución</div>
-                  <div class="info-value">${formData?.institucion || 'No especificado'}</div>
+                  <div class="info-value">\${formData?.institucion || 'No especificado'}</div>
                 </div>
                 <div class="info-item">
                   <div class="info-label">Cargo</div>
-                  <div class="info-value">${formData?.cargo || 'No especificado'}</div>
+                  <div class="info-value">\${formData?.cargo || 'No especificado'}</div>
                 </div>
               </div>
             </div>
@@ -338,13 +352,13 @@ serve(async (req) => {
               <div class="info-grid">
                 <div class="info-item">
                   <div class="info-label">Tipo de Consulta</div>
-                  <div class="info-value">${consultationType}</div>
+                  <div class="info-value">\${consultationType}</div>
                 </div>
                 <div class="info-item">
                   <div class="info-label">Prioridad</div>
                   <div class="info-value">
-                    <span class="priority-badge" style="background-color: ${priorityInfo.color};">
-                      ${priorityInfo.label}
+                    <span class="priority-badge" style="background-color: \${priorityInfo.color};">
+                      \${priorityInfo.label}
                     </span>
                   </div>
                 </div>
@@ -355,7 +369,7 @@ serve(async (req) => {
             <div class="section">
               <div class="section-title">💬 Mensaje</div>
               <div class="message-box">
-                <div class="message-content">${formData?.mensaje || 'Sin mensaje específico'}</div>
+                <div class="message-content">\${formData?.mensaje || 'Sin mensaje específico'}</div>
               </div>
             </div>
             
@@ -368,10 +382,10 @@ serve(async (req) => {
           
           <!-- Footer -->
           <div class="footer">
-            <div class="footer-brand">SolHub</div>
+            <div class="footer-brand">SolHub by Solware</div>
             <div class="footer-tagline">Transformando la Gestión Médica con Inteligencia Artificial</div>
             <div class="footer-meta">
-              <p>Este correo fue generado automáticamente el ${currentDate}</p>
+              <p>Este correo fue generado automáticamente el \${currentDate}</p>
               <p>Consulta enviada desde: Formulario de Contacto SolHub</p>
               <p>© 2025 Solware Technologies - Todos los derechos reservados</p>
             </div>
@@ -381,7 +395,7 @@ serve(async (req) => {
       </html>
     `;
 
-    // Send email using Resend
+    // Send email using Resend API
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -389,30 +403,29 @@ serve(async (req) => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: 'SolHub <onboarding@resend.dev>',
         to: ['jesusdfreites@gmail.com'],
-        subject: `🔔 Nueva Consulta - ${consultationType} - ${formData?.nombre}`,
+        subject: `🔔 Nueva Consulta SolHub - ${consultationType} - ${formData?.nombre}`,
         html: emailContent
       })
     });
 
-    const emailResult = await emailResponse?.json();
+    const emailResult = await emailResponse.json();
     
-    if (!emailResponse?.ok) {
+    if (!emailResponse.ok) {
+      console.error('Resend API error:', emailResult);
       throw new Error(`Email sending failed: ${emailResult?.message || 'Unknown error'}`);
     }
 
     return new Response(JSON.stringify({
       success: true,
-      message: 'Email enviado exitosamente con formato profesional',
+      message: 'Email enviado exitosamente con Resend',
       emailId: emailResult?.id,
       timestamp: new Date().toISOString()
     }), {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*" // DO NOT CHANGE THIS
-      }
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
+
   } catch (error) {
     console.error('Error sending email:', error);
     
@@ -421,10 +434,7 @@ serve(async (req) => {
       error: error?.message || 'Error interno del servidor'
     }), {
       status: 500,
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*" // DO NOT CHANGE THIS
-      }
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
   }
 });
