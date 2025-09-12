@@ -226,7 +226,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'SolHub <onboarding@resend.dev>',
-        to: ['jesusdfreites@gmail.com'],
+        to: ['elthon.abou@gmail.com'],
         subject: `🎁 Nuevo Referido SolHub - ${referralData.referrerName} refiere a ${referralData.referredName}`,
         html: emailContent
       })

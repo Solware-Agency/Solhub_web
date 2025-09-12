@@ -404,7 +404,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'SolHub <onboarding@resend.dev>',
-        to: ['jesusdfreites@gmail.com'],
+        to: ['elthon.abou@gmail.com'],
         subject: `🔔 Nueva Consulta SolHub - ${consultationType} - ${formData?.nombre}`,
         html: emailContent
       })
