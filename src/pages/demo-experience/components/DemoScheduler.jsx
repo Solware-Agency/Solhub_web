@@ -3,7 +3,7 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 import Select from '../../../components/ui/Select';
-import { sendContactEmail } from '../../../lib/resend';
+import { sendContactEmail } from '../../../lib/emailjs';
 
 const DemoScheduler = ({ onScheduleDemo }) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -199,21 +199,52 @@ const DemoScheduler = ({ onScheduleDemo }) => {
     setIsSubmitting(true);
 
     try {
-      // Preparar datos para el email
+      // Preparar datos para el email usando el template de contacto
       const demoData = {
-        ...formData,
-        tipoConsulta: `Demo Programado - ${formData.tipoDemo}`,
-        mensaje: `Solicitud de Demo Programado:
-        
-Fecha: ${formatDate(selectedDate)}
-Hora: ${selectedTime} (Hora de Venezuela)
-Tipo de Demo: ${tipoDemoOptions.find(opt => opt.value === formData.tipoDemo)?.label}
-Cargo: ${cargoOptions.find(opt => opt.value === formData.cargo)?.label}
+        nombre: formData.nombre,
+        email: formData.email,
+        telefono: formData.telefono,
+        institucion: formData.institucion,
+        cargo: formData.cargo,
+        tipoConsulta: 'Demo Programado',
+        asunto: `🎯 Demo Programado - ${formData.nombre}`,
+        mensaje: `🎯 SOLICITUD DE DEMO PROGRAMADO
 
-${formData.mensaje ? `Mensaje adicional: ${formData.mensaje}` : ''}`
+📅 INFORMACIÓN DEL DEMO:
+• Fecha: ${formatDate(selectedDate)}
+• Hora: ${selectedTime} (Hora de Venezuela)
+• Tipo de Demo: ${tipoDemoOptions.find(opt => opt.value === formData.tipoDemo)?.label}
+• Duración: 45 minutos
+• Zona Horaria: Venezuela (UTC-4)
+
+👤 INFORMACIÓN DEL CONTACTO:
+• Nombre: ${formData.nombre}
+• Email: ${formData.email}
+• Teléfono: ${formData.telefono}
+• Institución: ${formData.institucion}
+• Cargo: ${cargoOptions.find(opt => opt.value === formData.cargo)?.label}
+
+💬 MENSAJE ADICIONAL:
+${formData.mensaje || 'Sin mensaje adicional'}
+
+📧 Fecha de solicitud: ${new Date().toLocaleDateString('es-ES', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })}
+
+Por favor, confirma este demo o contacta al cliente para reprogramar si es necesario.`
       };
 
-      // Enviar email usando Resend
+      // Debug: Mostrar datos que se van a enviar
+      console.log('🎯 Datos del demo que se van a enviar:', demoData);
+      console.log('📅 Fecha seleccionada:', selectedDate);
+      console.log('🕐 Hora seleccionada:', selectedTime);
+      console.log('📝 Fecha formateada:', formatDate(selectedDate));
+
+      // Enviar email usando el template de contacto
       const result = await sendContactEmail(demoData);
       
       if (result.success) {
