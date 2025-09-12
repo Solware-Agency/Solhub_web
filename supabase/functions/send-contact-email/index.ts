@@ -20,7 +20,7 @@ const getConsultationTypeLabel = (type: string): string => {
 };
 
 // Helper function to get priority label with colors
-const getPriorityLabel = (priority: string): { label: string, color: string } = {
+const getPriorityLabel = (priority: string): { label: string, color: string } => {
   const priorities: { [key: string]: { label: string, color: string } } = {
     'baja': { label: 'Baja - Información General', color: '#22c55e' },
     'media': { label: 'Media - Consulta Específica', color: '#f59e0b' },
