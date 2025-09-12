@@ -7,6 +7,8 @@ const EMAILJS_CONFIG = {
   publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
   contactTemplateId: import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID,
   referralTemplateId: import.meta.env.VITE_EMAILJS_REFERRAL_TEMPLATE_ID,
+  demoTemplateId: import.meta.env.VITE_EMAILJS_DEMO_TEMPLATE_ID,
+  contactEmail: import.meta.env.VITE_CONTACT_EMAIL || 'contacto@solhub.com',
 };
 
 // Inicializar EmailJS
@@ -45,9 +47,13 @@ export const sendContactEmail = async (formData) => {
       tipo_consulta: formData.tipoConsulta || 'No especificado',
       prioridad: formData.prioridad || 'No especificada',
       asunto: formData.asunto || 'Consulta general',
-      to_email: 'contacto@solhub.com', // Email de destino
+      // Campos específicos para demo programado
+      fecha_demo: formData.fechaDemo || '',
+      hora_demo: formData.horaDemo || '',
+      tipo_demo: formData.tipoDemo || '',
+      to_email: EMAILJS_CONFIG.contactEmail, // Email de destino
       reply_to: formData.email,
-      subject: `Nueva consulta de ${formData.nombre}`,
+      subject: formData.asunto || `Nueva consulta de ${formData.nombre}`,
       date: new Date().toLocaleDateString('es-ES', {
         year: 'numeric',
         month: 'long',
@@ -56,6 +62,12 @@ export const sendContactEmail = async (formData) => {
         minute: '2-digit'
       })
     };
+
+    // Debug: Mostrar datos que se van a enviar a EmailJS
+    console.log('📤 Datos que se envían a EmailJS:', templateParams);
+    console.log('📅 Fecha demo:', formData.fechaDemo);
+    console.log('🕐 Hora demo:', formData.horaDemo);
+    console.log('🎯 Tipo demo:', formData.tipoDemo);
 
     console.log('Enviando email de contacto con EmailJS...');
     
@@ -78,6 +90,81 @@ export const sendContactEmail = async (formData) => {
     return {
       success: false,
       message: 'Error al enviar el email. Por favor, inténtalo de nuevo.',
+      error: error.message
+    };
+  }
+};
+
+// Función para enviar email de demo programado
+export const sendDemoEmail = async (demoData) => {
+  try {
+    // Verificar configuración
+    if (!EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.demoTemplateId) {
+      throw new Error('Configuración de EmailJS para demo incompleta');
+    }
+
+    // Inicializar EmailJS
+    if (!initEmailJS()) {
+      throw new Error('No se pudo inicializar EmailJS');
+    }
+
+    // Preparar datos específicos para el template de demo
+    const templateParams = {
+      // Información del contacto
+      from_name: demoData.nombre,
+      from_email: demoData.email,
+      telefono: demoData.telefono || 'No proporcionado',
+      institucion: demoData.institucion || 'No proporcionada',
+      cargo: demoData.cargo || 'No proporcionado',
+      
+      // Información específica del demo
+      fecha_demo: demoData.fechaDemo || 'No especificada',
+      hora_demo: demoData.horaDemo || 'No especificada',
+      tipo_demo: demoData.tipoDemo || 'No especificado',
+      mensaje_adicional: demoData.mensaje || 'Sin mensaje adicional',
+      
+      // Configuración del email
+      to_email: EMAILJS_CONFIG.contactEmail,
+      reply_to: demoData.email,
+      subject: `🎯 Demo Programado - ${demoData.nombre} - ${demoData.fechaDemo}`,
+      
+      // Fecha de envío
+      fecha_envio: new Date().toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+      
+      // Información adicional
+      zona_horaria: 'Venezuela (UTC-4)',
+      duracion_demo: '45 minutos',
+      tipo_consulta: 'Demo Programado'
+    };
+
+    console.log('🎯 Enviando email de demo con EmailJS...');
+    console.log('📤 Parámetros del template de demo:', templateParams);
+    
+    const result = await emailjs.send(
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.demoTemplateId,
+      templateParams
+    );
+
+    console.log('✅ Email de demo enviado exitosamente:', result);
+    
+    return {
+      success: true,
+      message: 'Demo programado correctamente. Te contactaremos pronto.',
+      data: result
+    };
+
+  } catch (error) {
+    console.error('❌ Error enviando email de demo:', error);
+    return {
+      success: false,
+      message: 'Error al programar el demo. Por favor, inténtalo de nuevo.',
       error: error.message
     };
   }
@@ -153,6 +240,7 @@ export const checkEmailJSConfig = () => {
     serviceId: !!EMAILJS_CONFIG.serviceId,
     contactTemplateId: !!EMAILJS_CONFIG.contactTemplateId,
     referralTemplateId: !!EMAILJS_CONFIG.referralTemplateId,
+    demoTemplateId: !!EMAILJS_CONFIG.demoTemplateId,
   };
 
   const isConfigured = Object.values(config).every(Boolean);
@@ -189,8 +277,28 @@ export const formatReferralData = (referralData) => {
   };
 };
 
+// Función de prueba para verificar datos del demo
+export const testDemoData = (formData) => {
+  console.log('🧪 PRUEBA - Datos recibidos en EmailJS:');
+  console.log('📝 formData completo:', formData);
+  console.log('📅 fechaDemo:', formData.fechaDemo);
+  console.log('🕐 horaDemo:', formData.horaDemo);
+  console.log('🎯 tipoDemo:', formData.tipoDemo);
+  console.log('📧 asunto:', formData.asunto);
+  console.log('👤 cargo:', formData.cargo);
+  
+  return {
+    fechaDemo: formData.fechaDemo || 'NO ENCONTRADA',
+    horaDemo: formData.horaDemo || 'NO ENCONTRADA',
+    tipoDemo: formData.tipoDemo || 'NO ENCONTRADO',
+    asunto: formData.asunto || 'NO ENCONTRADO',
+    cargo: formData.cargo || 'NO ENCONTRADO'
+  };
+};
+
 export default {
   sendContactEmail,
+  sendDemoEmail,
   sendReferralEmail,
   checkEmailJSConfig,
   formatContactData,

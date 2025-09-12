@@ -9,6 +9,8 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 VITE_EMAILJS_SERVICE_ID=your_service_id_here
 VITE_EMAILJS_CONTACT_TEMPLATE_ID=your_contact_template_id_here
 VITE_EMAILJS_REFERRAL_TEMPLATE_ID=your_referral_template_id_here
+VITE_EMAILJS_DEMO_TEMPLATE_ID=your_demo_template_id_here
+VITE_CONTACT_EMAIL=tu-email@ejemplo.com
 ```
 
 ## Pasos para configurar EmailJS:
@@ -20,9 +22,10 @@ VITE_EMAILJS_REFERRAL_TEMPLATE_ID=your_referral_template_id_here
    - Copia el "Service ID"
 
 3. **Crear templates**:
-   - Ve a "Email Templates" y crea dos templates:
+   - Ve a "Email Templates" y crea tres templates:
      - **Template de Contacto**: Para emails de contacto general
      - **Template de Referido**: Para emails de referidos
+     - **Template de Demo**: Para emails de demo programado
 
 4. **Obtener Public Key**:
    - Ve a "Account" > "General" y copia tu "Public Key"
@@ -37,12 +40,14 @@ VITE_EMAILJS_REFERRAL_TEMPLATE_ID=your_referral_template_id_here
 - `VITE_EMAILJS_SERVICE_ID`: ID del servicio de email configurado
 - `VITE_EMAILJS_CONTACT_TEMPLATE_ID`: ID del template para emails de contacto
 - `VITE_EMAILJS_REFERRAL_TEMPLATE_ID`: ID del template para emails de referidos
+- `VITE_EMAILJS_DEMO_TEMPLATE_ID`: ID del template para emails de demo programado
+- `VITE_CONTACT_EMAIL`: Email de destino donde llegarán los correos de contacto (opcional, por defecto: contacto@solhub.com)
 
 ## Templates recomendados:
 
 ### Template de Contacto:
 ```
-Asunto: Nueva consulta de {{from_name}}
+Asunto: {{subject}}
 
 Hola,
 
@@ -50,11 +55,61 @@ Has recibido una nueva consulta desde SolHub:
 
 Nombre: {{from_name}}
 Email: {{from_email}}
+Teléfono: {{telefono}}
+Institución: {{institucion}}
+Cargo: {{cargo}}
+Tipo de Consulta: {{tipo_consulta}}
+Prioridad: {{prioridad}}
+
 Mensaje: {{message}}
 
-Fecha: {{date}}
+{% if fecha_demo %}
+--- INFORMACIÓN DE DEMO PROGRAMADO ---
+Fecha del Demo: {{fecha_demo}}
+Hora del Demo: {{hora_demo}}
+Tipo de Demo: {{tipo_demo}}
+{% endif %}
+
+Fecha de envío: {{date}}
 
 Puedes responder directamente a este email.
+```
+
+### Template de Demo Programado:
+```
+Asunto: {{subject}}
+
+🎯 NUEVA SOLICITUD DE DEMO PROGRAMADO
+
+Hola,
+
+Se ha programado una nueva demostración de SolHub:
+
+👤 INFORMACIÓN DEL CONTACTO:
+Nombre: {{from_name}}
+Email: {{from_email}}
+Teléfono: {{telefono}}
+Institución: {{institucion}}
+Cargo: {{cargo}}
+
+📅 INFORMACIÓN DEL DEMO:
+Fecha: {{fecha_demo}}
+Hora: {{hora_demo}}
+Zona Horaria: {{zona_horaria}}
+Tipo de Demo: {{tipo_demo}}
+Duración: {{duracion_demo}}
+
+💬 MENSAJE ADICIONAL:
+{{mensaje_adicional}}
+
+📧 INFORMACIÓN TÉCNICA:
+Fecha de solicitud: {{fecha_envio}}
+Tipo de consulta: {{tipo_consulta}}
+
+Puedes responder directamente a este email para confirmar o reprogramar el demo.
+
+Saludos,
+Equipo SolHub
 ```
 
 ### Template de Referido:
