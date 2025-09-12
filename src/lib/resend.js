@@ -1,7 +1,35 @@
 // Sistema de envío de emails con múltiples opciones
 export const sendContactEmail = async (formData) => {
   try {
-    // Opción 1: Intentar con Supabase Edge Functions
+    // Opción 1: Intentar con Vercel Serverless Functions (para deploy en Vercel)
+    try {
+      console.log('Intentando envío con Vercel API...');
+      
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({ formData }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          return {
+            success: true,
+            message: 'Email enviado correctamente con Vercel + Resend.',
+          };
+        }
+      }
+      
+      console.log('Vercel API no disponible, intentando con Supabase...');
+    } catch (vercelError) {
+      console.log('Error con Vercel API:', vercelError);
+    }
+
+    // Opción 2: Intentar con Supabase Edge Functions (para Bolt)
     const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
     const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
     
@@ -33,7 +61,7 @@ export const sendContactEmail = async (formData) => {
       console.log('Supabase Edge Functions no disponible, intentando con EmailJS...');
     }
 
-    // Opción 2: Usar EmailJS como alternativa
+    // Opción 3: Usar EmailJS como alternativa
     const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -168,7 +196,35 @@ export const sendContactEmail = async (formData) => {
 // Función para enviar referidos con las mismas opciones
 export const sendReferralEmail = async (referralData) => {
   try {
-    // Opción 1: Supabase Edge Functions
+    // Opción 1: Intentar con Vercel Serverless Functions (para deploy en Vercel)
+    try {
+      console.log('Intentando envío de referido con Vercel API...');
+      
+      const response = await fetch('/api/send-referral', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({ referralData }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          return {
+            success: true,
+            message: 'Referido enviado correctamente con Vercel + Resend.',
+          };
+        }
+      }
+      
+      console.log('Vercel API no disponible, intentando con Supabase...');
+    } catch (vercelError) {
+      console.log('Error con Vercel API:', vercelError);
+    }
+
+    // Opción 2: Supabase Edge Functions
     const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
     const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
     
