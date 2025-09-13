@@ -21,7 +21,7 @@ const PricingHeader = () => {
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
         <div className="flex items-center space-x-2 text-success">
           <Icon name="CheckCircle" size={16} />
-          <span>Precios en Bolívares</span>
+          <span>Precios en Dólares</span>
         </div>
         <div className="flex items-center space-x-2 text-secondary">
           <Icon name="Zap" size={16} />

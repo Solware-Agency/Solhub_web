@@ -16,7 +16,7 @@ const CTASection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const message = "Hola! Me interesa conocer más sobre SolHub y las capacidades de IA para transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
     window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 

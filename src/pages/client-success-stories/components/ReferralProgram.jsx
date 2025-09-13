@@ -1,9 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const ReferralProgram = () => {
+  const navigate = useNavigate();
+
+  const handleReferralClick = () => {
+    navigate('/contact-support');
+    // Esperar a que se cargue la página y luego hacer scroll
+    setTimeout(() => {
+      const element = document.getElementById('referral-form');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const handleInfoClick = () => {
+    navigate('/contact-support');
+    // Esperar a que se cargue la página y luego hacer scroll
+    setTimeout(() => {
+      const element = document.getElementById('referral-program');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   const referralStories = [
     {
       referrer: {
@@ -201,6 +226,7 @@ const ReferralProgram = () => {
             iconName="UserPlus"
             iconPosition="left"
             className="bg-gradient-medical hover:opacity-90"
+            onClick={handleReferralClick}
           >
             Referir un Colega
           </Button>
@@ -208,6 +234,7 @@ const ReferralProgram = () => {
             variant="outline"
             iconName="Info"
             iconPosition="left"
+            onClick={handleInfoClick}
           >
             Más Información del Programa
           </Button>

@@ -4,6 +4,7 @@ import PageLayout from '../../components/layout/PageLayout';
 import Footer from '../../components/layout/Footer';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
+import useActions from '../../hooks/useActions';
 
 import ModuleCard from './components/ModuleCard';
 import ConfiguratorSidebar from './components/ConfiguratorSidebar';
@@ -16,6 +17,14 @@ const ModulesShowcase = () => {
   const [demoModule, setDemoModule] = useState(null);
   const [hoveredModule, setHoveredModule] = useState(null);
   const [filterCategory, setFilterCategory] = useState('all');
+  const { handleWhatsAppClick } = useActions();
+
+  const handleExploreModules = () => {
+    const modulesSection = document.getElementById('modules-selection');
+    if (modulesSection) {
+      modulesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const seoConfig = {
     title: 'Módulos',
@@ -392,6 +401,7 @@ const ModulesShowcase = () => {
                 iconName="Play"
                 iconPosition="left"
                 className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+                onClick={handleExploreModules}
               >
                 Explorar Módulos
               </Button>
@@ -445,7 +455,7 @@ const ModulesShowcase = () => {
       </section>
 
       {/* Modules Grid */}
-      <section className="py-16">
+      <section id="modules-selection" className="py-16">
         <div className="container-medical">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Modules */}
@@ -582,6 +592,7 @@ const ModulesShowcase = () => {
               iconName="MessageCircle"
               iconPosition="left"
               className="border-white text-white hover:bg-white hover:text-primary"
+              onClick={handleWhatsAppClick}
             >
               Contactar por WhatsApp
             </Button>

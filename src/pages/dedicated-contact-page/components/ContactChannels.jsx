@@ -5,9 +5,9 @@ import Icon from '../../../components/AppIcon';
 
 const ContactChannels = () => {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Hola, me interesa conocer más sobre SolHub para mi laboratorio médico en Venezuela. ¿Podrían brindarme información personalizada?');
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
     const phoneNumber = '584129974533'; // Venezuelan WhatsApp number
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const handleInstagramClick = () => {

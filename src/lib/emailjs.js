@@ -15,7 +15,6 @@ const EMAILJS_CONFIG = {
 const initEmailJS = () => {
   if (EMAILJS_CONFIG.publicKey) {
     emailjs.init(EMAILJS_CONFIG.publicKey);
-    console.log('EmailJS inicializado correctamente');
     return true;
   } else {
     console.error('VITE_EMAILJS_PUBLIC_KEY no está configurada');
@@ -63,13 +62,6 @@ export const sendContactEmail = async (formData) => {
       })
     };
 
-    // Debug: Mostrar datos que se van a enviar a EmailJS
-    console.log('📤 Datos que se envían a EmailJS:', templateParams);
-    console.log('📅 Fecha demo:', formData.fechaDemo);
-    console.log('🕐 Hora demo:', formData.horaDemo);
-    console.log('🎯 Tipo demo:', formData.tipoDemo);
-
-    console.log('Enviando email de contacto con EmailJS...');
     
     const result = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
@@ -77,7 +69,6 @@ export const sendContactEmail = async (formData) => {
       templateParams
     );
 
-    console.log('Email enviado exitosamente:', result);
     
     return {
       success: true,
@@ -143,8 +134,6 @@ export const sendDemoEmail = async (demoData) => {
       tipo_consulta: 'Demo Programado'
     };
 
-    console.log('🎯 Enviando email de demo con EmailJS...');
-    console.log('📤 Parámetros del template de demo:', templateParams);
     
     const result = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
@@ -152,7 +141,6 @@ export const sendDemoEmail = async (demoData) => {
       templateParams
     );
 
-    console.log('✅ Email de demo enviado exitosamente:', result);
     
     return {
       success: true,
@@ -207,7 +195,6 @@ export const sendReferralEmail = async (referralData) => {
       })
     };
 
-    console.log('Enviando email de referido con EmailJS...');
     
     const result = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
@@ -215,7 +202,6 @@ export const sendReferralEmail = async (referralData) => {
       templateParams
     );
 
-    console.log('Email de referido enviado exitosamente:', result);
     
     return {
       success: true,
@@ -245,8 +231,6 @@ export const checkEmailJSConfig = () => {
 
   const isConfigured = Object.values(config).every(Boolean);
   
-  console.log('Configuración de EmailJS:', config);
-  console.log('EmailJS configurado:', isConfigured);
   
   return {
     isConfigured,
@@ -277,24 +261,6 @@ export const formatReferralData = (referralData) => {
   };
 };
 
-// Función de prueba para verificar datos del demo
-export const testDemoData = (formData) => {
-  console.log('🧪 PRUEBA - Datos recibidos en EmailJS:');
-  console.log('📝 formData completo:', formData);
-  console.log('📅 fechaDemo:', formData.fechaDemo);
-  console.log('🕐 horaDemo:', formData.horaDemo);
-  console.log('🎯 tipoDemo:', formData.tipoDemo);
-  console.log('📧 asunto:', formData.asunto);
-  console.log('👤 cargo:', formData.cargo);
-  
-  return {
-    fechaDemo: formData.fechaDemo || 'NO ENCONTRADA',
-    horaDemo: formData.horaDemo || 'NO ENCONTRADA',
-    tipoDemo: formData.tipoDemo || 'NO ENCONTRADO',
-    asunto: formData.asunto || 'NO ENCONTRADO',
-    cargo: formData.cargo || 'NO ENCONTRADO'
-  };
-};
 
 export default {
   sendContactEmail,

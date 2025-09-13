@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
@@ -7,6 +8,7 @@ import MetricsOverview from './components/MetricsOverview';
 import FilterBar from './components/FilterBar';
 import StoryModal from './components/StoryModal';
 import ReferralProgram from './components/ReferralProgram';
+import useActions from '../../hooks/useActions';
 
 const ClientSuccessStories = () => {
   const [activeFilter, setActiveFilter] = useState({ type: 'all', size: 'all' });
@@ -14,6 +16,7 @@ const ClientSuccessStories = () => {
   const [selectedStory, setSelectedStory] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filteredStories, setFilteredStories] = useState([]);
+  const { handleWhatsAppClick } = useActions();
 
   const successStories = [
     {
@@ -341,21 +344,24 @@ const ClientSuccessStories = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                variant="default"
-                size="lg"
-                iconName="Play"
-                iconPosition="left"
-                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
-              >
-                Ver Demo en Vivo
-              </Button>
+              <Link to="/demo-experience">
+                <Button
+                  variant="default"
+                  size="lg"
+                  iconName="Play"
+                  iconPosition="left"
+                  className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+                >
+                  Ver Demo en Vivo
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="lg"
                 iconName="MessageCircle"
                 iconPosition="left"
                 className="border-success text-success hover:bg-success/10"
+                onClick={handleWhatsAppClick}
               >
                 Contactar por WhatsApp
               </Button>

@@ -34,9 +34,9 @@ const PricingCalculator = () => {
       name: 'Laboratorio Independiente',
       description: 'Solución completa para laboratorios independientes pequeños y medianos',
       icon: 'Microscope',
-      monthlyPrice: 120000,
+      monthlyPrice: 120,
       monthlyPriceUSD: 120,
-      setupFee: 180000,
+      setupFee: 180,
       features: [
         'Gestión de pacientes y estudios',
         'Reportes digitales automatizados',
@@ -53,9 +53,9 @@ const PricingCalculator = () => {
       name: 'Clínica con Laboratorio',
       description: 'Integración perfecta entre servicios clínicos y laboratorio interno',
       icon: 'Building2',
-      monthlyPrice: 280000,
+      monthlyPrice: 280,
       monthlyPriceUSD: 280,
-      setupFee: 350000,
+      setupFee: 350,
       features: [
         'Gestión integral clínica-laboratorio',
         'Historia clínica unificada',
@@ -72,9 +72,9 @@ const PricingCalculator = () => {
       name: 'Red de Diagnóstico',
       description: 'Gestión centralizada para múltiples sedes y laboratorios',
       icon: 'Network',
-      monthlyPrice: 420000,
+      monthlyPrice: 420,
       monthlyPriceUSD: 420,
-      setupFee: 600000,
+      setupFee: 600,
       features: [
         'Gestión multi-sede centralizada',
         'Dashboard ejecutivo en tiempo real',
@@ -95,9 +95,9 @@ const PricingCalculator = () => {
       name: 'IA para Diagnósticos',
       description: 'Asistente de inteligencia artificial para interpretación de resultados',
       icon: 'Brain',
-      monthlyPrice: 80000,
+      monthlyPrice: 80,
       monthlyPriceUSD: 80,
-      setupFee: 120000,
+      setupFee: 120,
       features: ['Análisis automático de patrones', 'Sugerencias diagnósticas', 'Alertas de valores críticos']
     },
     {
@@ -105,9 +105,9 @@ const PricingCalculator = () => {
       name: 'Telemedicina',
       description: 'Consultas médicas remotas integradas con resultados de laboratorio',
       icon: 'Video',
-      monthlyPrice: 60000,
+      monthlyPrice: 60,
       monthlyPriceUSD: 60,
-      setupFee: 90000,
+      setupFee: 90,
       features: ['Videoconsultas HD', 'Compartir resultados en tiempo real', 'Grabación de sesiones']
     },
     {
@@ -115,9 +115,9 @@ const PricingCalculator = () => {
       name: 'App Móvil Pacientes',
       description: 'Aplicación móvil para que pacientes accedan a sus resultados',
       icon: 'Smartphone',
-      monthlyPrice: 40000,
+      monthlyPrice: 40,
       monthlyPriceUSD: 40,
-      setupFee: 60000,
+      setupFee: 60,
       features: ['Resultados en tiempo real', 'Notificaciones push', 'Historial médico']
     },
     {
@@ -125,9 +125,9 @@ const PricingCalculator = () => {
       name: 'Reportes Avanzados',
       description: 'Sistema de reportes ejecutivos y análisis de tendencias',
       icon: 'BarChart3',
-      monthlyPrice: 50000,
+      monthlyPrice: 50,
       monthlyPriceUSD: 50,
-      setupFee: 75000,
+      setupFee: 75,
       features: ['Dashboards personalizados', 'Análisis de tendencias', 'Exportación automática']
     },
     {
@@ -135,9 +135,9 @@ const PricingCalculator = () => {
       name: 'Control de Calidad',
       description: 'Módulo especializado para control de calidad y trazabilidad',
       icon: 'Shield',
-      monthlyPrice: 70000,
+      monthlyPrice: 70,
       monthlyPriceUSD: 70,
-      setupFee: 105000,
+      setupFee: 105,
       features: ['Trazabilidad completa', 'Controles automáticos', 'Certificaciones ISO']
     },
     {
@@ -145,9 +145,9 @@ const PricingCalculator = () => {
       name: 'Inventario Avanzado',
       description: 'Gestión avanzada de inventario con predicción de demanda',
       icon: 'Package',
-      monthlyPrice: 45000,
+      monthlyPrice: 45,
       monthlyPriceUSD: 45,
-      setupFee: 67500,
+      setupFee: 67.5,
       features: ['Predicción de demanda', 'Alertas automáticas', 'Integración con proveedores']
     }
   ];

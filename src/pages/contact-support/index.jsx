@@ -8,14 +8,10 @@ import ContactForm from './components/ContactForm';
 import OfficeLocations from './components/OfficeLocations';
 import FAQ from './components/FAQ';
 import ReferralProgram from './components/ReferralProgram';
-import EmailJSTest from '../../components/EmailJSTest';
-import EmailJSDebug from '../../components/EmailJSDebug';
+import useActions from '../../hooks/useActions';
 
 const ContactSupport = () => {
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?');
-    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
-  };
+  const { handleWhatsAppClick } = useActions();
 
   const handleEmailClick = () => {
     window.open('mailto:soporte@solhub.com.ve?subject=Consulta sobre SolHub', '_self');
@@ -113,16 +109,6 @@ const ContactSupport = () => {
         
         <ReferralProgram />
         
-        {/* EmailJS Debug and Test Components - Remove after testing */}
-        <div className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 space-y-8">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-              🧪 Debug y Prueba de EmailJS
-            </h2>
-            <EmailJSDebug />
-            <EmailJSTest />
-          </div>
-        </div>
       </main>
 
       <Footer />

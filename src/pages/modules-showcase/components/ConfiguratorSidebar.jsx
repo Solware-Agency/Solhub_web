@@ -70,7 +70,7 @@ const ConfiguratorSidebar = ({
                           {module.name}
                         </span>
                         <div className="text-xs text-muted-foreground">
-                          Bs. {module.price?.toLocaleString('es-VE')}/mes
+                          ${module.price}/mes
                         </div>
                       </div>
                     </div>
@@ -93,7 +93,7 @@ const ConfiguratorSidebar = ({
                   Total mensual:
                 </span>
                 <span className="text-lg font-bold text-primary">
-                  Bs. {totalPrice?.toLocaleString('es-VE')}
+                  ${totalPrice}
                 </span>
               </div>
               

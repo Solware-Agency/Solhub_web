@@ -53,7 +53,7 @@ const ReferralProgram = () => {
       institution: 'Laboratorio San Rafael',
       city: 'Caracas',
       referrals: 3,
-      savings: '$2,400 USD',
+      savings: '$2,400',
       testimonial: 'Referir SolHub a mis colegas ha sido muy gratificante. No solo ayudo a otros laboratorios a modernizarse, sino que también obtengo beneficios significativos.'
     },
     {
@@ -61,7 +61,7 @@ const ReferralProgram = () => {
       institution: 'Clínica Integral Zulia',
       city: 'Maracaibo',
       referrals: 2,
-      savings: '$1,800 USD',
+      savings: '$1,800',
       testimonial: 'El programa de referidos de SolHub es transparente y justo. Mis referidos están muy satisfechos con el descuento y yo con los beneficios recibidos.'
     }
   ];
@@ -157,7 +157,7 @@ const ReferralProgram = () => {
   }
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section id="referral-program" className="py-16 lg:py-24 bg-background">
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -191,7 +191,7 @@ const ReferralProgram = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Referral Form */}
-          <div className="card-medical-elevated p-8">
+          <div id="referral-form" className="card-medical-elevated p-8">
             <div className="flex items-center space-x-3 mb-8">
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                 <Icon name="UserPlus" size={24} className="text-primary" />

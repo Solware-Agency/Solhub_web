@@ -141,7 +141,7 @@ const ModuleCard = ({
               Precio desde:
             </span>
             <span className="text-lg font-bold text-primary">
-              Bs. {module.price?.toLocaleString('es-VE')}
+              ${module.price}
             </span>
             <span className="text-xs text-muted-foreground">
               /mes por sede

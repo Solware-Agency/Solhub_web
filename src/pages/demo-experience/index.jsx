@@ -97,10 +97,8 @@ const DemoExperience = () => {
 
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent(
-      'Hola! Me interesa programar un demo de SolHub. ¿Podrían ayudarme con la programación?'
-    );
-    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const renderStepContent = () => {
@@ -110,10 +108,6 @@ const DemoExperience = () => {
           <div className="space-y-8">
             {/* Hero Section */}
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-                <Icon name="Play" size={16} />
-                <span>Demo Interactivo Disponible</span>
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">
                 Experiencia de <span className="text-gradient-medical">Demostración</span>
               </h1>
@@ -190,7 +184,7 @@ const DemoExperience = () => {
         );
 
       case 'preview':
-        return <PlatformPreview />;
+        return <PlatformPreview onScheduleDemo={() => setCurrentStep('schedule')} />;
 
       case 'schedule':
         return (

@@ -202,7 +202,7 @@ const ContactForm = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="card-medical-elevated p-8 lg:p-12">
+          <div id="contact-form" className="card-medical-elevated p-8 lg:p-12">
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Error message */}
               {errors?.submit && (
