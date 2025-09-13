@@ -47,10 +47,10 @@ const PackageSelector = ({ selectedPackage, onPackageSelect, packages }) => {
               
               <div className="space-y-2">
                 <div className="text-2xl font-bold text-gradient-medical">
-                  Bs. {pkg?.monthlyPrice?.toLocaleString('es-VE')}
+                  ${pkg?.monthlyPrice}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  ~${pkg?.monthlyPriceUSD} USD/mes
+                  USD/mes
                 </div>
               </div>
               

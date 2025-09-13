@@ -1,10 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import useActions from '../../../hooks/useActions';
 
 
 const FAQ = () => {
   const [openItems, setOpenItems] = useState(new Set([0])); // First item open by default
+  const navigate = useNavigate();
+  const { handleWhatsAppClick } = useActions();
+
+  const handleScheduleClick = () => {
+    navigate('/contact-support');
+    // Esperar a que se cargue la página y luego hacer scroll al formulario de contacto
+    setTimeout(() => {
+      const element = document.getElementById('contact-form');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
 
   const faqCategories = [
     {
@@ -229,6 +244,7 @@ const FAQ = () => {
                 iconName="MessageCircle"
                 iconPosition="left"
                 className="bg-success hover:bg-success/90"
+                onClick={handleWhatsAppClick}
               >
                 WhatsApp Directo
               </Button>
@@ -236,6 +252,7 @@ const FAQ = () => {
                 variant="outline"
                 iconName="Calendar"
                 iconPosition="left"
+                onClick={handleScheduleClick}
               >
                 Agendar Consulta
               </Button>

@@ -7,14 +7,14 @@ const ROIComparison = () => {
       size: "Laboratorio Pequeño",
       description: "1-2 técnicos, 50-100 estudios/día",
       currentCosts: {
-        monthly: 180000,
+        monthly: 500,
         items: ["Personal administrativo", "Papelería y archivos", "Errores manuales", "Tiempo de reportes"]
       },
       withSolHub: {
-        monthly: 120000,
+        monthly: 120,
         items: ["Automatización completa", "Reportes digitales", "Reducción de errores", "Ahorro de tiempo"]
       },
-      savings: 60000,
+      savings: 380,
       savingsPercent: 33,
       paybackMonths: 3
     },
@@ -22,14 +22,14 @@ const ROIComparison = () => {
       size: "Clínica Mediana",
       description: "3-5 técnicos, 200-400 estudios/día",
       currentCosts: {
-        monthly: 450000,
+        monthly: 1250,
         items: ["Múltiples administrativos", "Gestión de inventario manual", "Coordinación compleja", "Reportes tardíos"]
       },
       withSolHub: {
-        monthly: 280000,
+        monthly: 280,
         items: ["Gestión centralizada", "Inventario automático", "Coordinación digital", "Reportes instantáneos"]
       },
-      savings: 170000,
+      savings: 970,
       savingsPercent: 38,
       paybackMonths: 2
     },
@@ -37,14 +37,14 @@ const ROIComparison = () => {
       size: "Red de Diagnóstico",
       description: "6+ técnicos, 500+ estudios/día",
       currentCosts: {
-        monthly: 720000,
+        monthly: 2000,
         items: ["Equipo administrativo completo", "Múltiples sedes", "Coordinación manual", "Duplicación de procesos"]
       },
       withSolHub: {
-        monthly: 420000,
+        monthly: 420,
         items: ["Gestión multi-sede", "Procesos unificados", "Coordinación automática", "Eficiencia escalable"]
       },
-      savings: 300000,
+      savings: 1580,
       savingsPercent: 42,
       paybackMonths: 2
     }
@@ -83,7 +83,7 @@ const ROIComparison = () => {
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-error">
-                      Bs. {data?.currentCosts?.monthly?.toLocaleString('es-VE')}
+                      ${data?.currentCosts?.monthly}
                     </div>
                     <div className="text-xs text-muted-foreground">por mes</div>
                   </div>
@@ -107,7 +107,7 @@ const ROIComparison = () => {
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-success">
-                      Bs. {data?.withSolHub?.monthly?.toLocaleString('es-VE')}
+                      ${data?.withSolHub?.monthly}
                     </div>
                     <div className="text-xs text-muted-foreground">por mes</div>
                   </div>
@@ -127,7 +127,7 @@ const ROIComparison = () => {
             <div className="bg-gradient-medical-subtle border border-primary/20 rounded-lg p-4">
               <div className="text-center space-y-2">
                 <div className="text-2xl font-bold text-gradient-medical">
-                  Bs. {data?.savings?.toLocaleString('es-VE')}
+                  ${data?.savings}
                 </div>
                 <div className="text-sm text-muted-foreground">
                   Ahorro mensual ({data?.savingsPercent}%)

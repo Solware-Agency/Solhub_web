@@ -2,8 +2,6 @@ import React from 'react';
 import PageLayout from '../../components/layout/PageLayout';
 import AIHeroSection from './components/AIHeroSection';
 import AICapabilitiesSection from './components/AICapabilitiesSection';
-import RealUseCasesSection from './components/RealUseCasesSection';
-import InteractiveAnalyzerSection from './components/InteractiveAnalyzerSection';
 import AIProcessVisualization from './components/AIProcessVisualization';
 import TrustBuildingSection from './components/TrustBuildingSection';
 import CTASection from './components/CTASection';
@@ -20,10 +18,7 @@ const AIIntelligenceCenter = () => {
   };
 
   const handleDemoClickWithScroll = () => {
-    const analyzerSection = document.getElementById('interactive-analyzer');
-    if (analyzerSection) {
-      analyzerSection?.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = '/demo-experience';
   };
 
   const handleLearnMoreClick = () => {
@@ -49,13 +44,7 @@ const AIIntelligenceCenter = () => {
       {/* Process Visualization */}
       <AIProcessVisualization />
 
-      {/* Real Use Cases */}
-      <RealUseCasesSection />
 
-      {/* Interactive Analyzer */}
-      <div id="interactive-analyzer">
-        <InteractiveAnalyzerSection />
-      </div>
 
       {/* Trust Building */}
       <TrustBuildingSection />

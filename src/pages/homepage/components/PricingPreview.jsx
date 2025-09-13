@@ -12,7 +12,7 @@ const PricingPreview = () => {
       name: 'Starter',
       subtitle: 'Para laboratorios pequeños',
       price: {
-        bs: '2.850',
+        bs: '$75',
         usd: '75'
       },
       period: 'mes',
@@ -37,7 +37,7 @@ const PricingPreview = () => {
       name: 'Professional',
       subtitle: 'Más popular para clínicas',
       price: {
-        bs: '4.750',
+        bs: '$125',
         usd: '125'
       },
       period: 'mes',
@@ -61,7 +61,7 @@ const PricingPreview = () => {
       name: 'Enterprise',
       subtitle: 'Para redes de laboratorios',
       price: {
-        bs: 'Personalizado',
+        bs: 'Custom',
         usd: 'Custom'
       },
       period: 'sede',
@@ -87,17 +87,17 @@ const PricingPreview = () => {
   const addOns = [
     {
       name: 'Módulo de Facturación',
-      price: { bs: '950', usd: '25' },
+      price: { bs: '$25', usd: '25' },
       description: 'Facturación automática integrada con contabilidad'
     },
     {
       name: 'Telemedicina',
-      price: { bs: '1.140', usd: '30' },
+      price: { bs: '$30', usd: '30' },
       description: 'Consultas remotas y entrega digital de resultados'
     },
     {
       name: 'API Personalizada',
-      price: { bs: '1.900', usd: '50' },
+      price: { bs: '$50', usd: '50' },
       description: 'Integraciones específicas con sistemas existentes'
     }
   ];
@@ -120,14 +120,14 @@ const PricingPreview = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Precios en bolívares con referencia USD. Sin costos ocultos, 
+            Precios en dólares USD. Sin costos ocultos, 
             con programa de referidos del 20% de descuento.
           </p>
 
           {/* Currency Toggle */}
           <div className="inline-flex items-center bg-card border border-border rounded-lg p-1">
-            <span className="px-3 py-1 text-sm font-medium text-foreground">Bs.</span>
-            <span className="px-3 py-1 text-sm text-muted-foreground">(USD ref.)</span>
+            <span className="px-3 py-1 text-sm font-medium text-foreground">USD</span>
+            <span className="px-3 py-1 text-sm text-muted-foreground">(Dólares)</span>
           </div>
         </div>
 
@@ -159,15 +159,15 @@ const PricingPreview = () => {
                 <div className="mb-4">
                   <div className="flex items-baseline justify-center space-x-2">
                     <span className="text-4xl font-bold text-gradient-medical">
-                      {plan?.price?.bs === 'Personalizado' ? 'Custom' : `Bs. ${plan?.price?.bs}`}
+                      {plan?.price?.bs === 'Custom' ? 'Custom' : `${plan?.price?.bs}`}
                     </span>
-                    {plan?.price?.bs !== 'Personalizado' && (
+                    {plan?.price?.bs !== 'Custom' && (
                       <span className="text-muted-foreground">/{plan?.period}</span>
                     )}
                   </div>
-                  {plan?.price?.bs !== 'Personalizado' && (
+                  {plan?.price?.bs !== 'Custom' && (
                     <div className="text-sm text-muted-foreground mt-1">
-                      (≈ ${plan?.price?.usd} USD)
+                      (USD)
                     </div>
                   )}
                 </div>
@@ -224,8 +224,8 @@ const PricingPreview = () => {
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="font-bold text-foreground">{addon?.name}</h4>
                   <div className="text-right">
-                    <div className="text-lg font-bold text-primary">Bs. {addon?.price?.bs}</div>
-                    <div className="text-xs text-muted-foreground">(${addon?.price?.usd} USD)</div>
+                    <div className="text-lg font-bold text-primary">{addon?.price?.bs}</div>
+                    <div className="text-xs text-muted-foreground">(USD)</div>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground">{addon?.description}</p>

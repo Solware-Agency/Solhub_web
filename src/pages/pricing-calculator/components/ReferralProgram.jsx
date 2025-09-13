@@ -53,14 +53,14 @@ const ReferralProgram = () => {
     {
       referrer: "Dr. María González - Laboratorio Central Caracas",
       referred: "Clínica San Rafael",
-      savings: "Bs. 240,000",
+      savings: "$240",
       quote: `Recomendé SolHub porque transformó completamente nuestros procesos. 
       Ver que San Rafael también está teniendo excelentes resultados me da mucha satisfacción.`
     },
     {
       referrer: "Laboratorio Diagnóstico Valencia",
       referred: "Centro Médico Integral",
-      savings: "Bs. 180,000",
+      savings: "$180",
       quote: `El programa de referidos es una excelente forma de ayudar a colegas 
       mientras obtenemos beneficios. Todos ganamos con SolHub.`
     }
@@ -68,10 +68,8 @@ const ReferralProgram = () => {
 
   const handleStartReferral = () => {
     // WhatsApp message for referral program
-    const message = encodeURIComponent(
-      "Hola! Soy cliente de SolHub y me interesa participar en el programa de referidos. ¿Pueden darme más información?"
-    );
-    window.open(`https://wa.me/584129974533?text=${message}`, '_blank');
+    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
+    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

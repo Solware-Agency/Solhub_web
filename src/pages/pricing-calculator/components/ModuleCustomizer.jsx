@@ -53,17 +53,17 @@ const ModuleCustomizer = ({ availableModules, selectedModules, onModuleToggle })
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
                       <div className="text-lg font-bold text-gradient-medical">
-                        Bs. {module.monthlyPrice?.toLocaleString('es-VE')}
+                        ${module.monthlyPrice}
                       </div>
                       <div className="text-xs text-muted-foreground">
-                        ~${module.monthlyPriceUSD} USD/mes
+                        USD/mes
                       </div>
                     </div>
                     
                     {module.setupFee > 0 && (
                       <div className="text-right">
                         <div className="text-sm text-warning">
-                          +Bs. {module.setupFee?.toLocaleString('es-VE')}
+                          +${module.setupFee}
                         </div>
                         <div className="text-xs text-muted-foreground">
                           Configuración inicial

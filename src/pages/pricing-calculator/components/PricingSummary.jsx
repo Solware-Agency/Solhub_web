@@ -37,8 +37,8 @@ const PricingSummary = ({
 
     const discount = hasReferralDiscount ? monthlyTotal * 0.2 : 0;
     const finalMonthly = monthlyTotal - discount;
-    const monthlyUSD = Math.round(finalMonthly / 36000); // Approximate exchange rate
-    const setupUSD = Math.round(setupTotal / 36000);
+    const monthlyUSD = finalMonthly; // Already in USD
+    const setupUSD = setupTotal; // Already in USD
 
     return {
       items,
@@ -93,11 +93,11 @@ const PricingSummary = ({
               </div>
               <div className="text-right">
                 <div className="font-semibold text-foreground">
-                  Bs. {item?.monthlyPrice?.toLocaleString('es-VE')}/mes
+                  ${item?.monthlyPrice}/mes
                 </div>
                 {item?.setupFee > 0 && (
                   <div className="text-xs text-warning">
-                    +Bs. {item?.setupFee?.toLocaleString('es-VE')}
+                    +${item?.setupFee}
                   </div>
                 )}
               </div>
@@ -132,7 +132,7 @@ const PricingSummary = ({
           <div className="flex justify-between items-center">
             <span className="text-foreground">Subtotal mensual:</span>
             <span className="font-semibold">
-              Bs. {totals?.monthlyTotal?.toLocaleString('es-VE')}
+              ${totals?.monthlyTotal}
             </span>
           </div>
 
@@ -140,7 +140,7 @@ const PricingSummary = ({
             <div className="flex justify-between items-center text-accent">
               <span>Descuento por referido (20%):</span>
               <span className="font-semibold">
-                -Bs. {totals?.discount?.toLocaleString('es-VE')}
+                -${totals?.discount}
               </span>
             </div>
           )}
@@ -150,10 +150,10 @@ const PricingSummary = ({
               <span className="text-lg font-bold text-foreground">Total mensual:</span>
               <div className="text-right">
                 <div className="text-2xl font-bold text-gradient-medical">
-                  Bs. {totals?.finalMonthly?.toLocaleString('es-VE')}
+                  ${totals?.finalMonthly}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  ~${totals?.monthlyUSD} USD/mes
+                  USD/mes
                 </div>
               </div>
             </div>
@@ -163,10 +163,10 @@ const PricingSummary = ({
                 <span className="text-foreground">Configuración inicial:</span>
                 <div className="text-right">
                   <div className="font-semibold text-warning">
-                    Bs. {totals?.setupTotal?.toLocaleString('es-VE')}
+                    ${totals?.setupTotal}
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    ~${totals?.setupUSD} USD (una vez)
+                    USD (una vez)
                   </div>
                 </div>
               </div>
