@@ -4,103 +4,29 @@ import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const PricingPreview = () => {
-  const [selectedPlan, setSelectedPlan] = useState('professional');
+  const [numberOfLabs, setNumberOfLabs] = useState(1);
 
-  const plans = [
-    {
-      id: 'starter',
-      name: 'Starter',
-      subtitle: 'Para laboratorios pequeños',
-      price: {
-        bs: '$75',
-        usd: '75'
-      },
-      period: 'mes',
-      description: 'Perfecto para laboratorios independientes que inician su transformación digital',
-      features: [
-        'Gestión básica de muestras',
-        'Reportes estándar',
-        'Hasta 5 usuarios',
-        'Soporte por email',
-        'Backup diario',
-        'Seguridad básica'
-      ],
-      limitations: [
-        'Sin IA avanzada',
-        'Reportes limitados'
-      ],
-      popular: false,
-      cta: 'Comenzar Prueba'
-    },
-    {
-      id: 'professional',
-      name: 'Professional',
-      subtitle: 'Más popular para clínicas',
-      price: {
-        bs: '$125',
-        usd: '125'
-      },
-      period: 'mes',
-      description: 'La opción preferida por clínicas medianas con laboratorio integrado',
-      features: [
-        'Gestión completa de muestras',
-        'IA para detección de anomalías',
-        'Reportes con sugerencias',
-        'Hasta 15 usuarios',
-        'Soporte prioritario 24/7',
-        'Seguridad avanzada por sede',
-        'Analytics básico',
-        'Integración con equipos'
-      ],
-      limitations: [],
-      popular: true,
-      cta: 'Demo Personalizado'
-    },
-    {
-      id: 'enterprise',
-      name: 'Enterprise',
-      subtitle: 'Para redes de laboratorios',
-      price: {
-        bs: 'Custom',
-        usd: 'Custom'
-      },
-      period: 'sede',
-      description: 'Solución completa para redes de laboratorios con múltiples ubicaciones',
-      features: [
-        'Todos los módulos incluidos',
-        'IA avanzada y predictiva',
-        'Reportes ejecutivos completos',
-        'Usuarios ilimitados',
-        'Soporte dedicado 24/7',
-        'Seguridad enterprise',
-        'Analytics avanzado',
-        'Integraciones personalizadas',
-        'Onboarding guiado',
-        'SLA garantizado'
-      ],
-      limitations: [],
-      popular: false,
-      cta: 'Contactar Ventas'
-    }
-  ];
+  const pricingModel = {
+    monthlyPerLab: 150,
+    features: [
+      'Implementación completa incluida',
+      'Capacitación del personal',
+      'Migración de datos existentes',
+      'Configuración personalizada',
+      'Soporte técnico durante implementación',
+      'Gestión completa de pacientes y estudios',
+      'Reportes digitales automatizados',
+      'Control de inventario',
+      'Facturación y cobranza',
+      'Backup automático diario',
+      'Soporte técnico continuo',
+      'Actualizaciones automáticas'
+    ]
+  };
 
-  const addOns = [
-    {
-      name: 'Módulo de Facturación',
-      price: { bs: '$25', usd: '25' },
-      description: 'Facturación automática integrada con contabilidad'
-    },
-    {
-      name: 'Telemedicina',
-      price: { bs: '$30', usd: '30' },
-      description: 'Consultas remotas y entrega digital de resultados'
-    },
-    {
-      name: 'API Personalizada',
-      price: { bs: '$50', usd: '50' },
-      description: 'Integraciones específicas con sistemas existentes'
-    }
-  ];
+  const handleLabCountChange = (count) => {
+    setNumberOfLabs(Math.max(1, count));
+  };
 
   return (
     <section className="py-20 bg-muted/10 relative overflow-hidden">
@@ -109,19 +35,19 @@ const PricingPreview = () => {
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
+      
       <div className="container-medical relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-foreground">Inversión que</span>
+            <span className="text-foreground">Precios</span>
             <br />
-            <span className="text-gradient-medical">se paga sola</span>
+            <span className="text-gradient-medical">Transparentes</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Precios en dólares USD. Sin costos ocultos, 
-            con programa de referidos del 20% de descuento.
+            Modelo simple: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. 
+            Sin sorpresas, sin costos ocultos.
           </p>
 
           {/* Currency Toggle */}
@@ -131,106 +57,95 @@ const PricingPreview = () => {
           </div>
         </div>
 
-        {/* Pricing Plans */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
-          {plans?.map((plan) => (
-            <div
-              key={plan?.id}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 hover-lift ${
-                plan?.popular
-                  ? 'border-primary bg-card shadow-lg ring-2 ring-primary/20'
-                  : 'border-border bg-card/50 hover:border-primary/30'
-              }`}
-            >
-              {/* Popular Badge */}
-              {plan?.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-medical text-white px-4 py-1 rounded-full text-sm font-medium">
-                    Más Popular
-                  </div>
-                </div>
-              )}
-
-              {/* Plan Header */}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-foreground mb-2">{plan?.name}</h3>
-                <p className="text-primary font-medium mb-4">{plan?.subtitle}</p>
-                
-                <div className="mb-4">
-                  <div className="flex items-baseline justify-center space-x-2">
-                    <span className="text-4xl font-bold text-gradient-medical">
-                      {plan?.price?.bs === 'Custom' ? 'Custom' : `${plan?.price?.bs}`}
-                    </span>
-                    {plan?.price?.bs !== 'Custom' && (
-                      <span className="text-muted-foreground">/{plan?.period}</span>
-                    )}
-                  </div>
-                  {plan?.price?.bs !== 'Custom' && (
-                    <div className="text-sm text-muted-foreground mt-1">
-                      (USD)
-                    </div>
-                  )}
-                </div>
-                
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {plan?.description}
+        {/* Pricing Model */}
+        <div className="max-w-4xl mx-auto mb-12 lg:mb-16">
+          {/* Selector de número de laboratorios */}
+          <div className="card-medical-elevated p-8 mb-8">
+            <div className="text-center space-y-6">
+              <div className="w-20 h-20 mx-auto rounded-xl bg-gradient-medical flex items-center justify-center">
+                <Icon name="Building2" size={40} color="white" />
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Número de Laboratorios/Sedes
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Selecciona cuántos laboratorios o sedes necesitas gestionar
                 </p>
               </div>
-
-              {/* Features */}
-              <div className="mb-8">
-                <ul className="space-y-3">
-                  {plan?.features?.map((feature, index) => (
-                    <li key={index} className="flex items-start space-x-3">
-                      <Icon name="Check" size={16} className="text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-foreground text-sm">{feature}</span>
-                    </li>
-                  ))}
-                  {plan?.limitations?.map((limitation, index) => (
-                    <li key={index} className="flex items-start space-x-3">
-                      <Icon name="X" size={16} className="text-muted-foreground mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground text-sm line-through">{limitation}</span>
-                    </li>
-                  ))}
-                </ul>
+              
+              <div className="flex items-center justify-center space-x-4">
+                <Button
+                  variant="outline"
+                  onClick={() => handleLabCountChange(numberOfLabs - 1)}
+                  disabled={numberOfLabs <= 1}
+                  className="w-12 h-12 rounded-full"
+                >
+                  <Icon name="Minus" size={20} />
+                </Button>
+                
+                <div className="text-4xl font-bold text-gradient-medical min-w-[80px] text-center">
+                  {numberOfLabs}
+                </div>
+                
+                <Button
+                  variant="outline"
+                  onClick={() => handleLabCountChange(numberOfLabs + 1)}
+                  className="w-12 h-12 rounded-full"
+                >
+                  <Icon name="Plus" size={20} />
+                </Button>
               </div>
-
-              {/* CTA */}
-              <Button
-                variant={plan?.popular ? "default" : "outline"}
-                fullWidth
-                className={plan?.popular ? "bg-gradient-medical hover:opacity-90" : "border-primary/30 text-primary hover:bg-primary/10"}
-              >
-                {plan?.cta}
-              </Button>
             </div>
-          ))}
-        </div>
-
-        {/* Add-ons */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Módulos Adicionales
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              Expande tu solución con módulos especializados
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {addOns?.map((addon, index) => (
-              <div key={index} className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all duration-300">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-bold text-foreground">{addon?.name}</h4>
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-primary">{addon?.price?.bs}</div>
-                    <div className="text-xs text-muted-foreground">(USD)</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground">{addon?.description}</p>
+          {/* Resumen de precios */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="card-medical-elevated p-8 text-center">
+              <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4">
+                <Icon name="Zap" size={32} color="white" />
               </div>
-            ))}
+              <h3 className="text-xl font-bold text-foreground mb-2">
+                Implementación Inicial
+              </h3>
+              <div className="text-3xl font-bold text-gradient-medical mb-2">
+                Personalizada
+              </div>
+              <p className="text-muted-foreground">
+                Según necesidades específicas
+              </p>
+            </div>
+
+            <div className="card-medical-elevated p-8 text-center">
+              <div className="w-16 h-16 mx-auto rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-4">
+                <Icon name="Calendar" size={32} color="white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">
+                Costo Mensual
+              </h3>
+              <div className="text-3xl font-bold text-gradient-medical mb-2">
+                ${numberOfLabs * pricingModel.monthlyPerLab}
+              </div>
+              <p className="text-muted-foreground">
+                ${pricingModel.monthlyPerLab} × {numberOfLabs} {numberOfLabs === 1 ? 'laboratorio' : 'laboratorios'}
+              </p>
+            </div>
+          </div>
+
+          {/* Características incluidas */}
+          <div className="card-medical-elevated p-8">
+            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+              Todo Incluido en el Precio
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {pricingModel.features.map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <Icon name="Check" size={16} className="text-success flex-shrink-0" />
+                  <span className="text-foreground">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -245,13 +160,13 @@ const PricingPreview = () => {
             </h3>
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
               Recomienda SolHub a otros laboratorios y obtén un 20% de descuento 
-              en tu próxima facturación por cada referido exitoso.
+              en el costo mensual por cada referido exitoso.
             </p>
             <div className="flex justify-center">
-              <Link to="/dedicated-contact-page">
+              <Link to="/pricing-calculator">
                 <Button
                   variant="default"
-                  iconName="Users"
+                  iconName="Gift"
                   iconPosition="left"
                   className="bg-gradient-medical hover:opacity-90"
                 >
@@ -263,36 +178,37 @@ const PricingPreview = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
-            ¿Necesitas una cotización personalizada?
-          </h3>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Nuestro equipo puede crear una propuesta específica para tu laboratorio, 
-            incluyendo módulos personalizados y descuentos por volumen.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/pricing-calculator">
-              <Button
-                variant="default"
-                iconName="Calculator"
-                iconPosition="left"
-                className="bg-gradient-medical hover:opacity-90"
-              >
-                Calculadora de Precios
-              </Button>
-            </Link>
-            <Link to="/contact-support">
-              <Button
-                variant="outline"
-                iconName="MessageCircle"
-                iconPosition="left"
-                className="border-primary/30 text-primary hover:bg-primary/10"
-              >
-                Hablar con Ventas
-              </Button>
-            </Link>
+        <div className="text-center space-y-6">
+          <div className="bg-gradient-medical-subtle border border-primary/20 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              ¿Listo para Transformar tu Laboratorio?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Obtén una cotización personalizada para la implementación inicial y descubre 
+              cómo SolHub puede optimizar las operaciones de tu laboratorio.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/pricing-calculator">
+                <Button
+                  variant="default"
+                  iconName="Calculator"
+                  iconPosition="left"
+                  className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+                >
+                  Calculadora de Precios
+                </Button>
+              </Link>
+              <Link to="/demo-experience">
+                <Button
+                  variant="outline"
+                  iconName="Calendar"
+                  iconPosition="left"
+                  className="border-success text-success hover:bg-success/10"
+                >
+                  Agendar Demo
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

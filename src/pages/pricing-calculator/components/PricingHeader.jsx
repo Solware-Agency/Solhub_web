@@ -14,8 +14,8 @@ const PricingHeader = () => {
       </div>
       
       <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-        Planifica tu inversión en SolHub con transparencia total. 
-        Calcula costos, compara opciones y descubre el ROI de la digitalización médica.
+        Modelo de precios simple y transparente: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. 
+        Sin sorpresas, sin costos ocultos.
       </p>
       
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
@@ -25,7 +25,7 @@ const PricingHeader = () => {
         </div>
         <div className="flex items-center space-x-2 text-secondary">
           <Icon name="Zap" size={16} />
-          <span>Cálculo en Tiempo Real</span>
+          <span>Implementación Incluida</span>
         </div>
         <div className="flex items-center space-x-2 text-accent">
           <Icon name="Gift" size={16} />

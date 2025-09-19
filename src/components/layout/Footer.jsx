@@ -47,7 +47,16 @@ const Footer = ({ variant = 'default' }) => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm">
-              © {currentYear} SolHub by Solware. Transformando la medicina diagnóstica en Venezuela.
+              © {currentYear} SolHub by{' '}
+              <a 
+                href="https://www.solware.agency" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                Solware
+              </a>
+              . Transformando la medicina diagnóstica en Venezuela.
             </p>
           </div>
         </div>
@@ -154,7 +163,16 @@ const Footer = ({ variant = 'default' }) => {
           variants={footerVariants}
         >
           <div className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
-            © {currentYear} SolHub by Solware. Todos los derechos reservados.
+            © {currentYear} SolHub by{' '}
+            <a 
+              href="https://www.solware.agency" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              Solware
+            </a>
+            . Todos los derechos reservados.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
             <Link to="/legal/privacidad" className="hover:text-primary transition-colors hover:underline">
