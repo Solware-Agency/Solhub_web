@@ -1,30 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
 const PricingSummary = ({ 
-  selectedPackage, 
+  numberOfLabs,
   selectedModules, 
   hasReferralDiscount, 
+  pricingModel,
   onToggleReferral,
   onRequestDemo,
   onContactSales 
 }) => {
   const calculateTotals = () => {
-    let monthlyTotal = 0;
-    let setupTotal = 0;
+    let monthlyTotal = numberOfLabs * pricingModel.monthlyPerLab;
+    let setupTotal = 0; // Implementación personalizada
     let items = [];
 
-    if (selectedPackage) {
-      monthlyTotal += selectedPackage?.monthlyPrice;
-      setupTotal += selectedPackage?.setupFee || 0;
-      items?.push({
-        name: selectedPackage?.name,
-        monthlyPrice: selectedPackage?.monthlyPrice,
-        setupFee: selectedPackage?.setupFee || 0
-      });
-    }
+    // Agregar costo base por laboratorios
+    items.push({
+      name: `SolHub (${numberOfLabs} ${numberOfLabs === 1 ? 'laboratorio' : 'laboratorios'})`,
+      monthlyPrice: monthlyTotal,
+      setupFee: 0,
+      isCustomImplementation: true
+    });
 
+    // Agregar módulos adicionales si los hay
     selectedModules?.forEach(module => {
       monthlyTotal += module.monthlyPrice;
       setupTotal += module.setupFee || 0;
@@ -53,15 +54,15 @@ const PricingSummary = ({
 
   const totals = calculateTotals();
 
-  if (!selectedPackage && selectedModules?.length === 0) {
+  if (numberOfLabs === 0) {
     return (
       <div className="card-medical p-6 text-center">
         <Icon name="Calculator" size={48} className="text-muted-foreground mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-foreground mb-2">
-          Selecciona un Paquete o Módulos
+          Configura tu Solución
         </h3>
         <p className="text-muted-foreground">
-          Elige una opción para ver el resumen de precios
+          Selecciona el número de laboratorios para ver el resumen de precios
         </p>
       </div>
     );
@@ -85,7 +86,12 @@ const PricingSummary = ({
             <div key={index} className="flex justify-between items-center py-2 border-b border-border/50">
               <div>
                 <div className="font-medium text-foreground">{item?.name}</div>
-                {item?.setupFee > 0 && (
+                {item?.isCustomImplementation && (
+                  <div className="text-xs text-muted-foreground">
+                    +Implementación personalizada
+                  </div>
+                )}
+                {item?.setupFee > 0 && !item?.isCustomImplementation && (
                   <div className="text-xs text-muted-foreground">
                     +Configuración inicial
                   </div>
@@ -95,7 +101,12 @@ const PricingSummary = ({
                 <div className="font-semibold text-foreground">
                   ${item?.monthlyPrice}/mes
                 </div>
-                {item?.setupFee > 0 && (
+                {item?.isCustomImplementation && (
+                  <div className="text-xs text-warning">
+                    +Cotización personalizada
+                  </div>
+                )}
+                {item?.setupFee > 0 && !item?.isCustomImplementation && (
                   <div className="text-xs text-warning">
                     +${item?.setupFee}
                   </div>
@@ -158,19 +169,17 @@ const PricingSummary = ({
               </div>
             </div>
 
-            {totals?.setupTotal > 0 && (
-              <div className="flex justify-between items-center">
-                <span className="text-foreground">Configuración inicial:</span>
-                <div className="text-right">
-                  <div className="font-semibold text-warning">
-                    ${totals?.setupTotal}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    USD (una vez)
-                  </div>
+            <div className="flex justify-between items-center">
+              <span className="text-foreground">Implementación inicial:</span>
+              <div className="text-right">
+                <div className="font-semibold text-warning">
+                  Personalizada
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  Según necesidades
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
 
@@ -187,16 +196,17 @@ const PricingSummary = ({
 
         {/* Action Buttons */}
         <div className="space-y-3">
-          <Button
-            variant="default"
-            fullWidth
-            onClick={onRequestDemo}
-            iconName="MessageCircle"
-            iconPosition="left"
-            className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
-          >
-            Contáctanos
-          </Button>
+          <Link to="/contact-support">
+            <Button
+              variant="default"
+              fullWidth
+              iconName="MessageCircle"
+              iconPosition="left"
+              className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
+            >
+              Contáctanos
+            </Button>
+          </Link>
           
           <Button
             variant="outline"

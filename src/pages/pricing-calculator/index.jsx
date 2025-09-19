@@ -13,7 +13,7 @@ import Button from '../../components/ui/Button';
 import useActions from '../../hooks/useActions';
 
 const PricingCalculator = () => {
-  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [numberOfLabs, setNumberOfLabs] = useState(0);
   const [selectedModules, setSelectedModules] = useState([]);
   const [hasReferralDiscount, setHasReferralDiscount] = useState(false);
   const [activeTab, setActiveTab] = useState('packages');
@@ -22,71 +22,29 @@ const PricingCalculator = () => {
 
   const seoConfig = {
     title: 'Precios',
-    description: 'Calcula el costo de implementar SolHub en tu laboratorio. Precios transparentes en bolívares, opciones flexibles de pago y programa de referidos con 20% de descuento.',
-    keywords: 'precios laboratorio médico, software médico Venezuela, calculadora precios SolHub, ROI laboratorio digital',
+    description: 'Modelo de precios simple: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. Calcula el costo de SolHub para tu establecimiento médico.',
+    keywords: 'precios laboratorio médico, software médico Venezuela, calculadora precios SolHub, ROI laboratorio digital, implementación inicial personalizada',
     url: '/pricing-calculator'
   };
 
-  // Mock data for packages
-  const packages = [
-    {
-      id: 'independent-lab',
-      name: 'Laboratorio Independiente',
-      description: 'Solución completa para laboratorios independientes pequeños y medianos',
-      icon: 'Microscope',
-      monthlyPrice: 120,
-      monthlyPriceUSD: 120,
-      setupFee: 180,
-      features: [
-        'Gestión de pacientes y estudios',
-        'Reportes digitales automatizados',
-        'Control de inventario básico',
-        'Facturación y cobranza',
-        'Backup automático diario',
-        'Soporte técnico estándar',
-        'Capacitación inicial incluida',
-        'Actualizaciones automáticas'
-      ]
-    },
-    {
-      id: 'clinic-with-lab',
-      name: 'Clínica con Laboratorio',
-      description: 'Integración perfecta entre servicios clínicos y laboratorio interno',
-      icon: 'Building2',
-      monthlyPrice: 280,
-      monthlyPriceUSD: 280,
-      setupFee: 350,
-      features: [
-        'Gestión integral clínica-laboratorio',
-        'Historia clínica unificada',
-        'Agenda médica integrada',
-        'Facturación multi-servicio',
-        'Reportes ejecutivos avanzados',
-        'Control de inventario completo',
-        'Soporte técnico prioritario',
-        'Capacitación especializada'
-      ]
-    },
-    {
-      id: 'diagnostic-network',
-      name: 'Red de Diagnóstico',
-      description: 'Gestión centralizada para múltiples sedes y laboratorios',
-      icon: 'Network',
-      monthlyPrice: 420,
-      monthlyPriceUSD: 420,
-      setupFee: 600,
-      features: [
-        'Gestión multi-sede centralizada',
-        'Dashboard ejecutivo en tiempo real',
-        'Transferencia de estudios entre sedes',
-        'Reportes consolidados',
-        'Control de inventario por sede',
-        'Facturación centralizada',
-        'Soporte técnico 24/7',
-        'Consultoría de procesos incluida'
-      ]
-    }
-  ];
+  // Modelo de precios simplificado
+  const pricingModel = {
+    monthlyPerLab: 150, // Por laboratorio o sede mensual
+    features: [
+      'Implementación completa incluida',
+      'Capacitación del personal',
+      'Migración de datos existentes',
+      'Configuración personalizada',
+      'Soporte técnico durante implementación',
+      'Gestión completa de pacientes y estudios',
+      'Reportes digitales automatizados',
+      'Control de inventario',
+      'Facturación y cobranza',
+      'Backup automático diario',
+      'Soporte técnico continuo',
+      'Actualizaciones automáticas'
+    ]
+  };
 
   // Mock data for individual modules
   const availableModules = [
@@ -152,9 +110,8 @@ const PricingCalculator = () => {
     }
   ];
 
-  const handlePackageSelect = (pkg) => {
-    setSelectedPackage(pkg);
-    setSelectedModules([]); // Clear modules when selecting a package
+  const handleLabCountChange = (count) => {
+    setNumberOfLabs(Math.max(0, count));
   };
 
   const handleModuleToggle = (module) => {
@@ -166,7 +123,6 @@ const PricingCalculator = () => {
         return [...prev, module];
       }
     });
-    setSelectedPackage(null); // Clear package when selecting individual modules
   };
 
   const handleToggleReferral = () => {
@@ -174,12 +130,12 @@ const PricingCalculator = () => {
   };
 
   const handleRequestDemo = () => {
-    const message = 'Hola, me interesa solicitar un demo personalizado de SolHub. He estado usando la calculadora de precios y me gustaría conocer más detalles sobre la implementación.';
+    const message = `Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?`;
     handleWhatsAppClick(message);
   };
 
   const handleContactSales = () => {
-    const message = 'Hola, he estado revisando los precios de SolHub y me gustaría hablar con el equipo de ventas para obtener más información sobre las opciones de pago y implementación.';
+    const message = `Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?`;
     handleWhatsAppClick(message);
   };
 
@@ -219,9 +175,9 @@ const PricingCalculator = () => {
           <div className="lg:col-span-2 space-y-12">
             {activeTab === 'packages' && (
               <PackageSelector
-                selectedPackage={selectedPackage}
-                onPackageSelect={handlePackageSelect}
-                packages={packages}
+                numberOfLabs={numberOfLabs}
+                onLabCountChange={handleLabCountChange}
+                pricingModel={pricingModel}
               />
             )}
 
@@ -243,9 +199,10 @@ const PricingCalculator = () => {
           {/* Pricing Summary Sidebar */}
           <div className="lg:col-span-1">
             <PricingSummary
-              selectedPackage={selectedPackage}
+              numberOfLabs={numberOfLabs}
               selectedModules={selectedModules}
               hasReferralDiscount={hasReferralDiscount}
+              pricingModel={pricingModel}
               onToggleReferral={handleToggleReferral}
               onRequestDemo={handleRequestDemo}
               onContactSales={handleContactSales}
@@ -261,17 +218,17 @@ const PricingCalculator = () => {
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Nuestro equipo puede crear una propuesta específica para las necesidades 
-              únicas de tu laboratorio, incluyendo integraciones especiales y descuentos por volumen.
+              únicas de tu laboratorio, incluyendo integraciones especiales y una cotización personalizada para la implementación inicial.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact-support">
+              <Link to="/demo-experience">
                 <Button
                   variant="default"
                   iconName="Calendar"
                   iconPosition="left"
                   className="bg-gradient-medical hover:opacity-90 shadow-medical-glow"
                 >
-                  Agendar Consulta Gratuita
+                  Agendar Demo
                 </Button>
               </Link>
               <Button
