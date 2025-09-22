@@ -111,26 +111,26 @@ const TestimonialCarousel = () => {
         <div className="max-w-5xl mx-auto px-4">
           <div className="relative bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg">
             {/* Quote Icon */}
-            <div className="absolute top-6 left-6 w-12 h-12 bg-gradient-medical rounded-full flex items-center justify-center">
-              <Icon name="Quote" size={24} color="white" />
+            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-medical rounded-full flex items-center justify-center">
+              <Icon name="Quote" size={20} color="white" className="sm:w-6 sm:h-6" />
             </div>
 
             {/* Testimonial Content */}
-            <div className="pt-8">
+            <div className="pt-12 sm:pt-16">
               {/* Doctores Aliados */}
               <div className="flex items-center space-x-1 mb-6">
-                <span className="text-primary font-semibold text-lg">Doctores Aliados</span>
+                <span className="text-primary font-semibold text-base sm:text-lg">Doctores Aliados</span>
               </div>
 
               {/* Content */}
-              <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
+              <blockquote className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed mb-8">
                 "{testimonials?.[currentTestimonial]?.content}"
               </blockquote>
 
               {/* Author Info */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                <div className="flex items-center space-x-4 mb-6 md:mb-0">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20 bg-muted/20 flex items-center justify-center">
+                <div className="flex items-center space-x-3 sm:space-x-4 mb-6 md:mb-0">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-primary/20 bg-muted/20 flex items-center justify-center">
                     <img 
                       src={testimonials?.[currentTestimonial]?.avatar} 
                       alt={testimonials?.[currentTestimonial]?.name}
@@ -140,18 +140,18 @@ const TestimonialCarousel = () => {
                         e.target.nextSibling.style.display = 'flex';
                       }}
                     />
-                    <div className="w-full h-full bg-gradient-medical flex items-center justify-center text-white font-bold text-lg" style={{display: 'none'}}>
+                    <div className="w-full h-full bg-gradient-medical flex items-center justify-center text-white font-bold text-sm sm:text-lg" style={{display: 'none'}}>
                       {testimonials?.[currentTestimonial]?.name?.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold text-foreground text-lg">
+                    <div className="font-bold text-foreground text-base sm:text-lg">
                       {testimonials?.[currentTestimonial]?.name}
                     </div>
-                    <div className="text-primary font-medium">
+                    <div className="text-primary font-medium text-sm sm:text-base">
                       {testimonials?.[currentTestimonial]?.role}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs sm:text-sm text-muted-foreground">
                       {testimonials?.[currentTestimonial]?.location}
                     </div>
                   </div>
@@ -163,15 +163,15 @@ const TestimonialCarousel = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-muted/50 hover:bg-muted rounded-full flex items-center justify-center transition-colors duration-200"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-muted/50 hover:bg-muted rounded-full flex items-center justify-center transition-colors duration-200"
             >
-              <Icon name="ChevronLeft" size={20} />
+              <Icon name="ChevronLeft" size={16} className="sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-muted/50 hover:bg-muted rounded-full flex items-center justify-center transition-colors duration-200"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-muted/50 hover:bg-muted rounded-full flex items-center justify-center transition-colors duration-200"
             >
-              <Icon name="ChevronRight" size={20} />
+              <Icon name="ChevronRight" size={16} className="sm:w-5 sm:h-5" />
             </button>
           </div>
 

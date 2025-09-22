@@ -15,9 +15,9 @@ const Footer = ({ variant = 'default' }) => {
     ],
     contact: [
       { name: 'Solicitar Demo', path: '/demo-experience' },
-      { name: 'Contacto', path: '/dedicated-contact-page' },
       { name: 'WhatsApp', href: 'https://wa.me/584129974533', external: true },
-      { name: 'Centro de Ayuda', path: '/knowledge-hub' }
+      { name: 'Instagram', href: 'https://www.instagram.com/solware_/?igsh=MTg4OTdwM3k3d2o4cA%3D%3D#', external: true },
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/company/agencia-solware/', external: true }
     ]
   };
 
@@ -73,11 +73,11 @@ const Footer = ({ variant = 'default' }) => {
       viewport={{ once: true }}
     >
       <div className="container-medical">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
-          <div className="sm:col-span-2">
+          <div className="md:col-span-2 lg:col-span-2 text-center md:text-left">
             <motion.div 
-              className="flex items-center space-x-3 mb-6"
+              className="flex items-center justify-center md:justify-start space-x-3 mb-6"
               variants={footerVariants}
             >
               <div className="relative">
@@ -92,25 +92,17 @@ const Footer = ({ variant = 'default' }) => {
               </div>
             </motion.div>
             <motion.p 
-              className="text-muted-foreground mb-6 max-w-md text-sm sm:text-base"
+              className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0 text-sm sm:text-base"
               variants={footerVariants}
             >
               Transformando laboratorios médicos en Venezuela con tecnología de vanguardia, 
               inteligencia artificial y seguridad avanzada. Desarrollado por Solware con el respaldo 
               de profesionales médicos venezolanos.
             </motion.p>
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <div className="w-2 h-2 bg-success rounded-full animate-pulse-medical flex-shrink-0"></div>
-                <span>5 sedes activas</span>
-              </div>
-              <div className="text-sm text-muted-foreground">•</div>
-              <div className="text-sm text-muted-foreground">Soporte 24/7</div>
-            </div>
           </div>
 
           {/* Quick Links */}
-          <motion.div variants={footerVariants}>
+          <motion.div variants={footerVariants} className="text-center md:text-left">
             <h3 className="font-semibold text-foreground mb-4">SolHub</h3>
             <ul className="space-y-2">
               {navigationSections?.solhub?.map((item) => (
@@ -127,7 +119,7 @@ const Footer = ({ variant = 'default' }) => {
           </motion.div>
 
           {/* Contact */}
-          <motion.div variants={footerVariants}>
+          <motion.div variants={footerVariants} className="text-center md:text-left">
             <h3 className="font-semibold text-foreground mb-4">Contacto</h3>
             <ul className="space-y-2">
               {navigationSections?.contact?.map((item) => (
@@ -159,10 +151,10 @@ const Footer = ({ variant = 'default' }) => {
 
         {/* Bottom Bar */}
         <motion.div 
-          className="border-t border-glass-border mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="border-t border-glass-border mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4"
           variants={footerVariants}
         >
-          <div className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
+          <div className="text-xs sm:text-sm text-muted-foreground text-center">
             © {currentYear} SolHub by{' '}
             <a 
               href="https://www.solware.agency" 
@@ -180,9 +172,6 @@ const Footer = ({ variant = 'default' }) => {
             </Link>
             <Link to="/legal/terminos" className="hover:text-primary transition-colors hover:underline">
               Términos
-            </Link>
-            <Link to="/security-fortress" className="hover:text-primary transition-colors hover:underline">
-              Seguridad
             </Link>
             <span className="hidden sm:inline">•</span>
             <a 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/layout/Footer';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import StoryCard from './components/StoryCard';
@@ -501,27 +502,7 @@ const ClientSuccessStories = () => {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
-      {/* Footer */}
-      <footer className="py-12 border-t border-border bg-background">
-        <div className="container-medical">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-medical rounded-xl flex items-center justify-center">
-                <Icon name="Activity" size={20} color="white" />
-              </div>
-              <span className="text-xl font-bold text-gradient-medical">SolHub</span>
-            </div>
-            <p className="text-muted-foreground mb-6">
-              Transformando laboratorios médicos en Venezuela con tecnología de vanguardia
-            </p>
-            <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
-              <span>© {new Date()?.getFullYear()} SolHub</span>
-              <span>•</span>
-              <span>Hecho con ❤️ en Venezuela</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
