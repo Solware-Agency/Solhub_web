@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/layout/Footer';
 import HeroSection from './components/HeroSection';
 import CategoryFilter from './components/CategoryFilter';
 import FeaturedContent from './components/FeaturedContent';
@@ -79,53 +80,7 @@ const KnowledgeHub = () => {
           </div>
         </main>
 
-        {/* Footer */}
-        <footer className="bg-card border-t border-border py-12">
-          <div className="container-medical">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="md:col-span-2">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-medical rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">I</span>
-                  </div>
-                  <div>
-                    <div className="text-xl font-bold text-gradient-medical">SolHub</div>
-                    <div className="text-sm text-muted-foreground">Centro de Conocimiento</div>
-                  </div>
-                </div>
-                <p className="text-muted-foreground mb-4 max-w-md">
-                  Impulsando la transformación digital de laboratorios médicos en Venezuela 
-                  a través de recursos educativos y una comunidad profesional activa.
-                </p>
-                <div className="text-sm text-muted-foreground">
-                  © {new Date()?.getFullYear()} SolHub. Todos los derechos reservados.
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-foreground mb-4">Recursos</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#" className="hover:text-primary transition-colors">Guías de Implementación</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Casos de Éxito</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Webinars</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Plantillas</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Comunidad</a></li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-foreground mb-4">Soporte</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#" className="hover:text-primary transition-colors">Centro de Ayuda</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Contacto</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">FAQ</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Términos de Uso</a></li>
-                  <li><a href="#" className="hover:text-primary transition-colors">Privacidad</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

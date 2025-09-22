@@ -40,7 +40,7 @@ const ModulesShowcase = () => {
       description: 'Sistema integral para el registro, seguimiento y gestión completa de pacientes con historial médico digitalizado.',
       icon: 'Users',
       category: 'core',
-      price: 2500,
+      price: 25,
       implementationWeeks: 2,
       dependencies: ['data-security'],
       features: [
@@ -88,7 +88,7 @@ const ModulesShowcase = () => {
       description: 'Inteligencia artificial avanzada para análisis automático de muestras, detección de patrones y diagnóstico asistido.',
       icon: 'Brain',
       category: 'ai',
-      price: 4500,
+      price: 45,
       implementationWeeks: 4,
       dependencies: ['patient-management', 'data-security'],
       features: [
@@ -136,7 +136,7 @@ const ModulesShowcase = () => {
       description: 'Generación automática de reportes médicos profesionales con interpretaciones inteligentes y entrega digital.',
       icon: 'FileText',
       category: 'automation',
-      price: 3200,
+      price: 32,
       implementationWeeks: 3,
       dependencies: ['ai-analysis', 'patient-management'],
       features: [
@@ -184,7 +184,7 @@ const ModulesShowcase = () => {
       description: 'Protección avanzada de datos médicos con encriptación, control de acceso y cumplimiento normativo completo.',
       icon: 'Shield',
       category: 'security',
-      price: 1800,
+      price: 18,
       implementationWeeks: 1,
       dependencies: [],
       features: [
@@ -232,7 +232,7 @@ const ModulesShowcase = () => {
       description: 'Gestión inteligente de inventario médico con predicción de demanda y reposición automática.',
       icon: 'Package',
       category: 'operations',
-      price: 2800,
+      price: 28,
       implementationWeeks: 2,
       dependencies: ['data-security'],
       features: [
@@ -280,7 +280,7 @@ const ModulesShowcase = () => {
       description: 'Sistema completo de facturación médica con integración a seguros y procesamiento automático de pagos.',
       icon: 'CreditCard',
       category: 'finance',
-      price: 3500,
+      price: 35,
       implementationWeeks: 3,
       dependencies: ['patient-management', 'data-security'],
       features: [

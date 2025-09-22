@@ -26,12 +26,10 @@ const WhatsAppButton = () => {
   const buttonVariants = {
     initial: { 
       scale: 0,
-      rotate: -180,
       opacity: 0 
     },
     animate: { 
       scale: 1,
-      rotate: 0,
       opacity: 1,
       transition: {
         type: "spring",
@@ -42,23 +40,15 @@ const WhatsAppButton = () => {
     },
     exit: { 
       scale: 0,
-      rotate: 180,
       opacity: 0,
       transition: {
         duration: 0.3
       }
     },
     hover: {
-      scale: 1.1,
-      rotate: [0, -5, 5, 0],
+      scale: 1.05,
       transition: {
-        rotate: {
-          repeat: Infinity,
-          duration: 0.5
-        },
-        scale: {
-          duration: 0.2
-        }
+        duration: 0.2
       }
     },
     tap: {
@@ -72,33 +62,19 @@ const WhatsAppButton = () => {
   const iconVariants = {
     initial: { rotate: 0 },
     hover: {
-      rotate: [0, 15, -15, 0],
+      rotate: 5,
       transition: {
-        repeat: Infinity,
-        duration: 1,
-        ease: "easeInOut"
+        duration: 0.2
       }
     }
   };
 
-  const pulseVariants = {
-    initial: { scale: 1, opacity: 0.7 },
-    animate: {
-      scale: [1, 1.5, 1],
-      opacity: [0.7, 0, 0.7],
-      transition: {
-        repeat: Infinity,
-        duration: 2,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   return (
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-6 right-6 z-whatsapp"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-whatsapp"
           variants={buttonVariants}
           initial="initial"
           animate="animate"
@@ -108,24 +84,13 @@ const WhatsAppButton = () => {
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
         >
-          {/* Pulse Ring Effect */}
-          <motion.div
-            className="absolute inset-0 rounded-full bg-success"
-            variants={pulseVariants}
-            initial="initial"
-            animate="animate"
-          />
-          
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-full bg-success blur-lg opacity-40" />
-          
           {/* Main Button */}
           <motion.button
             onClick={handleWhatsAppClick}
-            className="relative w-14 h-14 md:w-16 md:h-16 bg-success hover:bg-success/90 rounded-full shadow-glass-strong flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-success/30 transition-all duration-300"
+            className="relative w-14 h-14 sm:w-16 sm:h-16 bg-success hover:bg-success/90 rounded-full shadow-lg flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-success/30 transition-all duration-300"
             aria-label="Contactar por WhatsApp"
             whileHover={{ 
-              boxShadow: "0 20px 40px rgba(16, 185, 129, 0.4)" 
+              boxShadow: "0 10px 25px rgba(16, 185, 129, 0.3)" 
             }}
           >
             {/* Background Glass Effect */}
@@ -147,20 +112,6 @@ const WhatsAppButton = () => {
               />
             </motion.div>
             
-            {/* Hover Shimmer Effect */}
-            <div className="absolute inset-0 rounded-full overflow-hidden">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
-                animate={{
-                  translateX: isHovered ? ['100%', '100%'] : ['-100%', '100%']
-                }}
-                transition={{
-                  duration: isHovered ? 0 : 2,
-                  repeat: isHovered ? 0 : Infinity,
-                  repeatDelay: 3
-                }}
-              />
-            </div>
           </motion.button>
 
           {/* Tooltip */}
