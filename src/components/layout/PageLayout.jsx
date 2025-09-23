@@ -39,7 +39,7 @@ const PageLayout = ({
         link={seo?.link}
         script={seo?.script}
       />
-      <div className={`min-h-screen bg-background text-foreground ${className}`}>
+      <div className={`min-h-screen bg-background text-foreground overflow-x-hidden ${className}`}>
         <Header />
         {showWhatsApp && <WhatsAppButton />}
         
