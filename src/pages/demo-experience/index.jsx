@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
+import Footer from '../../components/layout/Footer';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 
@@ -296,6 +297,8 @@ const DemoExperience = () => {
             </div>
           </div>
         </main>
+        
+        <Footer />
       </div>
     </>
   );

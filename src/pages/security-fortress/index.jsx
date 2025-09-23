@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../../components/layout/PageLayout';
-import Footer from '../../components/layout/Footer';
 import SecurityHero from './components/SecurityHero';
 import AccessControls from './components/AccessControls';
 import DataFlowVisualization from './components/DataFlowVisualization';
@@ -103,8 +102,6 @@ const SecurityFortress = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </PageLayout>
   );
 };
