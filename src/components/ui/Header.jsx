@@ -167,18 +167,22 @@ const Header = ({ className = '' }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link to="/contact-support">
+              <a 
+                href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ28TbL6x8Jj7yLpzgpH2OQ1MV5t5zdvwYRbjCTVKTjj-pNNzSSZ3mGSpguP7Sv4AksuyRdav2bJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="default"
                   size="sm"
-                  iconName="MessageCircle"
+                  iconName="Calendar"
                   iconPosition="left"
                   className="bg-gradient-solware hover:opacity-90 shadow-glass-medium hover:shadow-glass-strong transition-all duration-300 text-xs lg:text-sm px-3 lg:px-4"
                 >
-                  <span className="hidden lg:inline">Contáctanos</span>
-                  <span className="lg:hidden">Contacto</span>
+                  <span className="hidden lg:inline">Demo</span>
+                  <span className="lg:hidden">Demo</span>
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           </div>
 
@@ -266,17 +270,22 @@ const Header = ({ className = '' }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <Link to="/contact-support" onClick={closeMobileMenu}>
+                  <a 
+                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ28TbL6x8Jj7yLpzgpH2OQ1MV5t5zdvwYRbjCTVKTjj-pNNzSSZ3mGSpguP7Sv4AksuyRdav2bJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMobileMenu}
+                  >
                     <Button
                       variant="default"
                       fullWidth
-                      iconName="MessageCircle"
+                      iconName="Calendar"
                       iconPosition="left"
                       className="bg-gradient-solware hover:opacity-90 shadow-glass-medium transition-all duration-300"
                     >
-                      Contáctanos
+                      Demo
                     </Button>
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>

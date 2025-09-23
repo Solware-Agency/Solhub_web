@@ -14,7 +14,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-visible bg-background px-3 sm:px-6 lg:px-8">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background px-3 sm:px-6 lg:px-8">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-medical opacity-10 pointer-events-none"></div>
       
