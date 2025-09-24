@@ -174,7 +174,7 @@ const OfficeLocations = () => {
               </div>
 
               {/* Map Preview */}
-              <div className="mt-6 h-32 rounded-lg overflow-hidden border border-border">
+              <div className="mt-6 h-32 rounded-lg border border-border">
                 <iframe
                   width="100%"
                   height="100%"

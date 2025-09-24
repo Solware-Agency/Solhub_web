@@ -4,7 +4,7 @@ import Button from '../../../components/ui/Button';
 
 const ContactHero = ({ onWhatsAppClick, onDemoClick }) => {
   return (
-    <section className="relative bg-gradient-medical py-16 lg:py-24 overflow-hidden">
+    <section className="relative bg-gradient-medical py-16 lg:py-24">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-full"></div>

@@ -12,9 +12,8 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
       color: 'success',
       action: 'Iniciar Chat',
       details: [
-        '+58 424-123-4567',
-        'Disponible: Lun-Vie 7:00-19:00',
-        'Emergencias: 24/7'
+        '+58 412-997-4533',
+        'Disponible: Lun-Vie 7:00-19:00'
       ],
       onClick: onWhatsAppClick
     },
@@ -26,9 +25,8 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
       color: 'primary',
       action: 'Enviar Email',
       details: [
-        'soporte@SolHubmedical.com.ve',
-        'ventas@SolHubmedical.com.ve',
-        'emergencias@SolHubmedical.com.ve'
+        'ventas@solware.agency',
+        'Respuesta garantizada en 4 horas'
       ],
       onClick: onEmailClick
     },
@@ -40,9 +38,8 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
       color: 'secondary',
       action: 'Llamar Ahora',
       details: [
-        '+58 212-555-0123 (Caracas)',
-        '+58 261-555-0124 (Maracaibo)',
-        '+58 241-555-0125 (Valencia)'
+        '+58 412-997-4533',
+        'Soporte técnico especializado'
       ],
       onClick: onPhoneClick
     }

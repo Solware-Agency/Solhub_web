@@ -9,6 +9,8 @@ import useActions from '../../hooks/useActions';
 const Header = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMoreHovered, setIsMoreHovered] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState(null);
   const location = useLocation();
   const { handleWhatsAppClick, handleDemoClick } = useActions();
 
@@ -21,12 +23,35 @@ const Header = ({ className = '' }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleMoreMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setIsMoreHovered(true);
+  };
+
+  const handleMoreMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsMoreHovered(false);
+    }, 300); // 300ms delay
+    setHoverTimeout(timeout);
   };
 
   const isActivePath = (path) => {
@@ -69,7 +94,7 @@ const Header = ({ className = '' }) => {
       animate="visible"
     >
       <div className="container-medical">
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+        <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5">
           {/* Logo with Enhanced Animation */}
           <motion.div
             variants={logoVariants}
@@ -126,21 +151,31 @@ const Header = ({ className = '' }) => {
             ))}
             
             {/* More Menu with Enhanced Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative"
+              onMouseEnter={handleMoreMouseEnter}
+              onMouseLeave={handleMoreMouseLeave}
+            >
               <motion.button 
                 className="flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium text-foreground hover:text-primary hover:glass-light transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
               >
-                <Icon name="MoreHorizontal" size={14} className="lg:w-4 lg:h-4" />
-                <span className="hidden lg:inline">Más</span>
+                <span>Más</span>
               </motion.button>
               
               {/* Enhanced Dropdown */}
               <motion.div 
-                className="absolute top-full right-0 mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-dropdown"
+                className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl z-[60]"
                 initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                animate={{ 
+                  opacity: isMoreHovered ? 1 : 0, 
+                  scale: isMoreHovered ? 1 : 0.95, 
+                  y: isMoreHovered ? 0 : -10 
+                }}
                 transition={{ duration: 0.2 }}
+                style={{ pointerEvents: isMoreHovered ? 'auto' : 'none' }}
+                onMouseEnter={handleMoreMouseEnter}
+                onMouseLeave={handleMoreMouseLeave}
               >
                 <div className="p-2">
                   {SECONDARY_ITEMS?.map((item) => (
@@ -209,10 +244,10 @@ const Header = ({ className = '' }) => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-xl z-dropdown"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-xl z-[60]"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
               <div className="p-4 space-y-2">

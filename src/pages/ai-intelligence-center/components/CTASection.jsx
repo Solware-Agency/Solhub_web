@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import useActions from '../../../hooks/useActions';
 
 const CTASection = () => {
   const navigate = useNavigate();
@@ -15,10 +16,7 @@ const CTASection = () => {
     navigate('/contact-support');
   };
 
-  const handleWhatsAppClick = () => {
-    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
-    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
-  };
+  const { handleWhatsAppClick } = useActions();
 
   const benefits = [
     {
@@ -71,9 +69,9 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background relative">
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
       </div>

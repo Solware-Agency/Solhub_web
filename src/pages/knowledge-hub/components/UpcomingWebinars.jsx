@@ -162,15 +162,6 @@ const UpcomingWebinars = () => {
               </Button>
             </div>
 
-            {/* Live Badge for Soon Starting */}
-            {new Date(webinar.date) <= new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) && (
-              <div className="absolute top-4 right-4">
-                <div className="bg-accent text-white rounded-full px-3 py-1 flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  <span className="text-xs font-medium">Próximamente</span>
-                </div>
-              </div>
-            )}
           </div>
         ))}
       </div>

@@ -7,7 +7,7 @@ import useActions from '../../../hooks/useActions';
 const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
   const { handleWhatsAppClick } = useActions();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20 pt-20">
+    <section className="relative flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 pt-20 py-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-success/10 rounded-full blur-3xl animate-pulse-medical"></div>
@@ -26,8 +26,9 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
               <span className="text-gradient-medical block">Seguridad Médica</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
-              Protección de datos médicos con estándares internacionales y cumplimiento de regulaciones venezolanas. 
-              <span className="text-success font-semibold">Seguridad por sede</span> garantizada.
+              <span className="text-destructive font-semibold">Un examen falsificado puede destruir la reputación de un doctor y un laboratorio de por vida.</span> 
+              <span className="text-primary font-medium"> SolHub</span> protege la integridad médica con blockchain, trazabilidad completa y 
+              <span className="text-success font-semibold"> seguridad por sede</span> que garantiza que cada resultado sea auténtico e inalterable.
             </p>
           </div>
 

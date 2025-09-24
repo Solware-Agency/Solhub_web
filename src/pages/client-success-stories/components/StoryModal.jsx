@@ -41,7 +41,7 @@ const StoryModal = ({ story, isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md">
-      <div className="bg-card border border-border rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-card border border-border rounded-2xl shadow-2xl max-w-4xl w-full">
         {/* Header */}
         <div className="relative">
           <Image

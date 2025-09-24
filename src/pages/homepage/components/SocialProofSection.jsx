@@ -70,7 +70,7 @@ const SocialProofSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/20 relative overflow-hidden">
+    <section className="py-20 bg-muted/20 relative">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>

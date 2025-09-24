@@ -207,7 +207,7 @@ const DemoExperience = () => {
         <meta name="description" content="Programe una demostración personalizada de SolHub. Demo interactivo de 45 minutos sin compromiso para laboratorios médicos en Venezuela." />
         <meta name="keywords" content="demo SolHub, demostración laboratorio, software médico Venezuela, prueba gratuita" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+      <div className="bg-background">
         <Header />
         
         <main className="pt-20">

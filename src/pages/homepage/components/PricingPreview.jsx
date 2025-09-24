@@ -29,7 +29,7 @@ const PricingPreview = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/10 relative overflow-hidden">
+    <section className="py-20 bg-muted/10 relative">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
