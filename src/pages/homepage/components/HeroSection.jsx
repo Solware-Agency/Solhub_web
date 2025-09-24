@@ -2,19 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import useActions from '../../../hooks/useActions';
 
 const HeroSection = () => {
   const handleDemoClick = () => {
     console.log('Demo solicitado');
   };
 
-  const handleWhatsAppClick = () => {
-    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
-    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
-  };
+  const { handleWhatsAppClick } = useActions();
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-background px-3 sm:px-6 lg:px-8">
+    <section className="relative flex items-center justify-center bg-background px-3 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-medical opacity-10 pointer-events-none"></div>
       
@@ -25,7 +23,16 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/4 sm:left-1/3 w-20 h-20 sm:w-24 sm:h-24 bg-accent/20 rounded-full blur-2xl animate-pulse-medical" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container-medical relative z-10 w-full max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 xl:py-20">
+      {/* IESA Logo - Top Left */}
+      <div className="absolute top-12 left-4 sm:top-16 sm:left-6 z-20">
+        <img 
+          src="/iesa.webp" 
+          alt="IESA" 
+          className="w-16 h-16 sm:w-20 sm:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+
+      <div className="container-medical relative z-10 w-full max-w-7xl mx-auto py-4 sm:py-6 lg:py-8">
         <div className="text-center max-w-4xl mx-auto px-2 sm:px-4">
 
           {/* Main Headline - Improved responsive typography */}
@@ -37,8 +44,8 @@ const HeroSection = () => {
 
           {/* Supporting Tagline - Better responsive text */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in px-2" style={{ animationDelay: '0.2s' }}>
-            Transforma tu laboratorio con módulos inteligentes, seguridad por sede y onboarding guiado. 
-            La evolución digital que los profesionales médicos venezolanos estaban esperando.
+            <span className="text-destructive font-semibold">8 de cada 10 laboratorios en Venezuela</span> no cuentan con una base de datos digital. 
+            <span className="text-primary font-medium"> SolHub</span> revoluciona el diagnóstico médico con IA integrada, seguridad por sede y onboarding guiado.
           </p>
 
           {/* Key Benefits - Better responsive grid */}

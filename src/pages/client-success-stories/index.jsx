@@ -319,7 +319,7 @@ const ClientSuccessStories = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Header />
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-medical-subtle border-b border-border">

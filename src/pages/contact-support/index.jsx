@@ -27,7 +27,7 @@ const ContactSupport = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Helmet>
         <title>Contacto y Soporte | SolHub - Soporte 24/7 para Laboratorios Venezolanos</title>
         <meta 

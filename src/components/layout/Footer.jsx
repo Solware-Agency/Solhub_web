@@ -8,7 +8,7 @@ const Footer = ({ variant = 'default' }) => {
 
   const navigationSections = {
     solhub: [
-      { name: 'Módulos', path: '/modules-showcase' },
+      { name: 'Soluciones', path: '/modules-showcase' },
       { name: 'IA Center', path: '/ai-intelligence-center' },
       { name: 'Seguridad', path: '/security-fortress' },
       { name: 'Precios', path: '/pricing-calculator' }

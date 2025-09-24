@@ -4,7 +4,7 @@ import Icon from '../../../components/AppIcon';
 
 const HeroSection = ({ onSearchChange, searchQuery }) => {
   return (
-    <section className="relative bg-gradient-medical py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-gradient-medical py-20 lg:py-32">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border border-white/20 rounded-full"></div>

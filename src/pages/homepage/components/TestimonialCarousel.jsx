@@ -84,7 +84,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

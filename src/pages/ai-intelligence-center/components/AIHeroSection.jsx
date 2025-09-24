@@ -23,9 +23,9 @@ const AIHeroSection = ({ onDemoClick, onLearnMoreClick }) => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden">
+    <section className="relative flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/20 py-20">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-medical"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-medical" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-2xl"></div>
@@ -48,8 +48,8 @@ const AIHeroSection = ({ onDemoClick, onLearnMoreClick }) => {
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Descubre cómo SolIA, la inteligencia artificial de SolHub, revoluciona los laboratorios venezolanos, 
-                mejorando la precisión diagnóstica y optimizando los flujos de trabajo médico.
+                <span className="text-destructive font-semibold">Entregar información médica confidencial a IAs externas es un riesgo que puede comprometer la privacidad de tus pacientes y la confidencialidad de tu laboratorio.</span> 
+                <span className="text-primary font-medium"> SolIA</span> es la única IA médica que funciona completamente dentro de tu infraestructura, garantizando que los datos de tus pacientes nunca salgan de tu control y manteniendo la confidencialidad absoluta.
               </p>
             </div>
 

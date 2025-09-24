@@ -61,7 +61,7 @@ const DedicatedContactPage = () => {
           })}
         </script>
       </Helmet>
-      <div className="min-h-screen bg-background overflow-x-hidden">
+      <div className="bg-background">
         <Header />
 
         {/* Main Content */}
@@ -73,7 +73,7 @@ const DedicatedContactPage = () => {
         >
           {/* Hero Section */}
           <motion.section 
-            className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-background relative overflow-hidden"
+            className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-background relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

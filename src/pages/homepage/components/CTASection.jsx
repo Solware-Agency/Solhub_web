@@ -2,16 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import useActions from '../../../hooks/useActions';
 
 const CTASection = () => {
   const handleDemoClick = () => {
     console.log('Demo solicitado desde CTA');
   };
 
-  const handleWhatsAppClick = () => {
-    const message = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
-    window.open(`https://wa.me/584129974533?text=${encodeURIComponent(message)}`, '_blank');
-  };
+  const { handleWhatsAppClick } = useActions();
 
   const benefits = [
     {
@@ -60,7 +58,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-20 bg-background relative">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-medical opacity-5"></div>

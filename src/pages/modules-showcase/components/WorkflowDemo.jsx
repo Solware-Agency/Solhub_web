@@ -141,7 +141,7 @@ const WorkflowDemo = ({ module, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="card-medical-elevated max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="card-medical-elevated max-w-4xl w-full">
         {/* Header */}
         <div className="p-6 border-b border-border">
           <div className="flex items-center justify-between">

@@ -41,7 +41,7 @@ const KnowledgeHub = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="/knowledge-hub" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+      <div className="bg-background">
         <Header />
         
         <main className="pt-16 lg:pt-20">
