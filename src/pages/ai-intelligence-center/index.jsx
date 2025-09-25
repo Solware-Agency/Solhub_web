@@ -31,12 +31,10 @@ const AIIntelligenceCenter = () => {
   return (
     <PageLayout seoConfig={seoConfig}>
       {/* Hero Section */}
-      <div className="section-container">
-        <AIHeroSection 
-          onDemoClick={handleDemoClickWithScroll}
-          onLearnMoreClick={handleLearnMoreClick}
-        />
-      </div>
+      <AIHeroSection 
+        onDemoClick={handleDemoClickWithScroll}
+        onLearnMoreClick={handleLearnMoreClick}
+      />
 
       {/* AI Capabilities */}
       <div id="ai-capabilities">
@@ -44,9 +42,7 @@ const AIIntelligenceCenter = () => {
       </div>
 
       {/* Process Visualization */}
-      <div className="section-container">
-        <AIProcessVisualization />
-      </div>
+      <AIProcessVisualization />
 
 
 

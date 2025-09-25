@@ -374,7 +374,7 @@ const ModulesShowcase = () => {
   return (
     <PageLayout seoConfig={seoConfig}>
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-medical-subtle section-container">
+      <section className="py-16 bg-gradient-medical-subtle">
         <div className="container-medical">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -422,7 +422,7 @@ const ModulesShowcase = () => {
       </section>
 
       {/* Ecosystem Map */}
-      <section className="py-16 section-container">
+      <section className="py-16">
         <div className="container-medical">
           <EcosystemMap
             modules={modules}
