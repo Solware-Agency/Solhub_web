@@ -50,7 +50,7 @@ const EcosystemMap = ({ modules, selectedModules, onModuleHover, onModuleClick }
           Descubre cómo nuestros módulos se integran para crear una solución completa
         </p>
       </div>
-      <div className="relative w-full h-48 sm:h-56 lg:h-64 bg-gradient-medical-subtle rounded-xl">
+      <div className="relative w-full h-48 sm:h-56 lg:h-64 bg-gradient-medical-subtle rounded-xl overflow-hidden">
         {/* Background Grid */}
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%">

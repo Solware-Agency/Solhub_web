@@ -121,6 +121,7 @@
   html {
     scroll-behavior: smooth;
     font-variant-numeric: tabular-nums;
+    overflow-x: hidden;
   }
   
   body {
@@ -129,6 +130,8 @@
     font-feature-settings: 'rlig' 1, 'calt' 1, 'ss01' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
   
   html {
@@ -464,6 +467,13 @@
 
 /* Prevent Horizontal Overflow */
 .overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow on main sections */
+.section-container {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Better Focus Handling */
