@@ -205,7 +205,7 @@ const AIProcessVisualization = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-xl p-8"
+              className="bg-card border border-border rounded-xl p-4 sm:p-8"
             >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center">
