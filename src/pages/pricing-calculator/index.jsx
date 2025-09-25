@@ -46,67 +46,67 @@ const PricingCalculator = () => {
     ]
   };
 
-  // Mock data for individual modules
+  // Módulos con precios consistentes con la página de módulos
   const availableModules = [
     {
-      id: 'ai-diagnostics',
-      name: 'IA para Diagnósticos',
-      description: 'Asistente de inteligencia artificial para interpretación de resultados',
+      id: 'patient-management',
+      name: 'Gestión de Pacientes',
+      description: 'Sistema integral para el registro, seguimiento y gestión completa de pacientes',
+      icon: 'Users',
+      monthlyPrice: 25,
+      monthlyPriceUSD: 25,
+      setupFee: 37.5,
+      features: ['Registro rápido con validación automática', 'Historial médico completo', 'Gestión de citas y recordatorios']
+    },
+    {
+      id: 'ai-analysis',
+      name: 'Análisis con IA',
+      description: 'Inteligencia artificial avanzada para análisis automático de muestras y diagnóstico asistido',
       icon: 'Brain',
-      monthlyPrice: 80,
-      monthlyPriceUSD: 80,
-      setupFee: 120,
-      features: ['Análisis automático de patrones', 'Sugerencias diagnósticas', 'Alertas de valores críticos']
-    },
-    {
-      id: 'telemedicine',
-      name: 'Telemedicina',
-      description: 'Consultas médicas remotas integradas con resultados de laboratorio',
-      icon: 'Video',
-      monthlyPrice: 60,
-      monthlyPriceUSD: 60,
-      setupFee: 90,
-      features: ['Videoconsultas HD', 'Compartir resultados en tiempo real', 'Grabación de sesiones']
-    },
-    {
-      id: 'mobile-app',
-      name: 'App Móvil Pacientes',
-      description: 'Aplicación móvil para que pacientes accedan a sus resultados',
-      icon: 'Smartphone',
-      monthlyPrice: 40,
-      monthlyPriceUSD: 40,
-      setupFee: 60,
-      features: ['Resultados en tiempo real', 'Notificaciones push', 'Historial médico']
-    },
-    {
-      id: 'advanced-reports',
-      name: 'Reportes Avanzados',
-      description: 'Sistema de reportes ejecutivos y análisis de tendencias',
-      icon: 'BarChart3',
-      monthlyPrice: 50,
-      monthlyPriceUSD: 50,
-      setupFee: 75,
-      features: ['Dashboards personalizados', 'Análisis de tendencias', 'Exportación automática']
-    },
-    {
-      id: 'quality-control',
-      name: 'Control de Calidad',
-      description: 'Módulo especializado para control de calidad y trazabilidad',
-      icon: 'Shield',
-      monthlyPrice: 70,
-      monthlyPriceUSD: 70,
-      setupFee: 105,
-      features: ['Trazabilidad completa', 'Controles automáticos', 'Certificaciones ISO']
-    },
-    {
-      id: 'inventory-plus',
-      name: 'Inventario Avanzado',
-      description: 'Gestión avanzada de inventario con predicción de demanda',
-      icon: 'Package',
       monthlyPrice: 45,
       monthlyPriceUSD: 45,
       setupFee: 67.5,
-      features: ['Predicción de demanda', 'Alertas automáticas', 'Integración con proveedores']
+      features: ['Análisis automático de imágenes médicas', 'Detección temprana de anomalías', 'Interpretación inteligente de resultados']
+    },
+    {
+      id: 'automated-reports',
+      name: 'Reportes Automatizados',
+      description: 'Generación automática de reportes médicos profesionales con interpretaciones inteligentes',
+      icon: 'FileText',
+      monthlyPrice: 32,
+      monthlyPriceUSD: 32,
+      setupFee: 48,
+      features: ['Generación automática de reportes', 'Plantillas personalizables', 'Entrega digital multi-canal']
+    },
+    {
+      id: 'data-security',
+      name: 'Seguridad de Datos',
+      description: 'Protección avanzada de datos médicos con encriptación y control de acceso',
+      icon: 'Shield',
+      monthlyPrice: 18,
+      monthlyPriceUSD: 18,
+      setupFee: 27,
+      features: ['Encriptación AES-256', 'Control de acceso basado en roles', 'Auditoría completa de actividades']
+    },
+    {
+      id: 'inventory-control',
+      name: 'Control de Inventario',
+      description: 'Gestión inteligente de inventario médico con predicción de demanda',
+      icon: 'Package',
+      monthlyPrice: 28,
+      monthlyPriceUSD: 28,
+      setupFee: 42,
+      features: ['Tracking en tiempo real', 'Predicción de demanda con IA', 'Alertas de stock mínimo']
+    },
+    {
+      id: 'billing-integration',
+      name: 'Integración de Facturación',
+      description: 'Sistema completo de facturación médica con integración a seguros',
+      icon: 'CreditCard',
+      monthlyPrice: 35,
+      monthlyPriceUSD: 35,
+      setupFee: 52.5,
+      features: ['Facturación automática por servicios', 'Integración con seguros médicos', 'Procesamiento de pagos multi-canal']
     }
   ];
 

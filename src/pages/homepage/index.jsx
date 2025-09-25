@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import ModuleShowcase from './components/ModuleShowcase';
 import SocialProofSection from './components/SocialProofSection';
 import TestimonialCarousel from './components/TestimonialCarousel';
+import RecognitionsSection from './components/RecognitionsSection';
 import PricingPreview from './components/PricingPreview';
 import ContactFormSection from './components/ContactFormSection';
 import CTASection from './components/CTASection';
@@ -35,9 +36,10 @@ const Homepage = () => {
     { Component: ModuleShowcase, delay: 0.1 },
     { Component: SocialProofSection, delay: 0.2 },
     { Component: TestimonialCarousel, delay: 0.1 },
-    { Component: PricingPreview, delay: 0.2 },
-    { Component: ContactFormSection, delay: 0.1 },
-    { Component: CTASection, delay: 0.2 }
+    { Component: RecognitionsSection, delay: 0.2 },
+    { Component: PricingPreview, delay: 0.1 },
+    { Component: ContactFormSection, delay: 0.2 },
+    { Component: CTASection, delay: 0.1 }
   ];
 
   return (
@@ -51,7 +53,7 @@ const Homepage = () => {
         <HeroSection />
       </motion.div>
       {/* Content Sections with Staggered Animations */}
-      <div className="space-y-16 sm:space-y-20 lg:space-y-24 pb-16 sm:pb-20 lg:pb-24">
+      <div className="space-y-16 sm:space-y-20 lg:space-y-24">
         {sections?.slice(1)?.map(({ Component, delay }, index) => {
           const ComponentToRender = Component;
           return (
