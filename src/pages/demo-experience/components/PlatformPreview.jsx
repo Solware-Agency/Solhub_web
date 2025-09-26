@@ -20,23 +20,26 @@ const PlatformPreview = ({ onScheduleDemo }) => {
         </div>
       </div>
 
-      {/* Próximamente Section */}
-      <div className="text-center py-12">
-        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <Icon name="Clock" size={32} className="text-primary" />
+      {/* Video Section */}
+      <div className="space-y-6">
+        {/* Video Player */}
+        <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
+          <video 
+            className="w-full h-auto max-h-[350px] object-contain"
+            controls
+            preload="metadata"
+            poster=""
+          >
+            <source src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/DemoSolHub.mp4" type="video/mp4" />
+            Su navegador no soporta la reproducción de video.
+          </video>
+          
+          {/* Custom Video Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
         </div>
-        
-        <h4 className="text-2xl font-semibold text-foreground mb-4">
-          Demo Interactiva Próximamente
-        </h4>
-        
-        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-          Estamos preparando una experiencia interactiva completa donde podrás explorar 
-          todos los módulos de SolHub en tiempo real. Mientras tanto, programa una demo 
-          personalizada con nuestro equipo.
-        </p>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* Features Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-muted/20 rounded-lg p-4 text-center">
             <Icon name="UserPlus" size={24} className="text-primary mx-auto mb-2" />
             <h5 className="text-sm font-medium text-foreground">Registro de Pacientes</h5>
@@ -60,22 +63,24 @@ const PlatformPreview = ({ onScheduleDemo }) => {
           <div className="flex items-center justify-center space-x-2 mb-3">
             <Icon name="Zap" size={20} className="text-primary" />
             <h5 className="text-lg font-semibold text-foreground">
-              ¿Listo para ver más?
+              ¿Listo para una experiencia personalizada?
             </h5>
           </div>
-          <p className="text-muted-foreground mb-4">
-            Este es solo un vistazo de las capacidades de SolHub. 
-            En el demo completo podrá interactuar con todas las funcionalidades.
+          <p className="text-muted-foreground mb-4 text-center">
+            Este video muestra las capacidades generales de SolHub. 
+            En el demo personalizado podrá interactuar con todas las funcionalidades adaptadas a su laboratorio.
           </p>
-          <Button
-            variant="default"
-            iconName="Calendar"
-            iconPosition="left"
-            className="bg-gradient-medical"
-            onClick={onScheduleDemo}
-          >
-            Programar Demo Completo
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              variant="default"
+              iconName="Calendar"
+              iconPosition="left"
+              className="bg-gradient-medical"
+              onClick={onScheduleDemo}
+            >
+              Programar Demo Personalizado
+            </Button>
+          </div>
         </div>
       </div>
     </div>

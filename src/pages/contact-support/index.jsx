@@ -5,7 +5,6 @@ import Footer from '../../components/layout/Footer';
 import ContactHero from './components/ContactHero';
 import ContactChannels from './components/ContactChannels';
 import ContactForm from './components/ContactForm';
-import OfficeLocations from './components/OfficeLocations';
 import FAQ from './components/FAQ';
 import ReferralProgram from './components/ReferralProgram';
 import useActions from '../../hooks/useActions';
@@ -102,8 +101,6 @@ const ContactSupport = () => {
         />
         
         <ContactForm />
-        
-        <OfficeLocations />
         
         <FAQ />
         

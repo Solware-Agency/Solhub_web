@@ -122,7 +122,7 @@ const CTASection = () => {
         </motion.div>
 
         {/* Action Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-16 overflow-hidden">
           {nextSteps?.map((step, index) => (
             <motion.div
               key={step?.title}
@@ -130,7 +130,7 @@ const CTASection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card border border-border rounded-xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="bg-card border border-border rounded-xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
               <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center mx-auto mb-6">
                 <Icon name={step?.icon} size={32} color="white" />

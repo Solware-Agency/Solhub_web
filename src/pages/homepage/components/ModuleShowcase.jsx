@@ -189,7 +189,7 @@ const ModuleShowcase = () => {
         </div>
 
         {/* Active Module Display */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center overflow-hidden">
           {/* Module Info */}
           <div className="space-y-8">
             <div>
@@ -276,7 +276,7 @@ const ModuleShowcase = () => {
           </div>
 
           {/* Code Preview */}
-          <div className="relative">
+          <div className="relative min-w-0">
             <div className="bg-card border border-border rounded-xl overflow-hidden shadow-lg">
               <div className="flex items-center justify-between px-4 py-3 bg-muted/50 border-b border-border">
                 <div className="flex items-center space-x-2">
@@ -289,7 +289,7 @@ const ModuleShowcase = () => {
                 </span>
               </div>
               <div className="p-6">
-                <pre className="text-sm text-foreground font-mono overflow-x-auto">
+                <pre className="text-sm text-foreground font-mono overflow-x-auto whitespace-pre-wrap break-words">
                   <code>{modules?.[activeModule]?.preview}</code>
                 </pre>
               </div>

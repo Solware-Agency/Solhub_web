@@ -47,7 +47,7 @@ const AIHeroSection = ({ onDemoClick, onLearnMoreClick }) => {
                 <span className="text-foreground">el Diagnóstico</span>
               </h1>
               
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl break-words">
                 <span className="text-destructive font-semibold">Entregar información médica confidencial a IAs externas es un riesgo que puede comprometer la privacidad de tus pacientes y la confidencialidad de tu laboratorio.</span> 
                 <span className="text-primary font-medium"> SolIA</span> es la única IA médica que funciona completamente dentro de tu infraestructura, garantizando que los datos de tus pacientes nunca salgan de tu control y manteniendo la confidencialidad absoluta.
               </p>
