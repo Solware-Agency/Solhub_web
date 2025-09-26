@@ -100,7 +100,7 @@ const TrustBuildingSection = () => {
         </motion.div>
 
         {/* Trust Principles */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-20 overflow-hidden">
           {trustPrinciples?.map((principle, index) => (
             <motion.div
               key={principle?.title}
@@ -193,7 +193,7 @@ const TrustBuildingSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 overflow-hidden">
             {testimonials?.map((testimonial, index) => (
               <motion.div
                 key={testimonial?.name}

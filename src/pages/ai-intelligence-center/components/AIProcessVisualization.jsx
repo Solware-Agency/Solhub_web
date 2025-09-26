@@ -123,7 +123,7 @@ const AIProcessVisualization = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start overflow-hidden">
           {/* Process Flow Visualization */}
           <div className="relative">
             <div className="space-y-6">
@@ -134,7 +134,7 @@ const AIProcessVisualization = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative cursor-pointer transition-all duration-500 ${
+                  className={`relative cursor-pointer transition-all duration-500 overflow-hidden ${
                     activeStep === index ? 'scale-105' : 'hover:scale-102'
                   }`}
                   onClick={() => handleStepClick(index)}

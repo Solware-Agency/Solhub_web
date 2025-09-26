@@ -22,7 +22,7 @@ const ConfiguratorSidebar = ({
   );
 
   return (
-    <div className="sticky top-24 space-y-6">
+    <div className="sticky top-24 space-y-6 min-w-0">
       {/* Header */}
       <div className="card-medical p-6">
         <div className="flex items-center justify-between mb-4">
@@ -61,12 +61,12 @@ const ConfiguratorSidebar = ({
                 return (
                   <div 
                     key={moduleId}
-                    className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                    className="flex items-center justify-between p-3 bg-muted/50 rounded-lg min-w-0"
                   >
-                    <div className="flex items-center space-x-3">
-                      <Icon name={module.icon} size={16} className="text-primary" />
-                      <div>
-                        <span className="text-sm font-medium text-foreground">
+                    <div className="flex items-center space-x-3 min-w-0 flex-1">
+                      <Icon name={module.icon} size={16} className="text-primary flex-shrink-0" />
+                      <div className="min-w-0 flex-1">
+                        <span className="text-sm font-medium text-foreground block truncate">
                           {module.name}
                         </span>
                         <div className="text-xs text-muted-foreground">
@@ -79,7 +79,7 @@ const ConfiguratorSidebar = ({
                       size="sm"
                       onClick={() => onRemoveModule(moduleId)}
                       iconName="X"
-                      className="text-destructive hover:text-destructive"
+                      className="text-destructive hover:text-destructive flex-shrink-0 ml-2"
                     />
                   </div>
                 );
