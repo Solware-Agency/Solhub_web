@@ -142,13 +142,13 @@ const FAQ = () => {
         {/* FAQ Categories */}
         <div className="space-y-12">
           {faqCategories?.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="card-medical-elevated p-8 lg:p-12">
+            <div key={categoryIndex} className="group card-medical-elevated p-8 lg:p-12 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer">
               {/* Category Header */}
               <div className="flex items-center space-x-4 mb-8">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${getColorClasses(category?.color)}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${getColorClasses(category?.color)} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
                   <Icon name={category?.icon} size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   {category?.title}
                 </h3>
               </div>
@@ -162,20 +162,20 @@ const FAQ = () => {
                   return (
                     <div
                       key={questionIndex}
-                      className="border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/30"
+                      className="group/question border border-border rounded-xl overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
                     >
                       {/* Question Button */}
                       <button
                         onClick={() => toggleItem(categoryIndex, questionIndex)}
-                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-muted/30 transition-colors duration-200"
+                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-muted/30 transition-colors duration-200 group-hover/question:bg-primary/5"
                       >
-                        <span className="text-lg font-semibold text-foreground pr-4">
+                        <span className="text-lg font-semibold text-foreground pr-4 group-hover/question:text-primary transition-colors duration-300">
                           {item?.question}
                         </span>
                         <Icon
                           name={isOpen ? "ChevronUp" : "ChevronDown"}
                           size={20}
-                          className={`text-muted-foreground transition-transform duration-200 flex-shrink-0 ${
+                          className={`text-muted-foreground transition-transform duration-200 flex-shrink-0 group-hover/question:text-primary ${
                             isOpen ? 'transform rotate-180' : ''
                           }`}
                         />

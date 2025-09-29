@@ -119,16 +119,19 @@ const DemoExperience = () => {
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits?.map((benefit, index) => (
-                <div key={index} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center mb-4">
-                    <Icon name={benefit?.icon} size={24} color="white" />
+                <div key={index} className="group bg-card border border-border rounded-xl p-6 hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/60 via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out opacity-0 group-hover:opacity-100"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center mb-4 group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">
+                      <Icon name={benefit?.icon} size={24} color="white" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      {benefit?.title}
+                    </h3>
+                    <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      {benefit?.description}
+                    </p>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {benefit?.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {benefit?.description}
-                  </p>
                 </div>
               ))}
             </div>
@@ -139,17 +142,19 @@ const DemoExperience = () => {
               </h3>
               <div className="space-y-4">
                 {demoFeatures?.map((feature, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-card rounded-lg border border-border">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                        <span className="text-sm font-medium text-primary">{index + 1}</span>
+                  <div key={index} className="group flex items-center justify-between p-4 bg-card rounded-lg border border-border hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 hover:scale-105 transition-all duration-500 cursor-pointer relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-radial from-primary/40 via-primary/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out opacity-0 group-hover:opacity-100"></div>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/30 via-transparent to-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative z-10 flex items-center space-x-4">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-150 group-hover:animate-bounce transition-transform duration-300">
+                        <span className="text-sm font-medium text-primary group-hover:scale-125">{index + 1}</span>
                       </div>
                       <div>
-                        <h4 className="font-medium text-foreground">{feature?.title}</h4>
-                        <p className="text-sm text-muted-foreground">{feature?.description}</p>
+                        <h4 className="font-medium text-foreground group-hover:text-primary transition-colors duration-300">{feature?.title}</h4>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{feature?.description}</p>
                       </div>
                     </div>
-                    <div className="text-sm text-primary font-medium">
+                    <div className="relative z-10 text-sm text-primary font-medium group-hover:scale-125 transition-transform duration-300">
                       {feature?.duration}
                     </div>
                   </div>

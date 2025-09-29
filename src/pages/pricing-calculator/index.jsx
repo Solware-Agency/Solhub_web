@@ -15,7 +15,6 @@ import useActions from '../../hooks/useActions';
 const PricingCalculator = () => {
   const [numberOfLabs, setNumberOfLabs] = useState(0);
   const [selectedModules, setSelectedModules] = useState([]);
-  const [hasReferralDiscount, setHasReferralDiscount] = useState(false);
   const [activeTab, setActiveTab] = useState('packages');
   
   const { handleWhatsAppClick } = useActions();
@@ -125,9 +124,6 @@ const PricingCalculator = () => {
     });
   };
 
-  const handleToggleReferral = () => {
-    setHasReferralDiscount(!hasReferralDiscount);
-  };
 
   const handleRequestDemo = () => {
     const message = `Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?`;
@@ -201,9 +197,7 @@ const PricingCalculator = () => {
             <PricingSummary
               numberOfLabs={numberOfLabs}
               selectedModules={selectedModules}
-              hasReferralDiscount={hasReferralDiscount}
               pricingModel={pricingModel}
-              onToggleReferral={handleToggleReferral}
               onRequestDemo={handleRequestDemo}
               onContactSales={handleContactSales}
             />

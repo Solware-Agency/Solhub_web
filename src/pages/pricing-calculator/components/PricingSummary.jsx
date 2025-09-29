@@ -6,9 +6,7 @@ import Button from '../../../components/ui/Button';
 const PricingSummary = ({ 
   numberOfLabs,
   selectedModules, 
-  hasReferralDiscount, 
   pricingModel,
-  onToggleReferral,
   onRequestDemo,
   onContactSales 
 }) => {
@@ -36,17 +34,13 @@ const PricingSummary = ({
       });
     });
 
-    const discount = hasReferralDiscount ? monthlyTotal * 0.2 : 0;
-    const finalMonthly = monthlyTotal - discount;
-    const monthlyUSD = finalMonthly; // Already in USD
+    const monthlyUSD = monthlyTotal; // Already in USD
     const setupUSD = setupTotal; // Already in USD
 
     return {
       items,
       monthlyTotal,
       setupTotal,
-      discount,
-      finalMonthly,
       monthlyUSD,
       setupUSD
     };
@@ -116,27 +110,6 @@ const PricingSummary = ({
           ))}
         </div>
 
-        {/* Referral Discount Toggle */}
-        <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
-          <div className="flex items-center space-x-3">
-            <input
-              type="checkbox"
-              id="referral-discount"
-              checked={hasReferralDiscount}
-              onChange={onToggleReferral}
-              className="w-4 h-4 text-accent bg-background border-border rounded focus:ring-accent"
-            />
-            <label htmlFor="referral-discount" className="flex-1 cursor-pointer">
-              <div className="font-medium text-foreground">
-                Programa de Referidos
-              </div>
-              <div className="text-sm text-muted-foreground">
-                20% de descuento por recomendación
-              </div>
-            </label>
-            <Icon name="Gift" size={20} className="text-accent" />
-          </div>
-        </div>
 
         {/* Totals */}
         <div className="space-y-3">
@@ -147,21 +120,13 @@ const PricingSummary = ({
             </span>
           </div>
 
-          {hasReferralDiscount && (
-            <div className="flex justify-between items-center text-accent">
-              <span>Descuento por referido (20%):</span>
-              <span className="font-semibold">
-                -${totals?.discount}
-              </span>
-            </div>
-          )}
 
           <div className="border-t border-border pt-3">
             <div className="flex justify-between items-center mb-2">
               <span className="text-lg font-bold text-foreground">Total mensual:</span>
               <div className="text-right">
                 <div className="text-2xl font-bold text-gradient-medical">
-                  ${totals?.finalMonthly}
+                  ${totals?.monthlyTotal}
                 </div>
                 <div className="text-sm text-muted-foreground">
                   USD/mes

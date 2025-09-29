@@ -134,7 +134,7 @@ const AIProcessVisualization = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative cursor-pointer transition-all duration-500 overflow-hidden ${
+                  className={`group relative cursor-pointer transition-all duration-500 overflow-hidden ${
                     activeStep === index ? 'scale-105' : 'hover:scale-102'
                   }`}
                   onClick={() => handleStepClick(index)}
@@ -142,28 +142,28 @@ const AIProcessVisualization = () => {
                   <div className={`p-6 rounded-xl border-2 transition-all duration-300 ${
                     activeStep === index
                       ? `${step?.bgColor} border-current ${step?.color} shadow-lg`
-                      : 'bg-card border-border hover:border-primary/30'
+                      : 'bg-card border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1'
                   }`}>
                     <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                         activeStep === index
                           ? 'bg-gradient-medical text-white'
-                          : `${step?.bgColor} ${step?.color}`
+                          : `${step?.bgColor} ${step?.color} group-hover:scale-110 group-hover:rotate-6`
                       }`}>
                         <Icon name={step?.icon} size={24} />
                       </div>
                       <div className="flex-1">
-                        <h3 className={`text-lg font-semibold mb-1 ${
-                          activeStep === index ? step?.color : 'text-foreground'
+                        <h3 className={`text-lg font-semibold mb-1 transition-colors duration-300 ${
+                          activeStep === index ? step?.color : 'text-foreground group-hover:text-primary'
                         }`}>
                           {step?.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                           {step?.description}
                         </p>
                       </div>
-                      <div className={`text-2xl font-bold ${
-                        activeStep === index ? step?.color : 'text-muted-foreground'
+                      <div className={`text-2xl font-bold transition-all duration-300 ${
+                        activeStep === index ? step?.color : 'text-muted-foreground group-hover:text-primary group-hover:scale-110'
                       }`}>
                         {index + 1}
                       </div>
@@ -205,7 +205,7 @@ const AIProcessVisualization = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border rounded-xl p-4 sm:p-8"
+              className="bg-card border border-border rounded-xl p-4 sm:p-8 hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] hover:border-primary/50 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center">

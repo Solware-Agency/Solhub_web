@@ -97,14 +97,20 @@ const SocialProofSection = () => {
           {metrics?.map((metric, index) => (
             <div 
               key={index} 
-              className="text-center p-6 bg-card/50 backdrop-blur-sm border border-border rounded-xl hover:bg-card/70 hover:border-primary/20 transition-all duration-300 hover-lift"
+              className="group text-center p-6 bg-card/50 backdrop-blur-sm border border-border rounded-xl hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 cursor-pointer relative overflow-hidden"
             >
-              <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name={metric?.icon} size={24} color="white" />
+              {/* Efecto de brillo animado */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/60 via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out opacity-0 group-hover:opacity-100"></div>
+              
+              {/* Contenido relativo */}
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-medical rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500">
+                  <Icon name={metric?.icon} size={24} color="white" />
+                </div>
+                <div className="text-3xl font-bold text-gradient-medical mb-2 group-hover:scale-110 transition-transform duration-300">{metric?.value}</div>
+                <div className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{metric?.label}</div>
+                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{metric?.description}</div>
               </div>
-              <div className="text-3xl font-bold text-gradient-medical mb-2">{metric?.value}</div>
-              <div className="text-lg font-semibold text-foreground mb-2">{metric?.label}</div>
-              <div className="text-sm text-muted-foreground">{metric?.description}</div>
             </div>
           ))}
         </div>
@@ -124,31 +130,40 @@ const SocialProofSection = () => {
             {locations?.map((location, index) => (
               <div 
                 key={index}
-                className="p-6 bg-card border border-border rounded-xl hover:border-primary/30 transition-all duration-300 hover-lift"
+                className="group p-6 bg-card border border-border rounded-xl hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2 hover:scale-105 transition-all duration-500 cursor-pointer relative overflow-hidden"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h4 className="font-bold text-foreground">{location?.city}</h4>
-                    <p className="text-sm text-muted-foreground">{location?.zone}</p>
-                  </div>
-                  <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
-                </div>
+                {/* Efecto de pulso desde el centro */}
+                <div className="absolute inset-0 bg-gradient-radial from-primary/40 via-primary/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out opacity-0 group-hover:opacity-100"></div>
                 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Usuarios:</span>
-                    <span className="text-sm font-medium text-foreground">{location?.users}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Satisfacción:</span>
-                    <div className="flex items-center space-x-1">
-                      <Icon name="Star" size={12} className="text-warning fill-current" />
-                      <span className="text-sm font-medium text-foreground">{location?.satisfaction}</span>
+                {/* Efecto de resplandor en los bordes */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/30 via-transparent to-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Contenido relativo */}
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h4 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300">{location?.city}</h4>
+                      <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{location?.zone}</p>
                     </div>
+                    <div className="w-3 h-3 bg-success rounded-full animate-pulse group-hover:scale-150 group-hover:animate-bounce transition-all duration-300"></div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Uptime:</span>
-                    <span className="text-sm font-medium text-success">{location?.uptime}</span>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Usuarios:</span>
+                      <span className="text-sm font-medium text-foreground group-hover:scale-125 transition-transform duration-300">{location?.users}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Satisfacción:</span>
+                      <div className="flex items-center space-x-1">
+                        <Icon name="Star" size={12} className="text-warning fill-current group-hover:scale-125 transition-transform duration-300" />
+                        <span className="text-sm font-medium text-foreground group-hover:scale-125 transition-transform duration-300">{location?.satisfaction}</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Uptime:</span>
+                      <span className="text-sm font-medium text-success group-hover:scale-125 transition-transform duration-300">{location?.uptime}</span>
+                    </div>
                   </div>
                 </div>
               </div>

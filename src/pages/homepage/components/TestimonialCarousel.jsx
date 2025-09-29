@@ -108,29 +108,24 @@ const TestimonialCarousel = () => {
         </div>
 
         {/* Testimonial Display */}
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="relative bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg">
-            {/* Quote Icon */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-medical rounded-full flex items-center justify-center">
-              <Icon name="Quote" size={20} color="white" className="sm:w-6 sm:h-6" />
-            </div>
-
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="group relative bg-card border border-border rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer">
             {/* Testimonial Content */}
-            <div className="pt-12 sm:pt-16">
+            <div>
               {/* Doctores Aliados */}
-              <div className="flex items-center space-x-1 mb-6">
-                <span className="text-primary font-semibold text-base sm:text-lg">Doctores Aliados</span>
+              <div className="flex items-center space-x-1 mb-4">
+                <span className="text-primary font-semibold text-sm sm:text-base group-hover:text-primary/80 transition-colors duration-300">Doctores Aliados</span>
               </div>
 
               {/* Content */}
-              <blockquote className="text-base sm:text-lg md:text-xl text-foreground leading-relaxed mb-8">
+              <blockquote className="text-sm sm:text-base md:text-lg text-foreground leading-relaxed mb-6 group-hover:text-foreground/90 transition-colors duration-300">
                 "{testimonials?.[currentTestimonial]?.content}"
               </blockquote>
 
               {/* Author Info */}
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div className="flex items-center space-x-3 sm:space-x-4 mb-6 md:mb-0">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-primary/20 bg-muted/20 flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-primary/20 bg-muted/20 flex items-center justify-center group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300">
                     <img 
                       src={testimonials?.[currentTestimonial]?.avatar} 
                       alt={testimonials?.[currentTestimonial]?.name}
@@ -140,18 +135,18 @@ const TestimonialCarousel = () => {
                         e.target.nextSibling.style.display = 'flex';
                       }}
                     />
-                    <div className="w-full h-full bg-gradient-medical flex items-center justify-center text-white font-bold text-sm sm:text-lg" style={{display: 'none'}}>
+                    <div className="w-full h-full bg-gradient-medical flex items-center justify-center text-white font-bold text-xs sm:text-sm" style={{display: 'none'}}>
                       {testimonials?.[currentTestimonial]?.name?.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold text-foreground text-base sm:text-lg">
+                    <div className="font-bold text-foreground text-sm sm:text-base group-hover:text-primary transition-colors duration-300">
                       {testimonials?.[currentTestimonial]?.name}
                     </div>
-                    <div className="text-primary font-medium text-sm sm:text-base">
+                    <div className="text-primary font-medium text-xs sm:text-sm group-hover:text-primary/80 transition-colors duration-300">
                       {testimonials?.[currentTestimonial]?.role}
                     </div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">
+                    <div className="text-xs text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">
                       {testimonials?.[currentTestimonial]?.location}
                     </div>
                   </div>

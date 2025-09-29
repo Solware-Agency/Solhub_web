@@ -20,24 +20,14 @@ const ComplianceMatrix = () => {
           category: "Políticas de Seguridad",
           items: [
             { name: "Política de Seguridad de la Información", status: "Completo", progress: 100 },
-            { name: "Revisión y Actualización de Políticas", status: "Completo", progress: 100 },
-            { name: "Comunicación de Políticas", status: "Completo", progress: 100 }
-          ]
-        },
-        {
-          category: "Gestión de Activos",
-          items: [
-            { name: "Inventario de Activos", status: "Completo", progress: 100 },
-            { name: "Clasificación de Información", status: "Completo", progress: 100 },
-            { name: "Manejo de Medios", status: "Completo", progress: 100 }
+            { name: "Revisión y Actualización de Políticas", status: "Completo", progress: 100 }
           ]
         },
         {
           category: "Control de Acceso",
           items: [
             { name: "Gestión de Acceso de Usuarios", status: "Completo", progress: 100 },
-            { name: "Autenticación Multifactor", status: "Completo", progress: 100 },
-            { name: "Revisión de Derechos de Acceso", status: "Completo", progress: 100 }
+            { name: "Autenticación Multifactor", status: "Completo", progress: 100 }
           ]
         }
       ]
@@ -87,10 +77,10 @@ const ComplianceMatrix = () => {
                 <button
                   key={standard?.id}
                   onClick={() => setSelectedStandard(index)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
+                  className={`group w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                     selectedStandard === index
                       ? `border-${standard?.color} bg-${standard?.color}/10`
-                      : 'border-border bg-card/50 hover:bg-card/70'
+                      : 'border-border bg-card/50 hover:bg-card/70 hover:shadow-lg hover:shadow-success/20 hover:border-success/30 hover:-translate-y-1 cursor-pointer'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -120,9 +110,9 @@ const ComplianceMatrix = () => {
 
           {/* Standard Details */}
           <div className="lg:col-span-3">
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="bg-card border border-border rounded-xl p-4">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-4">
                   <div className={`w-12 h-12 bg-${currentStandard?.color}/10 rounded-lg flex items-center justify-center`}>
                     <Icon 
@@ -145,7 +135,7 @@ const ComplianceMatrix = () => {
               </div>
 
               {/* Audit Info */}
-              <div className="grid md:grid-cols-2 gap-4 mb-8">
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center space-x-3 p-3 bg-muted/30 rounded-lg">
                   <Icon name="Calendar" size={16} color="var(--color-muted-foreground)" />
                   <div>
@@ -163,10 +153,10 @@ const ComplianceMatrix = () => {
               </div>
 
               {/* Requirements */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {currentStandard?.requirements?.map((category, categoryIndex) => (
                   <div key={categoryIndex}>
-                    <h4 className="font-semibold text-foreground mb-3">{category?.category}</h4>
+                    <h4 className="font-semibold text-foreground mb-2">{category?.category}</h4>
                     <div className="space-y-2">
                       {category?.items?.map((item, itemIndex) => (
                         <div key={itemIndex} className="flex items-center justify-between p-3 bg-muted/20 rounded-lg">

@@ -225,21 +225,21 @@ const SecurityTestimonials = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-4">Métricas de Implementación</h4>
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-muted/30 rounded-lg p-3 text-center">
-                      <div className="text-lg font-bold text-primary">{currentTestimonial?.metrics?.implementation}</div>
-                      <div className="text-xs text-muted-foreground">Implementación</div>
+                    <div className="group bg-muted/30 rounded-lg p-3 text-center hover:bg-muted/50 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                      <div className="text-lg font-bold text-primary group-hover:scale-105 transition-transform duration-300">{currentTestimonial?.metrics?.implementation}</div>
+                      <div className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Implementación</div>
                     </div>
-                    <div className="bg-muted/30 rounded-lg p-3 text-center">
-                      <div className="text-lg font-bold text-success">{currentTestimonial?.metrics?.compliance}</div>
-                      <div className="text-xs text-muted-foreground">Cumplimiento</div>
+                    <div className="group bg-muted/30 rounded-lg p-3 text-center hover:bg-muted/50 hover:shadow-lg hover:shadow-success/20 hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                      <div className="text-lg font-bold text-success group-hover:scale-105 transition-transform duration-300">{currentTestimonial?.metrics?.compliance}</div>
+                      <div className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Cumplimiento</div>
                     </div>
-                    <div className="bg-muted/30 rounded-lg p-3 text-center">
-                      <div className="text-lg font-bold text-secondary">{currentTestimonial?.metrics?.uptime}</div>
-                      <div className="text-xs text-muted-foreground">Disponibilidad</div>
+                    <div className="group bg-muted/30 rounded-lg p-3 text-center hover:bg-muted/50 hover:shadow-lg hover:shadow-secondary/20 hover:border-secondary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                      <div className="text-lg font-bold text-secondary group-hover:scale-105 transition-transform duration-300">{currentTestimonial?.metrics?.uptime}</div>
+                      <div className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Disponibilidad</div>
                     </div>
-                    <div className="bg-muted/30 rounded-lg p-3 text-center">
-                      <div className="text-lg font-bold text-accent">{currentTestimonial?.metrics?.users}</div>
-                      <div className="text-xs text-muted-foreground">Usuarios</div>
+                    <div className="group bg-muted/30 rounded-lg p-3 text-center hover:bg-muted/50 hover:shadow-lg hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                      <div className="text-lg font-bold text-accent group-hover:scale-105 transition-transform duration-300">{currentTestimonial?.metrics?.users}</div>
+                      <div className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Usuarios</div>
                     </div>
                   </div>
                 </div>
@@ -273,21 +273,21 @@ const SecurityTestimonials = () => {
 
         {/* Trust Indicators */}
         <div className="mt-16 grid md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-success mb-2">5</div>
-            <div className="text-sm text-muted-foreground">Sedes Protegidas</div>
+          <div className="group text-center p-6 bg-card/30 border border-border rounded-xl hover:bg-card/50 hover:shadow-lg hover:shadow-success/20 hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <div className="text-3xl font-bold text-success mb-2 group-hover:scale-110 transition-transform duration-300">5</div>
+            <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Sedes Protegidas</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">Cumplimiento ISO</div>
+          <div className="group text-center p-6 bg-card/30 border border-border rounded-xl hover:bg-card/50 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+            <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Cumplimiento ISO</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-2">24/7</div>
-            <div className="text-sm text-muted-foreground">Monitoreo Activo</div>
+          <div className="group text-center p-6 bg-card/30 border border-border rounded-xl hover:bg-card/50 hover:shadow-lg hover:shadow-secondary/20 hover:border-secondary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <div className="text-3xl font-bold text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+            <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Monitoreo Activo</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">0</div>
-            <div className="text-sm text-muted-foreground">Brechas de Seguridad</div>
+          <div className="group text-center p-6 bg-card/30 border border-border rounded-xl hover:bg-card/50 hover:shadow-lg hover:shadow-accent/20 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <div className="text-3xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">0</div>
+            <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Brechas de Seguridad</div>
           </div>
         </div>
       </div>

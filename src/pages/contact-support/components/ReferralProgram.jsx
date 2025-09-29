@@ -175,14 +175,23 @@ const ReferralProgram = () => {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {benefits?.map((benefit, index) => (
-            <div key={index} className="card-medical-elevated p-6 text-center hover:shadow-xl transition-all duration-300">
-              <div className={`w-16 h-16 rounded-xl ${getColorClasses(benefit?.color)} flex items-center justify-center mx-auto mb-4`}>
+            <div 
+              key={index} 
+              className={`group card-medical-elevated p-6 text-center hover:-translate-y-1 transition-all duration-300 cursor-pointer ${
+                benefit?.color === 'success' ? 'hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30' :
+                benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30' :
+                benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-secondary/30' :
+                benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-accent/30' :
+                'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30'
+              }`}
+            >
+              <div className={`w-16 h-16 rounded-xl ${getColorClasses(benefit?.color)} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
                 <Icon name={benefit?.icon} size={28} />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                 {benefit?.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
                 {benefit?.description}
               </p>
             </div>
@@ -363,23 +372,23 @@ const ReferralProgram = () => {
 
               <div className="space-y-6">
                 {successStories?.map((story, index) => (
-                  <div key={index} className="border border-border rounded-xl p-6 bg-muted/10">
+                  <div key={index} className="group border border-border rounded-xl p-6 bg-muted/10 hover:shadow-lg hover:shadow-success/20 hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h4 className="font-bold text-foreground">{story?.referrer}</h4>
-                        <p className="text-sm text-muted-foreground">{story?.institution}</p>
-                        <p className="text-xs text-muted-foreground">{story?.city}</p>
+                        <h4 className="font-bold text-foreground group-hover:text-success transition-colors duration-300">{story?.referrer}</h4>
+                        <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{story?.institution}</p>
+                        <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">{story?.city}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-success">{story?.referrals}</div>
-                        <div className="text-xs text-muted-foreground">Referidos</div>
+                        <div className="text-2xl font-bold text-success group-hover:scale-110 transition-transform duration-300">{story?.referrals}</div>
+                        <div className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Referidos</div>
                       </div>
                     </div>
                     
                     <div className="flex items-center space-x-4 mb-4">
                     </div>
                     
-                    <blockquote className="text-sm text-muted-foreground italic">
+                    <blockquote className="text-sm text-muted-foreground italic group-hover:text-foreground transition-colors duration-300">
                       "{story?.testimonial}"
                     </blockquote>
                   </div>
@@ -388,42 +397,42 @@ const ReferralProgram = () => {
             </div>
 
             {/* Program Details */}
-            <div className="card-medical-elevated p-8">
-              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center space-x-2">
-                <Icon name="Info" size={20} className="text-primary" />
+            <div className="group card-medical-elevated p-8 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <h3 className="text-xl font-bold text-foreground mb-6 flex items-center space-x-2 group-hover:text-primary transition-colors duration-300">
+                <Icon name="Info" size={20} className="text-primary group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300" />
                 <span>Detalles del Programa</span>
               </h3>
               
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-3 group-hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                   <div>
-                    <p className="text-sm font-medium text-foreground">Descuento Inmediato</p>
-                    <p className="text-xs text-muted-foreground">El 20% de descuento se aplica desde el primer mes</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Descuento Inmediato</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">El 20% de descuento se aplica desde el primer mes</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-3 group-hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                   <div>
-                    <p className="text-sm font-medium text-foreground">Seguimiento Personalizado</p>
-                    <p className="text-xs text-muted-foreground">Te mantenemos informado en cada etapa del proceso</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Seguimiento Personalizado</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Te mantenemos informado en cada etapa del proceso</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-3 group-hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                   <div>
-                    <p className="text-sm font-medium text-foreground">Beneficios Acumulativos</p>
-                    <p className="text-xs text-muted-foreground">Más referidos = más beneficios para ti</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Beneficios Acumulativos</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Más referidos = más beneficios para ti</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div className="flex items-start space-x-3 group-hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
                   <div>
-                    <p className="text-sm font-medium text-foreground">Sin Límites</p>
-                    <p className="text-xs text-muted-foreground">Puedes referir tantos laboratorios como desees</p>
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Sin Límites</p>
+                    <p className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300">Puedes referir tantos laboratorios como desees</p>
                   </div>
                 </div>
               </div>

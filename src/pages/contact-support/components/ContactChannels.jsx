@@ -93,43 +93,42 @@ const ContactChannels = ({ onWhatsAppClick, onEmailClick, onPhoneClick }) => {
           {contactChannels?.map((channel) => (
             <div
               key={channel?.id}
-              className={`card-medical-elevated p-8 border-2 ${getColorClasses(channel?.color)} hover:shadow-xl transition-all duration-300 group`}
+              className={`group card-medical-elevated p-8 border-2 ${getColorClasses(channel?.color)} hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer relative overflow-hidden`}
             >
-              {/* Icon */}
-              <div className={`w-16 h-16 rounded-xl bg-gradient-to-br from-${channel?.color}/20 to-${channel?.color}/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon name={channel?.icon} size={28} className={getIconColor(channel?.color)} />
-              </div>
-
-              {/* Content */}
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                {channel?.title}
-              </h3>
-              
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {channel?.description}
-              </p>
-
-              {/* Details */}
-              <div className="space-y-2 mb-8">
-                {channel?.details?.map((detail, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className={`w-2 h-2 rounded-full bg-${channel?.color}`}></div>
-                    <span className="text-sm text-foreground font-medium">{detail}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/60 via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out opacity-0 group-hover:opacity-100"></div>
+              <div className="relative z-10">
+                {/* Icon and Title */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-${channel?.color}/20 to-${channel?.color}/10 flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300`}>
+                    <Icon name={channel?.icon} size={24} className={getIconColor(channel?.color)} />
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {channel?.title}
+                  </h3>
+                </div>
 
-              {/* Action Button */}
-              <Button
-                variant={getButtonVariant(channel?.color)}
-                fullWidth
-                onClick={channel?.onClick}
-                iconName={channel?.icon}
-                iconPosition="left"
-                className="group-hover:shadow-lg transition-shadow duration-300"
-              >
-                {channel?.action}
-              </Button>
+                {/* Details */}
+                <div className="space-y-2 mb-8">
+                  {channel?.details?.map((detail, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <div className={`w-2 h-2 rounded-full bg-${channel?.color} group-hover:scale-150 transition-transform duration-300`}></div>
+                      <span className="text-sm text-foreground font-medium group-hover:text-primary transition-colors duration-300">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Action Button */}
+                <Button
+                  variant={getButtonVariant(channel?.color)}
+                  fullWidth
+                  onClick={channel?.onClick}
+                  iconName={channel?.icon}
+                  iconPosition="left"
+                  className="group-hover:shadow-lg transition-shadow duration-300"
+                >
+                  {channel?.action}
+                </Button>
+              </div>
             </div>
           ))}
         </div>
