@@ -34,33 +34,33 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
 
           {/* Security Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
-            <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-success/20 rounded-lg mx-auto mb-4">
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-center w-12 h-12 bg-success/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Icon name="Lock" size={24} color="var(--color-success)" />
               </div>
-              <div className="text-2xl font-bold text-success mb-1">256-bit</div>
-              <div className="text-sm text-muted-foreground">Encriptación AES</div>
+              <div className="text-2xl font-bold text-success mb-1 group-hover:scale-105 transition-transform duration-300">256-bit</div>
+              <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Encriptación AES</div>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg mx-auto mb-4">
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Icon name="Database" size={24} color="var(--color-primary)" />
               </div>
-              <div className="text-2xl font-bold text-primary mb-1">5</div>
-              <div className="text-sm text-muted-foreground">Sedes Aisladas</div>
+              <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-105 transition-transform duration-300">5</div>
+              <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Sedes Aisladas</div>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-500/20 rounded-lg mx-auto mb-4">
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-center w-12 h-12 bg-blue-500/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Icon name="Clock" size={24} color="#3b82f6" />
               </div>
-              <div className="text-2xl font-bold text-blue-500 mb-1">24/7</div>
-              <div className="text-sm text-muted-foreground">Monitoreo</div>
+              <div className="text-2xl font-bold text-blue-500 mb-1 group-hover:scale-105 transition-transform duration-300">24/7</div>
+              <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Monitoreo</div>
             </div>
-            <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 transition-all duration-300">
-              <div className="flex items-center justify-center w-12 h-12 bg-pink-500/20 rounded-lg mx-auto mb-4">
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-pink-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-center w-12 h-12 bg-pink-500/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Icon name="Users" size={24} color="#ec4899" />
               </div>
-              <div className="text-2xl font-bold text-pink-500 mb-1">99.9%</div>
-              <div className="text-sm text-muted-foreground">Disponibilidad</div>
+              <div className="text-2xl font-bold text-pink-500 mb-1 group-hover:scale-105 transition-transform duration-300">99.9%</div>
+              <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Disponibilidad</div>
             </div>
           </div>
 
@@ -78,12 +78,12 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
               </Button>
             </Link>
             <Button
-              variant="outline"
+              variant="default"
               size="lg"
               onClick={handleWhatsAppClick}
               iconName="MessageCircle"
               iconPosition="left"
-              className="border-success text-success hover:bg-success/10 min-w-48"
+              className="bg-[#25D366] text-white hover:bg-[#20BA5A] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] border-[#25D366] shadow-lg font-semibold min-w-48"
             >
               Consultar por WhatsApp
             </Button>

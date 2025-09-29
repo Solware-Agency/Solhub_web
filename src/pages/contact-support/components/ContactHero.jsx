@@ -55,17 +55,17 @@ const ContactHero = ({ onWhatsAppClick, onDemoClick }) => {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">&lt; 2 min</div>
-              <div className="text-white/80 text-sm">Tiempo de Respuesta WhatsApp</div>
+            <div className="group text-center hover:bg-white/10 rounded-xl p-4 transition-all duration-300 cursor-pointer">
+              <div className="text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">&lt; 2 min</div>
+              <div className="text-white/80 text-sm group-hover:text-white transition-colors duration-300">Tiempo de Respuesta WhatsApp</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">24/7</div>
-              <div className="text-white/80 text-sm">Soporte Técnico Crítico</div>
+            <div className="group text-center hover:bg-white/10 rounded-xl p-4 transition-all duration-300 cursor-pointer">
+              <div className="text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+              <div className="text-white/80 text-sm group-hover:text-white transition-colors duration-300">Soporte Técnico Crítico</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">5 Sedes</div>
-              <div className="text-white/80 text-sm">Activas en Venezuela</div>
+            <div className="group text-center hover:bg-white/10 rounded-xl p-4 transition-all duration-300 cursor-pointer">
+              <div className="text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">5 Sedes</div>
+              <div className="text-white/80 text-sm group-hover:text-white transition-colors duration-300">Activas en Venezuela</div>
             </div>
           </div>
         </div>

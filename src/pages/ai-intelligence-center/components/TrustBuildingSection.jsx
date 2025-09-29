@@ -108,17 +108,17 @@ const TrustBuildingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+              className="group bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             >
               <div className="flex items-start space-x-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <Icon name={principle?.icon} size={24} color="white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                     {principle?.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     {principle?.description}
                   </p>
                 </div>
@@ -126,9 +126,9 @@ const TrustBuildingSection = () => {
 
               <div className="space-y-3">
                 {principle?.details?.map((detail, detailIndex) => (
-                  <div key={detailIndex} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm text-muted-foreground">{detail}</p>
+                  <div key={detailIndex} className="flex items-start space-x-3 group-hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                    <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors duration-300">{detail}</p>
                   </div>
                 ))}
               </div>
@@ -154,7 +154,7 @@ const TrustBuildingSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex justify-center">
             {certifications?.map((cert, index) => (
               <motion.div
                 key={cert?.name}
@@ -162,14 +162,14 @@ const TrustBuildingSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"
+                className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-success/20 hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer max-w-sm"
               >
-                <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <Icon name={cert?.icon} size={24} className="text-success" />
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">{cert?.name}</h4>
-                <p className="text-sm text-muted-foreground mb-3">{cert?.description}</p>
-                <div className="inline-flex items-center px-2 py-1 bg-success/10 text-success text-xs font-medium rounded-full">
+                <h4 className="font-semibold text-foreground mb-2 group-hover:text-success transition-colors duration-300">{cert?.name}</h4>
+                <p className="text-sm text-muted-foreground mb-3 group-hover:text-foreground transition-colors duration-300">{cert?.description}</p>
+                <div className="inline-flex items-center px-2 py-1 bg-success/10 text-success text-xs font-medium rounded-full group-hover:bg-success/20 group-hover:scale-105 transition-all duration-300">
                   {cert?.status}
                 </div>
               </motion.div>

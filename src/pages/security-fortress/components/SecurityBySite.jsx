@@ -96,16 +96,16 @@ const SecurityBySite = () => {
                 <button
                   key={site?.id}
                   onClick={() => setSelectedSite(index)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
+                  className={`group w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                     selectedSite === index
-                      ? 'bg-primary/10 border-primary/30 text-primary' :'bg-card/50 border-border hover:bg-card/70 text-foreground'
+                      ? 'bg-primary/10 border-primary/30 text-primary' :'bg-card/50 border-border hover:bg-card/70 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 text-foreground cursor-pointer'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-medium text-sm">{site?.name}</span>
                     <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-success rounded-full"></div>
-                      <span className="text-xs text-success">Activo</span>
+                      <div className="w-2 h-2 bg-success rounded-full group-hover:scale-125 transition-transform duration-300"></div>
+                      <span className="text-xs text-success group-hover:text-success/80 transition-colors duration-300">Activo</span>
                     </div>
                   </div>
                   <p className="text-xs text-muted-foreground">{site?.location}</p>
@@ -116,7 +116,7 @@ const SecurityBySite = () => {
 
           {/* Site Details */}
           <div className="lg:col-span-2">
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-semibold text-foreground">{currentSite?.name}</h3>

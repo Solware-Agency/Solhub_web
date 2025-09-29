@@ -202,19 +202,20 @@ const AccessControls = () => {
                 <button
                   key={role?.id}
                   onClick={() => setSelectedRole(index)}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
+                  className={`group w-full text-left p-4 rounded-xl border transition-all duration-300 ${
                     selectedRole === index
                       ? `border-${role?.color} bg-${role?.color}/10`
-                      : 'border-border bg-card/50 hover:bg-card/70'
+                      : 'border-border bg-card/50 hover:bg-card/70 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/30 hover:-translate-y-1 cursor-pointer'
                   }`}
                 >
                   <div className="flex items-center space-x-3 mb-2">
                     <Icon 
                       name={role?.icon} 
                       size={20} 
-                      color={`var(--color-${role?.color})`} 
+                      color={`var(--color-${role?.color})`}
+                      className="group-hover:scale-110 group-hover:rotate-6 transition-all duration-300"
                     />
-                    <span className="font-medium text-sm">{role?.name}</span>
+                    <span className="font-medium text-sm group-hover:text-primary transition-colors duration-300">{role?.name}</span>
                   </div>
                   <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getLevelColor(role?.level)}`}>
                     {role?.level}
@@ -296,31 +297,31 @@ const AccessControls = () => {
 
         {/* Security Features */}
         <div className="mt-12 grid md:grid-cols-4 gap-6">
-          <div className="bg-card border border-border rounded-xl p-6 text-center">
-            <Icon name="Fingerprint" size={32} color="var(--color-primary)" className="mx-auto mb-4" />
-            <h4 className="font-semibold text-primary mb-2">Autenticación Multifactor</h4>
-            <p className="text-sm text-muted-foreground">
+          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <Icon name="Fingerprint" size={32} color="var(--color-primary)" className="mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+            <h4 className="font-semibold text-primary mb-2 group-hover:scale-105 transition-transform duration-300">Autenticación Multifactor</h4>
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
               Verificación en dos pasos obligatoria para todos los usuarios
             </p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-6 text-center">
-            <Icon name="Clock" size={32} color="var(--color-success)" className="mx-auto mb-4" />
-            <h4 className="font-semibold text-success mb-2">Sesiones Temporales</h4>
-            <p className="text-sm text-muted-foreground">
+          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <Icon name="Clock" size={32} color="var(--color-success)" className="mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+            <h4 className="font-semibold text-success mb-2 group-hover:scale-105 transition-transform duration-300">Sesiones Temporales</h4>
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
               Cierre automático de sesión por inactividad
             </p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-6 text-center">
-            <Icon name="MapPin" size={32} color="var(--color-secondary)" className="mx-auto mb-4" />
-            <h4 className="font-semibold text-secondary mb-2">Acceso por Ubicación</h4>
-            <p className="text-sm text-muted-foreground">
+          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-secondary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <Icon name="MapPin" size={32} color="var(--color-secondary)" className="mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+            <h4 className="font-semibold text-secondary mb-2 group-hover:scale-105 transition-transform duration-300">Acceso por Ubicación</h4>
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
               Restricciones geográficas para mayor seguridad
             </p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-6 text-center">
-            <Icon name="Activity" size={32} color="var(--color-accent)" className="mx-auto mb-4" />
-            <h4 className="font-semibold text-accent mb-2">Monitoreo en Tiempo Real</h4>
-            <p className="text-sm text-muted-foreground">
+          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-accent/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <Icon name="Activity" size={32} color="var(--color-accent)" className="mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
+            <h4 className="font-semibold text-accent mb-2 group-hover:scale-105 transition-transform duration-300">Monitoreo en Tiempo Real</h4>
+            <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
               Seguimiento continuo de todas las actividades
             </p>
           </div>

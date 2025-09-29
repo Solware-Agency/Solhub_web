@@ -526,21 +526,21 @@ const ModulesShowcase = () => {
                 icon: 'Zap'
               }
             ]?.map((story, index) => (
-              <div key={index} className="card-medical p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-medical rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="group bg-card border border-border rounded-2xl p-6 text-center hover:bg-gradient-to-br hover:from-primary/10 hover:to-secondary/10 hover:border-primary/50 hover:-translate-y-1 transition-all duration-500 cursor-pointer hover:shadow-[0_0_40px_rgba(139,92,246,0.8)] hover:shadow-primary/50">
+                <div className="w-16 h-16 bg-gradient-medical rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                   <Icon name={story?.icon} size={24} color="white" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
+                <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {story?.clinic}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-sm mb-4 group-hover:text-foreground transition-colors duration-300">
                   {story?.location}
                 </p>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">
+                  <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     {story?.modules} módulos
                   </span>
-                  <span className="text-success font-medium">
+                  <span className="text-success font-medium group-hover:text-green-400 group-hover:scale-110 transition-all duration-300">
                     {story?.improvement}
                   </span>
                 </div>

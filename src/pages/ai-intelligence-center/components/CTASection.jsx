@@ -18,26 +18,40 @@ const CTASection = () => {
 
   const { handleWhatsAppClick } = useActions();
 
+  const getHoverClasses = (color) => {
+    const colorMap = {
+      primary: 'hover:shadow-primary/20 hover:border-primary/30',
+      secondary: 'hover:shadow-secondary/20 hover:border-secondary/30',
+      success: 'hover:shadow-success/20 hover:border-success/30',
+      accent: 'hover:shadow-accent/20 hover:border-accent/30'
+    };
+    return colorMap[color] || 'hover:shadow-primary/20 hover:border-primary/30';
+  };
+
   const benefits = [
     {
       icon: "TrendingUp",
       title: "95% Precisión",
-      description: "En detección de anomalías"
+      description: "En detección de anomalías",
+      color: "primary"
     },
     {
       icon: "Clock",
       title: "< 2 Segundos",
-      description: "Tiempo de análisis"
+      description: "Tiempo de análisis",
+      color: "secondary"
     },
     {
       icon: "Shield",
       title: "100% Seguro",
-      description: "Datos protegidos"
+      description: "Datos protegidos",
+      color: "success"
     },
     {
       icon: "Users",
       title: "5 Sedes Activas",
-      description: "En Venezuela"
+      description: "En Venezuela",
+      color: "accent"
     }
   ];
 
@@ -63,8 +77,8 @@ const CTASection = () => {
       title: "Contacto Directo",
       description: "Habla con nuestros especialistas por WhatsApp",
       action: handleWhatsAppClick,
-      variant: "secondary",
-      className: "bg-success/10 text-success hover:bg-success/20 border-success/20"
+      variant: "default",
+      className: "bg-[#25D366] text-white hover:bg-[#20BA5A] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] border-[#25D366] shadow-lg font-semibold"
     }
   ];
 
@@ -105,15 +119,21 @@ const CTASection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center"
+                 className={`group bg-card/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-card/70 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer ${
+                   benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30' :
+                   benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-secondary/30' :
+                   benefit?.color === 'success' ? 'hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30' :
+                   benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-accent/30' :
+                   'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30'
+                 }`}
               >
-                <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <Icon name={benefit?.icon} size={24} color="white" />
                 </div>
-                <div className="text-lg font-bold text-gradient-medical mb-1">
+                <div className="text-lg font-bold text-gradient-medical mb-1 group-hover:scale-105 transition-transform duration-300">
                   {benefit?.title}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                   {benefit?.description}
                 </div>
               </motion.div>

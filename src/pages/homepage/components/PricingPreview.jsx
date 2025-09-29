@@ -140,9 +140,9 @@ const PricingPreview = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {pricingModel.features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <Icon name="Check" size={16} className="text-success flex-shrink-0" />
-                  <span className="text-foreground">{feature}</span>
+                <div key={index} className="group flex items-center space-x-3 hover:bg-primary/5 rounded-lg p-2 -m-2 transition-all duration-300 cursor-pointer">
+                  <Icon name="Check" size={16} className="text-success flex-shrink-0 group-hover:scale-125 group-hover:text-green-400 transition-all duration-300" />
+                  <span className="text-foreground group-hover:text-primary transition-colors duration-300">{feature}</span>
                 </div>
               ))}
             </div>
