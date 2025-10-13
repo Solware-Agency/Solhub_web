@@ -21,14 +21,14 @@ const PricingCalculator = () => {
 
   const seoConfig = {
     title: 'Precios',
-    description: 'Modelo de precios simple: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. Calcula el costo de SolHub para tu establecimiento médico.',
+    description: 'Modelo de precios simple: Implementación inicial personalizada + $200 USD mensual por laboratorio o sede. Calcula el costo de SolHub para tu establecimiento médico.',
     keywords: 'precios laboratorio médico, software médico Venezuela, calculadora precios SolHub, ROI laboratorio digital, implementación inicial personalizada',
     url: '/pricing-calculator'
   };
 
   // Modelo de precios simplificado
   const pricingModel = {
-    monthlyPerLab: 150, // Por laboratorio o sede mensual
+    monthlyPerLab: 200, // Por laboratorio o sede mensual
     features: [
       'Implementación completa incluida',
       'Capacitación del personal',

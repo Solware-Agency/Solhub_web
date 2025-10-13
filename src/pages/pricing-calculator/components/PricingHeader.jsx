@@ -14,7 +14,7 @@ const PricingHeader = () => {
       </div>
       
       <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-        Modelo de precios simple y transparente: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. 
+        Modelo de precios simple y transparente: Implementación inicial personalizada + $200 USD mensual por laboratorio o sede. 
         Sin sorpresas, sin costos ocultos.
       </p>
       

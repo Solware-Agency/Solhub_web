@@ -3,13 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../AppIcon';
 import Button from './Button';
-import { NAVIGATION_ITEMS, SECONDARY_ITEMS } from '../../constants/navigation';
+import { NAVIGATION_ITEMS, SOLUTIONS_DROPDOWN_ITEMS } from '../../constants/navigation';
 import useActions from '../../hooks/useActions';
 
 const Header = ({ className = '' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMoreHovered, setIsMoreHovered] = useState(false);
+  const [isSolutionsHovered, setIsSolutionsHovered] = useState(false);
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const location = useLocation();
   const { handleWhatsAppClick, handleDemoClick } = useActions();
@@ -62,17 +62,17 @@ const Header = ({ className = '' }) => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleMoreMouseEnter = () => {
+  const handleSolutionsMouseEnter = () => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
-    setIsMoreHovered(true);
+    setIsSolutionsHovered(true);
   };
 
-  const handleMoreMouseLeave = () => {
+  const handleSolutionsMouseLeave = () => {
     const timeout = setTimeout(() => {
-      setIsMoreHovered(false);
+      setIsSolutionsHovered(false);
     }, 300); // 300ms delay
     setHoverTimeout(timeout);
   };
@@ -152,71 +152,88 @@ const Header = ({ className = '' }) => {
 
           {/* Desktop Navigation with Glass Effects */}
           <nav className="hidden md:flex items-center space-x-1">
-            {NAVIGATION_ITEMS?.map((item, index) => (
-              <motion.div
-                key={item?.path}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.5, duration: 0.3 }}
-              >
-                <Link
-                  to={item?.path}
-                  className={`flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 hover:shadow-glass-light ${
-                    isActivePath(item?.path)
-                      ? 'text-primary glass-medium border border-primary/20 shadow-glass-light' 
-                      : 'text-foreground hover:text-primary hover:glass-light'
-                  }`}
-                >
-                  <Icon name={item?.icon} size={14} className="lg:w-4 lg:h-4" />
-                  <span className="hidden lg:inline">{item?.name}</span>
-                </Link>
-              </motion.div>
-            ))}
-            
-            {/* More Menu with Enhanced Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={handleMoreMouseEnter}
-              onMouseLeave={handleMoreMouseLeave}
-            >
-              <motion.button 
-                className="flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium text-foreground hover:text-primary hover:glass-light transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
-              >
-                <span>Más</span>
-              </motion.button>
-              
-              {/* Enhanced Dropdown */}
-              <motion.div 
-                className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl z-[60]"
-                initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                animate={{ 
-                  opacity: isMoreHovered ? 1 : 0, 
-                  scale: isMoreHovered ? 1 : 0.95, 
-                  y: isMoreHovered ? 0 : -10 
-                }}
-                transition={{ duration: 0.2 }}
-                style={{ pointerEvents: isMoreHovered ? 'auto' : 'none' }}
-                onMouseEnter={handleMoreMouseEnter}
-                onMouseLeave={handleMoreMouseLeave}
-              >
-                <div className="p-2">
-                  {SECONDARY_ITEMS?.map((item) => (
+            {NAVIGATION_ITEMS?.map((item, index) => {
+              // Handle Solutions dropdown
+              if (item?.hasDropdown) {
+                return (
+                  <motion.div
+                    key={item?.path}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.5, duration: 0.3 }}
+                    className="relative"
+                    onMouseEnter={handleSolutionsMouseEnter}
+                    onMouseLeave={handleSolutionsMouseLeave}
+                  >
                     <Link
-                      key={item?.path}
                       to={item?.path}
-                      className={`flex items-center space-x-3 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:glass-light ${
+                      className={`flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 hover:shadow-glass-light ${
                         isActivePath(item?.path)
-                          ? 'text-primary glass-light' :'text-popover-foreground hover:text-primary'
+                          ? 'text-primary glass-medium border border-primary/20 shadow-glass-light' 
+                          : 'text-foreground hover:text-primary hover:glass-light'
                       }`}
                     >
-                      <Icon name={item?.icon} size={16} />
-                      <span>{item?.name}</span>
+                      <Icon name={item?.icon} size={14} className="lg:w-4 lg:h-4" />
+                      <span className="hidden lg:inline">{item?.name}</span>
+                      <Icon name="ChevronDown" size={12} className="lg:w-3 lg:h-3" />
                     </Link>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+                    
+                    {/* Solutions Dropdown */}
+                    <motion.div 
+                      className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-2xl shadow-xl z-[60]"
+                      initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                      animate={{ 
+                        opacity: isSolutionsHovered ? 1 : 0, 
+                        scale: isSolutionsHovered ? 1 : 0.95, 
+                        y: isSolutionsHovered ? 0 : -10 
+                      }}
+                      transition={{ duration: 0.2 }}
+                      style={{ pointerEvents: isSolutionsHovered ? 'auto' : 'none' }}
+                      onMouseEnter={handleSolutionsMouseEnter}
+                      onMouseLeave={handleSolutionsMouseLeave}
+                    >
+                      <div className="p-2">
+                        {SOLUTIONS_DROPDOWN_ITEMS?.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem?.path}
+                            to={dropdownItem?.path}
+                            className={`flex items-center space-x-3 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:glass-light ${
+                              isActivePath(dropdownItem?.path)
+                                ? 'text-primary glass-light' :'text-popover-foreground hover:text-primary'
+                            }`}
+                          >
+                            <Icon name={dropdownItem?.icon} size={16} />
+                            <span>{dropdownItem?.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                );
+              }
+              
+              // Regular navigation items
+              return (
+                <motion.div
+                  key={item?.path}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.5, duration: 0.3 }}
+                >
+                  <Link
+                    to={item?.path}
+                    className={`flex items-center space-x-2 px-3 lg:px-4 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 hover:shadow-glass-light ${
+                      isActivePath(item?.path)
+                        ? 'text-primary glass-medium border border-primary/20 shadow-glass-light' 
+                        : 'text-foreground hover:text-primary hover:glass-light'
+                    }`}
+                  >
+                    <Icon name={item?.icon} size={14} className="lg:w-4 lg:h-4" />
+                    <span className="hidden lg:inline">{item?.name}</span>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA Buttons with Enhanced Styling */}
@@ -275,51 +292,77 @@ const Header = ({ className = '' }) => {
             >
               <div className="p-4 space-y-2">
                 {/* Primary Navigation */}
-                {NAVIGATION_ITEMS?.map((item, index) => (
-                  <motion.div
-                    key={item?.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <Link
-                      to={item?.path}
-                      onClick={closeMobileMenu}
-                      className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                        isActivePath(item?.path)
-                          ? 'text-primary glass-medium border border-primary/20' :'text-foreground hover:text-primary hover:glass-light'
-                      }`}
+                {NAVIGATION_ITEMS?.map((item, index) => {
+                  if (item?.hasDropdown) {
+                    return (
+                      <motion.div
+                        key={item?.path}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="space-y-2"
+                      >
+                        {/* Solutions main link */}
+                        <Link
+                          to={item?.path}
+                          onClick={closeMobileMenu}
+                          className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                            isActivePath(item?.path)
+                              ? 'text-primary glass-medium border border-primary/20' :'text-foreground hover:text-primary hover:glass-light'
+                          }`}
+                        >
+                          <Icon name={item?.icon} size={20} />
+                          <span>{item?.name}</span>
+                        </Link>
+                        
+                        {/* Solutions dropdown items */}
+                        <div className="ml-6 space-y-1">
+                          {SOLUTIONS_DROPDOWN_ITEMS?.map((dropdownItem, dropdownIndex) => (
+                            <motion.div
+                              key={dropdownItem?.path}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: (index + dropdownIndex + 1) * 0.05 }}
+                            >
+                              <Link
+                                to={dropdownItem?.path}
+                                onClick={closeMobileMenu}
+                                className={`flex items-center space-x-3 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                                  isActivePath(dropdownItem?.path)
+                                    ? 'text-primary glass-light border border-primary/10' :'text-muted-foreground hover:text-primary hover:glass-light'
+                                }`}
+                              >
+                                <Icon name={dropdownItem?.icon} size={16} />
+                                <span>{dropdownItem?.name}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    );
+                  }
+                  
+                  return (
+                    <motion.div
+                      key={item?.path}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
                     >
-                      <Icon name={item?.icon} size={20} />
-                      <span>{item?.name}</span>
-                    </Link>
-                  </motion.div>
-                ))}
-                
-                {/* Divider */}
-                <div className="border-t border-glass-border my-4"></div>
-                
-                {/* Secondary Navigation */}
-                {SECONDARY_ITEMS?.map((item, index) => (
-                  <motion.div
-                    key={item?.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (NAVIGATION_ITEMS?.length + index) * 0.05 }}
-                  >
-                    <Link
-                      to={item?.path}
-                      onClick={closeMobileMenu}
-                      className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
-                        isActivePath(item?.path)
-                          ? 'text-primary glass-medium border border-primary/20' :'text-foreground hover:text-primary hover:glass-light'
-                      }`}
-                    >
-                      <Icon name={item?.icon} size={20} />
-                      <span>{item?.name}</span>
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        to={item?.path}
+                        onClick={closeMobileMenu}
+                        className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                          isActivePath(item?.path)
+                            ? 'text-primary glass-medium border border-primary/20' :'text-foreground hover:text-primary hover:glass-light'
+                        }`}
+                      >
+                        <Icon name={item?.icon} size={20} />
+                        <span>{item?.name}</span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
                 
                 {/* Mobile CTA Buttons */}
                 <motion.div 

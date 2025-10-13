@@ -11,7 +11,6 @@ import AIIntelligenceCenter from './pages/ai-intelligence-center';
 import DemoExperience from './pages/demo-experience';
 import PricingCalculator from './pages/pricing-calculator';
 import SecurityFortress from './pages/security-fortress';
-import KnowledgeHub from './pages/knowledge-hub';
 import Homepage from './pages/homepage';
 import DedicatedContactPage from './pages/dedicated-contact-page';
 
@@ -31,7 +30,6 @@ const Routes = () => {
         <Route path="/demo-experience" element={<DemoExperience />} />
         <Route path="/pricing-calculator" element={<PricingCalculator />} />
         <Route path="/security-fortress" element={<SecurityFortress />} />
-        <Route path="/knowledge-hub" element={<KnowledgeHub />} />
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/dedicated-contact-page" element={<DedicatedContactPage />} />
         <Route path="*" element={<NotFound />} />

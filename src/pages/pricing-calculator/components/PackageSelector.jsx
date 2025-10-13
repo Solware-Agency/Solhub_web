@@ -12,7 +12,7 @@ const PackageSelector = ({ numberOfLabs, onLabCountChange, pricingModel }) => {
           Modelo de Precios SolHub
         </h2>
         <p className="text-muted-foreground">
-          Implementación inicial personalizada + $150 USD mensual por laboratorio o sede
+          Implementación inicial personalizada + $200 USD mensual por laboratorio o sede
         </p>
       </div>
 

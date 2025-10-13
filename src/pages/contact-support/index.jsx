@@ -13,7 +13,7 @@ const ContactSupport = () => {
   const { handleWhatsAppClick } = useActions();
 
   const handleEmailClick = () => {
-    window.open('mailto:soporte@solhub.com.ve?subject=Consulta sobre SolHub', '_self');
+    window.open('mailto:contacto@solware.agency?subject=Consulta sobre SolHub', '_self');
   };
 
   const handlePhoneClick = () => {
@@ -39,7 +39,7 @@ const ContactSupport = () => {
         <meta property="og:title" content="Contacto y Soporte | SolHub" />
         <meta property="og:description" content="Múltiples canales de contacto y soporte 24/7 para laboratorios médicos venezolanos" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://SolHubmedical.com.ve/contact-support" />
+        <meta property="og:url" content="https://solhub.solware.agency/contact-support" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -53,7 +53,7 @@ const ContactSupport = () => {
             "@type": "ContactPage",
             "name": "Contacto y Soporte - SolHub",
             "description": "Página de contacto y soporte técnico para laboratorios médicos venezolanos",
-            "url": "https://SolHubmedical.com.ve/contact-support",
+            "url": "https://solhub.solware.agency/contact-support",
             "mainEntity": {
               "@type": "Organization",
               "name": "SolHub",
@@ -67,7 +67,7 @@ const ContactSupport = () => {
                 },
                 {
                   "@type": "ContactPoint",
-                  "email": "soporte@SolHubmedical.com.ve",
+                  "email": "contacto@solware.agency",
                   "contactType": "technical support",
                   "availableLanguage": "Spanish"
                 }

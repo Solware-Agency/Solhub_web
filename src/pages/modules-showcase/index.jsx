@@ -9,12 +9,10 @@ import useActions from '../../hooks/useActions';
 import ModuleCard from './components/ModuleCard';
 import ConfiguratorSidebar from './components/ConfiguratorSidebar';
 import EcosystemMap from './components/EcosystemMap';
-import WorkflowDemo from './components/WorkflowDemo';
 
 const ModulesShowcase = () => {
   const [selectedModules, setSelectedModules] = useState([]);
   const [expandedModule, setExpandedModule] = useState(null);
-  const [demoModule, setDemoModule] = useState(null);
   const [hoveredModule, setHoveredModule] = useState(null);
   const [filterCategory, setFilterCategory] = useState('all');
   const { handleWhatsAppClick } = useActions();
@@ -350,10 +348,6 @@ const ModulesShowcase = () => {
     setExpandedModule(expandedModule === moduleId ? null : moduleId);
   };
 
-  const handleViewDemo = (moduleId) => {
-    const module = modules?.find(m => m?.id === moduleId);
-    setDemoModule(module);
-  };
 
   const handleClearAll = () => {
     setSelectedModules([]);
@@ -467,7 +461,6 @@ const ModulesShowcase = () => {
                     module={module}
                     isSelected={selectedModules?.includes(module.id)}
                     onToggle={handleModuleToggle}
-                    onViewDemo={handleViewDemo}
                     isExpanded={expandedModule === module.id}
                     onToggleExpand={handleModuleExpand}
                   />
@@ -600,13 +593,6 @@ const ModulesShowcase = () => {
         </div>
       </section>
 
-      {/* Demo Modal */}
-      {demoModule && (
-        <WorkflowDemo
-          module={demoModule}
-          onClose={() => setDemoModule(null)}
-        />
-      )}
       
     </PageLayout>
   );

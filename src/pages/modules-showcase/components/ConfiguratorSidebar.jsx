@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import useActions from '../../../hooks/useActions';
 
 const ConfiguratorSidebar = ({ 
   selectedModules, 
@@ -9,10 +11,8 @@ const ConfiguratorSidebar = ({
   onClearAll,
   onRequestDemo 
 }) => {
-  const totalPrice = selectedModules?.reduce((sum, moduleId) => {
-    const module = modules?.find(m => m?.id === moduleId);
-    return sum + (module ? module.price : 0);
-  }, 0);
+  const { handleContactClick } = useActions();
+  // Removed price calculation - no longer showing prices
 
   const implementationTime = Math.max(
     ...selectedModules?.map(moduleId => {
@@ -27,7 +27,7 @@ const ConfiguratorSidebar = ({
       <div className="card-medical p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-foreground">
-            Configurador de Solución
+            Mi Selección de Módulos
           </h3>
           {selectedModules?.length > 0 && (
             <Button
@@ -47,7 +47,7 @@ const ConfiguratorSidebar = ({
           <div className="text-center py-8">
             <Icon name="Package" size={48} className="text-muted-foreground mx-auto mb-4" />
             <p className="text-muted-foreground text-sm">
-              Selecciona módulos para ver tu configuración personalizada
+              Selecciona los módulos que te interesan para crear tu solución personalizada
             </p>
           </div>
         ) : (
@@ -70,7 +70,7 @@ const ConfiguratorSidebar = ({
                           {module.name}
                         </span>
                         <div className="text-xs text-muted-foreground">
-                          ${module.price}/mes
+                          {module.category === 'core' ? 'Módulo Central' : 'Módulo Adicional'}
                         </div>
                       </div>
                     </div>
@@ -90,16 +90,7 @@ const ConfiguratorSidebar = ({
             <div className="border-t border-border pt-4 space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">
-                  Total mensual:
-                </span>
-                <span className="text-lg font-bold text-primary">
-                  ${totalPrice}
-                </span>
-              </div>
-              
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-muted-foreground">
-                  Implementación:
+                  Tiempo de implementación:
                 </span>
                 <span className="text-sm font-medium text-foreground">
                   {implementationTime} semanas
@@ -108,25 +99,34 @@ const ConfiguratorSidebar = ({
 
               <div className="flex justify-between items-center">
                 <span className="text-sm text-muted-foreground">
-                  Módulos:
+                  Módulos seleccionados:
                 </span>
                 <span className="text-sm font-medium text-foreground">
-                  {selectedModules?.length} seleccionados
+                  {selectedModules?.length}
+                </span>
+              </div>
+              
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">
+                  Configuración:
+                </span>
+                <span className="text-sm font-medium text-primary">
+                  Personalizada
                 </span>
               </div>
             </div>
 
-            {/* Savings Badge */}
+            {/* Benefits Badge */}
             {selectedModules?.length >= 3 && (
-              <div className="bg-success/10 border border-success/20 rounded-lg p-3">
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
                 <div className="flex items-center space-x-2">
-                  <Icon name="Gift" size={16} className="text-success" />
-                  <span className="text-sm font-medium text-success">
-                    ¡Descuento por paquete!
+                  <Icon name="Star" size={16} className="text-primary" />
+                  <span className="text-sm font-medium text-primary">
+                    ¡Solución Completa!
                   </span>
                 </div>
-                <p className="text-xs text-success/80 mt-1">
-                  15% de descuento en implementación con 3+ módulos
+                <p className="text-xs text-primary/80 mt-1">
+                  Con 3+ módulos obtienes una solución integral para tu laboratorio
                 </p>
               </div>
             )}
@@ -136,7 +136,7 @@ const ConfiguratorSidebar = ({
               <Button
                 variant="default"
                 fullWidth
-                onClick={onRequestDemo}
+                onClick={() => handleContactClick('módulos seleccionados')}
                 iconName="MessageCircle"
                 iconPosition="left"
                 className="bg-gradient-medical hover:opacity-90"
@@ -148,8 +148,11 @@ const ConfiguratorSidebar = ({
                 fullWidth
                 iconName="Calculator"
                 iconPosition="left"
+                asChild
               >
-                Ver Precios Detallados
+                <Link to="/pricing-calculator">
+                  Ver Precios Detallados
+                </Link>
               </Button>
             </div>
           </div>
