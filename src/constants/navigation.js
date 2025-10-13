@@ -1,16 +1,14 @@
 export const NAVIGATION_ITEMS = [
   { name: 'Inicio', path: '/homepage', icon: 'Home' },
-  { name: 'Soluciones', path: '/modules-showcase', icon: 'Grid3X3' },
-  { name: 'Solwy', path: '/ai-intelligence-center', icon: 'Brain' },
-  { name: 'Seguridad', path: '/security-fortress', icon: 'Shield' },
-  { name: 'Precios', path: '/pricing-calculator', icon: 'Calculator' }
+  { name: 'Soluciones', path: '/modules-showcase', icon: 'Grid3X3', hasDropdown: true },
+  { name: 'Precios', path: '/pricing-calculator', icon: 'Calculator' },
+  { name: 'Contacto', path: '/contact-support', icon: 'MessageCircle' }
 ];
 
-export const SECONDARY_ITEMS = [
-  { name: 'Casos de Éxito', path: '/client-success-stories', icon: 'Trophy' },
-  { name: 'Demo', path: '/demo-experience', icon: 'Play' },
-  { name: 'Conocimiento', path: '/knowledge-hub', icon: 'BookOpen' },
-  { name: 'Contacto', path: '/contact-support', icon: 'MessageCircle' }
+export const SOLUTIONS_DROPDOWN_ITEMS = [
+  { name: 'Solwy', path: '/ai-intelligence-center', icon: 'Brain' },
+  { name: 'Seguridad', path: '/security-fortress', icon: 'Shield' },
+  { name: 'Demo', path: '/demo-experience', icon: 'Play' }
 ];
 
 export const CONTACT_INFO = {

@@ -7,7 +7,7 @@ const PricingPreview = () => {
   const [numberOfLabs, setNumberOfLabs] = useState(1);
 
   const pricingModel = {
-    monthlyPerLab: 150,
+    monthlyPerLab: 200,
     features: [
       'Implementación completa incluida',
       'Capacitación del personal',
@@ -46,7 +46,7 @@ const PricingPreview = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Modelo simple: Implementación inicial personalizada + $150 USD mensual por laboratorio o sede. 
+            Modelo simple: Implementación inicial personalizada + $200 USD mensual por laboratorio o sede. 
             Sin sorpresas, sin costos ocultos.
           </p>
 

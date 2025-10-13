@@ -48,7 +48,7 @@ const FAQ = () => {
       questions: [
         {
           question: '¿Cuáles son los costos de SolHub?',
-          answer: `Nuestros precios son transparentes y escalables según las necesidades de su laboratorio.\n\n**Modelo de precios:**\n• Implementación inicial: Personalizada según necesidades específicas\n• Costo mensual: $150 USD por laboratorio o sede\n\n**Todo incluido en el precio:**\n• Implementación completa y capacitación\n• Gestión de pacientes y estudios\n• Reportes digitales automatizados\n• Control de inventario\n• Facturación y cobranza\n• Soporte técnico continuo\n• Actualizaciones automáticas\n• Backup automático diario\n\nContacte para una cotización personalizada de la implementación inicial.`
+          answer: `Nuestros precios son transparentes y escalables según las necesidades de su laboratorio.\n\n**Modelo de precios:**\n• Implementación inicial: Personalizada según necesidades específicas\n• Costo mensual: $200 USD por laboratorio o sede\n\n**Todo incluido en el precio:**\n• Implementación completa y capacitación\n• Gestión de pacientes y estudios\n• Reportes digitales automatizados\n• Control de inventario\n• Facturación y cobranza\n• Soporte técnico continuo\n• Actualizaciones automáticas\n• Backup automático diario\n\nContacte para una cotización personalizada de la implementación inicial.`
         },
         {
           question: '¿Ofrecen descuentos para múltiples sedes o referidos?',
@@ -56,7 +56,7 @@ const FAQ = () => {
         },
         {
           question: '¿Hay costos ocultos o tarifas adicionales?',
-          answer: `No, creemos en la transparencia total de precios. Todo está incluido en el costo mensual de $150 USD por laboratorio.\n\n**Lo que ESTÁ incluido:**\n• Todas las funcionalidades principales de SolHub\n• Implementación completa y capacitación\n• Soporte técnico continuo\n• Actualizaciones automáticas\n• Backup automático diario\n• Gestión completa de pacientes y estudios\n• Reportes digitales automatizados\n• Control de inventario y facturación\n\n**Únicos costos adicionales opcionales:**\n• Módulos premium específicos (claramente identificados)\n• Servicios de consultoría especializada\n• Integraciones con equipos médicos específicos\n\nSiempre comunicamos cualquier costo adicional antes de la implementación.`
+          answer: `No, creemos en la transparencia total de precios. Todo está incluido en el costo mensual de $200 USD por laboratorio.\n\n**Lo que ESTÁ incluido:**\n• Todas las funcionalidades principales de SolHub\n• Implementación completa y capacitación\n• Soporte técnico continuo\n• Actualizaciones automáticas\n• Backup automático diario\n• Gestión completa de pacientes y estudios\n• Reportes digitales automatizados\n• Control de inventario y facturación\n\n**Únicos costos adicionales opcionales:**\n• Módulos premium específicos (claramente identificados)\n• Servicios de consultoría especializada\n• Integraciones con equipos médicos específicos\n\nSiempre comunicamos cualquier costo adicional antes de la implementación.`
         }
       ]
     },

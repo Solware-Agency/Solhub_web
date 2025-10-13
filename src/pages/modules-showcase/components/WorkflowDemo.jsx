@@ -4,7 +4,7 @@ import Button from '../../../components/ui/Button';
 
 const WorkflowDemo = ({ module, onClose }) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Auto-start demo
   const [progress, setProgress] = useState(0);
 
   const workflowSteps = {
@@ -140,7 +140,7 @@ const WorkflowDemo = ({ module, onClose }) => {
   if (!module) return null;
 
   return (
-    <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-background/95 backdrop-blur-md z-50 flex items-center justify-center p-4">
       <div className="card-medical-elevated max-w-4xl w-full">
         {/* Header */}
         <div className="p-6 border-b border-border">
@@ -159,11 +159,14 @@ const WorkflowDemo = ({ module, onClose }) => {
               </div>
             </div>
             <Button
-              variant="ghost"
+              variant="outline"
               size="sm"
               onClick={onClose}
               iconName="X"
-            />
+              className="border-destructive text-destructive hover:bg-destructive hover:text-destructive-foreground"
+            >
+              Cerrar
+            </Button>
           </div>
         </div>
 

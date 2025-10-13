@@ -6,7 +6,6 @@ const ModuleCard = ({
   module, 
   isSelected, 
   onToggle, 
-  onViewDemo, 
   isExpanded, 
   onToggleExpand 
 }) => {
@@ -138,25 +137,18 @@ const ModuleCard = ({
         <div className="flex items-center justify-between pt-6 border-t border-border">
           <div className="flex items-center space-x-4">
             <span className="text-sm text-muted-foreground">
-              Precio desde:
+              Categoría:
             </span>
-            <span className="text-lg font-bold text-primary">
-              ${module.price}
-            </span>
-            <span className="text-xs text-muted-foreground">
-              /mes por sede
+            <span className="text-sm font-medium text-primary">
+              {module.category === 'core' ? 'Módulo Central' : 
+               module.category === 'ai' ? 'Inteligencia Artificial' :
+               module.category === 'automation' ? 'Automatización' :
+               module.category === 'security' ? 'Seguridad' :
+               module.category === 'operations' ? 'Operaciones' :
+               module.category === 'finance' ? 'Finanzas' : 'Módulo Adicional'}
             </span>
           </div>
-          <div className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => onViewDemo(module.id)}
-              iconName="Play"
-              iconPosition="left"
-            >
-              Ver Demo
-            </Button>
+          <div className="flex items-center justify-end">
             <Button
               variant={isSelected ? "destructive" : "default"}
               size="sm"
