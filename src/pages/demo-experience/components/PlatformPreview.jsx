@@ -22,20 +22,18 @@ const PlatformPreview = ({ onScheduleDemo }) => {
 
       {/* Video Section */}
       <div className="space-y-6">
-        {/* Video Player */}
-        <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-          <video 
-            className="w-full h-auto max-h-[350px] object-contain"
-            controls
-            preload="metadata"
-            poster=""
-          >
-            <source src="https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/videos/DemoSolHub.mp4" type="video/mp4" />
-            Su navegador no soporta la reproducción de video.
-          </video>
+        {/* Platform Preview iframe */}
+        <div className="relative bg-white rounded-xl overflow-hidden shadow-2xl max-w-6xl mx-auto">
+          <iframe 
+            src="https://preview.solhub.agency"
+            className="w-full h-[600px] border-0"
+            title="SolHub Platform Preview"
+            allowFullScreen
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+          />
           
-          {/* Custom Video Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+          {/* Loading overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
         </div>
 
         {/* Features Grid */}
@@ -67,8 +65,9 @@ const PlatformPreview = ({ onScheduleDemo }) => {
             </h5>
           </div>
           <p className="text-muted-foreground mb-4 text-center">
-            Este video muestra las capacidades generales de SolHub. 
-            En el demo personalizado podrá interactuar con todas las funcionalidades adaptadas a su laboratorio.
+            Explore la plataforma SolHub en tiempo real. Esta es una versión de demostración interactiva 
+            donde puede navegar por todas las funcionalidades principales. En el demo personalizado 
+            podrá interactuar con datos específicos de su laboratorio.
           </p>
           <div className="flex justify-center">
             <Button

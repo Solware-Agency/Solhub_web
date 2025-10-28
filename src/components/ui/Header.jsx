@@ -128,25 +128,14 @@ const Header = ({ className = '' }) => {
               className="flex items-center space-x-3 transition-opacity duration-300"
               onClick={closeMobileMenu}
             >
-              <div className="relative">
-                <motion.div 
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-solware rounded-xl flex items-center justify-center shadow-glass-medium"
-                  whileHover={{
-                    boxShadow: "0 8px 32px rgba(139, 92, 246, 0.4)"
-                  }}
-                >
-                  <Icon name="Activity" size={20} color="white" strokeWidth={2.5} className="sm:w-6 sm:h-6" />
-                </motion.div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-success rounded-full border-2 border-background animate-pulse-medical"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg sm:text-xl lg:text-2xl font-bold text-gradient-solware">
-                  SolHub
-                </span>
-                <span className="text-xs sm:text-xs lg:text-sm text-muted-foreground font-medium -mt-1">
-                  by Solware
-                </span>
-              </div>
+              <motion.img 
+                src="/assets/images/solhub-logo.webp" 
+                alt="SolHub Logo" 
+                className="w-20 h-8 sm:w-24 sm:h-10 lg:w-28 lg:h-12 object-contain"
+                whileHover={{
+                  scale: 1.05
+                }}
+              />
             </Link>
           </motion.div>
 
