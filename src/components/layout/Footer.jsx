@@ -38,13 +38,12 @@ const Footer = ({ variant = 'default' }) => {
       <footer className="py-12 border-t border-border">
         <div className="container-medical">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-solware rounded-lg flex items-center justify-center">
-                <Icon name="Activity" size={16} color="white" />
-              </div>
-              <span className="text-xl font-bold text-gradient-solware">
-                SolHub Medical
-              </span>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/assets/images/solhub-logo.webp" 
+                alt="SolHub Logo" 
+                className="w-24 h-12 object-contain"
+              />
             </div>
             <p className="text-muted-foreground text-sm">
               © {currentYear} SolHub by{' '}
@@ -80,16 +79,11 @@ const Footer = ({ variant = 'default' }) => {
               className="flex items-center justify-center md:justify-start space-x-3 mb-6"
               variants={footerVariants}
             >
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-solware rounded-xl flex items-center justify-center shadow-glass-medium">
-                  <span className="text-white font-bold text-lg">S</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-success rounded-full border-2 border-background animate-pulse-medical"></div>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-gradient-solware">SolHub</div>
-                <div className="text-sm text-muted-foreground">by Solware</div>
-              </div>
+              <img 
+                src="/assets/images/solhub-logo.webp" 
+                alt="SolHub Logo" 
+                className="w-24 h-12 object-contain"
+              />
             </motion.div>
             <motion.p 
               className="text-muted-foreground mb-6 max-w-md mx-auto md:mx-0 text-sm sm:text-base"
