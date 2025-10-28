@@ -12,5 +12,7 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "buildCommand": "pnpm build",
+  "installCommand": "pnpm install --frozen-lockfile"
 }
