@@ -124,8 +124,8 @@ const ModuleShowcase = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, #8B5CF6 0%, transparent 50%), 
-                           radial-gradient(circle at 75% 75%, #22D3EE 0%, transparent 50%)`
+          backgroundImage: `radial-gradient(circle at 25% 25%, #41e2b8 0%, transparent 50%), 
+                           radial-gradient(circle at 75% 75%, #4c87ff 0%, transparent 50%)`
         }}></div>
       </div>
       <div className="container-medical relative z-10">

@@ -120,11 +120,11 @@ const CTASection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                  className={`group bg-card/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-card/70 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer ${
-                   benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30' :
-                   benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-secondary/30' :
+                   benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30' :
+                   benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(76,135,255,0.3)] hover:border-secondary/30' :
                    benefit?.color === 'success' ? 'hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30' :
-                   benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-accent/30' :
-                   'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30'
+                   benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(76,135,255,0.3)] hover:border-accent/30' :
+                   'hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30'
                  }`}
               >
                 <div className="w-12 h-12 bg-gradient-medical rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">

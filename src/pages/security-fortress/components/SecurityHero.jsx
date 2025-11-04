@@ -41,7 +41,7 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
               <div className="text-2xl font-bold text-success mb-1 group-hover:scale-105 transition-transform duration-300">256-bit</div>
               <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Encriptación AES</div>
             </div>
-            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <div className="flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                 <Icon name="Database" size={24} color="var(--color-primary)" />
               </div>
@@ -55,11 +55,11 @@ const SecurityHero = ({ onDemoClick, onWhatsAppClick }) => {
               <div className="text-2xl font-bold text-blue-500 mb-1 group-hover:scale-105 transition-transform duration-300">24/7</div>
               <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Monitoreo</div>
             </div>
-            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-pink-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <div className="flex items-center justify-center w-12 h-12 bg-pink-500/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <Icon name="Users" size={24} color="#ec4899" />
+            <div className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 hover:bg-card/50 hover:shadow-lg hover:shadow-[0_0_20px_rgba(76,135,255,0.3)] hover:border-secondary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+              <div className="flex items-center justify-center w-12 h-12 bg-secondary/20 rounded-lg mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <Icon name="Users" size={24} color="#4c87ff" />
               </div>
-              <div className="text-2xl font-bold text-pink-500 mb-1 group-hover:scale-105 transition-transform duration-300">99.9%</div>
+              <div className="text-2xl font-bold text-secondary mb-1 group-hover:scale-105 transition-transform duration-300">99.9%</div>
               <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">Disponibilidad</div>
             </div>
           </div>

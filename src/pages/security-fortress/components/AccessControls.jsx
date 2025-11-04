@@ -297,7 +297,7 @@ const AccessControls = () => {
 
         {/* Security Features */}
         <div className="mt-12 grid md:grid-cols-4 gap-6">
-          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+          <div className="group bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
             <Icon name="Fingerprint" size={32} color="var(--color-primary)" className="mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300" />
             <h4 className="font-semibold text-primary mb-2 group-hover:scale-105 transition-transform duration-300">Autenticación Multifactor</h4>
             <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
