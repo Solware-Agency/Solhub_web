@@ -78,22 +78,22 @@ const DataFlowVisualization = () => {
 
   const getColorClass = (color, type = 'bg') => {
     const colorMap = {
-      primary: type === 'bg' ? 'bg-purple-500' : 'text-purple-500',
-      success: type === 'bg' ? 'bg-green-500' : 'text-green-500',
-      secondary: type === 'bg' ? 'bg-blue-400' : 'text-blue-400',
-      accent: type === 'bg' ? 'bg-pink-500' : 'text-pink-500',
-      warning: type === 'bg' ? 'bg-orange-500' : 'text-orange-500'
+      primary: type === 'bg' ? 'bg-primary' : 'text-primary',
+      success: type === 'bg' ? 'bg-success' : 'text-success',
+      secondary: type === 'bg' ? 'bg-secondary' : 'text-secondary',
+      accent: type === 'bg' ? 'bg-accent' : 'text-accent',
+      warning: type === 'bg' ? 'bg-warning' : 'text-warning'
     };
     return colorMap?.[color] || colorMap?.primary;
   };
 
   const getColorVar = (color) => {
     const colorMap = {
-      primary: '#8b5cf6',
-      success: '#10b981',
-      secondary: '#60a5fa',
-      accent: '#ec4899',
-      warning: '#f97316'
+      primary: 'var(--color-primary)',
+      success: 'var(--color-success)',
+      secondary: 'var(--color-secondary)',
+      accent: 'var(--color-accent)',
+      warning: 'var(--color-warning)'
     };
     return colorMap?.[color] || colorMap?.primary;
   };
@@ -114,30 +114,66 @@ const DataFlowVisualization = () => {
         <div className="max-w-6xl mx-auto">
           {/* Interactive Flow Diagram */}
           <div className="relative mb-12">
-            {/* Connection Lines */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500/60 via-green-500/60 via-blue-400/60 via-pink-500/60 to-orange-500/60 transform -translate-y-1/2 rounded-full shadow-lg"></div>
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-green-500 via-blue-400 via-pink-500 to-orange-500 transform -translate-y-1/2 rounded-full"></div>
+            {/* Subtle Connection Line */}
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 transform -translate-y-1/2">
+              {/* Base gradient line */}
+              <div className="h-0.5 bg-gradient-to-r from-transparent via-primary/20 via-secondary/20 via-primary/20 to-transparent rounded-full"></div>
+            </div>
             
             {/* Flow Steps */}
             <div className="grid md:grid-cols-5 gap-6">
               {dataFlowSteps?.map((step, index) => (
                 <div key={step?.id} className="relative">
+                  {/* Pulse effect around active card */}
+                  {activeStep === index && (
+                    <div className="absolute -inset-2 rounded-xl pointer-events-none">
+                      {/* Outer glow ring */}
+                      <div 
+                        className="absolute inset-0 rounded-xl"
+                        style={{
+                          boxShadow: '0 0 20px rgba(65, 226, 184, 0.4), 0 0 40px rgba(65, 226, 184, 0.2), 0 0 60px rgba(65, 226, 184, 0.1)',
+                          animation: 'pulseGlow 2s ease-in-out infinite'
+                        }}
+                      ></div>
+                      {/* Middle glow ring */}
+                      <div 
+                        className="absolute -inset-1 rounded-xl"
+                        style={{
+                          boxShadow: '0 0 15px rgba(65, 226, 184, 0.3), 0 0 30px rgba(65, 226, 184, 0.15)',
+                          animation: 'pulseGlow 2s ease-in-out infinite 0.5s'
+                        }}
+                      ></div>
+                      {/* Inner glow ring */}
+                      <div 
+                        className="absolute inset-0 rounded-xl border border-primary/40"
+                        style={{
+                          boxShadow: '0 0 10px rgba(65, 226, 184, 0.5)',
+                          animation: 'pulseGlow 2s ease-in-out infinite 0.25s'
+                        }}
+                      ></div>
+                    </div>
+                  )}
+                  
                   <button
                     onClick={() => setActiveStep(index)}
-                    className={`w-full p-6 rounded-xl border-2 transition-all duration-300 ${
+                    className={`w-full p-6 rounded-xl border-2 transition-all duration-300 relative z-10 ${
                       activeStep === index
-                        ? `border-${step?.color} bg-${step?.color}/10 shadow-lg`
-                        : 'border-border bg-card/50 hover:bg-card/70'
+                        ? `border-primary bg-primary/10 shadow-lg shadow-primary/20`
+                        : 'border-border bg-card/50 hover:bg-card/70 hover:border-primary/30'
                     }`}
                   >
-                    <div className={`w-16 h-16 ${getColorClass(step?.color)}/10 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                    <div className={`w-16 h-16 ${
+                      activeStep === index ? 'bg-primary/20' : 'bg-card border border-border'
+                    } rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300`}>
                       <Icon 
                         name={step?.icon} 
                         size={32} 
-                        color={getColorVar(step?.color)} 
+                        color={activeStep === index ? 'var(--color-primary)' : getColorVar(step?.color)} 
                       />
                     </div>
-                    <h3 className={`font-semibold mb-2 ${activeStep === index ? getColorClass(step?.color, 'text') : 'text-foreground'}`}>
+                    <h3 className={`font-semibold mb-2 transition-colors duration-300 ${
+                      activeStep === index ? 'text-primary' : 'text-foreground'
+                    }`}>
                       {step?.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -145,8 +181,12 @@ const DataFlowVisualization = () => {
                     </p>
                   </button>
                   
-                  {/* Step Number */}
-                  <div className={`absolute -top-3 -right-3 w-8 h-8 ${getColorClass(step?.color)} text-white rounded-full flex items-center justify-center text-sm font-bold`}>
+                  {/* Step Number - Updated design */}
+                  <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                    activeStep === index 
+                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30 scale-110' 
+                      : `${getColorClass(step?.color)} text-white scale-100`
+                  }`}>
                     {index + 1}
                   </div>
                 </div>
@@ -169,13 +209,12 @@ const DataFlowVisualization = () => {
             ))}
           </div>
 
-          {/* Progress Bar */}
-          <div className="w-full max-w-md mx-auto bg-muted/30 rounded-full h-1 mb-8">
+          {/* Progress Bar - Updated with new brand colors */}
+          <div className="w-full max-w-md mx-auto bg-muted/30 rounded-full h-1.5 mb-8 overflow-hidden">
             <div
-              className="bg-gradient-to-r from-purple-500 via-green-500 via-blue-400 via-pink-500 to-orange-500 h-1 rounded-full transition-all duration-100 ease-linear"
+              className="bg-gradient-to-r from-primary via-secondary to-primary h-1.5 rounded-full transition-all duration-500 ease-out shadow-lg shadow-primary/30"
               style={{
-                width: `${((activeStep + 1) / dataFlowSteps.length) * 100}%`,
-                animation: 'progress 4s linear infinite'
+                width: `${((activeStep + 1) / dataFlowSteps.length) * 100}%`
               }}
             ></div>
           </div>
@@ -243,11 +282,17 @@ const DataFlowVisualization = () => {
         </div>
       </div>
 
-      {/* CSS Animation for Progress Bar */}
+      {/* CSS Animation for Pulse Glow */}
       <style jsx>{`
-        @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
+        @keyframes pulseGlow {
+          0%, 100% {
+            opacity: 0.5;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.9;
+            transform: scale(1.03);
+          }
         }
       `}</style>
     </section>
