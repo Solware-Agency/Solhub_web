@@ -111,8 +111,8 @@ export default {
         'medical-md': 'var(--shadow-md)',
         'medical-lg': 'var(--shadow-lg)',
         'medical-xl': 'var(--shadow-xl)',
-        'medical-glow': '0 0 20px rgba(139, 92, 246, 0.3)',
-        'medical-glow-accent': '0 0 20px rgba(236, 72, 153, 0.3)',
+        'medical-glow': '0 0 20px rgba(65, 226, 184, 0.3)',
+        'medical-glow-accent': '0 0 20px rgba(76, 135, 255, 0.3)',
         'glass-light': '0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08)',
         'glass-medium': '0 8px 32px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.12)',
         'glass-strong': '0 16px 48px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.16)',
@@ -174,10 +174,10 @@ export default {
       },
       backgroundImage: {
         'gradient-medical': 'var(--gradient-medical)',
-        'gradient-medical-subtle': 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(34, 211, 238, 0.1) 100%)',
+        'gradient-medical-subtle': 'linear-gradient(135deg, rgba(65, 226, 184, 0.1) 0%, rgba(76, 135, 255, 0.1) 100%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-liquid': 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(34, 211, 238, 0.15) 50%, rgba(236, 72, 153, 0.15) 100%)',
+        'gradient-liquid': 'linear-gradient(135deg, rgba(65, 226, 184, 0.15) 0%, rgba(76, 135, 255, 0.15) 50%, rgba(65, 226, 184, 0.15) 100%)',
         'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
       },
       backdropBlur: {

@@ -167,7 +167,7 @@ const AICapabilitiesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-card border border-border rounded-xl p-8 hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] hover:border-primary/50 transition-all duration-300 cursor-pointer"
+            className="bg-card border border-border rounded-xl p-8 hover:shadow-[0_0_30px_rgba(65,226,184,0.6)] hover:border-primary/50 transition-all duration-300 cursor-pointer"
           >
             <div className="mb-6">
               <div className="flex items-center space-x-3 mb-4">

@@ -179,10 +179,10 @@ const ReferralProgram = () => {
               key={index} 
               className={`group card-medical-elevated p-6 text-center hover:-translate-y-1 transition-all duration-300 cursor-pointer ${
                 benefit?.color === 'success' ? 'hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:border-success/30' :
-                benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30' :
-                benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:border-secondary/30' :
-                benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(236,72,153,0.3)] hover:border-accent/30' :
-                'hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:border-primary/30'
+                benefit?.color === 'primary' ? 'hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30' :
+                benefit?.color === 'secondary' ? 'hover:shadow-[0_0_20px_rgba(76,135,255,0.3)] hover:border-secondary/30' :
+                benefit?.color === 'accent' ? 'hover:shadow-[0_0_20px_rgba(76,135,255,0.3)] hover:border-accent/30' :
+                'hover:shadow-[0_0_20px_rgba(65,226,184,0.3)] hover:border-primary/30'
               }`}
             >
               <div className={`w-16 h-16 rounded-xl ${getColorClasses(benefit?.color)} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
