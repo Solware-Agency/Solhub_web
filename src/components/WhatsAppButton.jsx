@@ -5,6 +5,7 @@ import Icon from './AppIcon';
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPulsing, setIsPulsing] = useState(false);
 
   // Predefined message in Spanish
   const predefinedMessage = "Hola! Me interesa conocer más sobre SolHub y cómo puede ayudar a transformar mi laboratorio médico. ¿Podrían proporcionarme más información?";
@@ -15,6 +16,16 @@ const WhatsAppButton = () => {
   useEffect(() => {
     // Keep button always visible - removed scroll hide logic
     setIsVisible(true);
+    
+    // Pulso automático cada 5 segundos
+    const pulseInterval = setInterval(() => {
+      setIsPulsing(true);
+      setTimeout(() => {
+        setIsPulsing(false);
+      }, 1000); // Duración del pulso aumentada
+    }, 5000); // Cada 5 segundos
+
+    return () => clearInterval(pulseInterval);
   }, []);
 
   const handleWhatsAppClick = () => {
@@ -59,13 +70,18 @@ const WhatsAppButton = () => {
     }
   };
 
-  const iconVariants = {
-    initial: { rotate: 0 },
-    hover: {
-      rotate: 5,
-      transition: {
-        duration: 0.2
-      }
+  // Animación sutil de pulso - solo se ilumina y se apaga cada 5 segundos
+  const subtlePulse = {
+    boxShadow: [
+      "0 0 0 0 rgba(65, 226, 184, 0)",
+      "0 10px 25px rgba(65, 226, 184, 0.3)",
+      "0 0 0 0 rgba(65, 226, 184, 0)"
+    ],
+    transition: {
+      duration: 0.8,
+      repeat: Infinity,
+      repeatDelay: 4.2, // 5 segundos total (0.8s animación + 4.2s pausa)
+      ease: "easeInOut"
     }
   };
 
@@ -74,7 +90,7 @@ const WhatsAppButton = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-whatsapp"
+          className="fixed bottom-6 right-6 z-whatsapp"
           variants={buttonVariants}
           initial="initial"
           animate="animate"
@@ -84,33 +100,37 @@ const WhatsAppButton = () => {
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
         >
-          {/* Main Button */}
+          {/* Main Button - Redondo con SVG */}
           <motion.button
             onClick={handleWhatsAppClick}
-            className="relative w-14 h-14 sm:w-16 sm:h-16 bg-success hover:bg-success/90 rounded-full shadow-lg flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-success/30 transition-all duration-300"
+            className="relative w-16 h-16 sm:w-20 sm:h-20 bg-transparent hover:opacity-80 rounded-full flex items-center justify-center group focus:outline-none focus:ring-4 focus:ring-primary/30 transition-all duration-300"
             aria-label="Contactar por WhatsApp"
+            animate={{
+              boxShadow: isPulsing && !isHovered 
+                ? "0 0 0 3px rgba(65, 226, 184, 0.5), 0 15px 35px rgba(65, 226, 184, 0.4)"
+                : "0 0 0 0 rgba(65, 226, 184, 0)",
+              scale: isPulsing && !isHovered ? 1.05 : 1,
+              transition: {
+                duration: 1,
+                ease: "easeInOut"
+              }
+            }}
             whileHover={{ 
-              boxShadow: "0 10px 25px rgba(16, 185, 129, 0.3)" 
+              boxShadow: "0 10px 25px rgba(65, 226, 184, 0.3)",
+              scale: 1.05
             }}
           >
-            {/* Background Glass Effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
-            
-            {/* WhatsApp Icon */}
-            <motion.div
-              variants={iconVariants}
-              initial="initial"
-              animate={isHovered ? "hover" : "initial"}
-              className="relative z-10"
-            >
-              <Icon 
-                name="MessageCircle" 
-                size={24} 
-                color="white" 
-                strokeWidth={2}
-                className="drop-shadow-sm"
+            {/* Logo SVG */}
+            <div className="relative z-10">
+              <img 
+                src="/assets/images/herosvgg.svg" 
+                alt="SolHub Logo" 
+                className="w-14 h-14 sm:w-[72px] sm:h-[72px] drop-shadow-lg"
+                style={{ 
+                  filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3))'
+                }}
               />
-            </motion.div>
+            </div>
             
           </motion.button>
 
@@ -135,7 +155,7 @@ const WhatsAppButton = () => {
               >
                 <div className="glass-strong px-4 py-2 rounded-xl border border-glass-border shadow-glass-medium">
                   <p className="text-sm font-medium text-foreground">
-                    ¡Chatea con nosotros!
+                    Escríbenos por WhatsApp
                   </p>
                   <p className="text-xs text-muted-foreground">
                     Te respondemos al instante

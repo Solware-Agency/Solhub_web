@@ -31,7 +31,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left px-2 sm:px-4 order-2 lg:order-1">
 
             {/* Main Headline - Improved responsive typography */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight" style={{ animationDelay: '0.1s' }}>
               <span className="text-gradient-medical block">IA que potencia</span>
               <span className="text-foreground block">el diagnóstico médico</span>
               <span className="text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl block mt-1 sm:mt-2">en Venezuela</span>
@@ -101,18 +101,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Floating WhatsApp Button - Mobile - Better positioning */}
-      <div className="fixed bottom-4 right-4 z-50 lg:hidden">
-        <Button
-          variant="default"
-          size="icon"
-          onClick={handleWhatsAppClick}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-success hover:bg-success/90 shadow-lg shadow-success/25"
-        >
-          <Icon name="MessageCircle" size={20} />
-        </Button>
       </div>
 
       {/* Scroll Indicator - Better positioning */}

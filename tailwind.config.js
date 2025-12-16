@@ -11,7 +11,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.62rem", // Reduced 20% total
       screens: {
         "2xl": "1400px",
       },
@@ -89,15 +89,15 @@ export default {
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       fontSize: {
-        'medical-xs': ['0.75rem', { lineHeight: '1rem' }], // 12px
-        'medical-sm': ['0.875rem', { lineHeight: '1.25rem' }], // 14px
-        'medical-base': ['1rem', { lineHeight: '1.5rem' }], // 16px
-        'medical-lg': ['1.125rem', { lineHeight: '1.75rem' }], // 18px
-        'medical-xl': ['1.25rem', { lineHeight: '1.75rem' }], // 20px
-        'medical-2xl': ['1.5rem', { lineHeight: '2rem' }], // 24px
-        'medical-3xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
-        'medical-4xl': ['2.25rem', { lineHeight: '2.5rem' }], // 36px
-        'medical-5xl': ['3rem', { lineHeight: '1.2' }], // 48px
+        'medical-xs': ['0.6075rem', { lineHeight: '0.81rem' }], // 9.72px (reduced 20%)
+        'medical-sm': ['0.70875rem', { lineHeight: '1.0125rem' }], // 11.34px (reduced 20%)
+        'medical-base': ['0.81rem', { lineHeight: '1.215rem' }], // 12.96px (reduced 20%)
+        'medical-lg': ['0.91125rem', { lineHeight: '1.4175rem' }], // 14.58px (reduced 20%)
+        'medical-xl': ['1.0125rem', { lineHeight: '1.4175rem' }], // 16.2px (reduced 20%)
+        'medical-2xl': ['1.215rem', { lineHeight: '1.62rem' }], // 19.44px (reduced 20%)
+        'medical-3xl': ['1.51875rem', { lineHeight: '1.8225rem' }], // 24.3px (reduced 20%)
+        'medical-4xl': ['1.8225rem', { lineHeight: '2.025rem' }], // 29.16px (reduced 20%)
+        'medical-5xl': ['2.43rem', { lineHeight: '1.2' }], // 38.88px (reduced 20%)
       },
       spacing: {
         'medical-xs': 'var(--spacing-xs)', // 8px
