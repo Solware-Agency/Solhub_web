@@ -294,11 +294,6 @@ const ModuleShowcase = () => {
                 </pre>
               </div>
             </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-              En Tiempo Real
-            </div>
           </div>
         </div>
       </div>

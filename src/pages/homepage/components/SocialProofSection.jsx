@@ -27,42 +27,42 @@ const SocialProofSection = () => {
       icon: 'MapPin',
       value: '5',
       label: 'Sedes en Venezuela',
-      description: 'Caracas, Valencia, Maracaibo, Barquisimeto'
+      description: 'Centro Policlínico Caracas, Charallave, Policlínica Méndez Gimón, Clínica Sanatrix, Maracay'
     }
   ];
 
   const locations = [
     {
-      city: 'Caracas',
-      zone: 'Centro',
+      city: 'Centro Policlínico Caracas',
+      zone: 'Caracas',
       users: 15,
       satisfaction: 4.9,
       uptime: '99.98%'
     },
     {
-      city: 'Valencia',
-      zone: 'Norte',
+      city: 'Charallave',
+      zone: 'Miranda',
       users: 12,
       satisfaction: 4.8,
       uptime: '99.95%'
     },
     {
-      city: 'Maracaibo',
-      zone: 'Centro',
+      city: 'Policlínica Méndez Gimón',
+      zone: 'Caracas',
       users: 8,
       satisfaction: 4.9,
       uptime: '99.97%'
     },
     {
-      city: 'Barquisimeto',
-      zone: 'Este',
+      city: 'Clínica Sanatrix',
+      zone: 'Caracas',
       users: 10,
       satisfaction: 4.7,
       uptime: '99.94%'
     },
     {
-      city: 'Puerto Ordaz',
-      zone: 'Sur',
+      city: 'Maracay',
+      zone: 'Aragua',
       users: 6,
       satisfaction: 4.8,
       uptime: '99.96%'

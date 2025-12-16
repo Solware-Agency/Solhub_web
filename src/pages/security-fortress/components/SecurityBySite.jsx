@@ -7,7 +7,7 @@ const SecurityBySite = () => {
   const sites = [
     {
       id: 1,
-      name: "Laboratorio Central Caracas",
+      name: "Centro Policlínico Caracas",
       location: "Caracas, Distrito Capital",
       status: "Activo",
       encryption: "AES-256",
@@ -20,8 +20,8 @@ const SecurityBySite = () => {
     },
     {
       id: 2,
-      name: "Clínica Médica Valencia",
-      location: "Valencia, Carabobo",
+      name: "Charallave",
+      location: "Charallave, Miranda",
       status: "Activo",
       encryption: "AES-256",
       lastAudit: "12/08/2024",
@@ -33,8 +33,8 @@ const SecurityBySite = () => {
     },
     {
       id: 3,
-      name: "Centro Diagnóstico Maracaibo",
-      location: "Maracaibo, Zulia",
+      name: "Policlínica Méndez Gimón",
+      location: "Caracas, Distrito Capital",
       status: "Activo",
       encryption: "AES-256",
       lastAudit: "10/08/2024",
@@ -46,8 +46,8 @@ const SecurityBySite = () => {
     },
     {
       id: 4,
-      name: "Laboratorio Clínico Barquisimeto",
-      location: "Barquisimeto, Lara",
+      name: "Clínica Sanatrix",
+      location: "Caracas, Distrito Capital",
       status: "Activo",
       encryption: "AES-256",
       lastAudit: "08/08/2024",
@@ -59,8 +59,8 @@ const SecurityBySite = () => {
     },
     {
       id: 5,
-      name: "Centro Médico San Cristóbal",
-      location: "San Cristóbal, Táchira",
+      name: "Maracay",
+      location: "Maracay, Aragua",
       status: "Activo",
       encryption: "AES-256",
       lastAudit: "05/08/2024",

@@ -67,6 +67,17 @@ const HeroSection = () => {
                   Explorar Módulos
                 </Button>
               </Link>
+              <Link to="/demo-experience" className="w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  iconName="Play"
+                  iconPosition="left"
+                  className="border-primary/30 text-primary hover:bg-primary/10 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
+                >
+                  Ver Demo
+                </Button>
+              </Link>
             </div>
           </div>
 
