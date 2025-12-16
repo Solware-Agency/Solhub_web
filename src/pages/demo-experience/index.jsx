@@ -219,22 +219,22 @@ const DemoExperience = () => {
           {/* Progress Steps */}
           <div className="bg-muted/20 border-b border-border">
             <div className="container-medical py-4">
-              <div className="flex items-center justify-between overflow-x-auto">
+              <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-4">
                 {steps?.map((step, index) => (
                   <div key={step?.id} className="flex items-center">
                     <button
                       onClick={() => setCurrentStep(step?.id)}
-                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+                      className={`flex items-center space-x-2 px-3 sm:px-5 py-2 sm:py-3 rounded-lg transition-all duration-300 whitespace-nowrap font-medium shadow-sm ${
                         currentStep === step?.id
-                          ? 'bg-primary text-primary-foreground'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                          ? 'bg-gradient-medical text-white shadow-lg shadow-primary/30 scale-105 border-2 border-primary/50'
+                          : 'bg-card text-foreground border-2 border-border hover:border-primary/50 hover:bg-primary/10 hover:shadow-md hover:shadow-primary/20 hover:scale-105 active:scale-95 cursor-pointer'
                       }`}
                     >
-                      <Icon name={step?.icon} size={16} />
-                      <span className="text-sm font-medium">{step?.title}</span>
+                      <Icon name={step?.icon} size={16} className="sm:w-[18px] sm:h-[18px]" />
+                      <span className="text-xs sm:text-sm font-semibold">{step?.title}</span>
                     </button>
                     {index < steps?.length - 1 && (
-                      <Icon name="ChevronRight" size={16} className="mx-2 text-muted-foreground" />
+                      <Icon name="ChevronRight" size={14} className="mx-1 sm:mx-2 text-muted-foreground hidden sm:block" />
                     )}
                   </div>
                 ))}
