@@ -69,12 +69,12 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-glow: rgba(65, 226, 184, 0.2); /* nuevo primario con opacidad */
     
-    /* Spacing System */
-    --spacing-xs: 0.5rem; /* 8px */
-    --spacing-sm: 0.75rem; /* 12px */
-    --spacing-md: 1.25rem; /* 20px */
-    --spacing-lg: 2rem; /* 32px */
-    --spacing-xl: 3rem; /* 48px */
+    /* Spacing System - Reduced 10% */
+    --spacing-xs: 0.45rem; /* 7.2px */
+    --spacing-sm: 0.675rem; /* 10.8px */
+    --spacing-md: 1.125rem; /* 18px */
+    --spacing-lg: 1.8rem; /* 28.8px */
+    --spacing-xl: 2.7rem; /* 43.2px */
     
     /* Border Radius System */
     --radius-sm: 0.5rem; /* 8px */
@@ -130,6 +130,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    font-size: 81%; /* Reduced 20% total */
   }
   
   html {
