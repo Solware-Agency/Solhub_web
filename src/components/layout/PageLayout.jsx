@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Header from '../ui/Header';
-import WhatsAppButton from '../WhatsAppButton';
 import Footer from './Footer';
 import { createSEOConfig } from '../../utils/seo';
 import useScrollToTop from '../../hooks/useScrollToTop';
@@ -41,7 +40,6 @@ const PageLayout = ({
       />
       <div className={`bg-background text-foreground ${className}`}>
         <Header />
-        {showWhatsApp && <WhatsAppButton />}
         
         <motion.main 
           className={`pt-16 ${containerClassName}`}
