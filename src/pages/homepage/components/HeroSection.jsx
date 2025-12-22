@@ -26,47 +26,47 @@ const HeroSection = () => {
       <div className="container-medical relative z-10 w-full max-w-7xl mx-auto">
         {/* Layout de dos columnas: Contenido a la izquierda, Video a la derecha */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
-          
+
           {/* Columna izquierda: Contenido */}
           <div className="text-center lg:text-left px-2 sm:px-4 order-2 lg:order-1">
 
-            {/* Main Headline - Improved responsive typography */}
+          {/* Main Headline - Improved responsive typography */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in leading-tight" style={{ animationDelay: '0.1s' }}>
-              <span className="text-gradient-medical block">IA que potencia</span>
-              <span className="text-foreground block">el diagnóstico médico</span>
+            <span className="text-gradient-medical block">IA que potencia</span>
+            <span className="text-foreground block">el diagnóstico médico</span>
               <span className="text-muted-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl block mt-1 sm:mt-2">en Venezuela</span>
-            </h1>
+          </h1>
 
-            {/* Supporting Tagline - Better responsive text */}
+          {/* Supporting Tagline - Better responsive text */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-8 sm:mb-10 lg:mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <span className="text-destructive font-semibold">8 de cada 10 laboratorios en Venezuela</span> no cuentan con una base de datos digital. 
-              <span className="text-primary font-medium"> SolHub</span> revoluciona el diagnóstico médico con IA integrada, seguridad por sede y onboarding guiado.
-            </p>
+            <span className="text-destructive font-semibold">8 de cada 10 laboratorios en Venezuela</span> no cuentan con una base de datos digital. 
+            <span className="text-primary font-medium"> SolHub</span> revoluciona el diagnóstico médico con IA integrada, seguridad por sede y onboarding guiado.
+          </p>
 
-            {/* CTA Buttons - Better responsive layout */}
+          {/* CTA Buttons - Better responsive layout */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <Link to="/contact-support" className="w-full sm:w-auto">
-                <Button
-                  variant="default"
-                  size="lg"
-                  iconName="MessageCircle"
-                  iconPosition="left"
-                  className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
-                >
-                  Contáctanos
-                </Button>
-              </Link>
-              <Link to="/modules-showcase" className="w-full sm:w-auto">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  iconName="Grid3X3"
-                  iconPosition="left"
-                  className="border-primary/30 text-primary hover:bg-primary/10 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
-                >
-                  Explorar Módulos
-                </Button>
-              </Link>
+            <Link to="/contact-support" className="w-full sm:w-auto">
+              <Button
+                variant="default"
+                size="lg"
+                iconName="MessageCircle"
+                iconPosition="left"
+                className="bg-gradient-medical hover:opacity-90 shadow-medical-glow text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
+              >
+                Contáctanos
+              </Button>
+            </Link>
+            <Link to="/modules-showcase" className="w-full sm:w-auto">
+              <Button
+                variant="outline"
+                size="lg"
+                iconName="Grid3X3"
+                iconPosition="left"
+                className="border-primary/30 text-primary hover:bg-primary/10 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 w-full min-h-[44px] sm:min-h-[48px]"
+              >
+                Explorar Módulos
+              </Button>
+            </Link>
               <Link to="/demo-experience" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
@@ -79,7 +79,7 @@ const HeroSection = () => {
                 </Button>
               </Link>
             </div>
-          </div>
+            </div>
 
           {/* Columna derecha: Video destacado */}
           <div className="order-1 lg:order-2 animate-fade-in flex justify-center lg:justify-end" style={{ animationDelay: '0.3s' }}>

@@ -69,19 +69,19 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-glow: rgba(65, 226, 184, 0.2); /* nuevo primario con opacidad */
     
-    /* Spacing System - Reduced 10% */
-    --spacing-xs: 0.45rem; /* 7.2px */
-    --spacing-sm: 0.675rem; /* 10.8px */
-    --spacing-md: 1.125rem; /* 18px */
-    --spacing-lg: 1.8rem; /* 28.8px */
-    --spacing-xl: 2.7rem; /* 43.2px */
+    /* Spacing System - Reduced 20% total */
+    --spacing-xs: 0.405rem; /* 6.48px */
+    --spacing-sm: 0.6075rem; /* 9.72px */
+    --spacing-md: 1.0125rem; /* 16.2px */
+    --spacing-lg: 1.62rem; /* 25.92px */
+    --spacing-xl: 2.43rem; /* 38.88px */
     
-    /* Border Radius System */
-    --radius-sm: 0.5rem; /* 8px */
-    --radius-md: 0.75rem; /* 12px */
-    --radius-lg: 1rem; /* 16px */
-    --radius-xl: 1.25rem; /* 20px */
-    --radius-2xl: 1.5rem; /* 24px */
+    /* Border Radius System - Reduced 10% */
+    --radius-sm: 0.45rem; /* 7.2px */
+    --radius-md: 0.675rem; /* 10.8px */
+    --radius-lg: 0.9rem; /* 14.4px */
+    --radius-xl: 1.125rem; /* 18px */
+    --radius-2xl: 1.35rem; /* 21.6px */
     
     /* Liquid Glass Shadows */
     --shadow-glass-light: 0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -130,7 +130,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    font-size: 81%; /* Reduced 20% total */
+    font-size: 72.9%; /* Reduced 30% total (20% + 10%) */
   }
   
   html {

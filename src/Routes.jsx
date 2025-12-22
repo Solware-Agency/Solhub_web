@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
-import WhatsAppButton from "components/WhatsAppButton";
+import WhatsAppButtonSolware from "components/WhatsAppButtonSolware";
 import NotFound from "pages/NotFound";
 import ClientSuccessStories from './pages/client-success-stories';
 import ModulesShowcase from './pages/modules-showcase';
@@ -19,7 +19,7 @@ const Routes = () => {
     <BrowserRouter>
       <ErrorBoundary>
       <ScrollToTop />
-      <WhatsAppButton />
+      <WhatsAppButtonSolware />
       <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<Homepage />} />

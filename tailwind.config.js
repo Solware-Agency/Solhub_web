@@ -11,7 +11,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.62rem", // Reduced 20% total
+      padding: "1.458rem", // Reduced 30% total (20% + 10%)
       screens: {
         "2xl": "1400px",
       },
@@ -77,27 +77,27 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius-lg)", // 12px
-        md: "var(--radius-md)", // 8px
-        sm: "var(--radius-sm)", // 6px
-        xl: "var(--radius-xl)", // 16px
-        "2xl": "1.25rem",
-        "3xl": "1.5rem",
+        lg: "var(--radius-lg)", // 14.4px
+        md: "var(--radius-md)", // 10.8px
+        sm: "var(--radius-sm)", // 7.2px
+        xl: "var(--radius-xl)", // 18px
+        "2xl": "1.125rem",
+        "3xl": "1.35rem",
       },
       fontFamily: {
         sans: ['Inter Variable', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       fontSize: {
-        'medical-xs': ['0.6075rem', { lineHeight: '0.81rem' }], // 9.72px (reduced 20%)
-        'medical-sm': ['0.70875rem', { lineHeight: '1.0125rem' }], // 11.34px (reduced 20%)
-        'medical-base': ['0.81rem', { lineHeight: '1.215rem' }], // 12.96px (reduced 20%)
-        'medical-lg': ['0.91125rem', { lineHeight: '1.4175rem' }], // 14.58px (reduced 20%)
-        'medical-xl': ['1.0125rem', { lineHeight: '1.4175rem' }], // 16.2px (reduced 20%)
-        'medical-2xl': ['1.215rem', { lineHeight: '1.62rem' }], // 19.44px (reduced 20%)
-        'medical-3xl': ['1.51875rem', { lineHeight: '1.8225rem' }], // 24.3px (reduced 20%)
-        'medical-4xl': ['1.8225rem', { lineHeight: '2.025rem' }], // 29.16px (reduced 20%)
-        'medical-5xl': ['2.43rem', { lineHeight: '1.2' }], // 38.88px (reduced 20%)
+        'medical-xs': ['0.54675rem', { lineHeight: '0.729rem' }], // 8.748px (reduced 30%)
+        'medical-sm': ['0.637875rem', { lineHeight: '0.91125rem' }], // 10.206px (reduced 30%)
+        'medical-base': ['0.729rem', { lineHeight: '1.0935rem' }], // 11.664px (reduced 30%)
+        'medical-lg': ['0.820125rem', { lineHeight: '1.27575rem' }], // 13.122px (reduced 30%)
+        'medical-xl': ['0.91125rem', { lineHeight: '1.27575rem' }], // 14.58px (reduced 30%)
+        'medical-2xl': ['1.0935rem', { lineHeight: '1.458rem' }], // 17.496px (reduced 30%)
+        'medical-3xl': ['1.366875rem', { lineHeight: '1.64025rem' }], // 21.87px (reduced 30%)
+        'medical-4xl': ['1.64025rem', { lineHeight: '1.8225rem' }], // 26.244px (reduced 30%)
+        'medical-5xl': ['2.187rem', { lineHeight: '1.2' }], // 34.992px (reduced 30%)
       },
       spacing: {
         'medical-xs': 'var(--spacing-xs)', // 8px

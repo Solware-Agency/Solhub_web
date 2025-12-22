@@ -77,7 +77,7 @@ const WhatsAppButton = () => {
       "0 10px 25px rgba(65, 226, 184, 0.3)",
       "0 0 0 0 rgba(65, 226, 184, 0)"
     ],
-    transition: {
+      transition: {
       duration: 0.8,
       repeat: Infinity,
       repeatDelay: 4.2, // 5 segundos total (0.8s animación + 4.2s pausa)
