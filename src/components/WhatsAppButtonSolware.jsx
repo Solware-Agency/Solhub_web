@@ -328,7 +328,7 @@ const WhatsAppButtonSolware = memo(() => {
         {/* Botón principal de WhatsApp */}
         <button
           onClick={openWhatsApp}
-          className="whatsapp-btn-solware relative w-[44px] h-[44px] md:w-[48px] md:h-[48px] bg-[#25D366] rounded-full 
+          className="whatsapp-btn-solware relative w-[56px] h-[56px] md:w-[64px] md:h-[64px] bg-[#25D366] rounded-full 
             flex items-center justify-center shadow-lg hover:shadow-xl 
             transform hover:scale-110 transition-all duration-300 
             hover:bg-[#22c35e] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2
@@ -336,7 +336,7 @@ const WhatsAppButtonSolware = memo(() => {
           aria-label="Chatear por WhatsApp"
         >
           <svg 
-            className="w-5 h-5 md:w-6 md:h-6 text-white" 
+            className="w-7 h-7 md:w-8 md:h-8 text-white" 
             fill="currentColor" 
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -378,4 +378,6 @@ const WhatsAppButtonSolware = memo(() => {
 WhatsAppButtonSolware.displayName = 'WhatsAppButtonSolware';
 
 export default WhatsAppButtonSolware;
+
+
 

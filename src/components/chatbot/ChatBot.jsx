@@ -309,12 +309,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				className={`p-2 pl-0 text-white rounded-full transition-all duration-300 ${isOpen ? 'hidden' : ''}`}
 				title="Chatbot"
 			>
-				<RobotTraking className={'size-12 md:size-16'} />
+				<RobotTraking className={'size-16 md:size-20'} />
 			</button>
 
 			{/* Ventana del chat */}
 			<div
-				className={`fixed bottom-0 right-0 z-[130] w-full sm:w-80 h-[450px] bg-background border border-border
+				className={`fixed bottom-0 right-0 z-[130] w-full sm:w-96 md:w-[420px] h-[550px] md:h-[600px] bg-background border border-border
           shadow-glass-strong
           transition-transform duration-300 transform 
           sm:rounded-t-2xl
@@ -324,8 +324,8 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				{/* Header */}
 				<div className="flex items-center justify-between p-2.5 bg-gradient-medical text-white sm:rounded-t-2xl shadow-lg">
 					<div className="flex items-center">
-						<RobotTraking className="size-7 md:size-8" />
-						<h3 className="font-semibold ml-2 text-sm md:text-base">Solwy</h3>
+						<RobotTraking className="size-9 md:size-10" />
+						<h3 className="font-semibold ml-2 text-base md:text-lg">Solwy</h3>
 					</div>
 					<button onClick={() => setIsOpen(false)} className="p-1 hover:bg-white/20 rounded-full transition-colors">
 						<X className="h-4 w-4" />
@@ -333,7 +333,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				</div>
 
 				{/* Messages Container */}
-				<div className="flex-1 p-2.5 h-[calc(450px-5rem)] overflow-y-auto">
+				<div className="flex-1 p-2.5 h-[calc(550px-5rem)] md:h-[calc(600px-5rem)] overflow-y-auto">
 					<div className="space-y-4">
 						{messages.map((message) => (
 							<div key={message.id}>
@@ -424,4 +424,5 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 }
 
 export default ChatBot
+
 
