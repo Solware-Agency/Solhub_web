@@ -19,23 +19,29 @@ const botResponses = {
 		options: [
 			'Ver Demo',
 			'Precios',
+			'Proceso de trabajo',
 			'Contacto',
+			'Menú principal',
 		],
 	},
 	precios: {
 		text: '💰 Nuestros Planes:\n\nLos precios varían según los módulos que necesites. Ofrecemos:\n\n• Planes personalizables por módulo\n• Sin costos ocultos\n• Implementación guiada\n• Soporte 24/7 incluido\n\nPara una cotización personalizada, te recomiendo contactar a nuestro equipo. ¿Te gustaría que te conecte con ellos?',
 		options: [
 			'Contacto',
-			'Ver Demo',
 			'Servicios',
+			'Proceso de trabajo',
+			'Ver Demo',
+			'Menú principal',
 		],
 	},
 	proceso: {
 		text: '⚙️ Nuestro Proceso de Implementación:\n\n1. Consulta inicial - Analizamos tus necesidades\n2. Configuración - Personalizamos SolHub para tu laboratorio\n3. Capacitación - Entrenamos a tu equipo\n4. Go-live - Activación con soporte completo\n5. Seguimiento - Acompañamiento continuo\n\nEl proceso completo puede tomar entre 2-4 semanas según los módulos seleccionados.\n\n¿Quieres agendar una consulta para conocer más?',
 		options: [
 			'Contacto',
-			'Ver Demo',
 			'Servicios',
+			'Precios',
+			'Ver Demo',
+			'Menú principal',
 		],
 	},
 	contacto: {
@@ -45,6 +51,7 @@ const botResponses = {
 			{ text: 'Abrir WhatsApp', icon: <FaWhatsapp /> },
 			{ text: 'Abrir Instagram', icon: <FaInstagram /> },
 			{ text: 'Abrir LinkedIn', icon: <FaLinkedin /> },
+			'Menú principal',
 		],
 	},
 }
@@ -100,6 +107,11 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 	const handleBotResponse = (userInput) => {
 		const input = userInput.toLowerCase()
 		let response
+		let responseOptions = []
+
+		// Obtener el último mensaje del bot para evitar loops
+		const lastBotMessage = [...messages].reverse().find(msg => msg.isBot)
+		const lastResponseText = lastBotMessage?.text || ''
 
 		// Detectar intención del usuario
 		if (
@@ -117,8 +129,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				text: botResponses.servicios.text,
 				isBot: true,
 				timestamp: new Date(),
-				options: botResponses.servicios.options,
 			}
+			// Filtrar opciones para evitar loops
+			responseOptions = botResponses.servicios.options.filter(opt => {
+				const optText = typeof opt === 'string' ? opt : opt.text
+				return optText !== 'Servicios'
+			})
 		} else if (
 			input.includes('precio') ||
 			input.includes('costo') ||
@@ -134,8 +150,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				text: botResponses.precios.text,
 				isBot: true,
 				timestamp: new Date(),
-				options: botResponses.precios.options,
 			}
+			// Filtrar opciones para evitar loops
+			responseOptions = botResponses.precios.options.filter(opt => {
+				const optText = typeof opt === 'string' ? opt : opt.text
+				return optText !== 'Precios'
+			})
 		} else if (
 			input.includes('proceso') ||
 			input.includes('implementacion') ||
@@ -153,8 +173,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				text: botResponses.proceso.text,
 				isBot: true,
 				timestamp: new Date(),
-				options: botResponses.proceso.options,
 			}
+			// Filtrar opciones para evitar loops
+			responseOptions = botResponses.proceso.options.filter(opt => {
+				const optText = typeof opt === 'string' ? opt : opt.text
+				return optText !== 'Proceso de trabajo' && optText !== 'Proceso'
+			})
 		} else if (
 			input.includes('contacto') ||
 			input.includes('contactar') ||
@@ -168,8 +192,8 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				text: botResponses.contacto.text,
 				isBot: true,
 				timestamp: new Date(),
-				options: botResponses.contacto.options,
 			}
+			responseOptions = botResponses.contacto.options
 		} else if (
 			input.includes('demo') ||
 			input.includes('demostracion') ||
@@ -180,6 +204,21 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 			// Redirigir a la página de demo
 			window.location.href = '/demo-experience'
 			return null
+		} else if (
+			input.includes('menú principal') ||
+			input.includes('menu principal') ||
+			input.includes('volver al inicio') ||
+			input.includes('inicio') ||
+			input.includes('reset')
+		) {
+			// Volver al menú principal
+			response = {
+				id: messages.length + 2,
+				text: botResponses.initial.text,
+				isBot: true,
+				timestamp: new Date(),
+			}
+			responseOptions = botResponses.initial.options
 		} else {
 			// Respuesta por defecto - mostrar opciones principales
 			response = {
@@ -187,10 +226,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				text: 'Puedo ayudarte con información sobre nuestros servicios, precios, proceso de implementación o conectarte con nuestro equipo. ¿Qué te gustaría saber?',
 				isBot: true,
 				timestamp: new Date(),
-				options: ['Servicios', 'Precios', 'Proceso de trabajo', 'Contacto'],
 			}
+			responseOptions = ['Servicios', 'Precios', 'Proceso de trabajo', 'Contacto']
 		}
 
+		// Agregar opciones al response
+		response.options = responseOptions
 		return response
 	}
 
@@ -238,6 +279,27 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 		} else if (optionText === 'Ver Demo') {
 			window.location.href = '/demo-experience'
 			return
+		} else if (optionText === 'Menú principal' || optionText === 'Volver al inicio') {
+			// Resetear al menú principal
+			const userMessage = {
+				id: messages.length + 1,
+				text: optionText,
+				isBot: false,
+				timestamp: new Date(),
+			}
+			setMessages((prev) => [...prev, userMessage])
+			
+			setTimeout(() => {
+				const botResponse = {
+					id: messages.length + 2,
+					text: botResponses.initial.text,
+					isBot: true,
+					timestamp: new Date(),
+					options: botResponses.initial.options,
+				}
+				setMessages((prev) => [...prev, botResponse])
+			}, 1000)
+			return
 		}
 
 		// Simular que el usuario escribió la opción
@@ -253,6 +315,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 		// Respuesta del bot
 		setTimeout(() => {
 			let botResponse
+			let responseOptions = []
 
 			if (optionText === 'Servicios') {
 				botResponse = {
@@ -260,32 +323,44 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 					text: botResponses.servicios.text,
 					isBot: true,
 					timestamp: new Date(),
-					options: botResponses.servicios.options,
 				}
+				// Filtrar opciones para evitar loops - no mostrar "Servicios" si ya estamos en ese contexto
+				responseOptions = botResponses.servicios.options.filter(opt => {
+					const optText = typeof opt === 'string' ? opt : opt.text
+					return optText !== 'Servicios'
+				})
 			} else if (optionText === 'Precios') {
 				botResponse = {
 					id: messages.length + 2,
 					text: botResponses.precios.text,
 					isBot: true,
 					timestamp: new Date(),
-					options: botResponses.precios.options,
 				}
+				// Filtrar opciones para evitar loops
+				responseOptions = botResponses.precios.options.filter(opt => {
+					const optText = typeof opt === 'string' ? opt : opt.text
+					return optText !== 'Precios'
+				})
 			} else if (optionText === 'Proceso de trabajo' || optionText === 'Proceso') {
 				botResponse = {
 					id: messages.length + 2,
 					text: botResponses.proceso.text,
 					isBot: true,
 					timestamp: new Date(),
-					options: botResponses.proceso.options,
 				}
+				// Filtrar opciones para evitar loops
+				responseOptions = botResponses.proceso.options.filter(opt => {
+					const optText = typeof opt === 'string' ? opt : opt.text
+					return optText !== 'Proceso de trabajo' && optText !== 'Proceso'
+				})
 			} else if (optionText === 'Contacto') {
 				botResponse = {
 					id: messages.length + 2,
 					text: botResponses.contacto.text,
 					isBot: true,
 					timestamp: new Date(),
-					options: botResponses.contacto.options,
 				}
+				responseOptions = botResponses.contacto.options
 			} else {
 				// Fallback - mostrar opciones principales
 				botResponse = {
@@ -293,9 +368,12 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 					text: 'Puedo ayudarte con información sobre nuestros servicios, precios, proceso de implementación o conectarte con nuestro equipo. ¿Qué te gustaría saber?',
 					isBot: true,
 					timestamp: new Date(),
-					options: ['Servicios', 'Precios', 'Proceso de trabajo', 'Contacto'],
 				}
+				responseOptions = ['Servicios', 'Precios', 'Proceso de trabajo', 'Contacto']
 			}
+
+			// Agregar opciones al botResponse
+			botResponse.options = responseOptions
 
 			setMessages((prev) => [...prev, botResponse])
 		}, 1000)
@@ -309,23 +387,30 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				className={`p-2 pl-0 text-white rounded-full transition-all duration-300 ${isOpen ? 'hidden' : ''}`}
 				title="Chatbot"
 			>
-				<RobotTraking className={'size-16 md:size-20'} />
+				<RobotTraking className={'size-14 md:size-18'} />
 			</button>
 
 			{/* Ventana del chat */}
 			<div
-				className={`fixed bottom-0 right-0 z-[130] w-full sm:w-96 md:w-[420px] h-[550px] md:h-[600px] bg-background border border-border
+				className={`fixed bottom-0 right-0 z-[130] w-full sm:w-96 md:w-[420px] bg-background border border-border
           shadow-glass-strong
           transition-transform duration-300 transform 
           sm:rounded-t-2xl
+          flex flex-col
+          overflow-hidden
           ${isOpen ? 'translate-y-0' : 'translate-y-full'}`}
+				style={{ 
+					maxHeight: '80vh',
+					height: 'auto',
+					minHeight: '400px'
+				}}
 				ref={chatRef}
 			>
 				{/* Header */}
-				<div className="flex items-center justify-between p-2.5 bg-gradient-medical text-white sm:rounded-t-2xl shadow-lg">
+				<div className="flex items-center justify-between p-2.5 bg-gradient-medical text-white sm:rounded-t-2xl shadow-lg flex-shrink-0">
 					<div className="flex items-center">
-						<RobotTraking className="size-9 md:size-10" />
-						<h3 className="font-semibold ml-2 text-base md:text-lg">Solwy</h3>
+						<RobotTraking className="size-8 md:size-9" />
+						<h3 className="font-semibold ml-2 text-sm md:text-base">Solwy</h3>
 					</div>
 					<button onClick={() => setIsOpen(false)} className="p-1 hover:bg-white/20 rounded-full transition-colors">
 						<X className="h-4 w-4" />
@@ -333,7 +418,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				</div>
 
 				{/* Messages Container */}
-				<div className="flex-1 p-2.5 h-[calc(550px-5rem)] md:h-[calc(600px-5rem)] overflow-y-auto">
+				<div className="flex-1 p-2.5 overflow-y-auto min-h-0">
 					<div className="space-y-4">
 						{messages.map((message) => (
 							<div key={message.id}>
@@ -398,7 +483,7 @@ const ChatBot = ({ isOpen, setIsOpen }) => {
 				{/* Input Form */}
 				<form
 					onSubmit={handleSendMessage}
-					className="absolute bottom-0 left-0 right-0 p-2 bg-background border-t border-border"
+					className="p-2 bg-background border-t border-border flex-shrink-0"
 				>
 					<div className="flex items-center gap-1.5">
 						<input

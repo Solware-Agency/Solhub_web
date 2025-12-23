@@ -69,19 +69,19 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-glow: rgba(65, 226, 184, 0.2); /* nuevo primario con opacidad */
     
-    /* Spacing System - Reduced 20% total */
-    --spacing-xs: 0.405rem; /* 6.48px */
-    --spacing-sm: 0.6075rem; /* 9.72px */
-    --spacing-md: 1.0125rem; /* 16.2px */
-    --spacing-lg: 1.62rem; /* 25.92px */
-    --spacing-xl: 2.43rem; /* 38.88px */
+    /* Spacing System - Reduced further for better proportions */
+    --spacing-xs: 0.35rem; /* 5.6px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 0.875rem; /* 14px */
+    --spacing-lg: 1.4rem; /* 22.4px */
+    --spacing-xl: 2.1rem; /* 33.6px */
     
-    /* Border Radius System - Reduced 10% */
-    --radius-sm: 0.45rem; /* 7.2px */
-    --radius-md: 0.675rem; /* 10.8px */
-    --radius-lg: 0.9rem; /* 14.4px */
-    --radius-xl: 1.125rem; /* 18px */
-    --radius-2xl: 1.35rem; /* 21.6px */
+    /* Border Radius System - Further reduced */
+    --radius-sm: 0.4rem; /* 6.4px */
+    --radius-md: 0.6rem; /* 9.6px */
+    --radius-lg: 0.8rem; /* 12.8px */
+    --radius-xl: 1rem; /* 16px */
+    --radius-2xl: 1.2rem; /* 19.2px */
     
     /* Liquid Glass Shadows */
     --shadow-glass-light: 0 4px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -130,7 +130,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    font-size: 72.9%; /* Reduced 30% total (20% + 10%) */
+    font-size: 62.5%; /* Reduced to 62.5% (10px base) for better proportion control */
   }
   
   html {
